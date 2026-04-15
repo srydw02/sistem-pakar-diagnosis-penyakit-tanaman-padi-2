@@ -1,47 +1,118 @@
 {
+  "aturan": [
+    {
+      "id": "R01",
+      "kondisi": ["G01", "G06"],
+      "kesimpulan": "P01",
+      "cf": 0.75,
+      "keterangan": "Layu siang hari disertai bercak kuning pada daun"
+    },
+    {
+      "id": "R02",
+      "kondisi": ["G01", "G02", "G04"],
+      "kesimpulan": "P01",
+      "cf": 0.80,
+      "keterangan": "Layu siang, daun muda mengering, dan daun mengerut"
+    },
+    {
+      "id": "R03",
+      "kondisi": ["G02", "G06", "G07"],
+      "kesimpulan": "P01",
+      "cf": 0.85,
+      "keterangan": "Daun mengering, bercak kuning, dan batang mengering"
+    },
+    {
+      "id": "R04",
+      "kondisi": ["G08", "G03"],
+      "kesimpulan": "P02",
+      "cf": 0.85,
+      "keterangan": "Buah mengering disertai buah menguning"
+    },
+    {
+      "id": "R05",
+      "kondisi": ["G08", "G10"],
+      "kesimpulan": "P02",
+      "cf": 0.80,
+      "keterangan": "Buah mengering dengan bercak putih seperti kapur pada daun"
+    },
+    {
+      "id": "R06",
+      "kondisi": ["G03", "G10"],
+      "kesimpulan": "P02",
+      "cf": 0.70,
+      "keterangan": "Buah menguning disertai bercak putih pada daun"
+    },
+    {
+      "id": "R07",
+      "kondisi": ["G05", "G07"],
+      "kesimpulan": "P03",
+      "cf": 0.75,
+      "keterangan": "Tanaman kerdil disertai batang mengering"
+    },
+    {
+      "id": "R08",
+      "kondisi": ["G05", "G04", "G03"],
+      "kesimpulan": "P03",
+      "cf": 0.80,
+      "keterangan": "Kerdil, daun mengerut, dan buah menguning"
+    },
+    {
+      "id": "R09",
+      "kondisi": ["G01", "G05", "G07"],
+      "kesimpulan": "P04",
+      "cf": 0.90,
+      "keterangan": "Layu siang, kerdil, dan batang mengering"
+    },
+    {
+      "id": "R10",
+      "kondisi": ["G01", "G05"],
+      "kesimpulan": "P04",
+      "cf": 0.70,
+      "keterangan": "Layu siang hari disertai tanaman kerdil"
+    },
+    {
+      "id": "R11",
+      "kondisi": ["G09", "G05"],
+      "kesimpulan": "P05",
+      "cf": 0.85,
+      "keterangan": "Retak pada daun disertai tanaman kerdil"
+    },
+    {
+      "id": "R12",
+      "kondisi": ["G09", "G02", "G04"],
+      "kesimpulan": "P05",
+      "cf": 0.80,
+      "keterangan": "Retak daun, daun muda mengering, dan daun mengerut"
+    }
+  ],
   "penyakit": {
     "P01": {
       "nama": "Penyakit Layu Fusarium",
+      "deskripsi": "Disebabkan oleh jamur Fusarium oxysporum yang menyerang pembuluh xilem tanaman.",
       "link": "/template/detailPenyakit/p1.html"
     },
     "P02": {
       "nama": "Penyakit Busuk Buah",
+      "deskripsi": "Disebabkan oleh jamur Colletotrichum atau Phytophthora yang menyerang buah.",
       "link": "/template/detailPenyakit/p2.html"
     },
     "P03": {
       "nama": "Penyakit Virus Kuning",
+      "deskripsi": "Ditularkan oleh serangga kutu kebul dan menyebabkan daun menguning serta tanaman kerdil.",
       "link": "/template/detailPenyakit/p3.html"
     },
     "P04": {
       "nama": "Penyakit Layu Bakteri",
+      "deskripsi": "Disebabkan oleh bakteri Ralstonia solanacearum yang menyerang sistem pembuluh tanaman.",
       "link": "/template/detailPenyakit/p4.html"
     },
     "P05": {
       "nama": "Penyakit Rebah Semai",
+      "deskripsi": "Disebabkan oleh jamur Phytophthora atau Pythium yang menyerang bibit muda.",
       "link": "/template/detailPenyakit/p5.html"
     }
   },
   "gejala": {
-    "G03": {
-      "teks": "Buah tampak menguning",
-      "keterangan": "Buah yang menguning sebelum matang bisa jadi gejala infeksi patogen atau stress tanaman.",
-      "gambar": "../static/images/fotoGejala/G3.jpeg"
-    },
-    "G10": {
-      "teks": "Bercak putih seperti kapur pada daun",
-      "keterangan": "Tanda klasik dari infeksi cendawan (jamur tepung), biasanya menyerang di musim lembap.",
-      "gambar": "../static/images/fotoGejala/G10.jpeg"
-    },
-    "G06": {
-      "teks": "Bercak kuning pada daun",
-      "keterangan": "Bercak kuning menyebar di permukaan daun bisa menandakan serangan jamur atau bakteri.",
-      "gambar": "../static/images/fotoGejala/G6.jpeg"
-    },
-    "G05": {
-      "teks": "Tanaman kerdil",
-      "keterangan": "Pertumbuhan tanaman terhambat, ukuran batang dan daun lebih kecil dari normal. Biasanya disebabkan oleh virus atau kualitas tanah buruk.",
-      "gambar": "../static/images/fotoGejala/G5.jpeg"
-    },
     "G01": {
       "teks": "Tanaman tampak layu pada siang hari",
       "keterangan": "Tanaman terlihat segar di pagi hari namun menjadi layu saat siang, lalu kembali segar di sore hari. Ini menandakan masalah pada sistem akar atau serangan jamur.",
@@ -52,10 +123,25 @@
       "keterangan": "Pengeringan biasanya dimulai dari ujung daun, mengindikasikan kekurangan air, unsur hara, atau infeksi fusarium.",
       "gambar": "../static/images/fotoGejala/G2.jpeg"
     },
+    "G03": {
+      "teks": "Buah tampak menguning",
+      "keterangan": "Buah yang menguning sebelum matang bisa jadi gejala infeksi patogen atau stress tanaman.",
+      "gambar": "../static/images/fotoGejala/G3.jpeg"
+    },
     "G04": {
       "teks": "Daun mulai mengerut",
       "keterangan": "Daun yang keriput dan mengecil dapat disebabkan oleh virus atau kekurangan air secara kronis.",
       "gambar": "../static/images/fotoGejala/G4.jpeg"
+    },
+    "G05": {
+      "teks": "Tanaman kerdil",
+      "keterangan": "Pertumbuhan tanaman terhambat, ukuran batang dan daun lebih kecil dari normal. Biasanya disebabkan oleh virus atau kualitas tanah buruk.",
+      "gambar": "../static/images/fotoGejala/G5.jpeg"
+    },
+    "G06": {
+      "teks": "Bercak kuning pada daun",
+      "keterangan": "Bercak kuning menyebar di permukaan daun bisa menandakan serangan jamur atau bakteri.",
+      "gambar": "../static/images/fotoGejala/G6.jpeg"
     },
     "G07": {
       "teks": "Batang tampak mengering",
@@ -71,6 +157,11 @@
       "teks": "Retak pada daun",
       "keterangan": "Retakan atau sobekan pada daun bisa muncul akibat kekeringan, infeksi, atau defisiensi unsur tertentu.",
       "gambar": "../static/images/fotoGejala/G9.jpeg"
+    },
+    "G10": {
+      "teks": "Bercak putih seperti kapur pada daun",
+      "keterangan": "Tanda klasik dari infeksi cendawan (jamur tepung), biasanya menyerang di musim lembap.",
+      "gambar": "../static/images/fotoGejala/G10.jpeg"
     }
   }
 }

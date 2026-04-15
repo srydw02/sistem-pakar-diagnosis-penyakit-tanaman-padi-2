@@ -3,59 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="/static/style/style3.css">
-    <title>Diagnosa Penyakit Cabai</title>
+    <title>Diagnosa Penyakit Cabai — SiPedas</title>
+    <style>
+        #metode-badge {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #185FA5;
+            border: 1px solid #b5d4f4;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-xl">
-            <a class="navbar-brand" href="#"><h3>SiPedas</h3></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <a class="navbar-brand" href="/index.html">
+                <h3>SiPedas</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
-                    <li class="nav-item active">
-                        <a class="btn px-4 btn-primary ml-2" href="#" role="button">Diagnosa</a>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="informasi.html">Informasi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="diagnosis.html" role="button">Diagnosa</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    <section id="form" class="py-5">
-        <div class="container" style="max-width: 600px;">
-            <h2 class="mb-4 text-center">Sistem Pakar Diagnosa</h2>
-            
+
+    <section id="form">
+        <div class="container">
+            <h1 class="mb-1">
+                Form Diagnosa Penyakit
+                <span id="metode-badge">Forward Chaining</span>
+            </h1>
+            <p class="text-muted mb-4" style="font-size:0.9rem;">
+                Jawab setiap pertanyaan gejala di bawah ini. Sistem akan menelusuri aturan secara maju
+                untuk menemukan kemungkinan penyakit pada tanaman cabai Anda.
+            </p>
+
             <form id="diagnosaForm">
-                <div class="form-group mb-4">
-                    <label for="nama" class="font-weight-bold">Masukkan Nama Anda:</label>
-                    <input type="text" class="form-control" id="nama" placeholder="Contoh: Mas Rusdi" required>
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama Petani:</label>
+                    <input type="text" class="form-control" id="nama"
+                        placeholder="Masukkan nama Anda" required>
                 </div>
-                
                 <div id="gejala-list" class="mb-3"></div>
             </form>
-        
-            <div class="mt-4" id="hasil"></div>
+
+            <div class="mt-5" id="hasil"></div>
         </div>
     </section>
 
-    <script src="../static/js/script.js"></script>
-    
+    <script src="/static/js/script.js"></script>
+
     <footer class="footer bg-light py-3 mt-5">
-        <div class="container-xl text-center">
-            <p class="mb-0">© 2026 Hak Cipta Dilindungi. Dibuat oleh Kelompok Web 2</p>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tentang</h5>
+                    <p>Sistem pakar diagnosa penyakit cabai membantu petani dalam mengidentifikasi
+                    penyakit tanaman menggunakan metode <em>Forward Chaining</em>.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Link</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="informasi.html">Informasi Penyakit</a></li>
+                        <li><a href="diagnosis.html">Halaman Diagnosa</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Kontak</h5>
+                    <p>Teknik Informatika Universitas Lampung<br>
+                    Bandar Lampung, Lampung<br>
+                    2024/2025</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2025 Hak Cipta Dilindungi. Dibuat oleh Kelompok 1 Teknik Informatika Unila</p>
+            </div>
         </div>
     </footer>
-    
-<script src="https://code.jquery.com/jquery-3.4.1.js" ...></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/..."></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/..."></script>
-    <script src="../static/js/script.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
