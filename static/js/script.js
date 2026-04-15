@@ -119,6 +119,16 @@ function nextQuestion() {
     return;
   }
 
+  // 🔥 FIX: Cek nama di sini kalau user lagi di soal TERAKHIR
+  if (currentGejalaIndex === gejalaKeys.length - 1) {
+    const nama = document.getElementById('nama').value.trim();
+    if (!nama) {
+      alert('Bro, isi nama lu dulu di form atas sebelum lihat hasil!');
+      document.getElementById('nama').focus(); // Kursor otomatis lari ke kolom nama
+      return; // Stop di sini, soal dan jawaban user NGGAK akan hilang
+    }
+  }
+
   const kode = gejalaKeys[currentGejalaIndex];
   selectedGejala = selectedGejala.filter(g => g !== kode && g !== ('!' + kode));
 
@@ -129,22 +139,12 @@ function nextQuestion() {
   tampilkanPertanyaan();
 }
 
-function prevQuestion() {
-  if (currentGejalaIndex > 0) {
-    currentGejalaIndex--;
-    tampilkanPertanyaan();
-  }
-}
-
 // ─── PROSES DIAGNOSA ─────────────────────────────────────────────────────────
 
 function prosesDiagnosa() {
   const nama = document.getElementById('nama').value.trim();
-  if (!nama) {
-    // BUG FIX: Hanya munculin alert, tanpa menghapus jawaban user
-    alert('Bro, isi nama lu dulu di form atas sebelum lihat hasil!');
-    return; 
-  }
+  
+  // (Pengecekan nama di sini dihapus karena udah dipindah ke atas)
 
   const faktaTerpilih = selectedGejala.filter(g => !g.startsWith('!'));
   const hasilFC = forwardChaining(faktaTerpilih);
