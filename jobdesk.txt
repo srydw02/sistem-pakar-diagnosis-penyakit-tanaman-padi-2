@@ -1,0 +1,23 @@
+1. Data & Asset Master (Anggota 1)
+Kekuasaan Mutlak: File data/data.json dan semua isi folder gambar/foto.
+Tugas: Dia yang ngetik konten pertanyaan gejala dan penjelasan penyakit di dalam JSON. Dia juga yang nyari foto, nge-crop, dan nge-rename file gambarnya biar rapi.
+
+2. Landing Page Coder (Anggota 2)
+Kekuasaan Mutlak: File index.html dan static/style/style.css.
+Tugas: Ngerapihin desain halaman depan. Ngatur tata letak header, gambar padi, dan penjelasan Forward Chaining/Sistem Pakar.
+
+3. Catalog UI Coder (Anggota 3)
+Kekuasaan Mutlak: File template/informasi.html dan static/style/style2.css.
+Tugas: Fokus bikin kerangka card daftar penyakit dan Accordion (menu buka-tutup) buat daftar gejala.
+
+4. Detail Pages Coder (Anggota 4)
+Kekuasaan Mutlak: Semua file di dalam folder template/detailPenyakit/ (p1.html sampai p5.html).
+Tugas: Mengisi dan merapikan 5 halaman HTML ini dengan teks penjelasan dan solusi dari masing-masing penyakit.
+
+5. Diagnosa UI Coder (Anggota 5)
+Kekuasaan Mutlak: File template/diagnosa.html dan static/style/style3.css.
+Tugas: Dia HANYA bikin kerangka HTML buat form input nama dan nyiapin div kosong (seperti <div id="gejala-list"></div>). Dia dilarang keras nulis kode JavaScript.
+
+6. JavaScript (JS) Master (Anggota 6)
+Kekuasaan Mutlak: File static/js/script.js (100% milik dia).
+Tugas: Ini otaknya. Dia yang nulis kode fetch buat narik JSON, nulis fungsi buat nampilin checkbox gejala ke dalam HTML buatan Anggota 5, dan bikin rumus if-else (Forward Chaining) buat nentuin hasil penyakitnya.
