@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>Sistem Pakar Penyakit Cabai</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-xl">
+            <a class="navbar-brand" href="#">
+                <h3>SiPedas</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/informasi.html">Informasi <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register " href="/template/diagnosa.html" role="button">Diagnosa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="heroBWA bg-light">
+        <div class="container-xl">
+            <div class="row position-relative">
+                <div class="col align-self-center">
+                    <h1 class="mb-4 heading">Sistem Pakar </h1>
+                    <h6 class="font-weight-normal">Diagnosa dan Identifikasi Penyakit Cabai Menggunakan Teorema Bayes</h6>
+                    </p>
+                    <a class="btn btn-primary" href="/template/diagnosa.html" role="button">Diagnosa Sekarang</a>
+                </div>
+                <div class="col d-none d-sm-block z-10">
+                    <img width="500" src="/static/images/beranda1.png" alt="hero" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alur" class="py-5 ">
+        <!--Content2-->
+        <div class="container-xl">
+            <h1 style=" text-align: center;" class="font-weight-normal sub-heading ">Cari Tahu Cara Diagnosa dan Solusinya</h1>
+            <p class="pb-5 text-center font-weight-light">Ikuti pentujuk dibawah ini, agar anda tidak kesulitan di
+                diagnosa penyakit ayam</p>
+            <p></p>
+            <div class="card-deck text-center ">
+                <div class="card border">
+                    <img src="/static/images/beranda2.png" class="card-img-top  mx-auto mt-5" style="width: 300px; height:250px">
+                    <div class="card-body pt-5">
+                        <h5 class="card-title ">Isi Nama</h5>
+                        <p class="card-text font-weight-light ">Silakan buka Halaman Diagnosa dan lengkapi dengan
+                            informasi Nama anda.</p>
+                    </div>
+                </div>
+                <div class="card border">
+                    <img src="/static/images/beranda3.png" class="card-img-top mx-auto mt-5" style="width: 300px; height:250px">
+                    <div class="card-body pt-5">
+                        <h5 class="card-title">Pilih Gejala Penyakit</h5>
+                        <p class="card-text font-weight-light">Dalam tahap ini pengguna akan diberikan beberapa
+                            pilihan gejala, dan pengguna diharapakan untuk memilih gejala yang dialami pada tanaman cabai pengguna.</p>
+                    </div>
+                </div>
+                <div class="card border">
+                    <img src="/static/images/beranda4.png" class="card-img-top mx-auto mt-5" style="width: 300px; height:250px">
+                    <div class="card-body pt-5">
+                        <h5 class="card-title ">Hasil Penyakit </h5>
+                        <p class="card-text font-weight-light">Hasil dari penyakit dari cabai akan muncul dengan presentase setiap penyakitnya.
+                            Selain itu akan diberikan informasi terkait masing-masing penyakit dan solusinya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-30 mb-5 container-xl">
+        <div class="row margin-top mb-5">
+            <div class="col d-flex justify-content-center flex-column text-center mb-5 margin-top">
+                <h1 class="font-weight-normal sub-heading ">Cara kerja metode Teorema Bayes</h1>
+                <p class="font-weight-light">Teorema Bayes adalah metode dalam statistika yang digunakan untuk 
+                    menghitung probabilitas suatu hipotesis berdasarkan pengetahuan sebelumnya (prior knowledge) dan evidence (bukti) baru yang diperoleh.</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-5 ">
+                <img class="metode" src="/static/images/beranda5.png" >
+            </div>
+            <div class="col-7 d-flex justify-content-center flex-column">
+                <h2 class="mt-4 ">Metode Teorema Bayes pada Sistem Pakar Diagnosa Penyakit Cabai</h2>
+                <p class="font-weight-light">Teorema ini sering digunakan dalam sistem pakar, klasifikasi, dan prediksi, termasuk untuk mendiagnosis penyakit, spam filtering, machine learning, dan lain-lain.
+                    Teorema ini melibatkan pengumpulan data, perhitungan rumus teorema,dan juga hasil perhitungan.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section section class="margin-top container-xl">
+        <div class="row margin-top d-flex flex-column">
+            <div class="col margin-top d-flex justify-content-center flex-column text-center">
+                <h1 class="font-weight-normal sub-heading ">Memulai Jawaban Pertanyaan Penting </h1>
+                <p class="font-weight-light">Pertanyaan ini meliputi informasi dasar terkait penerapan teorema bayes pada sistem pakar ini.</p>
+            </div>
+
+
+
+            <div class="col margin-top">
+                <div class="accordion mb-5" id="accordionExample">
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Apa itu Metode Teorema Bayes?
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse " aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Metode teorema bayes Teorema Bayes adalah metode dalam statistika yang digunakan untuk menghitung probabilitas suatu 
+                                hipotesis berdasarkan pengetahuan sebelumnya (prior knowledge) dan evidence (bukti) baru yang diperoleh. 
+                                Teorema ini sering digunakan dalam sistem pakar, klasifikasi, dan prediksi, termasuk untuk mendiagnosis penyakit, spam filtering, machine learning, dan lain-lain.
+                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Bagaimana cara kerja dari metode teorema bayes?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Dalam sistem pakar ini, metode teorema bayes mengambil data dari beberapa jurnal dan menerapkan dalam perhitungan rumus berikut ini:
+                                P(H∣E)= (P(E|H).P(H)) / P(E).
+                                <br>P(H∣E): Probabilitas hipotesis H jika diberikan evidence E (posterior).
+                                <br>P(E∣H): Probabilitas evidence E jika hipotesis H benar (likelihood).
+                                <br>P(E): Probabilitas total evidence E (normalizing constant).
+                                <br>Dari perhitungan dari setia penyakit akan ditampilkan probabilitas dan probabilitas terbesar menjadi
+                                peluang cabai terkena penyakit tersebut.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Mengapa Metode Teorema Byes dipilih untuk Sistem Pakar Diagnosa Penyakit Cabai?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Metode ini dipilih karena kemampuan dalam menangani ketidakpastian dalam sistem pakar. Selain itu teorema ini
+                                menggunakan data statistika yang ada sehingga dapat memunculkan setiap probabilitas setiap penyakit yang membuat 
+                                pengguna dapat mengetahui presentase peluang setiap penyakit.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Apa keuntungan menggunakan Metode Teorema Bayes?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Keuntungan dalam menggunakan teorema bayes yaitu :
+                                <br>1. Dapat menangani ketidakpastian pada Sistem Pakar
+                                <br>2. Memberi Output Berupa Probabilitas
+                                <br>3. Menggunakan data yang ada dalam melakukan perhitungan
+                                <br>4. Sederhana dan Efisien
+                                <br>5. Mudah diupdate dan dikembangkan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-light py-3 mt-10">
+        <div class=" container-xl">
+            <div class="row">
+                <!-- Footer Column 1 -->
+                <div class="col-md-4 mb-3">
+                    <h5>Tentang </h5>
+                    <p>Sistem pakar diagnosa penyakit cabai membantu petani cabai dalam melakukan diagnosa pada penyakit cabai.</p>
+                </div>
+                <!-- Footer Column 2 -->
+                <div class="col-md-4 mb-3">
+                    <h5>Link </h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="/template/informasi.html">Informasi Penyakit</a></li>
+                        <li><a href="/template/diagnosa.html">Kunjungi halaman diagnosa</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Column 3 -->
+                <div class="col-md-4 mb-3">
+                    <h5>Kontak</h5>
+                    <p>Teknik Informatika Universitas Lampung
+                        <br>Bandar Lampung, Lampung
+                        <br>2024/2025
+                    </p>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2025 Hak Cipta Dilindungi. Dibuat oleh Kelompok 1 Teknik Informatika Unila</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+</body>
+</html>

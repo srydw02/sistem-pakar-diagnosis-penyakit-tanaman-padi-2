@@ -1,0 +1,132 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f0f2f7;
+    color: #333;
+}
+
+/* === Topbar === */
+.topbar {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.topbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.logout {
+    color: #e53e3e;
+}
+
+/* === Layout container === */
+.app-container {
+    display: flex;
+    margin-top: 70px; /* beri ruang untuk topbar */
+    min-height: calc(100vh - 70px);
+}
+
+/* === Sidebar === */
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.tutorial-button {
+    background-color: #2d3748;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nav-links a {
+    display: block;
+    margin: 10px 0;
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+details ul {
+    margin-left: 20px;
+    list-style: none;
+}
+
+details ul li a {
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* === Main content === */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f0f2f7;
+}
+
+.dashboard-placeholder {
+    padding: 30px;
+    text-align: center;
+    color: #718096;
+}
+.dashboard-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    padding: 10px;
+}
+
+.dashboard-iframe iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.nav-links a.active {
+    background-color: #edf2f7;
+    color: #2b6cb0;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px 12px;
+}

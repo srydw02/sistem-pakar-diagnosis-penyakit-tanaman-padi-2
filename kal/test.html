@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOKO Financial - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Topbar -->
+    <header class="topbar">
+        <nav class="topbar-nav">
+            <div class="nav-left">
+                <strong>Kalkulator Finance</strong>
+            </div>
+            <div class="nav-right">
+                <a href="#">Tentang</a>
+                <a href="#">Layanan</a>
+                <a href="#">Kontak</a>
+                <a href="#">Kalkulator Finance</a>
+                <a href="#">Blog</a>
+                <a href="#" class="logout">Log out</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main layout -->
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">💰 Kalkulator Finance</div>
+            <button class="tutorial-button">▶️ Video Tutorial Kalkulator</button>
+            <nav class="nav-links">
+                <a href="#" class="active">Kalkulator Financial</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Input Budget</a>
+                <details>
+                    <summary>Input Nilai Aktual</summary>
+                    <ul>
+                        <li><a href="#">Pemasukan</a></li>
+                        <li><a href="#">Pengeluaran</a></li>
+                    </ul>
+                </details>
+                <a href="#">Download PDF</a>
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="main-content">
+            <div class="dashboard-iframe">
+                <iframe src="https://aryadivafrahim.pythonanywhere.com/" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "penyakit": {
+    "P01": {
+      "nama": "Penyakit Layu Fusarium",
+      "link": "/template/detailPenyakit/p1.html"
+    },
+    "P02": {
+      "nama": "Penyakit Busuk Buah",
+      "link": "/template/detailPenyakit/p2.html"
+    },
+    "P03": {
+      "nama": "Penyakit Virus Kuning",
+      "link": "/template/detailPenyakit/p3.html"
+    },
+    "P04": {
+      "nama": "Penyakit Layu Bakteri",
+      "link": "/template/detailPenyakit/p4.html"
+    },
+    "P05": {
+      "nama": "Penyakit Rebah Semai",
+      "link": "/template/detailPenyakit/p5.html"
+    }
+  },
+  "gejala": {
+    "G03": {
+      "teks": "Buah tampak menguning",
+      "keterangan": "Buah yang menguning sebelum matang bisa jadi gejala infeksi patogen atau stress tanaman.",
+      "gambar": "../static/images/fotoGejala/G3.jpeg"
+    },
+    "G10": {
+      "teks": "Bercak putih seperti kapur pada daun",
+      "keterangan": "Tanda klasik dari infeksi cendawan (jamur tepung), biasanya menyerang di musim lembap.",
+      "gambar": "../static/images/fotoGejala/G10.jpeg"
+    },
+    "G06": {
+      "teks": "Bercak kuning pada daun",
+      "keterangan": "Bercak kuning menyebar di permukaan daun bisa menandakan serangan jamur atau bakteri.",
+      "gambar": "../static/images/fotoGejala/G6.jpeg"
+    },
+    "G05": {
+      "teks": "Tanaman kerdil",
+      "keterangan": "Pertumbuhan tanaman terhambat, ukuran batang dan daun lebih kecil dari normal. Biasanya disebabkan oleh virus atau kualitas tanah buruk.",
+      "gambar": "../static/images/fotoGejala/G5.jpeg"
+    },
+    "G01": {
+      "teks": "Tanaman tampak layu pada siang hari",
+      "keterangan": "Tanaman terlihat segar di pagi hari namun menjadi layu saat siang, lalu kembali segar di sore hari. Ini menandakan masalah pada sistem akar atau serangan jamur.",
+      "gambar": "../static/images/fotoGejala/G1.jpeg"
+    },
+    "G02": {
+      "teks": "Daun muda tampak mengering",
+      "keterangan": "Pengeringan biasanya dimulai dari ujung daun, mengindikasikan kekurangan air, unsur hara, atau infeksi fusarium.",
+      "gambar": "../static/images/fotoGejala/G2.jpeg"
+    },
+    "G04": {
+      "teks": "Daun mulai mengerut",
+      "keterangan": "Daun yang keriput dan mengecil dapat disebabkan oleh virus atau kekurangan air secara kronis.",
+      "gambar": "../static/images/fotoGejala/G4.jpeg"
+    },
+    "G07": {
+      "teks": "Batang tampak mengering",
+      "keterangan": "Batang menjadi cokelat dan kaku, menandakan infeksi sistemik seperti fusarium atau bakteri layu.",
+      "gambar": "../static/images/fotoGejala/G7.jpeg"
+    },
+    "G08": {
+      "teks": "Buah tampak mengering",
+      "keterangan": "Buah mengering sebelum matang atau setelah terkena bercak penyakit, sering disebabkan oleh jamur atau virus.",
+      "gambar": "../static/images/fotoGejala/G8.jpeg"
+    },
+    "G09": {
+      "teks": "Retak pada daun",
+      "keterangan": "Retakan atau sobekan pada daun bisa muncul akibat kekeringan, infeksi, atau defisiensi unsur tertentu.",
+      "gambar": "../static/images/fotoGejala/G9.jpeg"
+    }
+  }
+}
