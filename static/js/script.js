@@ -179,30 +179,3 @@ function prosesDiagnosa() {
   output.innerHTML = htmlContent;
   document.getElementById("diagnosaForm").style.display = "none";
 }
-
-// =========================================================
-// FITUR TAMBAHAN: CETAK HASIL KE PDF (FIX FINAL)
-// =========================================================
-function unduhPDF() {
-  const elemen = document.getElementById("hasil");
-  
-  // Sembunyikan sementara tombol download
-  const tombolDownload = elemen.querySelector("button");
-  if (tombolDownload) tombolDownload.style.display = "none";
-
-  const opsi = {
-    margin:       0.5, // Balikin ke margin wajar
-    filename:     'Hasil_Diagnosis_Cabai.pdf',
-    image:        { type: 'jpeg', quality: 1.0 },
-    // KUNCI UTAMA: scrollY: 0 bikin screenshot-nya nggak peduli lu lagi scroll di mana
-    html2canvas:  { scale: 2, scrollY: 0 }, 
-    // Paksa semua elemen biar nggak kepisah beda halaman
-    pagebreak:    { mode: 'avoid-all' }, 
-    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-  };
-
-  html2pdf().set(opsi).from(elemen).save().then(() => {
-    // Munculkan kembali tombol download
-    if (tombolDownload) tombolDownload.style.display = "block";
-  });
-}
