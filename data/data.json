@@ -2,86 +2,115 @@
   "aturan": [
     {
       "id": "R01",
-      "kondisi": ["G01", "G06"],
+      "kondisi": [
+        "G01",
+        "G06"
+      ],
       "kesimpulan": "P01",
-      "cf": 0.75,
       "keterangan": "Layu siang hari disertai bercak kuning pada daun"
     },
     {
       "id": "R02",
-      "kondisi": ["G01", "G02", "G04"],
+      "kondisi": [
+        "G01",
+        "G02",
+        "G04"
+      ],
       "kesimpulan": "P01",
-      "cf": 0.80,
       "keterangan": "Layu siang, daun muda mengering, dan daun mengerut"
     },
     {
       "id": "R03",
-      "kondisi": ["G02", "G06", "G07"],
+      "kondisi": [
+        "G02",
+        "G06",
+        "G07"
+      ],
       "kesimpulan": "P01",
-      "cf": 0.85,
       "keterangan": "Daun mengering, bercak kuning, dan batang mengering"
     },
     {
       "id": "R04",
-      "kondisi": ["G08", "G03"],
+      "kondisi": [
+        "G08",
+        "G03"
+      ],
       "kesimpulan": "P02",
-      "cf": 0.85,
       "keterangan": "Buah mengering disertai buah menguning"
     },
     {
       "id": "R05",
-      "kondisi": ["G08", "G10"],
+      "kondisi": [
+        "G08",
+        "G10"
+      ],
       "kesimpulan": "P02",
-      "cf": 0.80,
       "keterangan": "Buah mengering dengan bercak putih seperti kapur pada daun"
     },
     {
       "id": "R06",
-      "kondisi": ["G03", "G10"],
+      "kondisi": [
+        "G03",
+        "G10"
+      ],
       "kesimpulan": "P02",
-      "cf": 0.70,
       "keterangan": "Buah menguning disertai bercak putih pada daun"
     },
     {
       "id": "R07",
-      "kondisi": ["G05", "G07"],
+      "kondisi": [
+        "G05",
+        "G07"
+      ],
       "kesimpulan": "P03",
-      "cf": 0.75,
       "keterangan": "Tanaman kerdil disertai batang mengering"
     },
     {
       "id": "R08",
-      "kondisi": ["G05", "G04", "G03"],
+      "kondisi": [
+        "G05",
+        "G04",
+        "G03"
+      ],
       "kesimpulan": "P03",
-      "cf": 0.80,
       "keterangan": "Kerdil, daun mengerut, dan buah menguning"
     },
     {
       "id": "R09",
-      "kondisi": ["G01", "G05", "G07"],
+      "kondisi": [
+        "G01",
+        "G05",
+        "G07"
+      ],
       "kesimpulan": "P04",
-      "cf": 0.90,
       "keterangan": "Layu siang, kerdil, dan batang mengering"
     },
     {
       "id": "R10",
-      "kondisi": ["G01", "G05"],
+      "kondisi": [
+        "G01",
+        "G05"
+      ],
       "kesimpulan": "P04",
-      "cf": 0.70,
       "keterangan": "Layu siang hari disertai tanaman kerdil"
     },
     {
       "id": "R11",
-      "kondisi": ["G09", "G05"],
+      "kondisi": [
+        "G09",
+        "G05"
+      ],
       "kesimpulan": "P05",
-      "cf": 0.85,
       "keterangan": "Retak pada daun disertai tanaman kerdil"
     },
     {
       "id": "R12",
-      "kondisi": ["G09", "G02", "G04"],
+      "kondisi": [
+        "G09",
+        "G02",
+        "G04"
+      ],
       "kesimpulan": "P05",
-      "cf": 0.80,
       "keterangan": "Retak daun, daun muda mengering, dan daun mengerut"
     }
   ],
