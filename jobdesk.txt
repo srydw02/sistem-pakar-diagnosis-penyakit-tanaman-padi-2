@@ -16,8 +16,8 @@ Tugas: Mengisi dan merapikan 5 halaman HTML ini dengan teks penjelasan dan solus
 
 5. Diagnosa UI Coder (Anggota 5)
 Kekuasaan Mutlak: File template/diagnosa.html dan static/style/style3.css.
-Tugas: Dia HANYA bikin kerangka HTML buat form input nama dan nyiapin div kosong (seperti <div id="gejala-list"></div>). Dia dilarang keras nulis kode JavaScript.
+Tugas: Dia hanya bikin kerangka HTML buat form input nama dan nyiapin div kosong (seperti <div id="gejala-list"></div>). Dia dilarang keras nulis kode JavaScript.
 
 6. JavaScript (JS) Master (Anggota 6)
-Kekuasaan Mutlak: File static/js/script.js (100% milik dia).
+Kekuasaan Mutlak: File static/js/script.js (100%).
 Tugas: Ini otaknya. Dia yang nulis kode fetch buat narik JSON, nulis fungsi buat nampilin checkbox gejala ke dalam HTML buatan Anggota 5, dan bikin rumus if-else (Forward Chaining) buat nentuin hasil penyakitnya.
