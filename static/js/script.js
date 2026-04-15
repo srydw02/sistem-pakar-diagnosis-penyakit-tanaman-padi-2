@@ -11,18 +11,16 @@ fetch('/data/data.json')
     tampilkanPertanyaan();
   });
 
-// ─── MESIN INFERENSI FORWARD CHAINING ───────────────────────────────────────
+// ─── MESIN INFERENSI FORWARD CHAINING MURNI ─────────────────────────────────
 
 /**
- * Menjalankan forward chaining berdasarkan fakta (gejala) yang dipilih.
+ * Menjalankan forward chaining murni berdasarkan fakta (gejala) yang dipilih.
  *
  * Langkah:
- *  1. Masukkan semua gejala terpilih ke Working Memory.
- *  2. Iterasi seluruh aturan (rule base).
- *  3. Jika SEMUA kondisi aturan ada di Working Memory → aturan dinyatakan TERPENUHI.
- *  4. Kombinasikan Certainty Factor (CF) jika beberapa aturan menuju penyakit yang sama.
- *     Rumus: CF_baru = CF_lama + CF_aturan × (1 − CF_lama)
- *  5. Kembalikan hasil berupa map { kode_penyakit → { cf, aturanFired[] } }.
+ * 1. Masukkan semua gejala terpilih ke Working Memory.
+ * 2. Iterasi seluruh aturan (rule base).
+ * 3. Jika SEMUA kondisi aturan ada di Working Memory → aturan dinyatakan TERPENUHI.
+ * 4. Kembalikan hasil berupa map { kode_penyakit → { aturanFired[] } }.
  */
 function forwardChaining(faktaTerpilih) {
   const workingMemory = new Set(faktaTerpilih);
@@ -35,11 +33,10 @@ function forwardChaining(faktaTerpilih) {
       const kode = aturan.kesimpulan;
 
       if (!hasil[kode]) {
-        hasil[kode] = { cf: 0, aturanFired: [] };
+        hasil[kode] = { aturanFired: [] };
       }
 
-      const cfLama = hasil[kode].cf;
-      hasil[kode].cf = cfLama + aturan.cf * (1 - cfLama);
+      // Catat aturan mana saja yang berhasil memicu penyakit ini
       hasil[kode].aturanFired.push(aturan.id);
     }
   }
@@ -144,11 +141,9 @@ function prevQuestion() {
 function prosesDiagnosa() {
   const nama = document.getElementById('nama').value.trim();
   if (!nama) {
-    alert('Silakan masukkan nama terlebih dahulu.');
-    currentGejalaIndex = 0;
-    selectedGejala = [];
-    tampilkanPertanyaan();
-    return;
+    // BUG FIX: Hanya munculin alert, tanpa menghapus jawaban user
+    alert('Bro, isi nama lu dulu di form atas sebelum lihat hasil!');
+    return; 
   }
 
   const faktaTerpilih = selectedGejala.filter(g => !g.startsWith('!'));
@@ -160,11 +155,11 @@ function prosesDiagnosa() {
     .map(kode => ({
       kode,
       nama: knowledgeBase.penyakit[kode].nama,
-      cf: hasilFC[kode].cf,
       aturanFired: hasilFC[kode].aturanFired,
       link: knowledgeBase.penyakit[kode].link
     }))
-    .sort((a, b) => b.cf - a.cf);
+    // Sortir berdasarkan penyakit yang paling banyak aturannya terpenuhi
+    .sort((a, b) => b.aturanFired.length - a.aturanFired.length);
 
   const output = document.getElementById('hasil');
 
@@ -188,10 +183,9 @@ function prosesDiagnosa() {
       </div>`;
   } else {
     hasilArray.forEach((item, index) => {
-      const cfPersen = (item.cf * 100).toFixed(2);
       const labelAturan = item.aturanFired.join(', ');
 
-      // Warna badge berdasarkan urutan
+      // Warna badge berdasarkan urutan keparahan/kemungkinan
       const badgeKelas = index === 0 ? 'badge-danger' : index === 1 ? 'badge-warning' : 'badge-secondary';
       const labelUrutan = index === 0 ? 'Diagnosa Utama' : `Kemungkinan ${index + 1}`;
 
@@ -205,15 +199,7 @@ function prosesDiagnosa() {
             <small class="text-muted">Aturan yang terpenuhi:</small>
             <span class="ml-1" style="font-family:monospace;font-size:0.85rem;">${labelAturan}</span>
           </div>
-          <div class="mb-2">
-            <small class="text-muted">Tingkat Keyakinan (CF):</small>
-            <strong class="ml-1">${cfPersen}%</strong>
-          </div>
-          <div class="progress mb-3" style="height:8px;">
-            <div class="progress-bar ${index === 0 ? 'bg-danger' : 'bg-warning'}"
-              role="progressbar" style="width:${cfPersen}%"></div>
-          </div>
-          <a href="${item.link}" class="btn btn-danger btn-sm" target="_blank">Lihat informasi</a>
+          <a href="${item.link}" class="btn btn-danger btn-sm mt-2" target="_blank">Lihat informasi</a>
         </div>
       `;
     });
