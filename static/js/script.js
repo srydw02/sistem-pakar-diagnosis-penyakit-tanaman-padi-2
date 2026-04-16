@@ -1,209 +1,107 @@
-let knowledgeBase = {};
-let currentGejalaIndex = 0;
-let selectedGejala = [];
-let gejalaKeys = [];
+let dataKB = {}, gejalaList = [], currentIndex = 0, jawaban = {};
 
+// ─── 1. AMBIL DATA DARI JSON ────────────────────────────────────────────────
 fetch('/data/data.json')
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
-    knowledgeBase = data;
-    gejalaKeys = Object.keys(knowledgeBase.gejala);
-    tampilkanPertanyaan();
+    dataKB = data;
+    gejalaList = Object.keys(data.gejala);
+    renderPertanyaan();
   });
 
-// ─── MESIN INFERENSI FORWARD CHAINING MURNI ─────────────────────────────────
-
-/**
- * Menjalankan forward chaining murni berdasarkan fakta (gejala) yang dipilih.
- *
- * Langkah:
- * 1. Masukkan semua gejala terpilih ke Working Memory.
- * 2. Iterasi seluruh aturan (rule base).
- * 3. Jika SEMUA kondisi aturan ada di Working Memory → aturan dinyatakan TERPENUHI.
- * 4. Kembalikan hasil berupa map { kode_penyakit → { aturanFired[] } }.
- */
-function forwardChaining(faktaTerpilih) {
-  const workingMemory = new Set(faktaTerpilih);
+// ─── 2. MESIN INFERENSI (FORWARD CHAINING) ──────────────────────────────────
+const forwardChaining = (fakta) => {
   const hasil = {};
-
-  for (const aturan of knowledgeBase.aturan) {
-    const kondisiTerpenuhi = aturan.kondisi.every(g => workingMemory.has(g));
-
-    if (kondisiTerpenuhi) {
-      const kode = aturan.kesimpulan;
-
-      if (!hasil[kode]) {
-        hasil[kode] = { aturanFired: [] };
-      }
-
-      // Catat aturan mana saja yang berhasil memicu penyakit ini
-      hasil[kode].aturanFired.push(aturan.id);
+  dataKB.aturan.forEach(({ id, kondisi, kesimpulan }) => {
+    // Jika semua kondisi dalam aturan ada di daftar fakta gejala user
+    if (kondisi.every(g => fakta.includes(g))) {
+      hasil[kesimpulan] = hasil[kesimpulan] || [];
+      hasil[kesimpulan].push(id); // Simpan ID aturan yang memicu penyakit
     }
-  }
-
+  });
   return hasil;
-}
+};
 
-// ─── TAMPILAN PERTANYAAN ─────────────────────────────────────────────────────
+// ─── 3. TAMPILAN & NAVIGASI ─────────────────────────────────────────────────
+const renderPertanyaan = () => {
+  // Jika soal habis, langsung tampilkan hasil
+  if (currentIndex >= gejalaList.length) return prosesDiagnosis();
 
-function tampilkanPertanyaan() {
-  const gejalaContainer = document.getElementById('gejala-list');
-  gejalaContainer.innerHTML = '';
+  const kode = gejalaList[currentIndex];
+  const gejala = dataKB.gejala[kode];
+  const progress = Math.round((currentIndex / gejalaList.length) * 100);
 
-  if (currentGejalaIndex < gejalaKeys.length) {
-    const kode = gejalaKeys[currentGejalaIndex];
-    const dataGejala = knowledgeBase.gejala[kode];
-    const nomorSoal = currentGejalaIndex + 1;
-    const total = gejalaKeys.length;
+  document.getElementById('gejala-list').innerHTML = `
+    <div class="progress mb-3" style="height: 6px;">
+      <div class="progress-bar bg-success" style="width: ${progress}%"></div>
+    </div>
+    <p class="text-muted mb-2 small">Pertanyaan ${currentIndex + 1} dari ${gejalaList.length}</p>
+    
+    <div class="card p-3 text-center mb-4 shadow-sm">
+      <img src="${gejala.gambar}" alt="Gejala" class="img-fluid mb-3 rounded mx-auto" style="max-height: 250px; object-fit: cover;">
+      <h5 class="mb-2">${gejala.teks}</h5>
+      <p class="text-muted small mb-0">${gejala.keterangan}</p>
+    </div>
 
-    const prevYa = selectedGejala.includes(kode);
-    const prevTidak = selectedGejala.includes('!' + kode);
-
-    gejalaContainer.innerHTML = `
-      <div class="progress mb-3" style="height: 6px;">
-        <div class="progress-bar bg-success" role="progressbar"
-          style="width: ${Math.round((currentGejalaIndex / total) * 100)}%"></div>
+    <div class="d-flex justify-content-between">
+      <button type="button" class="btn btn-secondary" onclick="navigasi(-1)" ${currentIndex === 0 ? 'disabled' : ''}>Kembali</button>
+      <div>
+        <button type="button" class="btn btn-outline-danger px-4 mr-2" onclick="jawab('${kode}', false)">Tidak</button>
+        <button type="button" class="btn btn-primary px-4" onclick="jawab('${kode}', true)">Ya</button>
       </div>
-      <p class="text-muted mb-2" style="font-size:0.85rem;">
-        Pertanyaan ${nomorSoal} dari ${total}
-      </p>
-      <div class="card p-3 text-center">
-        <img src="${dataGejala.gambar}" alt="Gambar Gejala"
-          class="img-fluid mb-3 rounded" style="max-height: 500px;">
-        <h5 class="mb-2">${dataGejala.teks}</h5>
-        <p class="text-muted">${dataGejala.keterangan}</p>
-        <div class="d-flex justify-content-center gap-4" style="font-size: 1.1rem;">
-          <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;margin-right:8px;">
-            <input type="checkbox" id="jawab-ya"
-              ${prevYa ? 'checked' : ''}
-              onclick="toggleCheckbox(this,'ya')"
-              style="width:18px;height:18px;">
-            Ya
-          </label>
-          <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">
-            <input type="checkbox" id="jawab-tidak"
-              ${prevTidak ? 'checked' : ''}
-              onclick="toggleCheckbox(this,'tidak')"
-              style="width:18px;height:18px;">
-            Tidak
-          </label>
-        </div>
-      </div>
-      <div class="mt-3 d-flex justify-content-between">
-        <button class="btn btn-secondary"
-          onclick="prevQuestion()"
-          ${currentGejalaIndex === 0 ? 'disabled' : ''}>Kembali</button>
-        <button class="btn btn-primary" onclick="nextQuestion()">
-          ${nomorSoal === total ? 'Lihat Hasil' : 'Selanjutnya'}
-        </button>
-      </div>
-    `;
-  } else {
-    prosesDiagnosis();
-  }
-}
+    </div>
+  `;
+};
 
-function toggleCheckbox(clicked, tipe) {
-  const ya = document.getElementById('jawab-ya');
-  const tidak = document.getElementById('jawab-tidak');
-  if (tipe === 'ya' && clicked.checked) tidak.checked = false;
-  else if (tipe === 'tidak' && clicked.checked) ya.checked = false;
-}
+const navigasi = (arah) => {
+  currentIndex += arah;
+  renderPertanyaan();
+};
 
-function nextQuestion() {
-  const ya = document.getElementById('jawab-ya');
-  const tidak = document.getElementById('jawab-tidak');
+const jawab = (kode, val) => {
+  jawaban[kode] = val; // Simpan nilai true/false
+  navigasi(1);         // Lanjut ke soal berikutnya otomatis
+};
 
-  if (!ya.checked && !tidak.checked) {
-    alert('Silakan pilih jawaban Ya atau Tidak sebelum melanjutkan.');
-    return;
-  }
-
-  // 🔥 FIX: Cek nama di sini kalau user lagi di soal TERAKHIR
-  if (currentGejalaIndex === gejalaKeys.length - 1) {
-    const nama = document.getElementById('nama').value.trim();
-    if (!nama) {
-      alert('Bro, isi nama lu dulu di form atas sebelum lihat hasil!');
-      document.getElementById('nama').focus(); // Kursor otomatis lari ke kolom nama
-      return; // Stop di sini, soal dan jawaban user NGGAK akan hilang
-    }
-  }
-
-  const kode = gejalaKeys[currentGejalaIndex];
-  selectedGejala = selectedGejala.filter(g => g !== kode && g !== ('!' + kode));
-
-  if (ya.checked) selectedGejala.push(kode);
-  else selectedGejala.push('!' + kode);
-
-  currentGejalaIndex++;
-  tampilkanPertanyaan();
-}
-
-// ─── PROSES DIAGNOSA ─────────────────────────────────────────────────────────
-
-function prosesDiagnosis() {
-  const nama = document.getElementById('nama').value.trim();
-  
-  // (Pengecekan nama di sini dihapus karena udah dipindah ke atas)
-
-  const faktaTerpilih = selectedGejala.filter(g => !g.startsWith('!'));
-  const hasilFC = forwardChaining(faktaTerpilih);
-
-  // Susun hasil hanya untuk penyakit yang minimal 1 aturannya terpenuhi
-  const hasilArray = Object.keys(knowledgeBase.penyakit)
-    .filter(kode => hasilFC[kode])
-    .map(kode => ({
-      kode,
-      nama: knowledgeBase.penyakit[kode].nama,
-      aturanFired: hasilFC[kode].aturanFired,
-      link: knowledgeBase.penyakit[kode].link
-    }))
-    // Sortir berdasarkan penyakit yang paling banyak aturannya terpenuhi
-    .sort((a, b) => b.aturanFired.length - a.aturanFired.length);
-
+// ─── 4. PROSES HASIL DIAGNOSIS ──────────────────────────────────────────────
+const prosesDiagnosis = () => {
+  document.getElementById('diagnosisForm').style.display = 'none';
   const output = document.getElementById('hasil');
+  
+  // Ambil kode gejala yang nilainya true (dijawab "Ya")
+  const fakta = Object.keys(jawaban).filter(k => jawaban[k]); 
+  const hasilFC = forwardChaining(fakta);
+  
+  // Format hasil dan urutkan dari probabilitas/aturan terbanyak
+  const hasilArray = Object.entries(hasilFC)
+    .map(([kode, aturan]) => ({ ...dataKB.penyakit[kode], aturan }))
+    .sort((a, b) => b.aturan.length - a.aturan.length);
 
-  // Tampilkan fakta yang dimasukkan
-  const labelGejala = faktaTerpilih.length > 0
-    ? faktaTerpilih.map(k => `<li>${knowledgeBase.gejala[k].teks}</li>`).join('')
+  const listFakta = fakta.length 
+    ? fakta.map(k => `<li>${dataKB.gejala[k].teks}</li>`).join('') 
     : '<li><em>Tidak ada gejala yang dipilih</em></li>';
 
-  output.innerHTML = `
-    <h3>Hai, ${nama}!</h3>
-    <h5 class="mt-3">Fakta yang dimasukkan:</h5>
-    <ul style="padding-left:20px;margin-top:8px;">${labelGejala}</ul>
-    <h4 class="mt-4">Hasil Diagnosis (Forward Chaining):</h4>
-  `;
-
-  if (hasilArray.length === 0) {
-    output.innerHTML += `
-      <div class="alert alert-warning mt-2">
-        <strong>Tidak terdiagnosis.</strong> Gejala yang dipilih tidak memenuhi kondisi
-        aturan manapun dalam basis pengetahuan. Silakan ulangi dan periksa gejala lebih teliti.
-      </div>`;
-  } else {
-    hasilArray.forEach((item, index) => {
-      const labelAturan = item.aturanFired.join(', ');
-
-      // Warna badge berdasarkan urutan keparahan/kemungkinan
-      const badgeKelas = index === 0 ? 'badge-danger' : index === 1 ? 'badge-warning' : 'badge-secondary';
-      const labelUrutan = index === 0 ? 'Diagnosis Utama' : `Kemungkinan ${index + 1}`;
-
-      output.innerHTML += `
-        <div class="card mb-3 p-3">
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <h5 class="mb-0">${item.nama}</h5>
-            <span class="badge ${badgeKelas}">${labelUrutan}</span>
-          </div>
-          <div class="mb-2">
-            <small class="text-muted">Aturan yang terpenuhi:</small>
-            <span class="ml-1" style="font-family:monospace;font-size:0.85rem;">${labelAturan}</span>
-          </div>
-          <a href="${item.link}" class="btn btn-danger btn-sm mt-2" target="_blank">Lihat informasi</a>
+  let htmlPenyakit = '<div class="alert alert-warning">Tidak ada penyakit yang cocok dengan gejala Anda.</div>';
+  
+  if (hasilArray.length > 0) {
+    htmlPenyakit = hasilArray.map((p, i) => `
+      <div class="card mb-3 p-3 border-${i === 0 ? 'danger' : 'light'} shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">${p.nama}</h5>
+          <span class="badge ${i === 0 ? 'badge-danger' : 'badge-secondary'}">${i === 0 ? 'Diagnosis Utama' : 'Kemungkinan Lain'}</span>
         </div>
-      `;
-    });
+        <small class="text-muted mb-3 d-block">Aturan Terpenuhi: <b>${p.aturan.join(', ')}</b></small>
+        <a href="${p.link}" class="btn btn-sm btn-outline-danger" target="_blank">Lihat Detail Penyakit</a>
+      </div>
+    `).join('');
   }
 
-  document.getElementById('diagnosisForm').style.display = 'none';
-}
+  output.innerHTML = `
+    <h3 class="mb-4">Hasil Diagnosis</h3>
+    <h5>Gejala yang dialami:</h5>
+    <ul class="mb-4 text-muted">${listFakta}</ul>
+    <h5>Detail Penyakit:</h5>
+    ${htmlPenyakit}
+    <button type="button" class="btn btn-secondary mt-3 btn-block" onclick="location.reload()">Ulangi Diagnosis</button>
+  `;
+};
