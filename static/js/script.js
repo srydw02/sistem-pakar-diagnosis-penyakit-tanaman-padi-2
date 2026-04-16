@@ -119,16 +119,6 @@ function nextQuestion() {
     return;
   }
 
-  // 🔥 FIX: Cek nama di sini kalau user lagi di soal TERAKHIR
-  if (currentGejalaIndex === gejalaKeys.length - 1) {
-    const nama = document.getElementById('nama').value.trim();
-    if (!nama) {
-      alert('Bro, isi nama lu dulu di form atas sebelum lihat hasil!');
-      document.getElementById('nama').focus(); // Kursor otomatis lari ke kolom nama
-      return; // Stop di sini, soal dan jawaban user NGGAK akan hilang
-    }
-  }
-
   const kode = gejalaKeys[currentGejalaIndex];
   selectedGejala = selectedGejala.filter(g => g !== kode && g !== ('!' + kode));
 
@@ -142,10 +132,6 @@ function nextQuestion() {
 // ─── PROSES DIAGNOSA ─────────────────────────────────────────────────────────
 
 function prosesDiagnosis() {
-  const nama = document.getElementById('nama').value.trim();
-  
-  // (Pengecekan nama di sini dihapus karena udah dipindah ke atas)
-
   const faktaTerpilih = selectedGejala.filter(g => !g.startsWith('!'));
   const hasilFC = forwardChaining(faktaTerpilih);
 
@@ -169,7 +155,6 @@ function prosesDiagnosis() {
     : '<li><em>Tidak ada gejala yang dipilih</em></li>';
 
   output.innerHTML = `
-    <h3>Hai, ${nama}!</h3>
     <h5 class="mt-3">Fakta yang dimasukkan:</h5>
     <ul style="padding-left:20px;margin-top:8px;">${labelGejala}</ul>
     <h4 class="mt-4">Hasil Diagnosis (Forward Chaining):</h4>
