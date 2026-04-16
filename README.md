@@ -6,11 +6,11 @@ Sistem Pakar Diagnosis Penyakit Tanaman Padi Berbasis Web menggunakan Metode For
 Untuk menghindari *merge conflict* pada repository, pengerjaan dibagi berdasarkan spesialisasi file:
 
 **1. Data & Asset Engineer (Anggota 1)**
-* **Ruang Lingkup:** `data/data.json` dan direktori `static/images/`.
+* **Ruang Lingkup:** `data/data.json` dan `static/images/fotoGejala` dan `static/images/fotoPadi`.
 * **Deskripsi Tugas:** Menyusun basis pengetahuan (gejala dan aturan penyakit) ke dalam format JSON. Mengumpulkan, memotong (*crop*), dan memastikan standardisasi penamaan file gambar/aset visual.
 
 **2. Landing Page Developer (Anggota 2)**
-* **Ruang Lingkup:** `index.html` dan `static/style/style.css`.
+* **Ruang Lingkup:** `index.html` dan `static/style/style.css` dan `static/images`.
 * **Deskripsi Tugas:** Merancang dan merapikan *User Interface* (UI) halaman utama (*Hero section*), mengatur tata letak, serta menyusun materi penjelasan mengenai metode Forward Chaining.
 
 **3. Catalog UI Developer (Anggota 3)**
