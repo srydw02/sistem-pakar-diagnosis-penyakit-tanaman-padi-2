@@ -21,7 +21,7 @@ Untuk menghindari *merge conflict* pada repository, pengerjaan dibagi berdasarka
 * **Ruang Lingkup:** Direktori `template/detailPenyakit/` (`p1.html` - `p5.html`).
 * **Deskripsi Tugas:** Menyusun kerangka dan konten dari lima halaman detail penyakit, mencakup penyebab, deskripsi rinci, dan solusi penanganan.
 
-**5. Diagnosa UI Developer (Anggota 5)**
+**5. Diagnosis UI Developer (Anggota 5)**
 * **Ruang Lingkup:** `template/diagnosis.html` dan `static/style/style3.css`.
 * **Deskripsi Tugas:** Membangun *form* input identitas pengguna dan menyiapkan *container* kosong (contoh: `<div id="gejala-list"></div>`) sebagai wadah *render* DOM. Anggota ini hanya fokus pada struktur HTML/CSS tanpa manipulasi logika.
 

@@ -99,7 +99,7 @@ function tampilkanPertanyaan() {
       </div>
     `;
   } else {
-    prosesDiagnosa();
+    prosesDiagnosis();
   }
 }
 
@@ -141,7 +141,7 @@ function nextQuestion() {
 
 // ─── PROSES DIAGNOSA ─────────────────────────────────────────────────────────
 
-function prosesDiagnosa() {
+function prosesDiagnosis() {
   const nama = document.getElementById('nama').value.trim();
   
   // (Pengecekan nama di sini dihapus karena udah dipindah ke atas)
@@ -172,13 +172,13 @@ function prosesDiagnosa() {
     <h3>Hai, ${nama}!</h3>
     <h5 class="mt-3">Fakta yang dimasukkan:</h5>
     <ul style="padding-left:20px;margin-top:8px;">${labelGejala}</ul>
-    <h4 class="mt-4">Hasil Diagnosa (Forward Chaining):</h4>
+    <h4 class="mt-4">Hasil Diagnosis (Forward Chaining):</h4>
   `;
 
   if (hasilArray.length === 0) {
     output.innerHTML += `
       <div class="alert alert-warning mt-2">
-        <strong>Tidak terdiagnosa.</strong> Gejala yang dipilih tidak memenuhi kondisi
+        <strong>Tidak terdiagnosis.</strong> Gejala yang dipilih tidak memenuhi kondisi
         aturan manapun dalam basis pengetahuan. Silakan ulangi dan periksa gejala lebih teliti.
       </div>`;
   } else {
@@ -187,7 +187,7 @@ function prosesDiagnosa() {
 
       // Warna badge berdasarkan urutan keparahan/kemungkinan
       const badgeKelas = index === 0 ? 'badge-danger' : index === 1 ? 'badge-warning' : 'badge-secondary';
-      const labelUrutan = index === 0 ? 'Diagnosa Utama' : `Kemungkinan ${index + 1}`;
+      const labelUrutan = index === 0 ? 'Diagnosis Utama' : `Kemungkinan ${index + 1}`;
 
       output.innerHTML += `
         <div class="card mb-3 p-3">
@@ -205,5 +205,5 @@ function prosesDiagnosa() {
     });
   }
 
-  document.getElementById('diagnosaForm').style.display = 'none';
+  document.getElementById('diagnosisForm').style.display = 'none';
 }
