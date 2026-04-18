@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 *,
 body,
 html {
@@ -7,6 +8,7 @@ html {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  color: #2F281E; 
 }
 
 .kiri {
@@ -14,8 +16,9 @@ html {
   margin-top: auto;
   width: 15%;
   height: auto;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
   float: left;
+  background-color: #f9f7f2; 
 }
 
 .kanan {
@@ -26,9 +29,9 @@ html {
   float: left;
 }
 
-
 .teks {
   font-size: medium;
+  color: #5d4037; 
 }
 
 .nav-link {
@@ -36,25 +39,52 @@ html {
 }
 
 .isi:hover a {
-  background-color: rgb(35, 87, 155);
-  color: #ffff;
+  background-color: #4E9258; 
+  color: #ffffff;
 }
-
 
 .heading {
   font-size: 4em;
+  color: #2E5A27; 
 }
+
 .sub-heading {
   font-size: 3em;
+  color: #A67B5B; 
 }
 
 .navbar {
   margin-top: 15px;
-}
+  border-bottom: 2px solid #F4C430; 
+}aris bawah kuning emas
 
 .col label {
   font-weight: 400;
+  color: #5d4037;
+}
+
+.btn-primary {
+  background: #F4C430; 
+  border: none;
   color: #2f281e;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #DA8A67; 
+  color: white;
+}
+
+.btn-success {
+  background: #4E9258; 
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.btn-success:hover {
+    background: #2E5A27;
 }
 
 .btn-register {
@@ -63,40 +93,26 @@ html {
   font-size: 16px;
   font-weight: 400;
 }
-.btn-primary {
-  background: #ffb39050;
-  border: none;
-  color: red;
-  border-radius: 10px;
-}
-.btn-primary:hover{
-    background: #eb0d0d;
-    border: 0px;
-}
-.btn-success {
-  background: #00d25b50;
-  border: none;
-  color: #00d25b;
-  border-radius: 10px;
-}
+
 .margin-top {
   margin-top: 1em;
 }
 
-a{
-    color: black;
+a {
+    color: #4E9258;
+    text-decoration: none;
 }
-a:hover{
-    color: #eb0d0d;
-    border: 0px;
+
+a:hover {
+    color: #F4C430; 
 }
 
 @media screen and (max-width: 600px) {
-  .navbar{
+  .navbar {
     margin-left: 10px;
     margin-right: 10px;
   }
-  img{
+  img {
     width: 300px;
   }
 }
@@ -108,9 +124,8 @@ a:hover{
     margin-top: 10px;
     margin-left: 0 !important;
   }
-  .navbar{
+  .navbar {
     margin-left: 10px;
     margin-right: 10px;
   }
-
 }
