@@ -90,10 +90,10 @@ function tampilkanPertanyaan() {
         </div>
       </div>
       <div class="mt-3 d-flex justify-content-between">
-        <button class="btn btn-secondary"
+        <button type="button" class="btn btn-secondary"
           onclick="prevQuestion()"
           ${currentGejalaIndex === 0 ? 'disabled' : ''}>Kembali</button>
-        <button class="btn btn-primary" onclick="nextQuestion()">
+        <button type="button" class="btn btn-primary" onclick="nextQuestion()">
           ${nomorSoal === total ? 'Lihat Hasil' : 'Selanjutnya'}
         </button>
       </div>
@@ -127,6 +127,13 @@ function nextQuestion() {
 
   currentGejalaIndex++;
   tampilkanPertanyaan();
+}
+
+function prevQuestion() {
+  if (currentGejalaIndex > 0) {
+    currentGejalaIndex--;
+    tampilkanPertanyaan();
+  }
 }
 
 // ─── PROSES DIAGNOSA ─────────────────────────────────────────────────────────
@@ -168,8 +175,6 @@ function prosesDiagnosis() {
       </div>`;
   } else {
     hasilArray.forEach((item, index) => {
-      const labelAturan = item.aturanFired.join(', ');
-
       // Warna badge berdasarkan urutan keparahan/kemungkinan
       const badgeKelas = index === 0 ? 'badge-danger' : index === 1 ? 'badge-warning' : 'badge-secondary';
       const labelUrutan = index === 0 ? 'Diagnosis Utama' : `Kemungkinan ${index + 1}`;
@@ -179,10 +184,6 @@ function prosesDiagnosis() {
           <div class="d-flex align-items-center justify-content-between mb-2">
             <h5 class="mb-0">${item.nama}</h5>
             <span class="badge ${badgeKelas}">${labelUrutan}</span>
-          </div>
-          <div class="mb-2">
-            <small class="text-muted">Aturan yang terpenuhi:</small>
-            <span class="ml-1" style="font-family:monospace;font-size:0.85rem;">${labelAturan}</span>
           </div>
           <a href="${item.link}" class="btn btn-danger btn-sm mt-2" target="_blank">Lihat informasi</a>
         </div>
