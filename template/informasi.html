@@ -8,16 +8,19 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
     <link rel="stylesheet" href="/static/style/style2.css" />
+
     <title>Informasi Penyakit Cabai</title>
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+       
       <div class="container-xl">
-        <a class="navbar-brand" href="#">
-          <h3>SiPedas</h3>
+        <a class="navbar-brand" href="/index.html">
+          <h3>🌾 SiPadi</h3>
         </a>
         <button
           class="navbar-toggler"
@@ -33,16 +36,31 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
+
             <li class="nav-item align-self-center active">
               <a class="nav-link" href="/index.html"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
+
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="/template/jenisPadi.html"
+                >Jenis Padi<span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="#"
+                >Metode<span class="sr-only">(current)</span></a
+              >
+            </li>
+
             <li class="nav-item align-self-center active">
               <a class="nav-link" href="#"
                 >Informasi <span class="sr-only">(current)</span></a
               >
             </li>
+
             <li class="nav-item align-self-center">
               <a
                 class="btn px-4 btn-primary ml-2 btn-register"
@@ -51,6 +69,7 @@
                 >Diagnosis</a
               >
             </li>
+
           </ul>
         </div>
       </div>
@@ -59,50 +78,38 @@
     <section class="bg-light" id="hero">
       <div class="container">
         <div id="wrapper">
-          <div
-            class="col margin-top d-flex justify-content-center flex-column text-center"
-          >
+          <div class="col margin-top d-flex justify-content-center flex-column text-center">
             <h1 class="font-weight-normal sub-heading">Data Penyakit</h1>
             <p class="font-weight-light">
-              Berikut merupakan data penyakit tanaman cabai yang sering dijumpai
+              Berikut merupakan data penyakit tanaman padi yang sering dijumpai
               saat budidaya cabai. Setiap penyakit memiliki ciri khas gejala,
               penyebab, serta dampak terhadap pertumbuhan dan hasil tanaman.
             </p>
           </div>
         </div>
+
         <section id="penyakit">
-          <div
-            class="row row-cols-1 row-cols-md-3 g-4 mb-4 justify-content-center"
-          >
+          <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 justify-content-center">
+
             <div class="col">
               <div class="card h-100">
-                <img
-                  src="/static/images/fotoPadi/layu 1.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
+                <img src="/static/images/fotoPadi/layu 1.jpg" class="card-img-top"alt="..."/>
                 <div class="card-body">
-                  <h5 class="card-title">P1 : Penyakit Blast</h5>
+                  <h5 class="card-title">P1 : penyakit Blas (Blast)</h5>
                   <p class="card-text">
-                    Disebabkan oleh Jamur Magnaporthe oryzae yang menyerang
-                    seluruh bagian tanaman di atas tanah, terutama daun dan
-                    leher malai.
+                      Disebabkan oleh Jamur Magnaporthe oryzae yang menyerang seluruh bagian tanaman di atas tanah, terutama daun (blas daun) dan leher malai (blas leher).
                   </p>
                   <a
                     href="/template/detailPenyakit/p1.html"
                     class="btn btn-primary mt-auto"
-                    >Detail Penyakit</a
-                  >
+                    >Detail Penyakit</a>
                 </div>
               </div>
             </div>
+
             <div class="col">
               <div class="card h-100">
-                <img
-                  src="/static/images/fotoPadi/Busuk buah 2.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
+                <img src="/static/images/fotoPadi/Busuk buah 2.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body">
                   <h5 class="card-title">
                     P2 : Penyakit Hawar Daun Bakteri (BLB)
@@ -114,19 +121,14 @@
                   </p>
                   <a
                     href="/template/detailPenyakit/p2.html"
-                    class="btn btn-primary mt-auto"
-                    >Detail Penyakit</a
-                  >
+                    class="btn btn-primary mt-auto">Detail Penyakit</a>
                 </div>
               </div>
             </div>
+
             <div class="col">
               <div class="card h-100">
-                <img
-                  src="/static/images/fotoPadi/IMG_0522 (2).JPG"
-                  class="card-img-top"
-                  alt="..."
-                />
+                <img src="/static/images/fotoPadi/IMG_0522 (2).JPG" class="card-img-top" alt="..."/>
                 <div class="card-body">
                   <h5 class="card-title">P3 : Penyakit tungro</h5>
                   <p class="card-text">
@@ -136,19 +138,17 @@
                   </p>
                   <a
                     href="/template/detailPenyakit/p3.html"
-                    class="btn btn-primary mt-auto"
-                    >Detail Penyakit</a
-                  >
+                    class="btn btn-primary mt-auto">Detail Penyakit</a>
                 </div>
               </div>
             </div>
+
             <div class="col">
               <div class="card h-100">
                 <img
                   src="/static/images/fotoPadi/hama-penyakit-pada-cabai-penyakit-busuk-bakteri-pada-cabai.jpg"
                   class="card-img-top"
-                  alt="..."
-                />
+                  alt="..."/>
                 <div class="card-body">
                   <h5 class="card-title">P4 : Penyakit Busuk Pelepah</h5>
                   <p class="card-text">
@@ -159,19 +159,17 @@
                   </p>
                   <a
                     href="/template/detailPenyakit/p4.html"
-                    class="btn btn-primary mt-auto"
-                    >Detail Penyakit</a
-                  >
+                    class="btn btn-primary mt-auto">Detail Penyakit</a>
                 </div>
               </div>
             </div>
+
             <div class="col">
               <div class="card h-100">
                 <img
                   src="/static/images/fotoPadi/gejala-phytophtora-5- rebah semai.jpg"
                   class="card-img-top"
-                  alt="..."
-                />
+                  alt="..."/>
                 <div class="card-body">
                   <h5 class="card-title">P5 : Penyakit Rumput Kerdil</h5>
                   <p class="card-text">
@@ -182,15 +180,17 @@
                   <a
                     href="/template/detailPenyakit/p5.html"
                     class="btn btn-primary mt-auto"
-                    >Detail Penyakit</a
-                  >
+                    >Detail Penyakit</a>
                 </div>
               </div>
             </div>
+
           </div>
         </section>
+
       </div>
     </section>
+
     <section section class="margin-top container-xl">
       <div class="row margin-top d-flex flex-column">
         <div
@@ -198,16 +198,17 @@
         >
           <h1 class="font-weight-normal sub-heading">Data Gejala</h1>
           <p class="font-weight-light">
-            Berikut merupakan data gejala yang muncul pada tanaman cabai sebagai
+            Berikut merupakan data gejala yang muncul pada tanaman padi sebagai
             indikasi awal adanya serangan penyakit. Setiap gejala dapat terkait
             dengan satu atau lebih jenis penyakit tertentu. Identifikasi gejala
             yang akurat sangat penting dalam proses diagnosis penyakit secara
-            cepat dan efektif melalui sistem pakar berbasis teorema bayes.
+            cepat dan efektif melalui sistem pakar dengan metode forward chaining.
           </p>
         </div>
 
         <div class="col margin-top">
           <div class="accordion mb-5" id="accordionExample">
+
             <div class="card mb-3">
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
@@ -217,9 +218,8 @@
                     data-toggle="collapse"
                     data-target="#collapseOne"
                     aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Tanaman Tampak Layu pada Siang Hari
+                    aria-controls="collapseOne">
+                    Bercak coklat/hitam pada daun
                   </button>
                 </h2>
               </div>
@@ -228,14 +228,13 @@
                 id="collapseOne"
                 class="collapse"
                 aria-labelledby="headingOne"
-                data-parent="#accordionExample"
-              >
+                data-parent="#accordionExample">
                 <div class="card-body">
-                  Tanaman kehilangan turgor akibat gangguan penyerapan air,
-                  biasanya disebabkan oleh infeksi akar atau pembuluh.
+                  Penyakit ini memicu penurunan hasil panen akibat daun mengering (hawar) dan infeksi pada gabah.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
@@ -247,7 +246,7 @@
                     aria-expanded="false"
                     aria-controls="collapseTwo"
                   >
-                    Daun Muda Tampak Mengering
+                    Bercak berbentuk belah ketupat
                   </button>
                 </h2>
               </div>
@@ -258,11 +257,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Menunjukkan adanya serangan patogen atau kekurangan air dan
-                  unsur hara yang menyerang jaringan daun muda.
+                  Bercak ini berwarna cokelat dengan pusat abu-abu, ujung meruncing, dan dapat menyebabkan daun mengering serta menginfeksi leher malai (blas leher).
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
@@ -274,7 +273,7 @@
                     aria-expanded="false"
                     aria-controls="collapseThree"
                   >
-                    Buah Tampak Menguning
+                    Daun menguning
                   </button>
                 </h2>
               </div>
@@ -285,11 +284,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Warna buah berubah sebelum waktunya, indikasi infeksi jamur
-                  atau virus yang menghambat proses pematangan normal.
+                  Gejala ini sering muncul saat fase vegetatif maupun bunting (kekurangan kalsium), ditandai ujung daun kuning atau kering.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingFour">
                 <h2 class="mb-0">
@@ -301,7 +300,7 @@
                     aria-expanded="false"
                     aria-controls="collapseFour"
                   >
-                    Daun Mulai Mengerut
+                    Daun kering seperti terbakar
                   </button>
                 </h2>
               </div>
@@ -312,11 +311,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Permukaan daun tampak kusut atau melipat, seringkali akibat
-                  serangan virus atau gangguan sistem vaskular tanaman.
+                 Gejalanya ditandai dengan daun menguning, menggulung, dan mengering mulai dari ujung, terlihat terbakar, dan cepat menyebar saat kondisi lembap.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingFive">
                 <h2 class="mb-0">
@@ -328,7 +327,7 @@
                     aria-expanded="false"
                     aria-controls="collapseFive"
                   >
-                    Tanaman Kerdil
+                    Tanaman kerdil
                   </button>
                 </h2>
               </div>
@@ -339,12 +338,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Pertumbuhan tanaman terhambat, biasanya disebabkan oleh
-                  infeksi virus atau gangguan akar yang mengganggu penyerapan
-                  nutrisi.
+                  Pertumbuhan tinggi tanaman terhambat drastis, daun menguning-oranye dari ujung, jumlah anakan berkurang, dan malai pendek atau hampa.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingSix">
                 <h2 class="mb-0">
@@ -356,7 +354,7 @@
                     aria-expanded="false"
                     aria-controls="collapseSix"
                   >
-                    Bercak Kuning pada Daun
+                    Daun kuning-oranye
                   </button>
                 </h2>
               </div>
@@ -367,11 +365,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Tanda awal infeksi virus atau jamur, menyebabkan klorosis
-                  lokal pada permukaan daun.
+                  Warna kuning oranye sering menandakan serangan bakteri atau jamur, terutama jika dimulai dari ujung daun.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingSeven">
                 <h2 class="mb-0">
@@ -383,7 +381,7 @@
                     aria-expanded="false"
                     aria-controls="collapseSeven"
                   >
-                    Batang Tampak Mengering
+                    Bercak pada batang atau pelepah
                   </button>
                 </h2>
               </div>
@@ -394,11 +392,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Gejala lanjutan dari penyakit layu atau busuk batang,
-                  seringkali disebabkan oleh jamur atau bakteri sistemik.
+                  Bercak oval berwarna abu-abu, coklat, atau hitam pada pelepah daun, dapat meluas hingga membusukkan batang dan menyebabkan bulir hampa.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingEight">
                 <h2 class="mb-0">
@@ -410,7 +408,7 @@
                     aria-expanded="false"
                     aria-controls="collapseFive"
                   >
-                    Buah Tampak Mengering
+                    Tanaman mudah rebah
                   </button>
                 </h2>
               </div>
@@ -421,11 +419,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Buah kehilangan kelembapan dan menjadi keriput; bisa akibat
-                  infeksi pasca-panen atau jamur buah.
+                  Batang padi roboh sebelum panen akibat batang lemah, akar dangkal, atau faktor cuaca seperti angin dan hujan.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingNine">
                 <h2 class="mb-0">
@@ -437,7 +435,7 @@
                     aria-expanded="false"
                     aria-controls="collapseFive"
                   >
-                    Retak pada Daun
+                    Bulir padi hampa
                   </button>
                 </h2>
               </div>
@@ -448,11 +446,11 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Adanya pecahan atau luka pada permukaan daun, bisa disebabkan
-                  oleh kekurangan air atau infeksi jamur.
+                  Gabah kosong tanpa isi, biasanya berwarna putih pucat dan malai tampak tegak.
                 </div>
               </div>
             </div>
+
             <div class="card mb-3">
               <div class="card-header" id="headingTen">
                 <h2 class="mb-0">
@@ -464,7 +462,7 @@
                     aria-expanded="false"
                     aria-controls="collapseFive"
                   >
-                    Bercak Putih seperti Kapur pada Daun
+                    Pertumbuhan terhambat
                   </button>
                 </h2>
               </div>
@@ -475,8 +473,7 @@
                 data-parent="#accordionExample"
               >
                 <div class="card-body">
-                  Menandakan adanya infeksi jamur permukaan seperti powdery
-                  mildew yang tampak seperti tepung putih.
+                  Tinggi tanaman, jumlah anakan, dan perkembangan daun tidak optimal dibandingkan fase pertumbuhan normal.
                 </div>
               </div>
             </div>
@@ -484,44 +481,36 @@
         </div>
       </div>
     </section>
-    <footer class="footer bg-light py-3 mt-10">
-      <div class="container-xl">
-        <div class="row">
-          <!-- Footer Column 1 -->
-          <div class="col-md-4 mb-3">
-            <h5>Tentang</h5>
-            <p>
-              Sistem pakar diagnosis penyakit cabai membantu petani cabai dalam
-              melakukan diagnosis pada penyakit cabai.
-            </p>
-          </div>
-          <!-- Footer Column 2 -->
-          <div class="col-md-4 mb-3">
-            <h5>Link</h5>
-            <ul class="list-unstyled">
-              <li><a href="/index.html">Home</a></li>
-              <li><a href="#">Informasi Penyakit</a></li>
-              <li><a href="diagnosis.html">Kunjungi halaman diagnosis</a></li>
-            </ul>
-          </div>
-          <!-- Footer Column 3 -->
-          <div class="col-md-4 mb-3">
-            <h5>Kontak</h5>
-            <p>
-              Teknik Informatika Universitas Lampung <br />Bandar Lampung,
-              Lampung <br />2024/2025
-            </p>
-          </div>
+    
+     <footer class="footer bg-light py-3 mt-5">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tentang</h5>
+                    <p>Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi
+                    penyakit tanaman menggunakan metode <em>Forward Chaining</em>.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Link</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="informasi.html">Informasi Penyakit</a></li>
+                        <li><a href="diagnosis.html">Halaman Diagnosis</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Kontak</h5>
+                    <p>Teknik Informatika Universitas Duta Bangsa Surakarta<br>
+                    Surakarta, Jawa Tengah<br>
+                    2025/2026</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2026 Hak Cipta Dilindungi. Dibuat oleh Kelompok 1 Teknik Informatika UDB</p>
+            </div>
         </div>
-        <!-- Footer Bottom -->
-        <div class="text-center mt-4">
-          <p class="mb-0">
-            © 2025 Hak Cipta Dilindungi. Dibuat oleh Kelompok 1 Teknik
-            Informatika Unila
-          </p>
-        </div>
-      </div>
     </footer>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
