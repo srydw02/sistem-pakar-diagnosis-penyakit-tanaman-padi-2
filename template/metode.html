@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+     <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>Sistem Pakar Penyakit Cabai</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-xl">
+            <a class="navbar-brand" href="#">
+                <h3 style="color: green;">SiPadi</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="metode.html">Metode <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="cara kerja.html">Jenis<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/informasi.html">Informasi <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register " href="/template/diagnosis.html" role="button">Diagnosis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="heroBWA-2 bg-light">
+        <div class="container-xl">
+            <div class="row position-relative">
+                <div class="col align-self-center">
+                    <h1 style=" text-align: center;" class="font-weight-normal sub-heading ">Cara kerja metode Forward chaining</h1>
+                <p class="pb-5 text-center font-weight-light">Forward chaining adalah metode inferensi dalam sistem pakar yang bekerja secara deduktif, dimulai dari fakta-fakta <br> yang diketahui (data-driven) menuju kesimpulan.</p>
+            <p></p>
+
+            <section class="py-30 mb-5 container-xl">
+        <div class="row mb-5">
+            <div class="col-5 ">
+                <img class="metode" src="/static/images/work.png">
+            </div>
+            <div class="col-7 d-flex justify-content-center flex-column">
+                <h2 class="mt-4 ">Metode Forward Chaining pada Sistem Pakar Diagnosis Penyakit Padi</h2>
+                <p class="font-weight-light">Metode Forward Chaining pada sistem pakar diagnosis penyakit padi adalah pendekatan data-driven yang menelusuri aturan (rules) berdasarkan fakta gejala (input) untuk menyimpulkan jenis penyakit dan solusinya. Sistem ini mencocokkan gejala yang dipilih (IF) dengan basis pengetahuan pakar untuk menghasilkan diagnosis akhir (THEN).
+                </p>
+            </div>
+        </div>
+    </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section section class="margin-top-2 container-xl">
+        <div class="row margin-top d-flex flex-column">
+            <div class="col margin-top d-flex justify-content-center flex-column text-center">
+                <h1 class="font-weight-normal sub-heading ">Memulai Jawaban Pertanyaan Penting </h1>
+                <p class="font-weight-light">Pertanyaan ini meliputi informasi dasar terkait penerapan Forward Chaining pada sistem pakar ini.</p>
+            </div>
+
+            <div class="col margin-top">
+                <div class="accordion mb-5" id="accordionExample">
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Apa itu Metode Forward Chaining?
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse " aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Forward Chaining adalah metode penalaran dalam sistem pakar yang memulai proses inferensi dari kumpulan fakta atau gejala yang diketahui, kemudian menelusurinya secara maju melalui aturan-aturan IF-THEN hingga mencapai kesimpulan akhir, sehingga metode ini sangat cocok digunakan ketika data gejala sudah tersedia dan sistem perlu menentukan penyakit apa yang paling mungkin menyerang tanaman.
+
+                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Bagaimana cara kerja dari metode Forward Chaining?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Saat pengguna mencentang gejala yang diamati pada tanaman padi — misalnya bercak belah ketupat pada daun dan pusat bercak berwarna abu-abu — sistem akan membaca seluruh aturan yang tersimpan dalam basis pengetahuan, mencocokkan fakta tersebut dengan kondisi IF pada setiap aturan, dan ketika kondisi terpenuhi sistem langsung mengeksekusi bagian THEN sebagai kesimpulan, yaitu menampilkan nama penyakit beserta solusi penanganannya secara otomatis dan real-time.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Mengapa Metode Forward Chaining dipilih untuk Sistem Pakar Diagnosis Penyakit Padi?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                               Forward Chaining dipilih karena sangat sesuai dengan alur berpikir petani yang selalu berangkat dari gejala yang mereka lihat di lapangan menuju diagnosa penyakit — metode ini efisien untuk jumlah penyakit dan gejala yang terstruktur, mudah diimplementasikan dalam bahasa pemrograman berbasis web (HTML, CSS, JavaScript), transparan sehingga alur keputusannya dapat dijelaskan kepada pengguna, serta tidak memerlukan data latih dalam jumlah besar seperti metode Machine Learning.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Apa keuntungan menggunakan Metode Forward Chaining?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Keuntungan Menggunakan Metode Forward Chaining
+Metode Forward Chaining menawarkan sejumlah keunggulan untuk sistem pakar diagnosis penyakit padi, antara lain prosesnya transparan dan mudah dipahami karena setiap aturan IF-THEN dapat dilihat dan dijelaskan, responsnya instan karena seluruh logika berjalan di sisi pengguna (client-side) tanpa perlu koneksi server, basis pengetahuannya mudah diperbarui cukup dengan menambah aturan baru tanpa mengubah struktur program, serta dapat dijalankan langsung di browser smartphone petani tanpa instalasi aplikasi tambahan.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+</body>
+</html>

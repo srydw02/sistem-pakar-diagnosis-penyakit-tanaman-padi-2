@@ -88,6 +88,13 @@ html {
 
 .navbar {
   margin-top: 15px;
+  background-color: #ffff;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+  position: sticky;
+
+  top: 0px;
+  margin-top: 0px;
+  z-index: 1000;
 }
 .card {
   border: none;
