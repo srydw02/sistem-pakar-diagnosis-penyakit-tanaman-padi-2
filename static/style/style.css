@@ -90,6 +90,13 @@ html {
 
 .navbar {
   margin-top: 15px;
+  background-color: #ffff;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+  position: sticky;
+
+  top: 0px;
+  margin-top: 0px;
+  z-index: 1000;
 }
 .card {
   border: none;
@@ -119,13 +126,13 @@ html {
   font-weight: 400;
 }
 .btn-primary {
-  background: #ffb39050;
+  background: #a5e68d50;
   border: none;
-  color: red;
+  color: green;
   border-radius: 10px;
 }
 .btn-primary:hover{
-    background: #eb0d0d;
+    background: #2f9825;
     border: 0px;
 }
 .btn-success {
