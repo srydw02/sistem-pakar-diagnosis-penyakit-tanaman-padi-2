@@ -24,35 +24,33 @@ html {
 }
 
 .navbar {
-  margin-top: 15px;
-  background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    margin-top: 15px;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    
+    top: 0px;
+    margin-top: 0px;
+    z-index: 1000;
 }
 
-.nav-link {
-  text-align: left;
-
-}
-
-.nav-link.isi:hover {
-  background-color: rgb(35, 87, 155);
-  color: #ffff;
+.nav-link:hover {
+    color: #2f9e44 !important;
+    transform: translateY(-2px);
 }
 
 .isi:hover a {
-  background-color: rgb(35, 87, 155);
-  color: #ffff;
+    background-color: rgb(35, 87, 155);
+    color: #ffff;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .card-img-top {
@@ -63,8 +61,8 @@ html {
 }
 
 .card-body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover{
@@ -76,71 +74,71 @@ html {
 }
 
 .kiri {
-  margin: 1%;
-  margin-top: auto;
-  width: 15%;
-  height: auto;
-  border-radius: 5px 5px 5px 5px;
-  float: left;
+    margin: 1%;
+    margin-top: auto;
+    width: 15%;
+    height: auto;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
 }
 
 .kanan {
-  margin: 1%;
-  margin-top: auto;
-  width: 75%;
-  height: auto;
-  float: left;
+    margin: 1%;
+    margin-top: auto;
+    width: 75%;
+    height: auto;
+    float: left;
 }
 
 .teks {
-  font-size: medium;
+    font-size: medium;
 }
 
 .heading {
-  font-size: 4em;
+    font-size: 4em;
 }
 .sub-heading {
-  font-size: 3em;
+    font-size: 3em;
 }
 
 
 
 .col label {
-  font-weight: 400;
-  color: #2f281e;
+    font-weight: 400;
+    color: #2f281e;
 }
 
 .btn-register {
-  border-radius: 10px;
-  margin: 20px 20px;
-  font-size: 16px;
-  font-weight: 400;
+    border-radius: 10px;
+    margin: 20px 20px;
+    font-size: 16px;
+    font-weight: 400;
 }
 .btn-primary {
-  background: rgb(155, 243, 155);
-  border: none;
-  color: black;
-  border-radius: 10px;
+    background: #a5e68d50;
+    border: none;
+    color: green;
+    border-radius: 10px;
 }
 .btn-primary:hover{
-    background: green;
+    background: #2f9825;
     border: 0px;
 }
 .btn-success {
-  background: #00d25b50;
-  border: none;
-  color: #00d25b;
-  border-radius: 10px;
+    background: #00d25b50;
+    border: none;
+    color: #00d25b;
+    border-radius: 10px;
 }
 .margin-top {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 a{
     color: black;
 }
 a:hover{
-    color: #eb0d0d;
+    color: green;
     border: 0px;
 }
 
