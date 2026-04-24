@@ -79,80 +79,80 @@
 ],
   "penyakit": {
     "P01": {
-      "nama": "penyakit Blas (Blast)",
-      "deskripsi": "Disebabkan oleh Jamur Magnaporthe oryzae yang menyerang seluruh bagian tanaman di atas tanah, terutama daun (blas daun) dan leher malai (blas leher).",
+      "nama": "Penyakit Blas (Blast)",
+      "deskripsi": "Disebabkan oleh Jamur Magnaporthe oryzae yang menyerang seluruh bagian tanaman di atas tanah, terutama daun (blas daun) dan leher malai (blas leher)",
       "link": "/template/detailPenyakit/p1.html"
     },
     "P02": {
-      "nama": "penyakit Hawar Daun Bakteri (BLB)",
-      "deskripsi": "Disebabkan oleh Bakteri Xanthomonas oryzae yang menyerang bagian daun.",
+      "nama": "Penyakit Hawar Daun Bakteri (BLB)",
+      "deskripsi": "Disebabkan oleh Bakteri Xanthomonas oryzae yang menyerang bagian daun",
       "link": "/template/detailPenyakit/p2.html"
     },
     "P03": {
-      "nama": "penyakit tungro",
-      "deskripsi": "Ditularkan oleh serangga wereng hijau, menyebabkan bagian daun dan mempengaruhi pertumbuhan keseluruhan.",
+      "nama": "Penyakit Tungro",
+      "deskripsi": "Ditularkan oleh serangga wereng hijau, menyebabkan bagian daun dan mempengaruhi pertumbuhan keseluruhan",
       "link": "/template/detailPenyakit/p3.html"
     },
     "P04": {
-      "nama": "penyakit Busuk Pelepah (Sheat Blight)",
-      "deskripsi": "Disebabkan oleh Jamur Rhizoctonia solani yang menyerang pelepah daun paling atas (daun bendera) yang membungkus calon malai muda pada fase bunting hingga akhir.",
+      "nama": "Penyakit Busuk Pelepah (Sheat Blight)",
+      "deskripsi": "Disebabkan oleh Jamur Rhizoctonia solani yang menyerang pelepah daun paling atas (daun bendera) yang membungkus calon malai muda pada fase bunting hingga akhir",
       "link": "/template/detailPenyakit/p4.html"
     },
     "P05": {
-      "nama": "penyakit Rumput Kerdil (Grassy Stunt)",
-      "deskripsi": "Disebabkan oleh serangga wereng coklat yang menyerang daun dan keseluruhan morfologi tanaman.",
+      "nama": "Penyakit Rumput Kerdil (Grassy Stunt)",
+      "deskripsi": "Disebabkan oleh serangga wereng coklat yang menyerang daun dan keseluruhan morfologi tanaman",
       "link": "/template/detailPenyakit/p5.html"
     }
   },
   "gejala": {
   "G01": {
     "teks": "Bercak coklat/hitam pada daun",
-    "keterangan": "Penyakit ini memicu penurunan hasil panen akibat daun mengering (hawar) dan infeksi pada gabah.",
+    "keterangan": "Penyakit ini memicu penurunan hasil panen akibat daun mengering (hawar) dan infeksi pada gabah",
     "gambar": "../static/images/fotoGejala/G1.jpg"
   },
   "G02": {
     "teks": "Bercak berbentuk belah ketupat",
-    "keterangan": "Bercak ini berwarna cokelat dengan pusat abu-abu, ujung meruncing, dan dapat menyebabkan daun mengering serta menginfeksi leher malai (blas leher).",
+    "keterangan": "Bercak ini berwarna cokelat dengan pusat abu-abu, ujung meruncing, dan dapat menyebabkan daun mengering serta menginfeksi leher malai (blas leher)",
     "gambar": "../static/images/fotoGejala/G2.jpg"
   },
   "G03": {
     "teks": "Daun menguning",
-    "keterangan": "Gejala ini sering muncul saat fase vegetatif maupun bunting (kekurangan kalsium), ditandai ujung daun kuning atau kering.",
+    "keterangan": "Gejala ini sering muncul saat fase vegetatif maupun bunting (kekurangan kalsium), ditandai ujung daun kuning atau kering",
     "gambar": "../static/images/fotoGejala/G3.jpeg"
   },
   "G04": {
     "teks": "Daun kering seperti terbakar",
-    "keterangan": "Gejalanya ditandai dengan daun menguning, menggulung, dan mengering mulai dari ujung, terlihat terbakar, dan cepat menyebar saat kondisi lembap.",
+    "keterangan": "Gejalanya ditandai dengan daun menguning, menggulung, dan mengering mulai dari ujung, terlihat terbakar, dan cepat menyebar saat kondisi lembap",
     "gambar": "../static/images/fotoGejala/G4.jpeg"
   },
   "G05": {
     "teks": "Tanaman kerdil",
-    "keterangan": "Pertumbuhan tinggi tanaman terhambat drastis, daun menguning-oranye dari ujung, jumlah anakan berkurang, dan malai pendek atau hampa.",
+    "keterangan": "Pertumbuhan tinggi tanaman terhambat drastis, daun menguning-oranye dari ujung, jumlah anakan berkurang, dan malai pendek atau hampa",
     "gambar": "../static/images/fotoGejala/G5.jpeg"
   },
   "G06": {
     "teks": "Daun kuning-oranye",
-    "keterangan": "Warna kuning oranye sering menandakan serangan bakteri atau jamur, terutama jika dimulai dari ujung daun.",
+    "keterangan": "Warna kuning oranye sering menandakan serangan bakteri atau jamur, terutama jika dimulai dari ujung daun",
     "gambar": "../static/images/fotoGejala/G6.jpeg"
   },
   "G07": {
     "teks": "Bercak pada batang atau pelepah",
-    "keterangan": "Bercak oval berwarna abu-abu, coklat, atau hitam pada pelepah daun, dapat meluas hingga membusukkan batang dan menyebabkan bulir hampa.",
+    "keterangan": "Bercak oval berwarna abu-abu, coklat, atau hitam pada pelepah daun, dapat meluas hingga membusukkan batang dan menyebabkan bulir hampa",
     "gambar": "../static/images/fotoGejala/G7.jpeg"
   },
   "G08": {
     "teks": "Tanaman mudah rebah",
-    "keterangan": "Batang padi roboh sebelum panen akibat batang lemah, akar dangkal, atau faktor cuaca seperti angin dan hujan.",
+    "keterangan": "Batang padi roboh sebelum panen akibat batang lemah, akar dangkal, atau faktor cuaca seperti angin dan hujan",
     "gambar": "../static/images/fotoGejala/G8.jpeg"
   },
   "G09": {
     "teks": "Bulir padi hampa",
-    "keterangan": "Gabah kosong tanpa isi, biasanya berwarna putih pucat dan malai tampak tegak.",
+    "keterangan": "Gabah kosong tanpa isi, biasanya berwarna putih pucat dan malai tampak tegak",
     "gambar": "../static/images/fotoGejala/G9.jpg"
   },
   "G10": {
     "teks": "Pertumbuhan terhambat",
-    "keterangan": "Tinggi tanaman, jumlah anakan, dan perkembangan daun tidak optimal dibandingkan fase pertumbuhan normal.",
+    "keterangan": "Tinggi tanaman, jumlah anakan, dan perkembangan daun tidak optimal dibandingkan fase pertumbuhan normal",
     "gambar": "../static/images/fotoGejala/G10.jpeg"
   }
 }

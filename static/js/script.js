@@ -111,7 +111,7 @@ function nextQuestion() {
   let tidak = document.getElementById('jawab-tidak');
 
   if (ya.checked === false && tidak.checked === false) {
-    alert('Silakan pilih jawaban Ya atau Tidak sebelum melanjutkan.');
+    alert('Silakan pilih jawaban Ya atau Tidak sebelum melanjutkan!');
     return;
   }
 
