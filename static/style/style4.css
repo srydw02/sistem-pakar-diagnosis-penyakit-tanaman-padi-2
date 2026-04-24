@@ -17,8 +17,13 @@ body {
 
 /* NAVBAR */
 .navbar {
-  background-color: #f8f9fa !important;
-  padding: 10px 0;
+  background-color: white;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+
+  top: 0px;
+  margin-top: 0px;
+  z-index: 1000;
 }
 
 .navbar-brand h3 {
