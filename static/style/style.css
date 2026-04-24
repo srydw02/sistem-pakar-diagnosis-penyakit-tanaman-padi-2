@@ -51,7 +51,6 @@ html {
   color: #ffff;
 }
 
-
 .nav-link {
   text-align: left;
 }
@@ -65,7 +64,6 @@ html {
   padding: 20px 80px;
   text-align: justify;
 }
-
 
 .heroBWA {
   padding-top: 70px;
@@ -119,14 +117,14 @@ html {
   font-weight: 400;
 }
 .btn-primary {
-  background: #ffb39050;
+  background: rgb(155, 243, 155);
   border: none;
-  color: red;
+  color: black;
   border-radius: 10px;
 }
-.btn-primary:hover{
-    background: #eb0d0d;
-    border: 0px;
+.btn-primary:hover {
+  background: #066d33;
+  border: 0px;
 }
 .btn-success {
   background: #00d25b50;
@@ -151,16 +149,16 @@ html {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-a{
-    color: black;
+a {
+  color: black;
 }
-a:hover{
-    color: #eb0d0d;
-    border: 0px;
+a:hover {
+  color: #eb0d0d;
+  border: 0px;
 }
-.metode{
-  width: 400px; 
-  height:400px;
+.metode {
+  width: 400px;
+  height: 400px;
 }
 
 @media screen and (max-width: 600px) {
@@ -178,7 +176,7 @@ a:hover{
 }
 
 @media only screen and (max-width: 768px) {
-  .btn-primary{
+  .btn-primary {
     width: 190px;
     height: 40px;
   }

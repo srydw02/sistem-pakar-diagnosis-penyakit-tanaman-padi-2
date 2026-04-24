@@ -1,0 +1,109 @@
+/* FONT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(to right, #e8f5e9, #ffffff);
+  padding-top: 80px;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #f8f9fa !important;
+  padding: 10px 0;
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* MENU */
+.nav-link {
+  color: black;
+  font-weight: 500;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #28a745;
+}
+
+.nav-link.active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* BUTTON HIJAU */
+.btn-diagnosis {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 500;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-diagnosis:hover {
+  background-color: #218838;
+}
+
+/* JUDUL */
+.title {
+  font-weight: 600;
+}
+
+/* ACCORDION */
+.accordion-item {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+
+.accordion-button {
+  font-weight: 500;
+  background-color: #f8f9fa;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e8f5e9;
+  color: #28a745;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+}
+
+.accordion img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.accordion img:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  font-size: 14px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .btn-diagnosis {
+    margin-top: 10px;
+  }
+}
