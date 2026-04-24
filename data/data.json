@@ -108,12 +108,12 @@
   "G01": {
     "teks": "Bercak coklat/hitam pada daun",
     "keterangan": "Penyakit ini memicu penurunan hasil panen akibat daun mengering (hawar) dan infeksi pada gabah.",
-    "gambar": "../static/images/fotoGejala/G1.jpeg"
+    "gambar": "../static/images/fotoGejala/G1.jpg"
   },
   "G02": {
     "teks": "Bercak berbentuk belah ketupat",
     "keterangan": "Bercak ini berwarna cokelat dengan pusat abu-abu, ujung meruncing, dan dapat menyebabkan daun mengering serta menginfeksi leher malai (blas leher).",
-    "gambar": "../static/images/fotoGejala/G2.jpeg"
+    "gambar": "../static/images/fotoGejala/G2.jpg"
   },
   "G03": {
     "teks": "Daun menguning",
@@ -148,7 +148,7 @@
   "G09": {
     "teks": "Bulir padi hampa",
     "keterangan": "Gabah kosong tanpa isi, biasanya berwarna putih pucat dan malai tampak tegak.",
-    "gambar": "../static/images/fotoGejala/G9.jpeg"
+    "gambar": "../static/images/fotoGejala/G9.jpg"
   },
   "G10": {
     "teks": "Pertumbuhan terhambat",
