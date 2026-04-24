@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jenis Padi</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS sendiri -->
+    <link rel="stylesheet" href="/static/style/#style4.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <h4>🌾 SiPadi</h4>
+        <a href="/index.html" class="btn btn-success">Home</a>
+      </div>
+    </nav>
+
+    <!-- Judul -->
+    <div class="container text-center mt-5">
+      <h2 class="title">Jenis-Jenis Padi</h2>
+      <p>Klik untuk melihat detail</p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="container mt-4 mb-5">
+      <div class="accordion" id="jenisPadi">
+        <!-- IR64 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              data-bs-toggle="collapse"
+              data-bs-target="#ir64"
+            >
+              Padi IR64
+            </button>
+          </h2>
+
+          <div id="ir64" class="accordion-collapse collapse show">
+            <div class="accordion-body text-center">
+              <img src="/static/images/fotoPadi/ir64.jpg" width="250" />
+
+              <p><b>Deskripsi:</b> Varietas unggul dengan hasil tinggi.</p>
+
+              <p><b>Kelebihan:</b></p>
+              <ul class="text-start">
+                <li>Produktivitas tinggi</li>
+                <li>Nasi pulen</li>
+              </ul>
+
+              <p><b>Kekurangan:</b></p>
+              <ul class="text-start">
+                <li>Rentan penyakit tertentu</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ciherang -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ciherang"
+            >
+              Padi Ciherang
+            </button>
+          </h2>
+
+          <div id="ciherang" class="accordion-collapse collapse">
+            <div class="accordion-body text-center">
+              <img src="/static/images/fotoPadi/ciherang.jpg" width="250" />
+
+              <p><b>Deskripsi:</b> Varietas populer di Indonesia.</p>
+
+              <p><b>Kelebihan:</b></p>
+              <ul class="text-start">
+                <li>Hasil stabil</li>
+                <li>Tahan hama tertentu</li>
+              </ul>
+
+              <p><b>Kekurangan:</b></p>
+              <ul class="text-start">
+                <li>Butuh perawatan intensif</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pandan Wangi -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#pandan"
+            >
+              Padi Pandan Wangi
+            </button>
+          </h2>
+
+          <div id="pandan" class="accordion-collapse collapse">
+            <div class="accordion-body text-center">
+              <img src="/static/images/fotoPadi/pandan.jpg" width="250" />
+
+              <p><b>Deskripsi:</b> Padi dengan aroma khas.</p>
+
+              <p><b>Kelebihan:</b></p>
+              <ul class="text-start">
+                <li>Aroma wangi</li>
+                <li>Kualitas premium</li>
+              </ul>
+
+              <p><b>Kekurangan:</b></p>
+              <ul class="text-start">
+                <li>Panen lebih lama</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center p-3 text-muted">
+      © 2025 Sistem Pakar Padi
+    </footer>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+body {
+  background: linear-gradient(to right, #e8f5e9, #ffffff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul */
+.title {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Accordion */
+.accordion-button {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.accordion-body {
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+/* Gambar */
+img {
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background: #f1f1f1;
+}
