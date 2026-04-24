@@ -55,36 +55,18 @@ html {
 
 .navbar {
   margin-top: 15px;
-  border-bottom: 2px solid #F4C430; 
-}aris bawah kuning emas
+  background-color: #ffff;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+  position: sticky;
+
+  top: 0px;
+  margin-top: 0px;
+  z-index: 1000;
+}
 
 .col label {
   font-weight: 400;
   color: #5d4037;
-}
-
-.btn-primary {
-  background: #F4C430; 
-  border: none;
-  color: #2f281e;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background: #DA8A67; 
-  color: white;
-}
-
-.btn-success {
-  background: #4E9258; 
-  border: none;
-  color: white;
-  border-radius: 10px;
-}
-
-.btn-success:hover {
-    background: #2E5A27;
 }
 
 .btn-register {
@@ -93,10 +75,25 @@ html {
   font-size: 16px;
   font-weight: 400;
 }
-
-.margin-top {
-  margin-top: 1em;
+.btn-primary {
+  background: #a5e68d50;
+  border: none;
+  color: green;
+  border-radius: 10px;
 }
+.btn-primary:hover {
+  background: #066d33;
+  border: 0px;
+}
+.btn-success {
+  background: #00d25b50;
+  border: none;
+  color: #00d25b;
+  border-radius: 10px;
+}
+
+
+
 
 a {
     color: #4E9258;
@@ -128,4 +125,8 @@ a:hover {
     margin-left: 10px;
     margin-right: 10px;
   }
+}
+
+.container {
+  padding-top: 40px;
 }

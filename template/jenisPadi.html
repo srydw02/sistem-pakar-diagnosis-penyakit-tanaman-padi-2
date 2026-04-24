@@ -13,60 +13,46 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/static/style/style4.css" />
+    <meta charset="UTF-8">
+     <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/style/style.css">
   </head>
 
   <body>
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container-xl">
-        <a class="navbar-brand" href="/index.html">
-          <h3 style="color: green;">SiPadi</h3>
-        </a>
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-xl">
+            <a class="navbar-brand" href="#">
+                <h3 style="color: green;">SiPadi</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Toggle -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/template/informasi.html">Metode</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active" href="/template/jenisPadi.html">
-                Jenis Padi
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/template/informasi.html">
-                Informasi
-              </a>
-            </li>
-
-            <!-- Tombol Hijau -->
-            <li class="nav-item ms-3">
-              <a class="btn btn-diagnosis" href="/template/diagnosis.html">
-                Diagnosis
-              </a>
-            </li>
-
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/metode.html">Metode <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/informasi.html">Informasi <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register " href="/template/diagnosis.html" role="button">Diagnosis</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- ================= JUDUL ================= -->
@@ -178,9 +164,30 @@
       </div>
     </div>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="text-center p-3 text-muted">
-      © 2025 Sistem Pakar Padi
+     <footer class="footer bg-dark py-3 mt-10 align-items-center" style="color: #ffff;">
+        <div class=" container-xl">
+            <div class="row">
+                <!-- Footer Column 1 -->
+                <div class="col-md-7 mb-2" style="padding-left: 100px; text-align: justify;">
+                    <h5>Tentang </h5>
+                    <p>Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada tanaman padi berdasarkan gejala yang muncul. Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani dapat mengambil tindakan yang tepat untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.</p>
+                </div>
+                <!-- Footer Column 2 -->
+                <div class="col-md-4 mb-2" style="padding-left: 150px;">
+                    <h5>Link </h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/index.html" style="color: #ffff;">Home</a></li>
+                        <li><a href="/template/metode.html" style="color: #ffff;"> Metode </a></li>
+                        <li><a href="#" style="color: #ffff;">Jenis Padi</a></li>
+                        <li><a href="/template/informasi.html" style="color: #ffff;">Informasi Penyakit</a></li>
+                        <li><a href="/template/diagnosis.html" style="color: #ffff;">Halaman diagnosis</a></li>
+                    </ul>
+                </div>
+               
+                
+            </div>
+            
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->

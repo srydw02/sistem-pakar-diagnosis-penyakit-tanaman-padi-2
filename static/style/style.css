@@ -51,8 +51,9 @@ html {
   color: #ffff;
 }
 
-.nav-link {
-  text-align: left;
+.nav-link:hover {
+    color: #2f9e44 !important;
+    transform: translateY(-2px);
 }
 
 .isi:hover a {
@@ -124,9 +125,9 @@ html {
   font-weight: 400;
 }
 .btn-primary {
-  background: rgb(155, 243, 155);
+  background: #a5e68d50;
   border: none;
-  color: black;
+  color: green;
   border-radius: 10px;
 }
 .btn-primary:hover {
