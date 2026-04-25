@@ -7,8 +7,13 @@ html {
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; (iki surya) */
   color: #2F281E; 
+}
+
+/* TAMBAHKAN INI: Paksa scrollbar agar layout tidak geser-geser saat load data .iki surya*/
+html {
+  overflow-y: scroll;
 }
 
 .kiri {
