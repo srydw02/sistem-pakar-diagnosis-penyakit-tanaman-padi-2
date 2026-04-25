@@ -2,54 +2,72 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" />
     <title>Info Penyakit - Busuk Pelepah</title>
 
-    <!-- Bootstrap 5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/static/style/style3.css" />
   </head>
-
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" >SiPadi</a>
-
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-xl">
+        <a class="navbar-brand">
+          <h3 style="color: green;">SiPadi</h3>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="/index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/template/metode.html">Metode</a>
-            </li>            
-
-            <li class="nav-item">
-              <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="/template/metode.html"
+                >Metode <span class="sr-only">(current)</span></a
+              >
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/template/informasi.html">Informasi</a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link"
+                >Jenis Padi<span class="sr-only">(current)</span></a
+              >
             </li>
-
-            <li class="nav-item ms-2">
-              <a class="btn btn-danger px-3" href="/template/diagnosis.html">Diagnosis</a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="/template/informasi.html"
+                >Informasi <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item align-self-center">
+              <a
+                class="btn px-4 btn-primary ml-2 btn-register"
+                href="/template/diagnosis.html"
+                role="button"
+                >Diagnosis</a
+              >
             </li>
           </ul>
         </div>
@@ -70,8 +88,11 @@
           style="max-width: 500px;"
         />
         <br />
-        <a href="#penyakit" class="btn btn-danger px-4 py-2">
-          Lihat Informasi
+        <a
+          class="btn px-4 btn-primary ml-2 btn-register"
+          href="#penyakit"
+          role="button"
+          >Lihat Informasi
         </a>
       </div>
     </section>
