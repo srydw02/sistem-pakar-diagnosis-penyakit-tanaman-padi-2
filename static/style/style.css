@@ -67,8 +67,9 @@ html {
 }
 
 .heroBWA {
+  background: linear-gradient(to right, #e8f5e9, #ffffff);
   padding-top: 70px;
-  padding-bottom: 200px;
+  padding-bottom: 70px;
 }
 
 .heroBWA h1 {
@@ -80,6 +81,11 @@ html {
   font-weight: 400;
   color: #2f281e;
 }
+
+.heroBWA-2 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
 .heading {
   font-size: 4em;
 }
@@ -87,11 +93,16 @@ html {
   font-size: 3em;
 }
 
+.margin-top-2 {
+  padding-top: -100px;
+  padding-bottom: 100px;
+}
+
 .navbar {
   margin-top: 15px;
   background-color: #ffff;
   box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-  position: sticky;
+  position: sticky; 
 
   top: 0px;
   margin-top: 0px;
@@ -169,6 +180,10 @@ a:hover {
   height: 400px;
 }
 
+footer {
+  font-size: 15px;
+}
+
 @media screen and (max-width: 600px) {
   .card-deck {
     flex-direction: column;
@@ -197,4 +212,74 @@ a:hover {
     margin-top: 10px;
     margin-left: 0 !important;
   }
+}
+
+.berita-section {
+    padding: 100px 0;
+}
+
+.berita-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(40, 167, 69, 0.10);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.berita-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(40, 167, 69, 0.18);
+}
+
+.berita-card .badge-kategori {
+    background: #28a745;
+    color: #fff;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.berita-card .card-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a3c1a;
+    line-height: 1.4;
+}
+
+.berita-card .card-text {
+    font-size: 0.88rem;
+    color: #555;
+}
+
+.berita-card .card-footer-meta {
+    font-size: 0.78rem;
+    color: #999;
+    padding: 10px 16px;
+    background: #f1f8f1;
+    border-top: 1px solid #e0f0e0;
+}
+
+.berita-img {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.btn-lihat-semua {
+  padding: 20px;
+  background: #a5e68d50;
+  border: none;
+  color: green;
+  border-radius: 20px;
+}
+
+.btn-lihat-semua:hover {
+    background: green;
+    color: #fff;
 }
