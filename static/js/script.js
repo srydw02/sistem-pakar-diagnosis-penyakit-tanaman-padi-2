@@ -203,11 +203,11 @@ function prosesDiagnosis() {
   } else {
     for (let i = 0; i < hasilArray.length; i++) {
       let item = hasilArray[i];
-      let warnaBadge;
+      // let warnaBadge;
       
-      if (i === 0)      { warnaBadge = 'badge-danger';  }
-      else if (i === 1) { warnaBadge = 'badge-warning'; }
-      else              { warnaBadge = 'badge-secondary'; }
+      // if (i === 0)      { warnaBadge = 'badge-danger';  }
+      // else if (i === 1) { warnaBadge = 'badge-warning'; }
+      // else              { warnaBadge = 'badge-secondary'; }
 
       let labelUrutan;
       if (i === 0) { labelUrutan = 'Diagnosis Utama';  }
@@ -217,9 +217,12 @@ function prosesDiagnosis() {
         '<div class="card mb-3 p-3">' +
           '<div class="d-flex align-items-center justify-content-between mb-2">' +
             '<h5 class="mb-0">' + item.nama + '</h5>' +
-            '<span class="badge ' + warnaBadge + '">' + labelUrutan + '</span>' +
+            // '<span class="badge ' + warnaBadge + '">' + labelUrutan + '</span>' +
+            '<span style="color: #2f281e; font-weight: 500;">' + labelUrutan + '</span>' +
+
           '</div>' +
-          '<a href="' + item.link + '" class="btn btn-danger btn-sm mt-2" target="_blank">Lihat informasi</a>' +
+          //'<a href="' + item.link + '" class="btn btn-danger btn-sm mt-2" target="_blank">Lihat informasi</a>' +
+          '<a href="' + item.link + '" class="btn btn-lihat-info btn-sm mt-2" target="_blank">Lihat informasi</a>' +
         '</div>';
     }
   }
