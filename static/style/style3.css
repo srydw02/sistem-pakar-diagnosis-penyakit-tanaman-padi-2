@@ -11,9 +11,9 @@ html {
   color: #2F281E; 
 }
 
-/* TAMBAHKAN INI: Paksa scrollbar agar layout tidak geser-geser saat load data .iki surya*/
+/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
 html {
-  overflow-y: scroll;
+  overflow-y: scroll !important;
 }
 
 .kiri {

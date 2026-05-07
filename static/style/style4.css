@@ -1,10 +1,10 @@
-/* KUNCI JAWABAN: Paksa scrollbar selalu muncul biar layout tidak geser, iki surya */
-html {
-  overflow-y: scroll;
-}
-
 /* FONT */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
+html {
+  overflow-y: scroll !important;
+}
 
 /* RESET */
 * {

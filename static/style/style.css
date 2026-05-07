@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
+html {
+  overflow-y: scroll !important;
+}
+
 .kiri {
   margin: 1%;
   margin-top: auto;
