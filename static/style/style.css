@@ -163,10 +163,10 @@ html {
 .card-title {
   font-weight: bolder;
 }
-.container {
+/* .container {
   max-width: 960px;
   margin: auto;
-}
+} */
 
 .card-deck {
   display: flex;
