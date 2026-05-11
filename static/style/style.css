@@ -1,290 +1,652 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 *,
-body,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
 html {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
-/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
-html {
-  overflow-y: scroll !important;
+body {
+    background: linear-gradient(to top, #ffffff, #f1fff4);
+    color: #2f281e;
 }
 
-.kiri {
-  margin: 1%;
-  margin-top: auto;
-  width: 15%;
-  height: auto;
-  border-radius: 5px 5px 5px 5px;
-  float: left;
+/* =========================
+   SECTION
+========================= */
+
+section {
+    scroll-margin-top: 0px;
 }
 
-.kanan {
-  margin: 1%;
-  margin-top: auto;
-  width: 75%;
-  height: auto;
-  float: left;
+#home,
+#berita,
+#informasi,
+#alur {
+    padding-top: 110px;
+    padding-bottom: 110px;
 }
 
-.logo {
-  display: flex;
-  margin: 30px, 0px;
-  align-content: center;
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+   background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+    z-index: 1000;
 }
 
-.teks {
-  font-size: medium;
+.navbar .container-xl {
+    display: flex;
+    align-items: center;
 }
 
-#tess {
-  font-size: xx-large;
-  font-weight: 600;
+.navbar-brand h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b8f1f;
 }
 
-.isi {
-  text-align: center;
-  padding: 10px;
-  color: #4183d7;
-}
-.isi:hover {
-  background-color: rgb(35, 87, 155);
-  color: #ffff;
+.navbar-nav .nav-item {
+    margin: 0 8px;
 }
 
+.nav-link {
+    position: relative;
+    color: #222 !important;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 8px 6px !important;
+}
+
+/* hover */
 .nav-link:hover {
     color: #2f9e44 !important;
     transform: translateY(-2px);
 }
 
-.isi:hover a {
-  background-color: rgb(35, 87, 155);
-  color: #ffff;
+/* ACTIVE NAV */
+.nav-link.active {
+    color: #2f9e44 !important;
+    font-weight: 600;
 }
 
-.content {
-  padding: 20px 80px;
-  text-align: justify;
+/* titik bawah */
+.nav-link::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: -6px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #2f9e44;
+
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+
+    transition: .3s ease;
 }
 
+.nav-link.active::after,
+.nav-link:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* tombol diagnosis */
+.btn-register {
+    border-radius: 14px;
+    padding: 10px 22px !important;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(47,158,68,.25);
+}
+
+/* hamburger */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* =========================
+   HERO
+========================= */
 .heroBWA {
-  background: linear-gradient(to right, #e8f5e9, #ffffff);
-  padding-top: 70px;
-  padding-bottom: 70px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+   
 }
 
 .heroBWA h1 {
-  font-weight: 700;
-  color: #2f281e;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.heroBWA p {
-  font-weight: 400;
-  color: #2f281e;
+.heroBWA h6 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #555;
 }
 
-.heroBWA-2 {
-  padding-top: 100px;
-  padding-bottom: 80px;
-}
 .heading {
-  font-size: 4em;
+    font-size: 4rem;
 }
+
 .sub-heading {
-  font-size: 3em;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
-.margin-top-2 {
-  padding-top: -100px;
-  padding-bottom: 100px;
-}
-
-.navbar {
-  margin-top: 15px;
-  background-color: #ffff;
-  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-  position: sticky; 
-
-  top: 0px;
-  margin-top: 0px;
-  z-index: 1000;
-}
-.card {
-  border: none;
-}
-.card-title h1 {
-  font-weight: 700;
-  color: #2f281e;
-}
-.card-register {
-  width: 50%;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #bcd0e5;
-  border-radius: 5px;
-}
-.col label {
-  font-weight: 400;
-  color: #2f281e;
-}
-
-.btn-register {
-  border-radius: 10px;
-  margin: 20px 20px;
-  font-size: 16px;
-  font-weight: 400;
-}
-.btn-primary {
-  background: #a5e68d50;
-  border: none;
-  color: green;
-  border-radius: 10px;
-}
-.btn-primary:hover {
-  background: #066d33;
-  border: 0px;
-}
-.btn-success {
-  background: #00d25b50;
-  border: none;
-  color: #00d25b;
-  border-radius: 10px;
-}
-.margin-top {
-  margin-top: 6em;
-}
-
-.card-title {
-  font-weight: bolder;
-}
-/* .container {
-  max-width: 960px;
-  margin: auto;
-} */
-
-.card-deck {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-a {
-  color: black;
-}
-a:hover {
-  color: #eb0d0d;
-  border: 0px;
-}
 .metode {
   width: 400px;
   height: 400px;
 }
 
-footer {
-  font-size: 15px;
-}
+/* =========================
+   BUTTON
+========================= */
 
-@media screen and (max-width: 600px) {
-  .card-deck {
-    flex-direction: column;
-  }
-
-  .card {
-    margin-bottom: 20px;
-  }
-  .metode {
-    width: 170px;
-    height: 170px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .btn-primary {
-    width: 190px;
-    height: 40px;
-  }
-  .btn-secondary,
-  .metode {
-    width: 170px;
-    height: 170px;
-  }
-  .card {
-    margin-top: 10px;
-    margin-left: 0 !important;
-  }
-}
-
-.berita-section {
-    padding: 100px 0;
-}
-
-.berita-card {
+.btn-primary {
+    background: #d8f5cf;
+    color: #0b8f1f;
     border: none;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(40, 167, 69, 0.10);
+    border-radius: 14px;
+    padding: 12px 24px;
+    transition: .3s ease;
+}
+
+.btn-primary:hover {
+    background: #0b8f1f;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    border: none;
+    border-radius: 18px;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    height: 100%;
+    transition: .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* =========================
+   BERITA
+========================= */
+.berita {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.berita-card {
+    background: white;
+    box-shadow: 0 6px 20px rgba(40,167,69,.08);
 }
 
 .berita-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(40, 167, 69, 0.18);
-}
-
-.berita-card .badge-kategori {
-    background: #28a745;
-    color: #fff;
-    font-size: 0.72rem;
-    padding: 3px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-.berita-card .card-title {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #1a3c1a;
-    line-height: 1.4;
-}
-
-.berita-card .card-text {
-    font-size: 0.88rem;
-    color: #555;
-}
-
-.berita-card .card-footer-meta {
-    font-size: 0.78rem;
-    color: #999;
-    padding: 10px 16px;
-    background: #f1f8f1;
-    border-top: 1px solid #e0f0e0;
+    box-shadow: 0 12px 28px rgba(40,167,69,.15);
 }
 
 .berita-img {
-    width: 100%;
-    height: 160px;
+    height: 170px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-size: 3rem;
 }
 
-.btn-lihat-semua {
-  padding: 20px;
-  background: #a5e68d50;
-  border: none;
-  color: green;
-  border-radius: 20px;
+.badge-kategori {
+    background: #28a745;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: .75rem;
+    display: inline-block;
 }
 
-.btn-lihat-semua:hover {
-    background: green;
-    color: #fff;
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1d3d1d;
+    line-height: 1.5;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.7;
+}
+
+.card-footer-meta {
+    padding: 14px 18px;
+    background: #f4fbf4;
+    border-top: 1px solid #e6f3e6;
+    font-size: .82rem;
+}
+
+/* =========================
+   INFORMASI
+========================= */
+
+.info h1 {
+  font-weight: 700;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+   
+}
+
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .col-md-span-2 {
+        grid-column: span 2;
+    }
+
+    .row-md-span-2 {
+        grid-row: span 2;
+    }
+}
+
+.info-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.info-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: grayscale(100%) blur(1px);
+    transform: scale(1);
+
+    transition: .6s ease;
+}
+
+.info-card:hover img {
+    filter: grayscale(0);
+    transform: scale(1.08);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.25),
+        transparent
+    );
+
+    opacity: 0;
+    transition: .4s ease;
+}
+
+.info-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-info {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 1.5rem;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition: .4s ease;
+}
+
+.info-card:hover .card-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   ACCORDION
+========================= */
+
+.accordion .card {
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,.05);
+}
+
+.accordion .btn {
+    color: #222;
+    text-decoration: none;
+}
+
+.accordion .btn:hover {
+    color: #0b8f1f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 100%;
+    background: #101010;
+    color: white;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+footer .container-fluid {
+    width: 100%;
+}
+
+footer p,
+footer a,
+footer li {
+    color: rgb(255, 255, 255) !important;
+}
+
+footer a {
+    transition: .3s ease;
+}
+
+footer a:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+footer hr {
+    border-color: rgba(255,255,255,0.15);
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .heroBWA {
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .heroBWA h1,
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .sub-heading {
+        font-size: 2rem;
+    }
+
+    .heroBWA img {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 8px 0;
+    }
+
+    .btn-register {
+        margin-top: 10px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metode {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-deck {
+        display: block;
+    }
+}
+
+/* cara kerja */
+.heroBWA-2 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* =========================
+   JENIS PADI
+========================= */
+
+.jenis-padi-section {
+    min-height: 100vh;
+    padding: 120px 0;
+}
+
+/* =========================
+   FLIP CARD
+========================= */
+
+.jenis-card {
+    width: 100%;
+    height: 430px;
+    perspective: 1200px;
+}
+
+.jenis-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform .8s;
+    transform-style: preserve-3d;
+}
+
+.jenis-card:hover .jenis-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* =========================
+   DEPAN & BELAKANG
+========================= */
+
+.jenis-card-front,
+.jenis-card-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    backface-visibility: hidden;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+/* =========================
+   DEPAN
+========================= */
+
+.jenis-card-front {
+    background: white;
+}
+
+.jenis-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: .5s ease;
+}
+
+.jenis-card:hover img {
+    transform: scale(1.08);
+}
+
+/* overlay */
+.front-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.2),
+        transparent
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 24px;
+}
+
+.front-overlay h3 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.front-overlay p {
+    color: rgba(255,255,255,.85);
+    margin: 0;
+}
+
+/* =========================
+   BELAKANG
+========================= */
+
+.jenis-card-back {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffffff
+    );
+
+    transform: rotateY(180deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.jenis-card-back h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    color: #0b8f1f;
+
+    margin-bottom: 16px;
+}
+
+.jenis-card-back p {
+    color: #444;
+    line-height: 1.9;
+
+    margin-bottom: 24px;
+}
+
+/* tombol */
+.btn-detail {
+    display: inline-block;
+    width: fit-content;
+
+    background: #0b8f1f;
+    color: white;
+
+    padding: 10px 22px;
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+.btn-detail:hover {
+    background: #087017;
+
+    color: white;
+    text-decoration: none;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .jenis-padi-section {
+        padding: 80px 0;
+    }
+
+    .jenis-card {
+        height: 360px;
+    }
+
+    .front-overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .jenis-card-back h4 {
+        font-size: 1.5rem;
+    }
+
+    .jenis-card-back p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
 }

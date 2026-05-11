@@ -34,22 +34,30 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+               <ul class="navbar-nav ml-auto">
+
                     <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/index.html">Home</a>
                     </li>
+
                     <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/template/metode.html">Metode <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="berita.html">Berita</a>
                     </li>
+
                     <li class="nav-item align-self-center active">
-                        <a class="nav-link" >Jenis Padi<span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#jenis-padi">Jenis Padi</a>
                     </li>
+
                     <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/template/informasi.html">Informasi <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="informasi.html">Informasi</a>
                     </li>
-                    <li class="nav-item align-self-center">
-                        <a class="btn px-4 btn-primary ml-2 btn-register " href="/template/diagnosis.html" role="button">Diagnosis</a>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="#diagnosis" role="button">
+                            Diagnosis
+                        </a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -209,5 +217,23 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        // default home aktif
+        document.querySelector('a[href="#jenispadi"]').classList.add("active");
+
+        // pindah active saat diklik
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+
+                navLinks.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                this.classList.add("active");
+            });
+        });
+    </script>
   </body>
 </html>
