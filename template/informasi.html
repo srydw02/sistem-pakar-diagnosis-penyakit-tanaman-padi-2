@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="/static/style/style2.css" />
 
   <style>
-  .search-input {
-    border: 1px solid #28a745 !important;
-  }
+    .search-input {
+      border: 1px solid #28a745 !important;
+    }
 
-  .search-input:focus {
-    border-color: #28a745 !important;
-    box-shadow: 0 0 4px rgba(40, 167, 69, 0.5) !important;
-  }
-</style>
+    .search-input:focus {
+      border-color: #28a745 !important;
+      box-shadow: 0 0 4px rgba(40, 167, 69, 0.5) !important;
+    }
+  </style>
 
   <title>Informasi Penyakit Padi</title>
 </head>
@@ -37,22 +37,24 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item align-self-center active">
-            <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span><a>
+          <li class="nav-item align-self-center">
+            <a class="nav-link" href="/">Home</a>
           </li>
 
-          <li class="nav-item align-self-center active">
-            <a class="nav-link" href="/template/metode.html">Metode<span class="sr-only">(current)</span></a>
+          <li class="nav-item align-self-center">
+            <a class="nav-link" href="/#berita">Berita</a>
           </li>
 
-          <li class="nav-item align-self-center active">
-            <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi<span class="sr-only">(current)</span></a>
+          <li class="nav-item align-self-center">
+            <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
           </li>
 
-          <li class="nav-item align-self-center active">
-            <a class="nav-link">Informasi <span class="sr-only">(current)</span></a>
+          <li class="nav-item align-self-center">
+            <a class="nav-link active" href="/template/informasi.html">
+              Informasi
+            </a>
           </li>
-
+          
           <li class="nav-item align-self-center">
             <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html"
               role="button">Diagnosis</a>
@@ -62,7 +64,7 @@
     </div>
   </nav>
 
-  <section class="searching pt-3 pb-0 mb-0" style="margin-top: 20px;">
+  <section class="searching pt-3 pb-0 mb-0" style="margin-top: 110px;">
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-md-4">
@@ -440,40 +442,7 @@
 
 
 
-  <script>
-    $(document).ready(function () {
-      $("#searchPenyakit").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        var visibleCards = 0;
 
-
-        if (value !== "") {
-          $("#wrapper").hide();
-        } else {
-          $("#wrapper").show();
-        }
-
-
-        $("#penyakit-row .col").each(function () {
-          var title = $(this).find(".card-title").text().toLowerCase();
-
-          if (title.indexOf(value) > -1) {
-            $(this).show();
-            visibleCards++;
-          } else {
-            $(this).hide();
-          }
-        });
-
-
-        if (value !== "" && visibleCards === 0) {
-          $("#not-found").show();
-        } else {
-          $("#not-found").hide();
-        }
-      });
-    });
-  </script>
 
 </body>
 
