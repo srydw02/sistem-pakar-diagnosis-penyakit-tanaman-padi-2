@@ -1,33 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=S, initial-scale=1.0">
-    <title>Kuku Balam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padi Kuku Balam - SiPadi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../static/style/style5.css">
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-xl">
+            <a class="navbar-brand" href="/">
+                <h3>SiPadi</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/#berita">Berita</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link active" href="/template/jenisPadi.html">Jenis Padi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="detail-header">
         <h1>Padi Kuku Balam</h1>
         <p>Andalan Utama Kuliner Sumatera</p>
     </div>
 
     <div class="detail-container">
-        <div class="specs-grid">
-            <div class="spec-card"><h4>Daerah Asal</h4><p>Sumatera Utara & Sumbar</p></div>
-            <div class="spec-card"><h4>Tekstur Nasi</h4><p>Pera</p></div>
-            <div class="spec-card"><h4>Warna Beras</h4><p>Putih Cerah</p></div>
-            <div class="spec-card"><h4>Ciri Fisik</h4><p>Meruncing seperti kuku</p></div>
+        
+        <div class="detail-main-info">
+            <div class="detail-image-wrapper">
+                <img src="../../static/images/fotoJenisPadi/kukubalam.png" alt="Padi Kuku Balam">
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card"><h4>Daerah Asal</h4><p>Sumatera Utara / Barat</p></div>
+                <div class="spec-card"><h4>Bentuk</h4><p>Runcing Melengkung</p></div>
+                <div class="spec-card"><h4>Tekstur</h4><p>Pera Berkualitas</p></div>
+                <div class="spec-card"><h4>Kegunaan</h4><p>Rumah Makan Padang</p></div>
+            </div>
         </div>
 
         <div class="detail-content">
             <h3>Deskripsi Lengkap</h3>
-            <p>Padi Kuku Balam adalah jenis padi kebanggaan masyarakat di wilayah Pulau Sumatera, khususnya Sumatera Barat, Riau, dan Sumatera Utara. Namanya yang unik diambil karena bentuk fisik berasnya; bentuknya sedikit melengkung dengan ujung yang meruncing, yang oleh masyarakat zaman dahulu disamakan dengan bentuk kuku burung balam (sejenis burung tekukur).</p>
+            <p>Kuku Balam adalah jenis padi kebanggaan Sumatera. Namanya diambil dari bentuk fisik berasnya yang meruncing dan melengkung seperti kuku burung Balam.</p>
             <br>
-            <p>Beras Kuku Balam menghasilkan nasi dengan tekstur pera berkualitas tinggi. Nasi ini adalah "nyawa" dari rumah makan atau restoran masakan Padang dan Minangkabau. Karena teksturnya yang pera, nasi ini tidak akan mudah hancur atau menjadi bubur ketika disiram dengan berbagai macam kuah gulai kental yang kaya akan rempah dan santan, sehingga struktur nasi tetap utuh dan sangat nikmat dikunyah.</p>
-            
+            <p>Beras ini adalah standar emas untuk rumah makan Minangkabau karena tekstur peranya tidak mudah hancur saat disiram kuah gulai kental yang melimpah, menjaga rasa tetap otentik.</p>
             <a href="../jenisPadi.html" class="btn-back">⬅ Kembali ke Daftar Padi</a>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

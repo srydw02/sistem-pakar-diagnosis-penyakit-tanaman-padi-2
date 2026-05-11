@@ -1,33 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentik Susu</title>
+    <title>Padi Mentik Susu - SiPadi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../static/style/style5.css">
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-xl">
+            <a class="navbar-brand" href="/">
+                <h3>SiPadi</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/#berita">Berita</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link active" href="/template/jenisPadi.html">Jenis Padi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="detail-header">
         <h1>Padi Mentik Susu</h1>
         <p>Sehat, Organik, dan Ramah Pencernaan</p>
     </div>
 
     <div class="detail-container">
-        <div class="specs-grid">
-            <div class="spec-card"><h4>Daerah Asal</h4><p>Jawa Tengah</p></div>
-            <div class="spec-card"><h4>Tekstur Nasi</h4><p>Sangat Pulen</p></div>
-            <div class="spec-card"><h4>Warna Beras</h4><p>Putih Pekat (Susu)</p></div>
-            <div class="spec-card"><h4>Kelebihan</h4><p>Rendah Gula</p></div>
+        
+        <div class="detail-main-info">
+            <div class="detail-image-wrapper">
+                <img src="../../static/images/fotoJenisPadi/mentiksusue.png" alt="Padi Mentik Susu">
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card"><h4>Warna Beras</h4><p>Putih Susu</p></div>
+                <div class="spec-card"><h4>Tekstur Nasi</h4><p>Sangat Pulen</p></div>
+                <div class="spec-card"><h4>Kelebihan</h4><p>Rendah Gula</p></div>
+                <div class="spec-card"><h4>Cocok Untuk</h4><p>Bayi & Lansia</p></div>
+            </div>
         </div>
 
         <div class="detail-content">
             <h3>Deskripsi Lengkap</h3>
-            <p>Sesuai dengan namanya, padi Mentik Susu menghasilkan beras yang warnanya unik, yakni putih pekat dan tidak bening (transparan) seperti beras pada umumnya, melainkan mirip dengan warna susu. Varietas unggulan ini adalah hasil seleksi alam dari benih padi lokal nusantara yang dibudidayakan dengan metode pertanian organik.</p>
+            <p>Mentik Susu menghasilkan beras yang warnanya unik, putih pekat mirip susu. Varietas ini adalah hasil seleksi alam dari benih padi lokal yang dibudidayakan dengan metode organik.</p>
             <br>
-            <p>Kelebihan utama dari Mentik Susu adalah kandungannya yang sangat kaya akan nutrisi, mineral, dan indeks glikemik yang relatif aman. Tekstur nasinya sangat pulen, lembut, dan tidak seret di tenggorokan. Oleh karena teksturnya yang bersahabat bagi lambung dan usus, beras Mentik Susu sangat direkomendasikan untuk konsumsi bayi (MPASI), anak-anak dalam masa pertumbuhan, lansia, atau orang yang sedang dalam masa pemulihan pasca sakit.</p>
-            
+            <p>Kelebihan utamanya adalah indeks glikemik yang rendah. Teksturnya yang sangat lembut menjadikannya pilihan favorit untuk MPASI bayi atau dikonsumsi oleh penderita diabetes yang membutuhkan asupan karbonhidrat lebih terkontrol.</p>
             <a href="../jenisPadi.html" class="btn-back">⬅ Kembali ke Daftar Padi</a>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

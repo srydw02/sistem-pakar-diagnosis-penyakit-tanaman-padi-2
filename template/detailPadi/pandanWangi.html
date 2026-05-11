@@ -1,33 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pandan Wangi</title>
+    <title>Padi Pandan Wangi - SiPadi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../static/style/style5.css">
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-xl">
+            <a class="navbar-brand" href="/">
+                <h3>SiPadi</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/#berita">Berita</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link active" href="/template/jenisPadi.html">Jenis Padi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="detail-header">
         <h1>Padi Pandan Wangi</h1>
         <p>Ikon Beras Aromatik Berkualitas Tinggi</p>
     </div>
 
     <div class="detail-container">
-        <div class="specs-grid">
-            <div class="spec-card"><h4>Daerah Asal</h4><p>Cianjur, Jawa Barat</p></div>
-            <div class="spec-card"><h4>Tekstur Nasi</h4><p>Pulen & Sedikit Lengket</p></div>
-            <div class="spec-card"><h4>Aroma</h4><p>Pandan Sangat Kuat</p></div>
-            <div class="spec-card"><h4>Umur Panen</h4><p>115 - 120 Hari</p></div>
+        
+        <div class="detail-main-info">
+            <div class="detail-image-wrapper">
+                <img src="../../static/images/fotoJenisPadi/pandan.png" alt="Padi Pandan Wangi">
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card"><h4>Daerah Asal</h4><p>Cianjur, Jabar</p></div>
+                <div class="spec-card"><h4>Tekstur Nasi</h4><p>Pulen Lengket</p></div>
+                <div class="spec-card"><h4>Aroma</h4><p>Pandan Kuat</p></div>
+                <div class="spec-card"><h4>Umur Panen</h4><p>120 Hari</p></div>
+            </div>
         </div>
 
         <div class="detail-content">
             <h3>Deskripsi Lengkap</h3>
-            <p>Pandan Wangi adalah ikon beras bermutu tinggi asli dari daerah Cianjur, Jawa Barat. Ciri khas paling menonjol dari varietas padi ini adalah aroma daun pandan yang menyengat secara alami, bahkan aromanya sudah tercium saat beras sedang dimasak. Bentuk gabah dan butiran berasnya cenderung membulat (montok) dengan warna yang sedikit kekuningan, membedakannya dari beras biasa.</p>
+            <p>Pandan Wangi adalah ikon beras bermutu tinggi asli dari daerah Cianjur, Jawa Barat. Ciri khas paling menonjol dari varietas padi ini adalah aroma daun pandan yang menyengat secara alami. Bentuk gabahnya cenderung membulat dengan warna yang sedikit kekuningan.</p>
             <br>
-            <p>Nasi yang dihasilkan dari beras Pandan Wangi sangat pulen dan sedikit lengket. Hal ini membuatnya sangat nikmat disantap meskipun hanya ditemani dengan lauk sederhana seperti sambal dan ikan asin. Tanaman padi Pandan Wangi tumbuh paling optimal di dataran dengan ketinggian tertentu di daerah Cianjur, iklim spesifik inilah yang dipercaya sangat berkontribusi pada keunikan rasa dan aroma pandannya yang tidak bisa ditiru jika ditanam di daerah lain.</p>
-            
+            <p>Nasi yang dihasilkan sangat pulen dan sedikit lengket. Iklim spesifik di Cianjur dipercaya berkontribusi pada keunikan rasa dan aromanya yang tidak bisa ditiru jika ditanam di daerah lain.</p>
             <a href="../jenisPadi.html" class="btn-back">⬅ Kembali ke Daftar Padi</a>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
