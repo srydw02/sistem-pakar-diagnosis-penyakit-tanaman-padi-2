@@ -20,10 +20,6 @@ body {
 }
 
 /* =========================
-   NAVBAR MODERN
-========================= */
-
-/* =========================
    NAVBAR
 ========================= */
 
@@ -55,19 +51,17 @@ body {
     padding: 8px 6px !important;
 }
 
-/* hover */
+
 .nav-link:hover {
     color: #2f9e44 !important;
     transform: translateY(-2px);
 }
 
-/* active */
 .nav-link.active {
     color: #2f9e44 !important;
     font-weight: 600;
 }
 
-/* titik bawah */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -87,14 +81,12 @@ body {
     transition: .3s ease;
 }
 
-/* hover + active */
 .nav-link:hover::after,
 .nav-link.active::after {
     transform: translateX(-50%) scale(1);
     opacity: 1;
 }
 
-/* tombol diagnosis */
 .btn-register {
     border-radius: 14px;
     padding: 10px 22px !important;
@@ -107,7 +99,6 @@ body {
     box-shadow: 0 8px 18px rgba(47,158,68,.25);
 }
 
-/* hamburger */
 .navbar-toggler {
     border: none;
 }
@@ -117,9 +108,6 @@ body {
     box-shadow: none;
 }
 
-/* =========================
-   HERO
-========================= */
 
 #hero {
   padding-top: 120px;
@@ -167,35 +155,83 @@ body {
 ========================= */
 
 .card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  border-radius: 16px;
-  border: none;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(34, 139, 34, 0.08);
-  transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(209, 247, 207, 0.1);
+    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(34, 139, 34, 0.15);
+.inner-img {
+    position: relative;
+    overflow: hidden; /* Memotong gambar yang membesar */
+    height: 200px;    /* Sesuaikan dengan tinggi card-img-top kamu */
 }
+
+.position-relative {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    transition: background 0.5s ease;
+    z-index: 1;
+}
+
 
 .card-img-top {
-  height: 220px;
-  object-fit: cover;
-  width: 100%;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);    
 }
 
 .card-body {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover .card-overlay{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1); 
 }
 
 .col {
   margin-bottom: 20px;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    transition: background 0.5s ease;
+    z-index: 1;
+}
+
+.gambar-dalam {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
 }
 
 /* =========================
@@ -310,4 +346,8 @@ a:hover {
 
 .nav-link.active::before {
   width: 70%;
+}
+
+.contaier{
+  margin-top: 0px;
 }
