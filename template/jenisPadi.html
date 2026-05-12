@@ -10,18 +10,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/static/style/style2.css" />
-
-    <style>
-      .search-input {
-        border: 1px solid #28a745 !important;
-      }
-
-      .search-input:focus {
-        border-color: #28a745 !important;
-        box-shadow: 0 0 4px rgba(40, 167, 69, 0.5) !important;
-      }
-    </style>
+    <link rel="stylesheet" href="/static/style/style4.css" />
 
     <title>Jenis Padi</title>
   </head>
@@ -46,55 +35,35 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item align-self-center">
-              <a class="nav-link" href="/">Home</a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link active" href="#home">Home</a>
             </li>
 
-            <li class="nav-item align-self-center">
-              <a class="nav-link" href="/#berita">Berita</a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="#berita">Berita</a>
             </li>
 
-            <li class="nav-item align-self-center">
-              <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="#jenis-padi">Jenis Padi</a>
             </li>
 
-            <li class="nav-item align-self-center">
-              <a class="nav-link active" href="/template/informasi.html">
-                Informasi
-              </a>
+            <li class="nav-item align-self-center active">
+              <a class="nav-link" href="#informasi">Informasi</a>
             </li>
 
-            <li class="nav-item align-self-center">
+            <li class="nav-item align-self-center active">
               <a
                 class="btn px-4 btn-primary ml-2 btn-register"
-                href="/template/diagnosis.html"
+                href="#diagnosis"
                 role="button"
-                >Diagnosis</a
               >
+                Diagnosis
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <!-- <section class="searching pt-3 pb-0 mb-0" style="margin-top: 110px;">
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-4">
-          <div class="input-group shadow-sm" style="border-radius: 20px;">
-            <input type="text" id="searchPenyakit" class="form-control search-input" placeholder="Cari penyakit..."
-              style="border-radius: 20px 0 0 20px;">
-
-            <div class="input-group-append">
-              <button class="btn btn-success" type="button" style="border-radius: 0 20px 20px 0;">
-                <i class="fa fa-search"></i> Search
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
     <section class="bg-light" id="hero">
       <div class="container">
@@ -109,17 +78,6 @@
             </p>
           </div>
         </div>
-
-        <!-- <div
-          id="not-found"
-          class="text-center py-5 w-100"
-          style="display: none;"
-        >
-          <h4 class="text-muted">
-            Maaf, penyakit yang Anda cari tidak ditemukan.
-          </h4>
-          <p class="text-secondary">Coba gunakan kata kunci lain.</p>
-        </div> -->
 
         <section id="jenis ">
           <div
@@ -356,313 +314,6 @@
         </section>
       </div>
     </section>
-
-    <!-- <section section class="margin-top container-xl">
-      <div class="row margin-top d-flex flex-column">
-        <div
-          class="col margin-top d-flex justify-content-center flex-column text-center"
-        >
-          <h1 class="font-weight-normal sub-heading">Data Gejala</h1>
-          <p class="font-weight-light">
-            Berikut merupakan data gejala yang muncul pada tanaman padi sebagai
-            indikasi awal adanya serangan penyakit. Setiap gejala dapat terkait
-            dengan satu atau lebih jenis penyakit tertentu. Identifikasi gejala
-            yang akurat sangat penting dalam proses diagnosis penyakit secara
-            cepat dan efektif melalui sistem pakar dengan metode forward
-            chaining.
-          </p>
-        </div>
-
-        <div class="col margin-top">
-          <div class="accordion mb-5" id="accordionExample">
-            <div class="card mb-3">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Bercak coklat/hitam pada daun
-                  </button>
-                </h2>
-              </div>
-
-              <div
-                id="collapseOne"
-                class="collapse"
-                aria-labelledby="headingOne"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Penyakit ini memicu penurunan hasil panen akibat daun
-                  mengering (hawar) dan infeksi pada gabah
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    Bercak berbentuk belah ketupat
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseTwo"
-                class="collapse"
-                aria-labelledby="headingTwo"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Bercak ini berwarna cokelat dengan pusat abu-abu, ujung
-                  meruncing, dan dapat menyebabkan daun mengering serta
-                  menginfeksi leher malai (blas leher)
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Daun menguning
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseThree"
-                class="collapse"
-                aria-labelledby="headingThree"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Gejala ini sering muncul saat fase vegetatif maupun bunting
-                  (kekurangan kalsium), ditandai ujung daun kuning atau kering
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingFour">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                  >
-                    Daun kering seperti terbakar
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseFour"
-                class="collapse"
-                aria-labelledby="headingFour"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Gejalanya ditandai dengan daun menguning, menggulung, dan
-                  mengering mulai dari ujung, terlihat terbakar, dan cepat
-                  menyebar saat kondisi lembap
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingFive">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseFive"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                  >
-                    Tanaman kerdil
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseFive"
-                class="collapse"
-                aria-labelledby="headingFive"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Pertumbuhan tinggi tanaman terhambat drastis, daun
-                  menguning-oranye dari ujung, jumlah anakan berkurang, dan
-                  malai pendek atau hampa
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingSix">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseSix"
-                    aria-expanded="false"
-                    aria-controls="collapseSix"
-                  >
-                    Daun kuning-oranye
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseSix"
-                class="collapse"
-                aria-labelledby="headingSix"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Warna kuning oranye sering menandakan serangan bakteri atau
-                  jamur, terutama jika dimulai dari ujung daun
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingSeven">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseSeven"
-                    aria-expanded="false"
-                    aria-controls="collapseSeven"
-                  >
-                    Bercak pada batang atau pelepah
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseSeven"
-                class="collapse"
-                aria-labelledby="headingSeven"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Bercak oval berwarna abu-abu, coklat, atau hitam pada pelepah
-                  daun, dapat meluas hingga membusukkan batang dan menyebabkan
-                  bulir hampa
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingEight">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseEight"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                  >
-                    Tanaman mudah rebah
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseEight"
-                class="collapse"
-                aria-labelledby="headingEight"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Batang padi roboh sebelum panen akibat batang lemah, akar
-                  dangkal, atau faktor cuaca seperti angin dan hujan
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingNine">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseNine"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                  >
-                    Bulir padi hampa
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseNine"
-                class="collapse"
-                aria-labelledby="headingNine"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Gabah kosong tanpa isi, biasanya berwarna putih pucat dan
-                  malai tampak tegak
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div class="card-header" id="headingTen">
-                <h2 class="mb-0">
-                  <button
-                    class="btn font-weight-bold btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseTen"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                  >
-                    Pertumbuhan terhambat
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseTen"
-                class="collapse"
-                aria-labelledby="headingTen"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Tinggi tanaman, jumlah anakan, dan perkembangan daun tidak
-                  optimal dibandingkan fase pertumbuhan normal
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
       <div class="container">
