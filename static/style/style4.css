@@ -1,27 +1,40 @@
-/* FONT */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
 /* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
 html {
   overflow-y: scroll !important;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-/* BODY */
 body {
   background: linear-gradient(to right, #e8f5e9, #ffffff);
-  padding-top: 80px;
 }
 
-/* NAVBAR */
+#hero {
+  padding-top: 25px;
+  padding-bottom: 5px;
+  background: linear-gradient(to right, #e8f5e9, #ffffff);
+}
+#wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#penyakit {
+  margin-top: 20px;
+}
+
 .navbar {
+  margin-top: 15px;
   background-color: white;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -31,90 +44,120 @@ body {
   z-index: 1000;
 }
 
-.navbar-brand h3 {
-
-  font-weight: 500;
-}
-
-/* MENU */
-.nav-link {
-  color: black;
-  font-weight: 400;
-  
-  transition: 0.3s;
-}
-
 .nav-link:hover {
-    color: #2f9e44 !important;
-    transform: translateY(-2px);
+  color: #2f9e44 !important;
+  transform: translateY(-2px);
 }
 
-.nav-link.active {
-  color: #28a745;
-  font-weight: 600;
+.isi:hover a {
+  background-color: rgb(35, 87, 155);
+  color: #ffff;
 }
 
-/* BUTTON HIJAU */
-.btn-diagnosis {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 22px;
-  border-radius: 12px;
-  font-weight: 500;
-  border: none;
-  transition: 0.3s;
-}
-
-.btn-diagnosis:hover {
-  background-color: #218838;
-}
-
-/* JUDUL */
-.title {
-  font-weight: 500;
-}
-
-/* ACCORDION */
-.accordion-item {
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 12px;
-  border: 1px solid #ddd;
-}
-
-.accordion-button {
-  font-weight: 500;
-  background-color: #f8f9fa;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #e8f5e9;
-  color: #28a745;
-}
-
-.accordion-body {
-  background-color: #ffffff;
-}
-
-.accordion img {
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
+  box-shadow: 0 6px 20px rgba(209, 247, 207, 0.1);
   transition: 0.3s;
 }
 
-.accordion img:hover {
-  transform: scale(1.05);
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
-/* FOOTER */
-footer {
-  font-size: 14px;
-  color: #555;
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .btn-diagnosis {
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.col {
+  margin-bottom: 20px;
+}
+
+.kiri {
+  margin: 1%;
+  margin-top: auto;
+  width: 15%;
+  height: auto;
+  border-radius: 5px 5px 5px 5px;
+  float: left;
+}
+
+.kanan {
+  margin: 1%;
+  margin-top: auto;
+  width: 75%;
+  height: auto;
+  float: left;
+}
+
+.teks {
+  font-size: medium;
+}
+
+.heading {
+  font-size: 4em;
+}
+.sub-heading {
+  font-size: 3em;
+}
+
+.col label {
+  font-weight: 400;
+  color: #2f281e;
+}
+
+.btn-register {
+  border-radius: 10px;
+  margin: 20px 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.btn-primary {
+  background: #a5e68d50;
+  border: none;
+  color: green;
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  background: #2f9825;
+  border: 0px;
+}
+.btn-success {
+  background: #00d25b50;
+  border: none;
+  color: #00d25b;
+  border-radius: 10px;
+}
+.margin-top {
+  margin-top: 1em;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: green;
+  border: 0px;
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .card {
     margin-top: 10px;
+    margin-left: 0 !important;
   }
 }
