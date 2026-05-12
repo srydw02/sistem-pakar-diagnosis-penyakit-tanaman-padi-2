@@ -264,11 +264,20 @@ section {
 .info h1 {
   font-weight: 700;
 }
+
+.info h1{
+    margin-bottom: 0px;
+}
+
+.info p{
+    margin-bottom: 0;
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: 220px;
-   
+    gap: 1rem;
 }
 
 @media (min-width: 768px) {
