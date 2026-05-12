@@ -8,7 +8,7 @@ html {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   /* scroll-behavior: smooth; (iki surya) */
-  color: #2F281E; 
+  color: #2F281E;
 }
 
 /* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
@@ -23,7 +23,7 @@ html {
   height: auto;
   border-radius: 5px;
   float: left;
-  background-color: #f9f7f2; 
+  background-color: #f9f7f2;
 }
 
 .kanan {
@@ -36,7 +36,7 @@ html {
 
 .teks {
   font-size: medium;
-  color: #5d4037; 
+  color: #5d4037;
 }
 
 .nav-link {
@@ -44,18 +44,18 @@ html {
 }
 
 .isi:hover a {
-  background-color: #4E9258; 
+  background-color: #4E9258;
   color: #ffffff;
 }
 
 .heading {
   font-size: 4em;
-  color: #2E5A27; 
+  color: #2E5A27;
 }
 
 .sub-heading {
   font-size: 3em;
-  color: #A67B5B; 
+  color: #A67B5B;
 }
 
 .navbar {
@@ -63,7 +63,6 @@ html {
   background-color: #ffff;
   box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
   position: sticky;
-
   top: 0px;
   margin-top: 0px;
   z-index: 1000;
@@ -80,16 +79,19 @@ html {
   font-size: 16px;
   font-weight: 400;
 }
+
 .btn-primary {
   background: #a5e68d50;
   border: none;
   color: green;
   border-radius: 10px;
 }
+
 .btn-primary:hover {
   background: #066d33;
   border: 0px;
 }
+
 .btn-success {
   background: #00d25b50;
   border: none;
@@ -97,16 +99,13 @@ html {
   border-radius: 10px;
 }
 
-
-
-
 a {
-    color: #4E9258;
-    text-decoration: none;
+  color: #4E9258;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #F4C430; 
+  color: #F4C430;
 }
 
 @media screen and (max-width: 600px) {
@@ -114,6 +113,7 @@ a:hover {
     margin-left: 0px;
     margin-right: 0px;
   }
+
   img {
     width: 300px;
   }
@@ -126,6 +126,7 @@ a:hover {
     margin-top: 10px;
     margin-left: 0 !important;
   }
+
   .navbar {
     margin-left: 0px;
     margin-right: 0px;
@@ -136,12 +137,33 @@ section .container {
   padding-top: 40px;
 }
 
-/*surya hama*/
-/* tombol lihat informasi bar diagnosis*/
+/* surya hama */
+/* tombol lihat informasi bar diagnosis */
 .btn-lihat-info {
-    background-color: green !important; 
-    color: #ffffff !important;
-    border-radius: 5px;
-    border: none;
-    transition: 0.3s ease-in-out;
+  background-color: green !important;
+  color: #ffffff !important;
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2E5A27;
+  padding: 30px;
+  color: #ffffff;
+}
+
+footer h5 {
+  color: #ffffff; /* tulisan Tentang & Link */
+  margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: #ffffff;
 }
