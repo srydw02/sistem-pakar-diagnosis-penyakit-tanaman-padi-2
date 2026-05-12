@@ -161,3 +161,101 @@ a:hover {
     margin-left: 0 !important;
   }
 }
+/* =========================
+   NAVBAR (COPAS DARI STYLE 2)
+========================= */
+.navbar {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  padding: 14px 0;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b8f1f;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 8px;
+}
+
+.nav-link {
+  position: relative;
+  color: #222 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 6px !important;
+}
+
+.nav-link:hover {
+  color: #2f9e44 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #2f9e44 !important;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2f9e44;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.nav-link.active::before {
+  width: 70%;
+}
+
+.btn-primary {
+  background: #d8f5cf;
+  border: none;
+  color: #0b8f1f;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #2f9825;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-register {
+  border-radius: 14px;
+  padding: 10px 22px !important;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(47, 158, 68, 0.25);
+}
+
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
