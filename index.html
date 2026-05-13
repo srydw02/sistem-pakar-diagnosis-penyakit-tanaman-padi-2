@@ -605,7 +605,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
 
-    <script>
+    <!-- <script>
         const navLinks = document.querySelectorAll(".nav-link");
 
         // default home aktif
@@ -622,7 +622,58 @@
                 this.classList.add("active");
             });
         });
-    </script>
-</body>
+    </script> --> <!--dibungkam surya-->
 
+    <script>
+        // --- Fitur Scrollspy untuk Navbar Dinamis ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil semua section yang punya ID
+            const sections = document.querySelectorAll('section[id]');
+            // Ambil semua link navigasi di navbar
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            function scrollSpy() {
+                // Posisi scroll saat ini (ditambah sedikit offset agar perubahan lebih awal)
+                let currentScroll = window.scrollY || document.documentElement.scrollTop;
+                // Offset bisa disesuaikan, biasanya sama dengan tinggi navbar (misal 150px)
+                let scrollPosition = currentScroll + 150; 
+
+                // Lakukan pengecekan untuk setiap section
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop; // Posisi atas section
+                    const sectionHeight = section.offsetHeight; // Tinggi section
+                    const sectionId = section.getAttribute('id'); // ID section (misal: 'berita')
+
+                    // Jika posisi scroll ada di dalam area section ini
+                    if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+                        // 1. Hapus class 'active' dari semua link
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+
+                        // 2. Tambahkan class 'active' HANYA ke link yang href-nya sesuai dengan sectionId
+                        // Gunakan querySelector untuk mencari link spesifik tersebut
+                        let activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
+                        
+                        // Validasi untuk mencegah error jika link dengan href="#home" tidak ditemukan (karena href-nya bisa beda misal "/")
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        } else if (sectionId === 'home') {
+                             // Penanganan khusus jika href untuk home bukan "#home" melainkan "/" atau kosong
+                            let homeLink = document.querySelector('.navbar-nav .nav-link');
+                            if(homeLink) homeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            // Jalankan fungsi scrollSpy setiap kali user melakukan scroll
+            window.addEventListener('scroll', scrollSpy);
+            
+            // Jalankan sekali saat halaman pertama kali dimuat (untuk set status awal)
+            scrollSpy(); 
+        });
+    </script>
+
+</body>
 </html>
