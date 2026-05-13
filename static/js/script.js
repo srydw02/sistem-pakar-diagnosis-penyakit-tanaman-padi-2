@@ -41,7 +41,7 @@ function forwardChaining(faktaTerpilih) {
   return hasil;
 }
 
-// --- UPDATE FUNGSI TAMPILKAN PERTANYAAN ---
+// --- UPDATE FUNGSI TAMPILKAN PERTANYAAN DENGAN RATIO TERKUNCI & MARGIN ---
 function tampilkanPertanyaan() {
   let gejalaContainer = document.getElementById('gejala-list');
   gejalaContainer.innerHTML = '';
@@ -62,19 +62,51 @@ function tampilkanPertanyaan() {
         '<div class="progress-bar bg-success" style="width:' + persenProgress + '%"></div>' +
       '</div>' +
       '<p class="text-muted mb-2" style="font-size:0.85rem;">Pertanyaan ' + nomorSoal + ' dari ' + total + '</p>' +
-      '<div class="card p-3 text-center border-0 shadow-sm">' +
-        '<img src="' + dataGejala.gambar + '" class="img-fluid mb-3 rounded" style="max-height:400px; object-fit: cover;">' +
-        '<h5 class="mb-2">' + dataGejala.teks + '</h5>' +
-        '<p class="text-muted small">' + dataGejala.keterangan + '</p>' +
-        
-        // Tombol Ya/Tidak untuk Auto-Advance
-        '<div class="d-flex justify-content-center gap-3 mt-3">' +
-          '<button type="button" class="btn btn-outline-success px-5 py-2" onclick="pilihGejala(true)">Ya</button>' +
-          '<button type="button" class="btn btn-outline-danger px-5 py-2" onclick="pilihGejala(false)">Tidak</button>' +
+      
+      // Menambah padding pada card (p-4) agar space putih lebih luas
+      '<div class="card p-4 text-center border-0 shadow-sm" style="border-radius: 15px;">' +
+
+        // --- BUNGKUSAN GAMBAR (CONTAINER) ---
+        // width: 92% memberikan margin kiri-kanan
+        // aspect-ratio: 4/3 mengunci rasio sesuai garis putih (bisa diganti 1/1 jika ingin kotak sempurna)
+        // margin: 15px auto memberikan jarak atas agar seimbang dengan space putih header
+        '<div style="position: relative; overflow: hidden; border-radius: 12px; margin: 15px auto 20px auto; width: 92%; aspect-ratio: 4 / 3; background-color: #f8f9fa;">' +
+          
+          '<img src="' + dataGejala.gambar + '" style="width: 100%; height: 100%; object-fit: cover; display: block;">' +
+
+          // OVERLAY KIRI (YA)
+          '<div onclick="pilihGejala(true)" ' +
+               'onmouseenter="this.style.opacity=\'1\'" ' +
+               'onmouseleave="this.style.opacity=\'0\'" ' +
+               'style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; ' +
+               'background-color: rgba(40, 167, 69, 0.85); color: white; display: flex; ' +
+               'align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; ' +
+               'opacity: 0; transition: opacity 0.3s ease; cursor: pointer;">' +
+            'YA' +
+          '</div>' +
+
+          // OVERLAY KANAN (TIDAK)
+          '<div onclick="pilihGejala(false)" ' +
+               'onmouseenter="this.style.opacity=\'1\'" ' +
+               'onmouseleave="this.style.opacity=\'0\'" ' +
+               'style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; ' +
+               'background-color: rgba(220, 53, 69, 0.85); color: white; display: flex; ' +
+               'align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; ' +
+               'opacity: 0; transition: opacity 0.3s ease; cursor: pointer;">' +
+            'TIDAK' +
+          '</div>' +
+
         '</div>' +
+        // --- AKHIR BUNGKUSAN GAMBAR ---
+
+        '<h5 class="mb-2" style="font-weight: 600;">' + dataGejala.teks + '</h5>' +
+        '<p class="text-muted small px-3">' + dataGejala.keterangan + '</p>' +
+        
+        '<p class="text-primary small mt-3 mb-0" style="font-weight: 500; font-size: 0.75rem;">' +
+          'Klik sisi kiri gambar (YA) atau sisi kanan (TIDAK)' +
+        '</p>' +
       '</div>' +
       
-      // Tombol Selanjutnya dihapus, hanya menyisakan Kembali
       '<div class="mt-4">' +
         '<button type="button" class="btn btn-light text-muted" onclick="prevQuestion()" ' + disableKembali + '>← Kembali</button>' +
       '</div>';
