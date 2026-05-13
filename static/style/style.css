@@ -207,7 +207,7 @@ section {
 /* =========================
    BERITA
 ========================= */
-.berita {
+/* .berita {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -255,7 +255,7 @@ section {
     background: #f4fbf4;
     border-top: 1px solid #e6f3e6;
     font-size: .82rem;
-}
+} */ /*dibungkam srya*/
 
 /* =========================
    INFORMASI
@@ -650,3 +650,179 @@ footer hr {
         line-height: 1.7;
     }
 }
+
+/* =========================================================================
+   BAGIAN BERITA (GRID KARTU & TOMBOL) - DITAMBAHKAN DARI UPDATE HALAMAN BERITA
+========================================================================= */
+
+/* Animasi Muncul (Fade In) */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+.delay-1 { animation-delay: 0.2s; opacity: 0; }
+.delay-2 { animation-delay: 0.4s; opacity: 0; }
+.delay-3 { animation-delay: 0.6s; opacity: 0; }
+
+/* Grid Berita Card */
+.news-card {
+    background: white; 
+    border: 1px solid rgba(0,0,0,0.03); 
+    border-radius: 20px; 
+    transition: all 0.4s ease; 
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    overflow: hidden;
+    text-align: left; /* Memastikan teks di dalam kartu rata kiri */
+}
+
+.news-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 35px rgba(45, 106, 79, 0.15); /* Hover Shadow Hijau Lembut */
+    border-color: rgba(116, 198, 157, 0.2);
+}
+
+.news-card-img-wrapper { 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.news-card img { 
+    height: 220px; 
+    object-fit: cover; 
+    width: 100%; 
+    transition: transform 0.5s ease; 
+    background: #e0e0e0;
+}
+
+.news-card:hover img { 
+    transform: scale(1.08); /* Efek gambar membesar */
+}
+
+/* Glassmorphism Badges untuk Label Kategori */
+.badge-overlay {
+    position: absolute; 
+    top: 15px; 
+    left: 15px;
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    font-weight: 700; 
+    border-radius: 10px; 
+    padding: 6px 12px; 
+    font-size: 0.8rem;
+    z-index: 10;
+}
+
+.badge-hama { background: rgba(254, 226, 226, 0.85); color: #dc2626; border: 1px solid rgba(254, 202, 202, 0.5); }
+.badge-tips { background: rgba(220, 252, 231, 0.85); color: #16a34a; border: 1px solid rgba(187, 247, 208, 0.5); }
+.badge-pasar { background: rgba(254, 249, 195, 0.85); color: #854d0e; border: 1px solid rgba(254, 240, 138, 0.5); }
+
+.card-title { 
+    font-weight: 800; 
+    line-height: 1.4; 
+    font-size: 1.15rem; 
+    margin-top: 10px; 
+    color: #1b4332;
+}
+
+.read-link { 
+    color: #74c69d; /* Warna Aksen Hijau */
+    font-weight: 700; 
+    transition: 0.3s; 
+}
+
+.news-card:hover .read-link { 
+    color: #2d6a4f; /* Berubah jadi hijau tua saat kartu di-hover */
+}
+
+/* Tombol Load More Berita */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(116, 198, 157, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(116, 198, 157, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(116, 198, 157, 0); }
+}
+
+.btn-load-more {
+    background: white; 
+    color: #2d6a4f;
+    border: 2px solid #2d6a4f; 
+    border-radius: 50px;
+    padding: 12px 35px; 
+    font-weight: 800; 
+    width: 100%; 
+    max-width: 300px;
+    transition: all 0.3s; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-load-more:hover { 
+    background: linear-gradient(135deg, #2d6a4f, #40916c);
+    color: white; 
+    border-color: transparent;
+    animation: pulseGlow 1.5s infinite;
+}
+
+/* =========================================
+   HEADLINE CARD BESAR (KARTU UTAMA)
+========================================= */
+.headline-card {
+    background: white; 
+    border-radius: 24px; 
+    overflow: hidden;
+    /* Ini bayangan yang bikin efek ada kartu di belakangnya */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 60px;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.headline-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(45, 106, 79, 0.15); 
+}
+
+.headline-card .img-wrapper { 
+    overflow: hidden; 
+    height: 100%; 
+}
+
+.headline-img { 
+    width: 100%; 
+    height: 100%; 
+    min-height: 350px;
+    object-fit: cover; 
+    transition: transform 0.7s ease; 
+    background: #e0e0e0;
+}
+
+.headline-card:hover .headline-img { 
+    transform: scale(1.05); 
+}
+
+/* Tombol Baca Selengkapnya di Kartu Besar */
+.btn-read-more {
+    background: #d8f3dc; 
+    color: #2d6a4f;
+    font-weight: 700; 
+    border-radius: 12px; 
+    padding: 12px 24px;
+    transition: all 0.3s; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.btn-read-more:hover { 
+    background: #2d6a4f; 
+    color: white; 
+    text-decoration: none; 
+}
+
+.btn-read-more i { transition: transform 0.3s; }
+.btn-read-more:hover i { transform: translateX(5px); }

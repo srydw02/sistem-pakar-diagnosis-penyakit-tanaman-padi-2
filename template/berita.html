@@ -1,19 +1,147 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-     <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon"> 
+    <link rel="shortcut icon" href="../gambar/icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/static/style/style.css">
-    <title>Sistem Pakar Penyakit Padi</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="stylesheet" href="../static/style/style.css">
+
+    <title>Berita - Sistem Pakar Penyakit Padi</title>
+
+    <style>
+        /* Background halaman agak abu-abu / hijau sangat muda agar kartu putih terlihat menonjol */
+        body {
+            background-color: #f8fafc; 
+        }
+
+        /* Styling Header Section */
+        .berita-header {
+            margin-top: 100px; /* Jarak dari fixed navbar */
+            margin-bottom: 50px;
+        }
+        .garis-bawah-hijau {
+            width: 80px;
+            height: 4px;
+            background-color: #28a745;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Styling Kartu Berita ala Botani */
+        .botani-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.5s ease;
+            overflow: hidden; /* Mencegah gambar tumpah saat di-zoom */
+            background-color: white;
+        }
+        
+        /* Efek saat kartu disentuh mouse */
+        .botani-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+
+        /* Bungkus Gambar */
+        .botani-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        .botani-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease-in-out;
+        }
+        
+        /* Efek gambar membesar saat kartu disentuh */
+        .botani-card:hover .botani-img {
+            transform: scale(1.05);
+        }
+
+        /* Gradien hitam transparan di atas gambar (untuk alas teks tanggal) */
+        .botani-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            pointer-events: none;
+        }
+
+        /* Teks Tanggal */
+        .botani-date {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 0.85rem;
+            z-index: 2;
+        }
+
+        /* Konten Teks di bawah gambar */
+        .botani-card-body {
+            padding: 1.5rem;
+        }
+        .botani-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #343a40;
+            transition: color 0.3s ease;
+            margin-bottom: 0.75rem;
+        }
+        .botani-card:hover .botani-title {
+            color: #28a745; /* Berubah hijau saat hover */
+        }
+        
+        /* Memotong teks panjang menjadi 3 baris */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Link "Baca selengkapnya" */
+        .botani-link {
+            display: inline-flex;
+            align-items: center;
+            color: #28a745;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .botani-link:hover {
+            color: #1e7e34;
+            text-decoration: none;
+        }
+        .botani-link i {
+            transition: transform 0.3s ease;
+        }
+        /* Ikon panah bergeser ke kanan saat disentuh */
+        .botani-card:hover .botani-link i {
+            transform: translateX(5px);
+        }
+    </style>
 </head>
+
 <body>
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
         <div class="container-xl">
-            <a class="navbar-brand">
-                <h3 style="color: green;">SiPadi</h3>
+            <a class="navbar-brand" href="/">
+                <h3 style="color: green; margin-bottom:0;">SiPadi</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,105 +150,131 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/index.html">Home</a>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="/#home">Home</a>
                     </li>
-
                     <li class="nav-item align-self-center active">
-                        <a class="nav-link active" href="#berita">Berita</a>
+                        <a class="nav-link active" href="/template/berita.html">Berita</a>
                     </li>
-
-                    <li class="nav-item align-self-center active">
+                    <li class="nav-item align-self-center">
                         <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
                     </li>
-
-                    <li class="nav-item align-self-center active">
+                    <li class="nav-item align-self-center">
                         <a class="nav-link" href="/template/informasi.html">Informasi</a>
                     </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">
                             Diagnosis
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="container-xl">
+        <div class="berita-header text-center animate-fade-up">
+            <h1 class="font-weight-bold" style="color: #2e7d32;">Berita Terkini</h1>
+            <p class="text-muted mb-4">Temukan informasi terbaru seputar dunia pertanian padi dan kesehatan tanaman.</p>
+            <div class="garis-bawah-hijau"></div>
+        </div>
 
+        <div class="row pb-5">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card botani-card h-100">
+                    <div class="botani-img-wrapper">
+                        <img src="../static/images/fotoJenisPadi/IR64.png" alt="Berita 1" class="botani-img">
+                        <div class="botani-img-overlay"></div>
+                        <div class="botani-date">
+                            <i class="far fa-calendar-alt mr-1"></i> 14 Jul 2025
+                        </div>
+                    </div>
+                    <div class="botani-card-body d-flex flex-column">
+                        <h2 class="botani-title">Waspadai Serangan Blast Padi di Musim Hujan yang Semakin Ekstrem</h2>
+                        <p class="line-clamp-3">Penyakit blast yang disebabkan jamur Pyricularia oryzae meningkat drastis saat kelembaban tinggi di musim hujan. Para petani dihimbau untuk selalu memeriksa kondisi daun secara berkala dan memastikan drainase sawah berjalan dengan baik.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="botani-link">
+                                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
 
-      <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
-          <div class="container">
-              <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card botani-card h-100">
+                    <div class="botani-img-wrapper">
+                        <img src="../static/images/fotoJenisPadi/ciherang.png" alt="Berita 2" class="botani-img">
+                        <div class="botani-img-overlay"></div>
+                        <div class="botani-date">
+                            <i class="far fa-calendar-alt mr-1"></i> 10 Jul 2025
+                        </div>
+                    </div>
+                    <div class="botani-card-body d-flex flex-column">
+                        <h2 class="botani-title">5 Cara Efektif Mencegah Penyakit Hawar Daun Bakteri Sejak Dini</h2>
+                        <p class="line-clamp-3">Hawar daun bakteri (HDB) dapat menurunkan hasil panen secara signifikan hingga 50%. Simak langkah pencegahan yang bisa dilakukan petani mulai dari pemilihan bibit unggul hingga manajemen pengairan lahan.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="botani-link">
+                                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <article class="card botani-card h-100">
+                    <div class="botani-img-wrapper">
+                        <img src="../static/images/fotoJenisPadi/pandan.png" alt="Berita 3" class="botani-img">
+                        <div class="botani-img-overlay"></div>
+                        <div class="botani-date">
+                            <i class="far fa-calendar-alt mr-1"></i> 05 Jul 2025
+                        </div>
+                    </div>
+                    <div class="botani-card-body d-flex flex-column">
+                        <h2 class="botani-title">Sistem Pakar Bantu Petani Deteksi Penyakit Lebih Cepat dan Akurat</h2>
+                        <p class="line-clamp-3">Penerapan teknologi sistem pakar berbasis web dengan metode Forward Chaining terbukti membantu petani mengidentifikasi penyakit padi 3x lebih cepat dibanding metode konvensional. Inovasi ini disambut baik oleh kelompok tani.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="botani-link">
+                                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
+        <div class="container-fluid px-5">
+            <div class="row">
                 <div class="col-lg-7 col-md-6">
                     <h5 class="fw-bold mb-3">Tentang</h5>
-                    <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
-                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada tanaman padi berdasarkan gejala yang muncul. 
-                        Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani dapat mengambil tindakan yang tepat 
-                        untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
+                    <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white !important;">
+                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada
+                        tanaman padi berdasarkan gejala yang muncul. Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya.
                     </p>
                 </div>
 
                 <div class="col-lg-4 col-md-6 offset-lg-1">
                     <h5 class="fw-bold mb-3">Link</h5>
-                    <ul class="list-unstyled" style="color: white;">
-                        <li class="mb-2">
-                            <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/metode.html" class="text-secondary text-decoration-none">Metode</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis Padi</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi Penyakit</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman Diagnosis</a>
-                        </li>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-secondary text-decoration-none" style="color: white !important;">Home</a></li>
+                        <li class="mb-2"><a href="/template/berita.html" class="text-secondary text-decoration-none" style="color: white !important;">Berita</a></li>
+                        <li class="mb-2"><a href="/template/jenisPadi.html" class="text-secondary text-decoration-none" style="color: white !important;">Jenis Padi</a></li>
+                        <li class="mb-2"><a href="/template/informasi.html" class="text-secondary text-decoration-none" style="color: white !important;">Informasi Penyakit</a></li>
                     </ul>
                 </div>
-          </div>
-
-          <hr class="my-2 border-secondary">
-              
-          <div class="text-center">
-              <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
-          </div>
-
+            </div>
+            <hr class="my-2 border-secondary">
+            <div class="text-center">
+                <p class="small text-secondary mb-0" style="color: white !important;">&copy; 2026 Sistem Pakar Padi</p>
+            </div>
         </div>
-      </footer>
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
- <script>
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        // default home aktif
-        document.querySelector('a[href="#berita"]').classList.add("active");
-
-        // pindah active saat diklik
-        navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-
-                navLinks.forEach(item => {
-                    item.classList.remove("active");
-                });
-
-                this.classList.add("active");
-            });
-        });
-    </script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
