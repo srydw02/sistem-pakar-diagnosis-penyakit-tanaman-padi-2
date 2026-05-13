@@ -41,6 +41,7 @@ function forwardChaining(faktaTerpilih) {
   return hasil;
 }
 
+// --- UPDATE FUNGSI TAMPILKAN PERTANYAAN ---
 function tampilkanPertanyaan() {
   let gejalaContainer = document.getElementById('gejala-list');
   gejalaContainer.innerHTML = '';
@@ -50,17 +51,6 @@ function tampilkanPertanyaan() {
     let dataGejala = knowledgeBase.gejala[kode];
     let nomorSoal  = currentGejalaIndex + 1;
     let total      = gejalaKeys.length;
-
-    let sudahJawabYa    = selectedGejala.includes(kode);
-    let sudahJawabTidak = selectedGejala.includes('!' + kode);
-
-    let atributYa    = '';
-    let atributTidak = '';
-    if (sudahJawabYa)    atributYa    = 'checked';
-    if (sudahJawabTidak) atributTidak = 'checked';
-
-    let labelTombol = 'Selanjutnya';
-    if (nomorSoal === total) labelTombol = 'Lihat Hasil';
 
     let disableKembali = '';
     if (currentGejalaIndex === 0) disableKembali = 'disabled';
@@ -72,52 +62,76 @@ function tampilkanPertanyaan() {
         '<div class="progress-bar bg-success" style="width:' + persenProgress + '%"></div>' +
       '</div>' +
       '<p class="text-muted mb-2" style="font-size:0.85rem;">Pertanyaan ' + nomorSoal + ' dari ' + total + '</p>' +
-      '<div class="card p-3 text-center">' +
-        '<img src="' + dataGejala.gambar + '" class="img-fluid mb-3 rounded" style="max-height:500px;">' +
+      '<div class="card p-3 text-center border-0 shadow-sm">' +
+        '<img src="' + dataGejala.gambar + '" class="img-fluid mb-3 rounded" style="max-height:400px; object-fit: cover;">' +
         '<h5 class="mb-2">' + dataGejala.teks + '</h5>' +
-        '<p class="text-muted">' + dataGejala.keterangan + '</p>' +
-        '<div class="d-flex justify-content-center gap-4" style="font-size:1.1rem;">' +
-          '<label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;margin-right:8px;">' +
-            '<input type="checkbox" id="jawab-ya" ' + atributYa + ' onclick="toggleCheckbox(this,\'ya\')" style="width:18px;height:18px;"> Ya' +
-          '</label>' +
-          '<label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer;">' +
-            '<input type="checkbox" id="jawab-tidak" ' + atributTidak + ' onclick="toggleCheckbox(this,\'tidak\')" style="width:18px;height:18px;"> Tidak' +
-          '</label>' +
+        '<p class="text-muted small">' + dataGejala.keterangan + '</p>' +
+        
+        // Tombol Ya/Tidak untuk Auto-Advance
+        '<div class="d-flex justify-content-center gap-3 mt-3">' +
+          '<button type="button" class="btn btn-outline-success px-5 py-2" onclick="pilihGejala(true)">Ya</button>' +
+          '<button type="button" class="btn btn-outline-danger px-5 py-2" onclick="pilihGejala(false)">Tidak</button>' +
         '</div>' +
       '</div>' +
-      '<div class="mt-3 d-flex justify-content-between">' +
-        '<button type="button" class="btn btn-secondary" onclick="prevQuestion()" ' + disableKembali + '>Kembali</button>' +
-        '<button type="button" class="btn btn-primary" onclick="nextQuestion()">' + labelTombol + '</button>' +
+      
+      // Tombol Selanjutnya dihapus, hanya menyisakan Kembali
+      '<div class="mt-4">' +
+        '<button type="button" class="btn btn-light text-muted" onclick="prevQuestion()" ' + disableKembali + '>← Kembali</button>' +
       '</div>';
   } else {
     prosesDiagnosis();
   }
 }
 
-function toggleCheckbox(clicked, tipe) {
-  let ya    = document.getElementById('jawab-ya');
-  let tidak = document.getElementById('jawab-tidak');
+// Catatan: Fungsi nextQuestion() dan toggleCheckbox() sudah tidak diperlukan lagi dan bisa dihapus.
 
-  if (tipe === 'ya' && clicked.checked) {
-    tidak.checked = false;
-  }
-  if (tipe === 'tidak' && clicked.checked) {
-    ya.checked = false;
-  }
-}
+// function toggleCheckbox(clicked, tipe) {
+//   let ya    = document.getElementById('jawab-ya');
+//   let tidak = document.getElementById('jawab-tidak');
 
-function nextQuestion() {
-  let ya    = document.getElementById('jawab-ya');
-  let tidak = document.getElementById('jawab-tidak');
+//   if (tipe === 'ya' && clicked.checked) {
+//     tidak.checked = false;
+//   }
+//   if (tipe === 'tidak' && clicked.checked) {
+//     ya.checked = false;
+//   }
+// }
 
-  if (ya.checked === false && tidak.checked === false) {
-    alert('Silakan pilih jawaban Ya atau Tidak sebelum melanjutkan!');
-    return;
-  }
+// function nextQuestion() {
+//   let ya    = document.getElementById('jawab-ya');
+//   let tidak = document.getElementById('jawab-tidak');
 
-  let kode = gejalaKeys[currentGejalaIndex];
-  let jawabanBersih = [];
+//   if (ya.checked === false && tidak.checked === false) {
+//     alert('Silakan pilih jawaban Ya atau Tidak sebelum melanjutkan!');
+//     return;
+//   }
+
+//   let kode = gejalaKeys[currentGejalaIndex];
+//   let jawabanBersih = [];
   
+//   for (let i = 0; i < selectedGejala.length; i++) {
+//     if (selectedGejala[i] !== kode && selectedGejala[i] !== '!' + kode) {
+//       jawabanBersih.push(selectedGejala[i]);
+//     }
+//   }
+//   selectedGejala = jawabanBersih;
+
+//   if (ya.checked) {
+//     selectedGejala.push(kode);
+//   } else {
+//     selectedGejala.push('!' + kode);
+//   }
+
+//   currentGejalaIndex++;
+//   tampilkanPertanyaan();
+// }
+
+// --- FUNGSI BARU UNTUK PILIH GEJALA OTOMATIS ---
+function pilihGejala(isYa) {
+  let kode = gejalaKeys[currentGejalaIndex];
+  
+  // Bersihkan jawaban sebelumnya untuk gejala ini jika ada
+  let jawabanBersih = [];
   for (let i = 0; i < selectedGejala.length; i++) {
     if (selectedGejala[i] !== kode && selectedGejala[i] !== '!' + kode) {
       jawabanBersih.push(selectedGejala[i]);
@@ -125,12 +139,14 @@ function nextQuestion() {
   }
   selectedGejala = jawabanBersih;
 
-  if (ya.checked) {
+  // Masukkan jawaban baru
+  if (isYa) {
     selectedGejala.push(kode);
   } else {
     selectedGejala.push('!' + kode);
   }
 
+  // Otomatis maju ke pertanyaan berikutnya
   currentGejalaIndex++;
   tampilkanPertanyaan();
 }
