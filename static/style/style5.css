@@ -1,56 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+
+/* 
+================================================================
+    YANG MENGGUNAKAN CSS INI ADALAH HALAMAN DIAGNOSIS
+================================================================ */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: #2F281E;
+  
+}
+
+/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman */
+html {
+  overflow-y: scroll !important;
+}
+
+/* Biar konten web tidak "nyelip" atau tenggelam di bawah navbar yang fixed */
 body {
-    background: linear-gradient(to bottom, #ffffff, #e8f5e9);
-    font-family: "Poppins", sans-serif;
-    color: #2f281e;
-    /* Tambahan jarak atas agar konten tidak tertabrak navbar fixed-top */
-    padding-top: 100px; 
-    padding-bottom: 60px;
-    overflow-y: scroll !important;
+  padding-top: 80px; 
+  background: linear-gradient(to bottom, #e8f5e9, #ffffff);
 }
 
 /* =========================
-   NAVBAR (COPAS DARI STYLE 2)
+   NAVBAR (STYLE SAMA DENGAN HALAMAN UTAMA & ANTI GESER)
 ========================= */
 .navbar {
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
-    padding: 14px 0;
+    padding: 15px 0 !important; /* Kunci ukuran navbar */
     box-shadow: 0 4px 25px rgba(0,0,0,0.07);
     transition: 0.3s ease;
-    z-index: 1000;
+    z-index: 1030;
 }
-
 .navbar-brand h3 {
     margin: 0;
     font-size: 2rem;
     font-weight: 700;
     color: #0b8f1f;
 }
-
 .navbar-nav .nav-item {
     margin: 0 8px;
 }
-
 .nav-link {
     position: relative;
     color: #222 !important;
     font-weight: 500;
     transition: all .3s ease;
     padding: 8px 6px !important;
+    text-align: left;
 }
-
 .nav-link:hover {
     color: #2f9e44 !important;
     transform: translateY(-2px);
 }
 
+/* Trik font-weight 500 + text-shadow agar tebal tapi tidak bikin navbar geser */
 .nav-link.active {
     color: #2f9e44 !important;
-    font-weight: 600;
+    font-weight: 500; 
+    text-shadow: 0 0 1px #2f9e44; 
 }
 
+/* Animasi titik hijau di bawah menu */
 .nav-link::after {
     content: "";
     position: absolute;
@@ -71,168 +90,176 @@ body {
     opacity: 1;
 }
 
-.nav-link.active::before { width: 70%; }
-
-.btn-primary {
-    background: #d8f5cf;
-    border: none;
-    color: #0b8f1f;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: #2f9825;
-    color: white;
-    transform: translateY(-2px);
-}
-
 .btn-register {
     border-radius: 14px;
     padding: 10px 22px !important;
+    margin: 0 0 0 10px !important; /* Mencegah margin bawaan yang bikin navbar melar */
     font-weight: 500;
+    font-size: 16px;
     transition: .3s ease;
+    background: #d8f5cf; /* Warna tombol navbar */
+    color: #0b8f1f;
 }
 
 .btn-register:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(47,158,68,.25);
-}
-
-.navbar-toggler { border: none; }
-.navbar-toggler:focus { outline: none; box-shadow: none; }
-
-/* =========================
-   DETAIL LAYOUT (GAMBAR & SPEK)
-========================= */
-.detail-header {
-    text-align: center;
-    padding: 10px 20px 30px;
-}
-
-.detail-header h1 {
-    color: #0b8f1f;
-    font-weight: 700;
-    font-size: 2.8rem;
-    margin-bottom: 5px;
-    text-transform: capitalize;
-}
-
-.detail-header p {
-    color: #555;
-    font-size: 1.1rem;
-}
-
-.detail-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Pembungkus Gambar dan Kartu Spesifikasi (Flexbox) */
-.detail-main-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: flex-start;
-    margin-bottom: 40px;
-}
-
-.detail-image-wrapper {
-    flex: 1;
-    min-width: 300px;
-}
-
-.detail-image-wrapper img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border: 5px solid white;
-}
-
-.specs-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    min-width: 300px;
-}
-
-.spec-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 15px;
-    box-shadow: 0 6px 20px rgba(47, 158, 68, 0.05);
-    text-align: center;
-    border-bottom: 4px solid #28a745;
-    transition: 0.3s;
-}
-
-.spec-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(47, 158, 68, 0.15);
-}
-
-.spec-card h4 {
-    color: #888;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.spec-card p {
-    color: #0b8f1f;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* =========================
-   KONTEN DESKRIPSI
-========================= */
-.detail-content {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    line-height: 1.8;
-    color: #444;
-    text-align: justify;
-}
-
-.detail-content h3 {
-    color: #0b8f1f;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.btn-back {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 25px;
-    background: #d8f5cf;
-    color: #0b8f1f;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-back:hover {
-    background: #0b8f1f;
+    background: #2f9825;
     color: white;
-    transform: translateY(-3px);
-    text-decoration: none;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 /* =========================
-   RESPONSIVE HP
+   KONTEN DIAGNOSIS
 ========================= */
-@media (max-width: 768px) {
-    .detail-header h1 { font-size: 2rem; }
-    .detail-image-wrapper img { height: 250px; }
-    .specs-grid { grid-template-columns: 1fr; }
-    body { padding-top: 80px; }
+.kiri {
+  margin: 1%;
+  margin-top: auto;
+  width: 15%;
+  height: auto;
+  border-radius: 5px;
+  float: left;
+  background-color: #f9f7f2;
+}
+
+.kanan {
+  margin: 1%;
+  margin-top: auto;
+  width: 75%;
+  height: auto;
+  float: left;
+}
+
+.teks {
+  font-size: medium;
+  color: #5d4037;
+}
+
+.isi:hover a {
+  background-color: #4E9258;
+  color: #ffffff;
+}
+.heading {
+  font-size: 4em;
+  color: #2E5A27;
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-size: 3em;
+  color: #A67B5B;
+  font-weight: 600;
+}
+
+.col label {
+  font-weight: 400;
+  color: #5d4037;
+}
+
+.btn-primary {
+  background: #a5e68d50;
+  border: none;
+  color: green;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background: #066d33;
+  border: 0px;
+  color: white;
+}
+
+.btn-success {
+  background: #00d25b50;
+  border: none;
+  color: #00d25b;
+  border-radius: 10px;
+}
+
+a {
+  color: #4E9258;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: #F4C430;
+}
+
+section .container {
+  padding-top: 40px;
+}
+
+/* surya hama */
+/* tombol lihat informasi bar diagnosis */
+.btn-lihat-info {
+  background-color: green !important;
+  color: #ffffff !important;
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2E5A27;
+  padding: 30px;
+  color: #ffffff;
+}
+
+footer h5 {
+  color: #ffffff; /* tulisan Tentang & Link */
+  margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: #F4C430;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 600px) {
+  .navbar {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  img {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .card {
+    margin-top: 10px;
+    margin-left: 0 !important;
+  }
+  .navbar {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .heading {
+    font-size: 2.5em;
+  }
+  .sub-heading {
+    font-size: 2em;
+  }
+  .navbar-nav {
+    padding-top: 10px;
+  }
+  .btn-register {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
 }
