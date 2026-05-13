@@ -351,3 +351,48 @@ a:hover {
 .contaier{
   margin-top: 0px;
 }
+
+/* =========================
+   STYLE SEARCH BAR MODERN
+========================= */
+.search-container {
+  border-radius: 50px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Efek menyala hijau saat diklik (focus) */
+.search-container:focus-within {
+  border-color: #2f9e44;
+  box-shadow: 0 4px 15px rgba(47, 158, 68, 0.2) !important;
+}
+
+.search-input {
+  border: none;
+  box-shadow: none !important;
+  padding: 12px 20px;
+  font-size: 15px;
+  background: transparent;
+  color: #2f281e;
+}
+
+.search-input:focus {
+  background: transparent;
+}
+
+.btn-search {
+  background-color: #2f9e44;
+  color: #fff;
+  border: none;
+  padding: 0 25px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-radius: 0 50px 50px 0 !important;
+}
+
+.btn-search:hover {
+  background-color: #237a33;
+  color: #fff;
+}

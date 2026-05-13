@@ -25,44 +25,44 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container-xl">
-      <a class="navbar-brand">
-        <h3 style="color: green;">SiPadi</h3>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item align-self-center">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-
-          <li class="nav-item align-self-center">
-            <a class="nav-link" href="/#berita">Berita</a>
-          </li>
-
-          <li class="nav-item align-self-center">
-            <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-          </li>
-
-          <li class="nav-item align-self-center">
-            <a class="nav-link active" href="/template/informasi.html">
-              Informasi
+        <div class="container-xl">
+            <a class="navbar-brand">
+                <h3 style="color: green;">SiPadi</h3>
             </a>
-          </li>
-          
-          <li class="nav-item align-self-center">
-            <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html"
-              role="button">Diagnosis</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/berita.html">Berita</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link active" href="#informasi">Informasi</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">
+                            Diagnosis
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
 
   <section class="searching pt-3 mb-0" style="margin-top: 110px;">
     <div class="container">
@@ -73,9 +73,11 @@
               style="border-radius: 20px 0 0 20px;">
 
             <div class="input-group-append">
-              <button class="btn btn-success" type="button" style="border-radius: 0 20px 20px 0;">
-                <i class="fa fa-search"></i> Search
+              <!-- PERHATIKAN TAMBAHAN id="btnSearch" dan class btn-search di bawah ini -->
+              <button id="btnSearch" class="btn btn-success btn-search" type="button" style="border-radius: 0 20px 20px 0;">
+                <i class="fa fa-search"></i> 🔍︎
               </button>
+            </div>
             </div>
           </div>
         </div>
@@ -542,8 +544,61 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.getElementById("searchPenyakit");
+      const btnSearch = document.getElementById("btnSearch");
+      const notFoundDiv = document.getElementById("not-found");
 
+      // Pastikan form inputnya ada
+      if (!searchInput) return;
 
+      function performSearch() {
+        const keyword = searchInput.value.toLowerCase(); 
+        
+        // HANYA targetkan bungkus (.col) yang ada di dalam id "penyakit-row"
+        const diseaseCols = document.querySelectorAll("#penyakit-row .col"); 
+        let isAnyVisible = false;
+
+        diseaseCols.forEach(function (col) {
+          const textContent = col.innerText.toLowerCase();
+
+          // Cocokkan teksnya
+          if (textContent.includes(keyword)) {
+            col.style.display = ""; // Tampilkan
+            isAnyVisible = true;
+          } else {
+            col.style.display = "none"; // Sembunyikan
+          }
+        });
+
+        // Tampilkan/sembunyikan notifikasi "Tidak ditemukan"
+        if (notFoundDiv) {
+          if (isAnyVisible) {
+            notFoundDiv.style.display = "none";
+          } else {
+            notFoundDiv.style.display = "block";
+          }
+        }
+      }
+
+      // Filter real-time saat ngetik (ini yang paling responsif)
+      searchInput.addEventListener("input", performSearch);
+
+      // Filter saat tombol enter ditekan
+      searchInput.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          performSearch();
+        }
+      });
+
+      // Filter saat tombol diklik (hanya jalan kalau id="btnSearch" sudah ditambahkan di HTML)
+      if (btnSearch) {
+        btnSearch.addEventListener("click", performSearch);
+      }
+    });
+  </script>
 
 
 

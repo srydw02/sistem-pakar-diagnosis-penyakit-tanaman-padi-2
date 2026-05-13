@@ -33,15 +33,30 @@ body {
   margin-top: 20px;
 }
 
+/* =========================
+   NAVBAR FINALLLL *SANA
+========================= */
 .navbar {
-  margin-top: 15px;
-  background-color: white;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  padding: 15px 0 !important; /* Ini yang mengunci tinggi/lebar navbar biar sama terus */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+  z-index: 1030;
+}
 
-  top: 0px;
-  margin-top: 0px;
-  z-index: 1000;
+.btn-register {
+  border-radius: 14px;
+  padding: 10px 22px !important;
+  margin: 0 0 0 10px !important; /* Mencegah margin 20px bawaan yang bikin navbar melar */
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+/* Biar konten web tidak "nyelip" atau tenggelam di bawah navbar yang fixed */
+body {
+  padding-top: 80px; 
 }
 
 .nav-link:hover {
@@ -116,12 +131,6 @@ body {
   color: #2f281e;
 }
 
-.btn-register {
-  border-radius: 10px;
-  margin: 20px 20px;
-  font-size: 16px;
-  font-weight: 400;
-}
 .btn-primary {
   background: #a5e68d50;
   border: none;

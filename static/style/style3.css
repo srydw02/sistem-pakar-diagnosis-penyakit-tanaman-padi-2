@@ -7,15 +7,116 @@ html {
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  /* scroll-behavior: smooth; (iki surya) */
+  scroll-behavior: smooth;
   color: #2F281E;
 }
 
-/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman iki surya*/
+/* Paksa scrollbar selalu muncul biar layout gak lompat antar halaman */
 html {
   overflow-y: scroll !important;
 }
 
+/* Biar konten web tidak "nyelip" atau tenggelam di bawah navbar yang fixed */
+body {
+  padding-top: 80px; 
+  background: linear-gradient(to right, #e8f5e9, #ffffff);
+}
+
+/* =========================
+   NAVBAR (STYLE SAMA DENGAN HALAMAN UTAMA & ANTI GESER)
+========================= */
+.navbar {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 15px 0 !important; /* Kunci ukuran navbar */
+    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+    z-index: 1030;
+}
+
+.navbar-brand h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b8f1f;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 8px;
+}
+
+.nav-link {
+    position: relative;
+    color: #222 !important;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 8px 6px !important;
+    text-align: left;
+}
+
+.nav-link:hover {
+    color: #2f9e44 !important;
+    transform: translateY(-2px);
+}
+
+/* Trik font-weight 500 + text-shadow agar tebal tapi tidak bikin navbar geser */
+.nav-link.active {
+    color: #2f9e44 !important;
+    font-weight: 500; 
+    text-shadow: 0 0 1px #2f9e44; 
+}
+
+/* Animasi titik hijau di bawah menu */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2f9e44;
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.btn-register {
+    border-radius: 14px;
+    padding: 10px 22px !important;
+    margin: 0 0 0 10px !important; /* Mencegah margin bawaan yang bikin navbar melar */
+    font-weight: 500;
+    font-size: 16px;
+    transition: .3s ease;
+    background: #d8f5cf; /* Warna tombol navbar */
+    color: #0b8f1f;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(47,158,68,.25);
+    background: #2f9825;
+    color: white;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* =========================
+   KONTEN DIAGNOSIS
+========================= */
 .kiri {
   margin: 1%;
   margin-top: auto;
@@ -39,10 +140,6 @@ html {
   color: #5d4037;
 }
 
-.nav-link {
-  text-align: left;
-}
-
 .isi:hover a {
   background-color: #4E9258;
   color: #ffffff;
@@ -51,33 +148,18 @@ html {
 .heading {
   font-size: 4em;
   color: #2E5A27;
+  font-weight: 700;
 }
 
 .sub-heading {
   font-size: 3em;
   color: #A67B5B;
-}
-
-.navbar {
-  margin-top: 15px;
-  background-color: #ffff;
-  box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0px;
-  margin-top: 0px;
-  z-index: 1000;
+  font-weight: 600;
 }
 
 .col label {
   font-weight: 400;
   color: #5d4037;
-}
-
-.btn-register {
-  border-radius: 10px;
-  margin: 20px 20px;
-  font-size: 16px;
-  font-weight: 400;
 }
 
 .btn-primary {
@@ -90,6 +172,7 @@ html {
 .btn-primary:hover {
   background: #066d33;
   border: 0px;
+  color: white;
 }
 
 .btn-success {
@@ -102,35 +185,11 @@ html {
 a {
   color: #4E9258;
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
 a:hover {
   color: #F4C430;
-}
-
-@media screen and (max-width: 600px) {
-  .navbar {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  img {
-    width: 300px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .btn-primary,
-  .btn-secondary,
-  .card {
-    margin-top: 10px;
-    margin-left: 0 !important;
-  }
-
-  .navbar {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
 }
 
 section .container {
@@ -165,5 +224,44 @@ footer a {
 }
 
 footer a:hover {
-  color: #ffffff;
+  color: #F4C430;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 600px) {
+  .navbar {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  img {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .card {
+    margin-top: 10px;
+    margin-left: 0 !important;
+  }
+  .navbar {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .heading {
+    font-size: 2.5em;
+  }
+  .sub-heading {
+    font-size: 2em;
+  }
+  .navbar-nav {
+    padding-top: 10px;
+  }
+  .btn-register {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
 }
