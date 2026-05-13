@@ -9,16 +9,6 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link rel="stylesheet" href="/static/style/style2.css" />
 
-  <style>
-    .search-input {
-      border: 1px solid #28a745 !important;
-    }
-
-    .search-input:focus {
-      border-color: #28a745 !important;
-      box-shadow: 0 0 4px rgba(40, 167, 69, 0.5) !important;
-    }
-  </style>
 
   <title>Informasi Penyakit Padi</title>
 </head>
@@ -64,43 +54,17 @@
         </div>
     </nav>
 
-  <section class="searching pt-3 mb-0" style="margin-top: 110px;">
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-4">
-          <div class="input-group shadow-sm" style="border-radius: 20px;">
-            <input type="text" id="searchPenyakit" class="form-control search-input" placeholder="Cari penyakit..."
-              style="border-radius: 20px 0 0 20px;">
-
-            <div class="input-group-append">
-              <!-- PERHATIKAN TAMBAHAN id="btnSearch" dan class btn-search di bawah ini -->
-              <button id="btnSearch" class="btn btn-success btn-search" type="button" style="border-radius: 0 20px 20px 0;">
-                <i class="fa fa-search"></i> 🔍︎
-              </button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-light">
+  <section class="penyakit margin-top">
     <div class="container">
       <div id="wrapper">
         <div class="col margin-top d-flex justify-content-center flex-column text-center">
-          <h1 class="font-weight-normal sub-heading">Data Penyakit</h1>
+          <h1 class="informasi-heading font-weight-bold" style="color: green;">Data Penyakit</h1>
           <p class="font-weight-light">
             Berikut merupakan data penyakit tanaman padi yang sering dijumpai
             saat budidaya padi. Setiap penyakit memiliki ciri khas gejala,
             penyebab, serta dampak terhadap pertumbuhan dan hasil tanaman
           </p>
         </div>
-      </div>
-
-      <div id="not-found" class="text-center py-5 w-100" style="display: none;">
-        <h4 class="text-muted">Maaf, penyakit yang Anda cari tidak ditemukan.</h4>
-        <p class="text-secondary">Coba gunakan kata kunci lain.</p>
       </div>
 
       <section id="penyakit">
@@ -292,14 +256,12 @@
         </div>
       </section>
     </div>
-
-
   </section>
 
   <section section class="margin-top container-xl">
     <div class="row margin-top d-flex flex-column">
       <div class="col margin-top d-flex justify-content-center flex-column text-center">
-        <h1 class="font-weight-normal sub-heading">Data Gejala</h1>
+        <h1 class="gejala-heading font-weight-bold" style="color: green;">Data Gejala</h1>
         <p class="font-weight-light">
           Berikut merupakan data gejala yang muncul pada tanaman padi sebagai
           indikasi awal adanya serangan penyakit. Setiap gejala dapat terkait
@@ -312,7 +274,8 @@
 
       <div class="col margin-top">
         <div class="accordion mb-5" id="accordionExample">
-          <div class="card mb-3">
+
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left" type="button" data-toggle="collapse"
@@ -330,7 +293,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -348,7 +311,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingThree">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -365,7 +328,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingFour">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -383,7 +346,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingFive">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -401,7 +364,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingSix">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -418,7 +381,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingSeven">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -436,7 +399,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingEight">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -453,7 +416,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingNine">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -470,7 +433,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala border mb-3">
             <div class="card-header" id="headingTen">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -486,6 +449,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -544,64 +508,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchInput = document.getElementById("searchPenyakit");
-      const btnSearch = document.getElementById("btnSearch");
-      const notFoundDiv = document.getElementById("not-found");
-
-      // Pastikan form inputnya ada
-      if (!searchInput) return;
-
-      function performSearch() {
-        const keyword = searchInput.value.toLowerCase(); 
-        
-        // HANYA targetkan bungkus (.col) yang ada di dalam id "penyakit-row"
-        const diseaseCols = document.querySelectorAll("#penyakit-row .col"); 
-        let isAnyVisible = false;
-
-        diseaseCols.forEach(function (col) {
-          const textContent = col.innerText.toLowerCase();
-
-          // Cocokkan teksnya
-          if (textContent.includes(keyword)) {
-            col.style.display = ""; // Tampilkan
-            isAnyVisible = true;
-          } else {
-            col.style.display = "none"; // Sembunyikan
-          }
-        });
-
-        // Tampilkan/sembunyikan notifikasi "Tidak ditemukan"
-        if (notFoundDiv) {
-          if (isAnyVisible) {
-            notFoundDiv.style.display = "none";
-          } else {
-            notFoundDiv.style.display = "block";
-          }
-        }
-      }
-
-      // Filter real-time saat ngetik (ini yang paling responsif)
-      searchInput.addEventListener("input", performSearch);
-
-      // Filter saat tombol enter ditekan
-      searchInput.addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          performSearch();
-        }
-      });
-
-      // Filter saat tombol diklik (hanya jalan kalau id="btnSearch" sudah ditambahkan di HTML)
-      if (btnSearch) {
-        btnSearch.addEventListener("click", performSearch);
-      }
-    });
-  </script>
-
-
-
+ 
 </body>
 
 </html>
