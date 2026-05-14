@@ -1,107 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" />
-    <title>Info Penyakit - Rot Toot</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Penyakit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/static/style/style3.css">
+</head>
+<body class="detail-page">
 
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    /> -->
+    <nav class="navbar-detail navbar-light fixed-top bg-white shadow-sm">
+        <div class="container-xl d-flex justify-content-between align-items-center">
+            <h3 class="brand-sipadi">SiPadi</h3>
+            <img
+                id="menu-toggle"
+                src="/static/images/x.png"
+                alt="close"
+                width="28"
+                height="28"
+                style="cursor: pointer;"
+            />
+        </div>  
+    </nav>
 
-    <link rel="stylesheet" href="/static/style/style3.css" />
-  </head>
+    <div class="container-xl detail-container">
 
-  <body>
-    <!-- Hero -->
-    <section class="bg-light pt-2 pb-4" style="margin-top: -30px;">
-      <div class="container text-center">
-        <h2 class="display-5 fw-bold mb-4">
-          Penyakit Rot Toot
+        <nav aria-label="breadcrumb" class="breadcrumb-custom mb-4">
+                <i class="fas fa-home"></i> <a href="/">Beranda</a>
+                <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> <a
+                    href="/template/informasi.html">Informasi</a>
+                <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> Penyakit Root Rot
+        </nav>
+
+        <h2 class="fw-bold mb-4">
+            Penyakit Root Rot
         </h2>
 
-        <img
-          src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Rot Toot.png"
-          alt="Rot Toot"
-          class="img-fluid mb-4"
-          style="max-width: 500px;"
-        />
-        <br />
-        <a
-          class="btn px-4 btn-primary ml-2 btn-register"
-          href="#penyakit"
-          role="button"
-          >Lihat Informasi
-        </a>
-      </div>
-    </section>
+        <div class="row align-items-start">
+            <div class="col-lg-5 mb-4">
+                <div class="left-side">
+                    <img
+                        src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Rot Toot.png"
+                        class="img-detail shadow-sm"
+                        alt="Penyakit Root Rot"
+                    >
 
-    <!-- Info -->
-    <section class="container" id="penyakit">
-      <h2 class="section-title mt-5">📌 Penyakit : Rot Toot</h2>
-      <p>
-        Penyakit root rot pada padi disebabkan oleh jamur <strong>Fusarium</strong> atau <strong>Pythium</strong> 
-        yang menyerang bagian akar tanaman. Penyakit ini menyebabkan akar membusuk sehingga tidak mampu menyerap 
-        air dan nutrisi dengan baik. Tanaman yang terserang biasanya menunjukkan gejala daun menguning, layu, 
-        dan pertumbuhan terhambat. Pada serangan berat, akar menjadi berwarna cokelat kehitaman dan tanaman 
-        mudah mati sebelum masa panen. Penyakit ini berkembang lebih cepat pada lahan yang terlalu lembap, 
-        drainase buruk, dan kondisi tanah yang kurang sehat.
+                    <div class="mt-4">
+                        <h5 class="section-title">
+                            Deskripsi Singkat
+                        </h5>
 
-      </p>
-    </section>
+                        <p class="description-text">
+                            Penyakit root rot atau busuk akar merupakan penyakit pada tanaman padi yang disebabkan oleh jamur seperti Fusarium dan Pythium. Penyakit ini menyerang sistem perakaran sehingga akar membusuk dan tidak mampu menyerap air serta nutrisi dengan baik. Tanaman yang terserang akan tampak layu, menguning, dan pertumbuhannya terhambat. Penyakit root rot sering berkembang pada lahan dengan drainase buruk dan kelembapan tinggi. Penyebaran jamur dapat terjadi melalui tanah, air, dan sisa tanaman yang terinfeksi. Pengendalian dilakukan dengan menjaga kondisi lahan tetap baik dan menggunakan benih sehat.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Gejala -->
-    <section class="container">
-      <h2 class="section-title mt-5">⚠️ Gejala</h2>
-      <ul>
-        <li>Akar padi membusuk dan berwarna cokelat kehitaman</li>
-        <li>Daun padi menguning dan layu</li>
-        <li>Pertumbuhan tanaman menjadi terhambat atau kerdil</li>
-        <li>Tanaman mudah roboh dan mati</li>
-      </ul>
-    </section>
+            <div class="col-lg-7">
+                <div class="card card-custom border-0 p-4 p-lg-5">
 
-    <!-- Solusi -->
-    <section class="container mb-5">
-      <h2 class="section-title mt-5">💡 Solusi</h2>
-      <ol>
-        <li>Perbaiki drainase agar lahan tidak terlalu tergenang</li>
-        <li>Gunakan bibit sehat dan tahan penyakit</li>
-        <li>Cabut tanaman yang sudah busuk parah</li>
-        <li>Gunakan fungisida sesuai dosis anjuran bila diperlukan</li>
-      </ol>
-    </section>
+                    <h5 class="section-title">
+                        Bagian Yang Diserang
+                    </h5>
 
-    <section class="bg-light py-5" style="margin-top: 80px;">
-  
-   <!-- BUTTON BACK -->
-    <div class="container" style="margin-top: -50px; margin-bottom: 20px;">
-      <a href="/template/informasi.html" class="btn btn-outline-success">
-        &larr; Kembali
-      </a>
+                    <ul>
+                        <li class="mb-2">Akar</li>
+                        <li class="mb-2">Pangkal Batang</li>
+                        <li class="mb-2">Jaringan Tanaman</li>
+                    </ul>
+
+                    <h5 class="section-title">
+                        Gejala
+                    </h5>
+
+                    <ul>
+                        <li class="mb-2">
+                            Akar membusuk.
+                        </li>
+                        <li class="mb-2">
+                            Daun menguning.
+                        </li>
+                        <li class="mb-2">
+                            Tanaman layu.
+                        </li>
+                        <li class="mb-2">
+                            Pertumbuhan terhambat.
+                        </li>
+                        <li class="mb-2">
+                            Tanaman mudah roboh.
+                        </li>
+                    </ul>
+
+                    <h5 class="section-title">
+                        Detail Gejala
+                    </h5>
+
+                    <p class="description-text">
+                        Tanaman yang terserang root rot menunjukkan akar berwarna cokelat kehitaman dan membusuk. Akar yang rusak tidak mampu menyerap air dan unsur hara dengan baik sehingga daun berubah menjadi kuning dan tanaman tampak layu. Pada kondisi parah, tanaman menjadi lemah dan mudah roboh. Pertumbuhan tanaman juga menjadi lambat dan hasil panen menurun. Penyakit ini biasanya berkembang pada lahan yang terlalu lembap atau memiliki drainase buruk.
+                    </p>
+
+                    <h5 class="section-title">
+                        Dampak
+                    </h5>
+
+                    <p class="description-text">
+                        Penyakit root rot dapat menyebabkan pertumbuhan tanaman terganggu dan menurunkan produktivitas padi. Kerusakan akar membuat tanaman kekurangan air dan nutrisi sehingga hasil panen menjadi rendah. Pada serangan berat, tanaman dapat mati sebelum masa panen dan menyebabkan kerugian besar bagi petani.
+                    </p>
+
+                    <h5 class="section-title">
+                        Penanganan
+                    </h5>
+
+                    <div class="warna p-4 rounded">
+                        <h6 class="fw-bold text-success mb-3">
+                            Solusi Pengendalian
+                        </h6>
+
+                        <p class="description-text mb-0">
+                            Pengendalian root rot dilakukan dengan memperbaiki drainase lahan agar tidak terlalu lembap. Penggunaan benih sehat dan sanitasi lahan juga penting untuk mengurangi sumber infeksi jamur. Selain itu, petani dapat melakukan pergiliran tanaman dan menggunakan fungisida sesuai anjuran untuk menekan perkembangan penyakit. Pemantauan kondisi akar secara rutin juga membantu mendeteksi serangan lebih awal.
+                        </p>
+                    </div>
+
+                    <h5 class="section-title mt-4">
+                        Penyebab
+                    </h5>
+
+                    <p class="description-text">
+                        Penyakit root rot disebabkan oleh jamur tanah seperti Fusarium dan Pythium yang berkembang pada kondisi tanah lembap dan drainase buruk. Jamur menyerang akar tanaman sehingga jaringan akar membusuk dan rusak. Penyebaran penyakit dapat terjadi melalui air, tanah, dan sisa tanaman yang terinfeksi.
+                    </p>
+
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container text-center">
 
-    <!-- Footer -->
-    <footer
-  class="bg-light text-center"
-  style="padding: 10px 0; margin-top: -40px;"
->
-  <p class="mb-0">
-    © 2026 Sistem Pakar Penyakit Padi
-  </p>
-</footer>
+    <script>
+        const closeBtn = document.getElementById("menu-toggle");
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+        closeBtn.addEventListener("click", function () {
+            if (document.referrer !== "") {
+                window.history.back();
+            } else {
+                window.location.href = "/index.html#informasi";
+            }
+        });
+    </script>
+
+</body>
 </html>
