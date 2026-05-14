@@ -206,24 +206,29 @@ html {
 .accordion{
   background-color: none;
 }
-
-.card-gejala {
-    height: 100%;
-    border-radius: 20px !important;
-    box-shadow: 0 6px 20px rgba(209, 247, 207, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f8fdf9;
-}
-
 .accordion .card-gejala {
   border-radius: 12px !important;
   overflow: hidden;
 }
 
+.card-gejala {
+    height: 100%;
+    border-radius: 20px !important;
+    box-shadow: 0 6px 30px rgba(209, 247, 207, 0.1);
+    background-color: #f8fdf9;
+
+    transition: 
+      transform 0.4s ease,
+      box-shadow 0.4s ease,
+      background-color 0.4s ease;
+      
+    will-change: transform;
+}
+
 .card-gejala:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-    transition: fadeUp 1s ease;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.15) !important;
+    background-color: #ffffff;
 }
 
 @keyframes fadeUp {
