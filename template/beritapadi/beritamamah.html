@@ -44,7 +44,7 @@
 
             <div class="article-meta mb-4">
                 <span class="author">Oleh Tim SiPadi</span>,
-                <span class="date">Kamis, 14 Mei 2026 | 08:30 WIB</span> -
+                <span class="date">Kamis, 12 Mei 2026 | 08:30 WIB</span> -
                 <span class="views"><i class="far fa-eye"></i> 1,245 kali dilihat</span>
             </div>
 
@@ -341,7 +341,7 @@
         });
     </script>
 
-    <!-- SCRIPT UNTUK CAROUSEL BERITA -->
+   <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const track = document.getElementById("newsTrack");
@@ -349,29 +349,48 @@
             const btnNext = document.getElementById("btnNextNews");
             let autoSlideInterval;
 
+            // Pastikan scrollBehavior default adalah smooth
+            track.style.scrollBehavior = 'smooth';
+
             // Fungsi geser ke Kanan (Next)
             function slideNext() {
-                // Cari lebar satu kartu + jarak (gap)
-                const itemWidth = track.querySelector('.news-carousel-item').offsetWidth + 24;
+                // Ambil elemen pertama dan hitung lebarnya
+                const firstItem = track.querySelector('.news-carousel-item');
+                const itemWidth = firstItem.offsetWidth + 24; // +24 gap
 
-                // Jika sudah mentok di ujung kanan, kembali ke awal
-                if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-                    track.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-                }
+                // 1. Geser ke kanan dengan animasi smooth
+                track.scrollBy({ left: itemWidth, behavior: 'smooth' });
+
+                // 2. Tunggu animasi selesai (sekitar 400ms), lalu pindahkan elemen ke belakang
+                setTimeout(() => {
+                    // Matikan animasi sementara agar perpindahan elemen tidak terlihat lompat
+                    track.style.scrollBehavior = 'auto'; 
+                    
+                    track.appendChild(firstItem); // Pindah item pertama ke ujung belakang
+                    track.scrollLeft -= itemWidth; // Koreksi titik scroll
+                    
+                    // Nyalakan animasi lagi
+                    track.style.scrollBehavior = 'smooth'; 
+                }, 400); 
             }
 
             // Fungsi geser ke Kiri (Prev)
             function slidePrev() {
-                const itemWidth = track.querySelector('.news-carousel-item').offsetWidth + 24;
+                // Ambil semua elemen, pilih yang paling terakhir
+                const items = track.querySelectorAll('.news-carousel-item');
+                const lastItem = items[items.length - 1];
+                const itemWidth = lastItem.offsetWidth + 24;
 
-                // Jika sudah mentok di ujung kiri, loncat ke paling akhir
-                if (track.scrollLeft <= 0) {
-                    track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-                } else {
+                // 1. Pindahkan elemen terakhir ke paling depan (tanpa animasi)
+                track.style.scrollBehavior = 'auto';
+                track.prepend(lastItem);
+                track.scrollLeft += itemWidth; // Koreksi titik scroll agar visual tetap diam
+
+                // 2. Beri jeda sangat kecil, lalu geser ke kiri dengan animasi
+                setTimeout(() => {
+                    track.style.scrollBehavior = 'smooth';
                     track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                }
+                }, 10);
             }
 
             // Event Listener Tombol
@@ -380,17 +399,17 @@
 
             // Fungsi Auto-Slide (jalan tiap 3,5 detik)
             function startAutoSlide() {
-                autoSlideInterval = setInterval(slideNext, 3500);
+                autoSlideInterval = setInterval(slideNext, 2000); 
             }
 
             function stopAutoSlide() {
                 clearInterval(autoSlideInterval);
             }
 
-            // Jalankan auto-slide
+            // Jalankan auto-slide saat halaman dimuat
             startAutoSlide();
 
-            // Berhenti geser otomatis kalau kursor menyorot area berita (biar gampang dibaca)
+            // Berhenti geser otomatis kalau kursor menyorot area berita
             const wrapper = document.querySelector('.news-carousel-wrapper');
             wrapper.addEventListener("mouseenter", stopAutoSlide);
             wrapper.addEventListener("mouseleave", startAutoSlide);
