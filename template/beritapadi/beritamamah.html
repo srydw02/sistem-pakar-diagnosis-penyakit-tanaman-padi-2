@@ -24,6 +24,11 @@
             <h3 class="brand-sipadi">SiPadi</h3>
             <img id="menu-toggle" src="/static/images/x.png" alt="close" width="28" height="28" class="close-btn" />
         </div>
+
+        <!-- TAMBAHKAN KODE INI DI SINI (Reading Progress Bar) -->
+        <div class="progress-container">
+            <div class="progress-bar-custom" id="readingBar"></div>
+        </div>
     </nav>
 
     <!-- Main Content Wrapper -->
@@ -35,8 +40,8 @@
                 <i class="fas fa-home"></i> <a href="/">Beranda</a>
                 <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> <a
                     href="/template/berita.html">Berita Pertanian</a>
-                <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> SiPadi Ajak Petani Muda Jadi Mitra
-                Strategis
+                <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> Antisipasi Serangan Wereng Coklat
+                pada Musim Tanam Ini
             </nav>
 
             <!-- Title & Meta -->
@@ -55,8 +60,7 @@
                     <!-- Featured Image dengan tombol share pop-up -->
                     <div class="featured-image-wrapper mb-4">
                         <!-- Gambar Artikel -->
-                        <img src="/static/images/mamah.png"
-                            alt="Pelatihan Petani" class="featured-img w-100">
+                        <img src="/static/images/mamah.png" alt="Pelatihan Petani" class="featured-img w-100">
 
                         <!-- Wrapper Share Container -->
                         <div class="share-container">
@@ -190,15 +194,6 @@
             <section class="related-news mt-5 pt-5 border-top">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h3 class="fw-bold m-0" style="color: #1b4332;">Berita Terkait Lainnya</h3>
-                    <!-- Tombol Navigasi Slider -->
-                    <div class="carousel-controls d-flex gap-2">
-                        <button id="btnPrevNews" class="carousel-btn mr-2" aria-label="Previous">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button id="btnNextNews" class="carousel-btn" aria-label="Next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
                 </div>
 
                 <!-- Pembungkus Slider -->
@@ -312,23 +307,23 @@
         </div>
     </main>
 
-  <!-- SCRIPT BACK PINTAR (MENYESUAIKAN ASAL HALAMAN) -->
+    <!-- SCRIPT BACK PINTAR (MENYESUAIKAN ASAL HALAMAN) -->
     <script>
         const closeBtn = document.getElementById("menu-toggle");
-        
+
         closeBtn.addEventListener("click", function () {
             // Ambil URL dari halaman sebelumnya
             const previousPage = document.referrer.toLowerCase();
-            
+
             // Kondisi 1: Jika user datang dari halaman Home (index.html atau root /)
             if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
                 // Balik ke Home (langsung scroll ke section berita)
-                window.location.href = "/index.html#berita"; 
-            } 
+                window.location.href = "/index.html#berita";
+            }
             // Kondisi 2: Jika user datang dari halaman Berita
             else if (previousPage.includes("berita.html")) {
                 window.location.href = "/template/berita.html";
-            } 
+            }
             // Kondisi 3: Jika ada history lain (contoh dari halaman pencarian)
             else if (previousPage !== "") {
                 window.history.back();
@@ -336,12 +331,12 @@
             // Kondisi 4: Jika user buka link langsung dari tab baru (tanpa history)
             else {
                 // Default: lempar ke halaman portal berita
-                window.location.href = "/template/berita.html"; 
+                window.location.href = "/template/berita.html";
             }
         });
     </script>
 
-   <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
+    <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const track = document.getElementById("newsTrack");
@@ -349,86 +344,103 @@
             const btnNext = document.getElementById("btnNextNews");
             let autoSlideInterval;
 
-            // Pastikan scrollBehavior default adalah smooth
+            if (!track) return; // Jaga-jaga kalau track ga ada
+
             track.style.scrollBehavior = 'smooth';
 
-            // Fungsi geser ke Kanan (Next)
             function slideNext() {
-                // Ambil elemen pertama dan hitung lebarnya
                 const firstItem = track.querySelector('.news-carousel-item');
-                const itemWidth = firstItem.offsetWidth + 24; // +24 gap
+                if (!firstItem) return;
 
-                // 1. Geser ke kanan dengan animasi smooth
+                const itemWidth = firstItem.offsetWidth + 24;
+
                 track.scrollBy({ left: itemWidth, behavior: 'smooth' });
 
-                // 2. Tunggu animasi selesai (sekitar 400ms), lalu pindahkan elemen ke belakang
                 setTimeout(() => {
-                    // Matikan animasi sementara agar perpindahan elemen tidak terlihat lompat
-                    track.style.scrollBehavior = 'auto'; 
-                    
-                    track.appendChild(firstItem); // Pindah item pertama ke ujung belakang
-                    track.scrollLeft -= itemWidth; // Koreksi titik scroll
-                    
-                    // Nyalakan animasi lagi
-                    track.style.scrollBehavior = 'smooth'; 
-                }, 400); 
+                    track.style.scrollBehavior = 'auto';
+                    track.appendChild(firstItem);
+                    track.scrollLeft -= itemWidth;
+                    track.style.scrollBehavior = 'smooth';
+                }, 400);
             }
 
-            // Fungsi geser ke Kiri (Prev)
             function slidePrev() {
-                // Ambil semua elemen, pilih yang paling terakhir
                 const items = track.querySelectorAll('.news-carousel-item');
+                if (items.length === 0) return;
+
                 const lastItem = items[items.length - 1];
                 const itemWidth = lastItem.offsetWidth + 24;
 
-                // 1. Pindahkan elemen terakhir ke paling depan (tanpa animasi)
                 track.style.scrollBehavior = 'auto';
                 track.prepend(lastItem);
-                track.scrollLeft += itemWidth; // Koreksi titik scroll agar visual tetap diam
+                track.scrollLeft += itemWidth;
 
-                // 2. Beri jeda sangat kecil, lalu geser ke kiri dengan animasi
                 setTimeout(() => {
                     track.style.scrollBehavior = 'smooth';
                     track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
                 }, 10);
             }
 
-            // Event Listener Tombol
-            btnNext.addEventListener("click", slideNext);
-            btnPrev.addEventListener("click", slidePrev);
+            // KUNCI PERBAIKANNYA DI SINI: Pakai if biar gak error kalau tombol dihapus
+            if (btnNext) {
+                btnNext.addEventListener("click", slideNext);
+            }
+            if (btnPrev) {
+                btnPrev.addEventListener("click", slidePrev);
+            }
 
-            // Fungsi Auto-Slide (jalan tiap 3,5 detik)
             function startAutoSlide() {
-                autoSlideInterval = setInterval(slideNext, 2000); 
+                autoSlideInterval = setInterval(slideNext, 2000);
             }
 
             function stopAutoSlide() {
                 clearInterval(autoSlideInterval);
             }
 
-            // Jalankan auto-slide saat halaman dimuat
             startAutoSlide();
 
-            // Berhenti geser otomatis kalau kursor menyorot area berita
             const wrapper = document.querySelector('.news-carousel-wrapper');
-            wrapper.addEventListener("mouseenter", stopAutoSlide);
-            wrapper.addEventListener("mouseleave", startAutoSlide);
+            if (wrapper) {
+                wrapper.addEventListener("mouseenter", stopAutoSlide);
+                wrapper.addEventListener("mouseleave", startAutoSlide);
+            }
         });
     </script>
 
     <script>
-    // Fungsi untuk tombol Copy Link
-    function copyToClipboard() {
-        // Mengambil URL halaman saat ini
-        const url = window.location.href; 
-        
-        navigator.clipboard.writeText(url).then(() => {
-            alert("Link artikel berhasil disalin!");
-        }).catch(err => {
-            console.error("Gagal menyalin link: ", err);
+        // Fungsi untuk tombol Copy Link
+        function copyToClipboard() {
+            // Mengambil URL halaman saat ini
+            const url = window.location.href;
+
+            navigator.clipboard.writeText(url).then(() => {
+                alert("Link artikel berhasil disalin!");
+            }).catch(err => {
+                console.error("Gagal menyalin link: ", err);
+            });
+        }
+    </script>
+
+    <!-- SCRIPT UNTUK READING PROGRESS BAR -->
+    <script>
+        // Deteksi setiap kali user melakukan scroll
+        window.addEventListener('scroll', function () {
+            // Ambil elemen bar-nya
+            const readingBar = document.getElementById("readingBar");
+
+            // Hitung jarak dari atas (scrollTop)
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+            // Hitung total tinggi halaman dikurangi tinggi layar monitor user
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            // Dapatkan persentasenya (Jarak saat ini dibagi Total jarak) dikali 100
+            const scrolled = (winScroll / height) * 100;
+
+            // Terapkan persentasenya ke lebar (width) garis hijaunya
+            readingBar.style.width = scrolled + "%";
         });
-    }
-</script>
+    </script>
 </body>
 
 </html>
