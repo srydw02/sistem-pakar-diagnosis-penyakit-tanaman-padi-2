@@ -9,96 +9,62 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link rel="stylesheet" href="/static/style/style2.css" />
 
-  <style>
-    .search-input {
-      border: 1px solid #28a745 !important;
-    }
-
-    .search-input:focus {
-      border-color: #28a745 !important;
-      box-shadow: 0 0 4px rgba(40, 167, 69, 0.5) !important;
-    }
-  </style>
 
   <title>Informasi Penyakit Padi</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container-xl">
-      <a class="navbar-brand">
-        <h3 style="color: green;">SiPadi</h3>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item align-self-center">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-
-          <li class="nav-item align-self-center">
-            <a class="nav-link" href="/#berita">Berita</a>
-          </li>
-
-          <li class="nav-item align-self-center">
-            <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-          </li>
-
-          <li class="nav-item align-self-center">
-            <a class="nav-link active" href="/template/informasi.html">
-              Informasi
+        <div class="container-xl">
+            <a class="navbar-brand">
+                <h3 style="color: green;">SiPadi</h3>
             </a>
-          </li>
-          
-          <li class="nav-item align-self-center">
-            <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html"
-              role="button">Diagnosis</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-  <section class="searching pt-3 mb-0" style="margin-top: 110px;">
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-md-4">
-          <div class="input-group shadow-sm" style="border-radius: 20px;">
-            <input type="text" id="searchPenyakit" class="form-control search-input" placeholder="Cari penyakit..."
-              style="border-radius: 20px 0 0 20px;">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
 
-            <div class="input-group-append">
-              <button class="btn btn-success" type="button" style="border-radius: 0 20px 20px 0;">
-                <i class="fa fa-search"></i> Search
-              </button>
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/berita.html">Berita</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="nav-link active" href="#informasi">Informasi</a>
+                    </li>
+
+                    <li class="nav-item align-self-center active">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">
+                            Diagnosis
+                        </a>
+                    </li>
+
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section class="bg-light">
+  <section class="penyakit margin-top">
     <div class="container">
       <div id="wrapper">
         <div class="col margin-top d-flex justify-content-center flex-column text-center">
-          <h1 class="font-weight-normal sub-heading">Data Penyakit</h1>
+          <h1 class="informasi-heading font-weight-bold" style="color: green;">Data Penyakit</h1>
           <p class="font-weight-light">
             Berikut merupakan data penyakit tanaman padi yang sering dijumpai
             saat budidaya padi. Setiap penyakit memiliki ciri khas gejala,
             penyebab, serta dampak terhadap pertumbuhan dan hasil tanaman
           </p>
         </div>
-      </div>
-
-      <div id="not-found" class="text-center py-5 w-100" style="display: none;">
-        <h4 class="text-muted">Maaf, penyakit yang Anda cari tidak ditemukan.</h4>
-        <p class="text-secondary">Coba gunakan kata kunci lain.</p>
       </div>
 
       <section id="penyakit">
@@ -290,14 +256,12 @@
         </div>
       </section>
     </div>
-
-
   </section>
 
   <section section class="margin-top container-xl">
     <div class="row margin-top d-flex flex-column">
       <div class="col margin-top d-flex justify-content-center flex-column text-center">
-        <h1 class="font-weight-normal sub-heading">Data Gejala</h1>
+        <h1 class="gejala-heading font-weight-bold" style="color: green;">Data Gejala</h1>
         <p class="font-weight-light">
           Berikut merupakan data gejala yang muncul pada tanaman padi sebagai
           indikasi awal adanya serangan penyakit. Setiap gejala dapat terkait
@@ -310,7 +274,8 @@
 
       <div class="col margin-top">
         <div class="accordion mb-5" id="accordionExample">
-          <div class="card mb-3">
+
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left" type="button" data-toggle="collapse"
@@ -328,7 +293,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -346,7 +311,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingThree">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -363,7 +328,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingFour">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -381,7 +346,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingFive">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -399,7 +364,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingSix">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -416,7 +381,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingSeven">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -434,7 +399,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingEight">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -451,7 +416,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala mb-3">
             <div class="card-header" id="headingNine">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -468,7 +433,7 @@
             </div>
           </div>
 
-          <div class="card mb-3">
+          <div class="card-gejala border mb-3">
             <div class="card-header" id="headingTen">
               <h2 class="mb-0">
                 <button class="btn font-weight-bold btn-block text-left collapsed" type="button" data-toggle="collapse"
@@ -484,55 +449,59 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 col-md-6">
-          <h5 class="fw-bold mb-3">Tentang</h5>
-          <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
-            Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada tanaman padi
-            berdasarkan gejala yang muncul.
-            Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani dapat
-            mengambil tindakan yang tepat
-            untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
-          </p>
+    <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <div class="col-lg-7 col-md-6">
+                    <h5 class="fw-bold mb-3">Tentang</h5>
+                    <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
+                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada
+                        tanaman padi berdasarkan gejala yang muncul.
+                        Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani
+                        dapat mengambil tindakan yang tepat
+                        untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 offset-lg-1">
+                    <h5 class="fw-bold mb-3">Link</h5>
+                    <ul class="list-unstyled" style="color: white;">
+                        <li class="mb-2">
+                            <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/template/berita.html" class="text-secondary text-decoration-none">Berita</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis
+                                Padi</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi
+                                Penyakit</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman
+                                Diagnosis</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-2 border-secondary">
+
+            <div class="text-center">
+                <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
+            </div>
+
         </div>
-
-        <div class="col-lg-4 col-md-6 offset-lg-1">
-          <h5 class="fw-bold mb-3">Link</h5>
-          <ul class="list-unstyled" style="color: white;">
-            <li class="mb-2">
-              <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
-            </li>
-            <li class="mb-2">
-              <a href="/template/metode.html" class="text-secondary text-decoration-none">Metode</a>
-            </li>
-            <li class="mb-2">
-              <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis Padi</a>
-            </li>
-            <li class="mb-2">
-              <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi Penyakit</a>
-            </li>
-            <li class="mb-2">
-              <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman Diagnosis</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <hr class="my-2 border-secondary">
-
-      <div class="text-center">
-        <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
-      </div>
-
-    </div>
-  </footer>
+    </footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
@@ -542,11 +511,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-
-
-
-
-
+ 
 </body>
 
 </html>

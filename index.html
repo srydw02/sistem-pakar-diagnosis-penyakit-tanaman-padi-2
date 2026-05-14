@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/static/style/style.css">
     <title>Sistem Pakar Penyakit Padi</title>
 </head>
@@ -42,7 +43,7 @@
                     </li>
 
                     <li class="nav-item align-self-center active">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href="#diagnosis" role="button">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href='template/diagnosis.html' role="button">
                             Diagnosis
                         </a>
                     </li>
@@ -69,64 +70,91 @@
         </div>
     </section>
 
-    <section id="berita" class="berita">
+    <section id="berita" class="berita py-5" style="background-color: #f8fbf9;">
         <div class="container-xl">
-            <h1 class="font-weight 700 sub-heading text-center" style="color: #444;">Caritahu Berita Terkini</h1>
-            <p class="text-center font-weight-light mb-5">Update terbaru seputar dunia pertanian padi dan kesehatan
+            <h1 class="font-weight-bold sub-heading text-center" style="color: #444; margin-bottom: 10px;">Caritahu Berita Terkini</h1>
+            <p class="text-center font-weight-light mb-5 text-secondary">Update terbaru seputar dunia pertanian padi dan kesehatan
                 tanaman</p>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card berita-card h-100">
-                        <div class="berita-img" style="background: linear-gradient(135deg,#e8f5e9,#81c784);">🌾</div>
-                        <div class="card-body">
-                            <span class="badge-kategori">Hama &amp; Penyakit</span>
-                            <h6 class="card-title mt-1">Waspadai Serangan Blast Padi di Musim Hujan</h6>
-                            <p class="card-text">Penyakit blast yang disebabkan jamur <em>Pyricularia oryzae</em>
-                                meningkat drastis saat kelembaban tinggi. Kenali gejalanya sejak dini.</p>
-                        </div>
-                        <div class="card-footer-meta d-flex justify-content-between align-items-center">
-                            <span>5 Mei 2025</span>
-                            <a style="cursor:pointer;color:green;font-size:0.82rem;font-weight:600;"
-                                onclick="showDetail(0)">Baca →</a>
+                
+            <div class="headline-card animate-fade-in delay-1 mb-5">
+                <div class="row no-gutters h-100">
+                    <div class="col-lg-7">
+                        <div class="img-wrapper">
+                            <img src="/static/images/mamah.png" class="headline-img" alt="Headline Waspada Hama">
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card berita-card h-100">
-                        <div class="berita-img" style="background: linear-gradient(135deg,#fff9c4,#f9a825);">🌿</div>
-                        <div class="card-body">
-                            <span class="badge-kategori">Tips Budidaya</span>
-                            <h6 class="card-title mt-1">5 Cara Efektif Mencegah Penyakit Hawar Daun Bakteri</h6>
-                            <p class="card-text">Hawar daun bakteri (HDB) dapat menurunkan hasil panen hingga 50%. Simak
-                                langkah pencegahan yang bisa dilakukan petani.</p>
+                    <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
+                        <div class="mb-3">
+                            <span class="badge badge-hama px-3 py-2" style="border-radius: 8px; font-size: 0.85rem;">Waspada Hama</span>
+                            <span class="small text-muted ml-2 font-weight-bold">12 Mei 2026</span>
                         </div>
-                        <div class="card-footer-meta d-flex justify-content-between align-items-center">
-                            <span>28 Apr 2025</span>
-                            <a style="cursor:pointer;color:green;font-size:0.82rem;font-weight:600;"
-                                onclick="showDetail(1)">Baca →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card berita-card h-100">
-                        <div class="berita-img" style="background: linear-gradient(135deg,#e3f2fd,#42a5f5);">💧</div>
-                        <div class="card-body">
-                            <span class="badge-kategori">Teknologi</span>
-                            <h6 class="card-title mt-1">Sistem Pakar Bantu Petani Deteksi Penyakit Lebih Cepat</h6>
-                            <p class="card-text">Penerapan teknologi sistem pakar berbasis web terbukti membantu petani
-                                mengidentifikasi penyakit padi 3x lebih cepat dibanding cara konvensional.</p>
-                        </div>
-                        <div class="card-footer-meta d-flex justify-content-between align-items-center">
-                            <span>15 Apr 2025</span>
-                            <a style="cursor:pointer;color:green;font-size:0.82rem;font-weight:600;"
-                                onclick="showDetail(2)">Baca →</a>
+                        <h2 class="font-weight-bold mb-3" style="line-height: 1.3;">Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini</h2>
+                        <p class="text-secondary mb-4" style="font-size: 1.05rem;">Pakar menyarankan petani untuk rutin memantau area bawah rumpun padi karena kelembaban tinggi memicu ledakan populasi yang dapat merusak panen.</p>
+                        <div>
+                            <a onclick="window.location.href='/template/beritapadi/beritamamah.html'" class="btn-read-more" style="cursor: pointer;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-1">
-                <a class="btn px-4 btn-primary ml-2 btn-register " href="/template/berita.html" role="button">Lihat
-                    Semua Berita →</a>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 animate-fade-in delay-1">
+                    <div class="card news-card">
+                        <div class="news-card-img-wrapper">
+                            <span class="badge-overlay badge-hama">Waspada Hama</span>
+                            <img src="/static/images/fotoberita/homeberita1.jpg" class="card-img-top" alt="Berita Hama">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="small text-muted font-weight-bold mb-2">12 Mei 2026</div>
+                            <h5 class="card-title">Cuaca Ekstrem dan Kelembapan Tinggi, Penyakit Blast Mengancam Panen Padi</h5>
+                            <p class="card-text small text-secondary mt-2">Penyakit blast yang disebabkan jamur Pyricularia oryzae meningkat drastis saat kelembaban tinggi. Kenali gejalanya sejak dini.</p>
+                            <hr style="border-color: rgba(0,0,0,0.05);">
+                            <div class="text-right">
+                                <a onclick="window.location.href='/template/beritapadi/waspadaseranganblast.html'" class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 animate-fade-in delay-2">
+                    <div class="card news-card">
+                        <div class="news-card-img-wrapper">
+                            <span class="badge-overlay badge-tips">Tips Budidaya</span>
+                            <img src="/static/images/fotoberita/kering.jpg" class="card-img-top" alt="Berita Tips">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="small text-muted font-weight-bold mb-2">28 Apr 2026</div>
+                            <h5 class="card-title">Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi Cerdas</h5>
+                            <p class="card-text small text-secondary mt-2">Atasi krisis air di musim kemarau ekstrem, sistem irigasi cerdas berbasis IoT hadir untuk menyelamatkan sawah petani dari kekeringan.</p>
+                            <hr style="border-color: rgba(0,0,0,0.05);">
+                            <div class="text-right">
+                                <a onclick="window.location.href='/template/beritapadi/irigasi.html'" class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 animate-fade-in delay-3">
+                    <div class="card news-card">
+                        <div class="news-card-img-wrapper">
+                            <span class="badge-overlay badge-pasar">Teknologi</span>
+                            <img src="/static/images/fotoberita/homeberita3.jpg" class="card-img-top" alt="Berita Teknologi">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="small text-muted font-weight-bold mb-2">15 Apr 2026</div>
+                            <h5 class="card-title">Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem Pakar</h5>
+                            <p class="card-text small text-secondary mt-2">Penerapan teknologi sistem pakar berbasis web terbukti membantu petani mengidentifikasi penyakit padi secara instan.</p>
+                            <hr style="border-color: rgba(0,0,0,0.05);">
+                            <div class="text-right">
+                                <a onclick="window.location.href='/template/beritapadi/sistempakarbantu.html'" class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 mb-4 animate-fade-in delay-3">
+                <button class="btn btn-load-more shadow-sm" onclick="window.location.href='/template/berita.html'">Lihat Semua Berita</button>
             </div>
         </div>
     </section>
@@ -144,138 +172,82 @@
 
             <div class="row">
 
-                <!-- CARD 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
-
                     <div class="jenis-card">
-
                         <div class="jenis-card-inner">
-
-                            <!-- DEPAN -->
                             <div class="jenis-card-front">
-
-                                <img src="/static/images/fotoJenisPadi/IR64.jpeg" alt="Padi IR64">
-
-                                <div class="front-overlay">
-                                    <h3>IR64</h3>
-                                    <p>Varietas unggulan Indonesia</p>
-                                </div>
-
-                            </div>
-
-                            <!-- BELAKANG -->
-                            <div class="jenis-card-back">
-
-                                <h4>Padi IR64</h4>
-
-                                <p>
-                                    IR64 terkenal dengan hasil panen tinggi,
-                                    tahan terhadap beberapa penyakit,
-                                    dan menghasilkan nasi yang pulen.
-                                </p>
-
-                                <a href="/template/jenisPadi.html" class="btn-detail">
-                                    Lihat Detail →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- CARD 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-                    <div class="jenis-card">
-
-                        <div class="jenis-card-inner">
-
-                            <!-- DEPAN -->
-                            <div class="jenis-card-front">
-
-                                <img src="/static/images/fotoJenisPadi/ciherang.jpg" alt="Padi Ciherang">
-
-                                <div class="front-overlay">
-                                    <h3>Ciherang</h3>
-                                    <p>Produktivitas tinggi</p>
-                                </div>
-
-                            </div>
-
-                            <!-- BELAKANG -->
-                            <div class="jenis-card-back">
-
-                                <h4>Padi Ciherang</h4>
-
-                                <p>
-                                    Ciherang memiliki daya tahan cukup baik
-                                    dan menjadi salah satu varietas favorit
-                                    petani di Indonesia.
-                                </p>
-
-                                <a href="/template/jenisPadi.html" class="btn-detail">
-                                    Lihat Detail →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-                    <div class="jenis-card">
-
-                        <div class="jenis-card-inner">
-
-                            <!-- DEPAN -->
-                            <div class="jenis-card-front">
-
-                                <img src="/static/images/fotoJenisPadi/pandan wangi.jpg" alt="Padi Inpari">
-
+                                <img src="/static/images/fotoJenisPadi/pandan.png" alt="Padi Pandan Wangi">
                                 <div class="front-overlay">
                                     <h3>Pandan Wangi</h3>
-                                    <p>Varietas modern unggulan</p>
+                                    <p>Aroma Pandan Alami</p>
                                 </div>
-
                             </div>
-
-                            <!-- BELAKANG -->
                             <div class="jenis-card-back">
-
-                                <h4>Padi Inpari 32</h4>
-
+                                <h4>Pandan Wangi</h4>
                                 <p>
-                                    Inpari 32 memiliki kualitas beras baik,
-                                    tahan penyakit tertentu,
-                                    serta cocok untuk lahan sawah modern.
+                                    Padi khas Cianjur dengan aroma wangi pandan yang alami 
+                                    dan rasa nasi yang sangat pulen.
                                 </p>
-
-                                <a href="/template/jenisPadi.html" class="btn-detail">
+                                <a href="/template/detailPadi/pandanWangi.html" class="btn-detail">
                                     Lihat Detail →
                                 </a>
-
                             </div>
-
                         </div>
-
                     </div>
+                </div>
 
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="jenis-card">
+                        <div class="jenis-card-inner">
+                            <div class="jenis-card-front">
+                                <img src="/static/images/fotoJenisPadi/mentiksusue.png" alt="Padi Mentik Susu">
+                                <div class="front-overlay">
+                                    <h3>Mentik Susu</h3>
+                                    <p>Tekstur Putih & Pulen</p>
+                                </div>
+                            </div>
+                            <div class="jenis-card-back">
+                                <h4>Mentik Susu</h4>
+                                <p>
+                                    Dikenal sebagai 'beras Jepang' Indonesia karena teksturnya 
+                                    yang sangat lengket dan putih seperti susu.
+                                </p>
+                                <a href="/template/detailPadi/mentikSusu.html" class="btn-detail">
+                                    Lihat Detail →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="jenis-card">
+                        <div class="jenis-card-inner">
+                            <div class="jenis-card-front">
+                                <img src="/static/images/fotoJenisPadi/siamunus.png" alt="Padi Siam Unus">
+                                <div class="front-overlay">
+                                    <h3>Siam Unus</h3>
+                                    <p>Varietas Unggul Lokal</p>
+                                </div>
+                            </div>
+                            <div class="jenis-card-back">
+                                <h4>Siam Unus</h4>
+                                <p>
+                                    Varietas dari Kalimantan Selatan yang sangat diminati 
+                                    karena tekstur nasi yang pera namun tetap enak.
+                                </p>
+                                <a href="/template/detailPadi/siamUnus.html" class="btn-detail">
+                                    Lihat Detail →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="text-center mt-4">
-                <a href="/template/jenisPadi.html" class="btn btn-primary px-4">
-                    Lihat Semua Jenis Padi →
-                </a>
+            <div class="text-center mt-5 mb-4 animate-fade-in delay-3">
+                <button class="btn btn-load-more shadow-sm" onclick="window.location.href='template/jenisPadi.html'">Lihat Semua Jenis Padi</button>
             </div>
 
         </div>
@@ -388,9 +360,8 @@
 
             </div>
 
-            <div class="mt-5 text-center">
-                <a class="btn px-4 btn-primary ml-2 btn-register " href="/template/informasi.html" role="button">Lihat
-                    Semua Informasi →</a>
+            <div class="text-center mt-5 mb-4 animate-fade-in delay-3">
+                <button class="btn btn-load-more shadow-sm" onclick="window.location.href='/template/informasi.html'">Lihat Semua Informasi</button>
             </div>
         </div>
 
@@ -631,7 +602,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
 
-    <script>
+    <!-- <script>
         const navLinks = document.querySelectorAll(".nav-link");
 
         // default home aktif
@@ -648,7 +619,58 @@
                 this.classList.add("active");
             });
         });
-    </script>
-</body>
+    </script> --> <!--dibungkam surya-->
 
+    <script>
+        // --- Fitur Scrollspy untuk Navbar Dinamis ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil semua section yang punya ID
+            const sections = document.querySelectorAll('section[id]');
+            // Ambil semua link navigasi di navbar
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            function scrollSpy() {
+                // Posisi scroll saat ini (ditambah sedikit offset agar perubahan lebih awal)
+                let currentScroll = window.scrollY || document.documentElement.scrollTop;
+                // Offset bisa disesuaikan, biasanya sama dengan tinggi navbar (misal 150px)
+                let scrollPosition = currentScroll + 150; 
+
+                // Lakukan pengecekan untuk setiap section
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop; // Posisi atas section
+                    const sectionHeight = section.offsetHeight; // Tinggi section
+                    const sectionId = section.getAttribute('id'); // ID section (misal: 'berita')
+
+                    // Jika posisi scroll ada di dalam area section ini
+                    if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+                        // 1. Hapus class 'active' dari semua link
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+
+                        // 2. Tambahkan class 'active' HANYA ke link yang href-nya sesuai dengan sectionId
+                        // Gunakan querySelector untuk mencari link spesifik tersebut
+                        let activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
+                        
+                        // Validasi untuk mencegah error jika link dengan href="#home" tidak ditemukan (karena href-nya bisa beda misal "/")
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        } else if (sectionId === 'home') {
+                             // Penanganan khusus jika href untuk home bukan "#home" melainkan "/" atau kosong
+                            let homeLink = document.querySelector('.navbar-nav .nav-link');
+                            if(homeLink) homeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            // Jalankan fungsi scrollSpy setiap kali user melakukan scroll
+            window.addEventListener('scroll', scrollSpy);
+            
+            // Jalankan sekali saat halaman pertama kali dimuat (untuk set status awal)
+            scrollSpy(); 
+        });
+    </script>
+
+</body>
 </html>

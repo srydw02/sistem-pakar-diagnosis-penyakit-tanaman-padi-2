@@ -1,159 +1,121 @@
+
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/static/style/style.css" />
-    <title>Info Penyakit - Blast</title>
-
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    /> -->
-
-    <link rel="stylesheet" href="/static/style/style3.css" />
-  </head>
-
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container-xl">
-        <a class="navbar-brand">
-          <h3 style="color: green;">SiPadi</h3>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item align-self-center active">
-              <a class="nav-link" href="/index.html"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item align-self-center active">
-              <a class="nav-link" href="/template/metode.html"
-                >Metode <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item align-self-center active">
-              <a class="nav-link" href="/template/jenisPadi.html"
-                >Jenis Padi<span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item align-self-center active">
-              <a class="nav-link" href="/template/informasi.html"
-                >Informasi <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item align-self-center">
-              <a
-                class="btn px-4 btn-primary ml-2 btn-register"
-                href="/template/diagnosis.html"
-                role="button"
-                >Diagnosis</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Penyakit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style/style3.css">
+</head>
+<body class="detail-page">
+    <nav class="navbar-detail navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+        <div class="container-xl d-flex justify-content-between align-items-center">
+            <h4 class="fw-bold color-teal m-0">
+                Detail Penyakit
+            </h4>
+            <img
+                id="menu-toggle"
+                src="/static/images/x.png"
+                alt="close"
+                width="28"
+                height="28"
+                style="cursor: pointer;"
+            />
+        </div>  
     </nav>
-
-    <section class="bg-light py-5">
-      <div class="container text-center">
-        <h2 class="display-5 fw-bold mb-4">Penyakit Blas (Blast)</h2>
-
-        <img
-          src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Blas (Blast).png"
-          alt="Ilustrasi Penyakit"
-          class="img-fluid mb-4"
-          style="max-width: 500px;"
-        />
-
-        <br />
-        <a
-          class="btn px-4 btn-primary ml-2 btn-register"
-          href="#penyakit"
-          role="button"
-          >Lihat Informasi
-        </a>
-      </div>
-    </section>
-
-    <section class="container" id="penyakit">
-      <h2 class="section-title mt-5">📌 Penyakit : Blas (Blast)</h2>
-      <p>
-        Penyakit blas pada padi disebabkan oleh jamur <strong>Magnaporthe oryzae</strong> yang menyerang 
-        seluruh bagian tanaman di atas tanah, terutama daun dan leher malai. Penyakit ini 
-        ditandai dengan munculnya bercak berbentuk belah ketupat pada daun yang berwarna 
-        abu-abu di bagian tengah dan cokelat di tepinya. Serangan berat dapat menyebabkan 
-        daun mengering dan tanaman menjadi mati sebelum panen. Pada bagian leher malai, 
-        blas dapat menyebabkan malai patah atau gabah menjadi hampa sehingga hasil panen 
-        menurun drastis. Penyakit ini berkembang dengan cepat pada kondisi lembap, curah 
-        hujan tinggi, dan penggunaan pupuk nitrogen yang berlebihan.
-
-      </p>
-    </section>
-
-    <section class="container">
-      <h2 class="section-title mt-5">⚠️ Gejala</h2>
-      <ul>
-        <li>Muncul bercak coklat/hitam pada daun</li>
-        <li>Bercak berbentuk belah ketupat</li>
-        <li>Leher malai menghitam dan mudah patah</li>
-        <li>Bulir padi banyak yang hampa atau tidak terisi</li>
-      </ul>
-    </section>
-
-    <section class="container mb-5">
-      <h2 class="section-title mt-5">💡 Solusi</h2>
-      <ol>
-        <li>Gunakan varietas tahan penyakit</li>
-        <li>Semprot fungisida sesuai anjuran jika serangan parah</li>
-        <li>Atur pemupukan nitrogen agar tidak berlebihan</li>
-        <li>Jaga jarak tanam supaya sirkulasi udara baik</li>
-      </ol>
-    </section>
-
- <section class="bg-light py-5" style="margin-top: 80px;">
-  
-    <!-- BUTTON BACK -->
-    <div class="container" style="margin-top: -50px; margin-bottom: 20px;">
-      <button
-        onclick="history.back()"
-        class="btn btn-outline-success"
-      >
-        ← Kembali
-      </button>
+    <div class="container detail-container ">
+        <h2 class="fw-bold mb-4">
+            Penyakit Blas (Blast)
+        </h2>
+        <div class="row">
+            <div class="col-lg-5 mb-4">
+                <div class="left-side">
+                    <img
+                        src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Blas (Blast).png"
+                        class="img-detail shadow-sm"
+                        alt="Ilustrasi Penyakit"
+                    >
+                    <div class="mt-4">
+                        <h5 class="section-title">
+                            Deskripsi Singkat
+                        </h5>
+                        <p class="description-text">
+                            Penyakit blas merupakan salah satu penyakit utama pada tanaman padi yang sangat merugikan petani karena dapat menyebabkan penurunan hasil panen hingga gagal panen pada serangan berat. Penyakit ini disebabkan oleh jamur Magnaporthe oryzae yang mampu menyerang tanaman padi sejak fase persemaian hingga menjelang panen. Blas dapat menyerang hampir seluruh bagian tanaman di atas permukaan tanah, terutama daun, batang, pelepah, ruas batang, dan leher malai. Penyakit ini sering muncul pada kondisi lingkungan yang lembap dan mudah menyebar dengan cepat ke area pertanaman lain apabila tidak segera dikendalikan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card card-custom border-0 p-4">
+                    <h5 class="section-title">
+                        Bagian Yang Diserang
+                    </h5>
+                    <ul>
+                        <li class="mb-2">Daun</li>
+                        <li class="mb-2">Batang</li>
+                        <li class="mb-2">Pelepah</li>
+                        <li class="mb-2">Leher Malai</li>
+                    </ul>
+                    <h5 class="section-title">
+                        Gejala
+                    </h5>
+                    <ul>
+                        <li class="mb-2">
+                            <b>Distorsi Daun:</b>
+                            Daun mengalami perubahan bentuk.
+                        </li>
+                        <li class="mb-2">
+                            <b>Pertumbuhan Terhambat:</b>
+                            Tanaman menjadi kerdil.
+                        </li>
+                        <li class="mb-2">
+                            <b>Bercak:</b>
+                            Muncul bercak coklat pada daun.
+                        </li>
+                    </ul>
+                    <h5 class="section-title">
+                        Detail Gejala
+                    </h5>
+                    <p class="description-text">
+                        Gejala awal penyakit blas biasanya muncul pada daun berupa bercak kecil berwarna coklat kehijauan yang kemudian berkembang menjadi bercak lebih besar berbentuk belah ketupat. Bagian tengah bercak umumnya berwarna abu-abu atau putih keabu-abuan, sedangkan tepinya berwarna coklat tua atau hitam. Pada kondisi serangan berat, bercak dapat menyatu sehingga daun tampak mengering seperti terbakar. Selain menyerang daun, blas juga dapat menyerang leher malai yang ditandai dengan perubahan warna menjadi coklat kehitaman pada pangkal malai. Akibatnya, aliran nutrisi menuju bulir terganggu sehingga bulir padi menjadi hampa atau tidak terisi sempurna. Tanaman yang terserang parah biasanya terlihat lemah dan mudah patah.
+                    </p>
+                    <h5 class="section-title">
+                        Dampak
+                    </h5>
+                    <p class="description-text">
+                        Serangan penyakit blas dapat menyebabkan kerusakan besar pada tanaman padi. Daun yang terinfeksi akan kehilangan kemampuan melakukan fotosintesis secara optimal sehingga pertumbuhan tanaman menjadi terganggu. Jika jamur menyerang leher malai, proses pengisian bulir akan gagal dan menyebabkan banyak gabah menjadi kosong atau hampa. Pada tingkat serangan tinggi, hasil panen dapat menurun drastis bahkan menyebabkan gagal panen. Selain itu, kualitas gabah yang dihasilkan juga menjadi lebih rendah sehingga nilai jual hasil panen menurun.
+                    </p>
+                    <h5 class="section-title">
+                        Penanganan
+                    </h5>
+                    <div class="warna p-4 rounded">
+                        <h6 class="fw-bold text-success mb-3">
+                            Solusi Pengendalian
+                        </h6>
+                        <p class="description-text mb-0">
+                            Pengendalian penyakit blas dapat dilakukan secara terpadu dengan menggabungkan metode kultur teknis, biologis, dan kimiawi. Tanaman yang terserang berat sebaiknya segera dicabut dan dibuang agar tidak menjadi sumber penyebaran penyakit. Penggunaan fungisida dapat dilakukan sesuai dosis dan anjuran untuk menekan perkembangan jamur. Selain itu, petani juga disarankan melakukan rotasi tanaman dan menjaga kondisi lahan agar tidak terlalu lembap sehingga perkembangan jamur dapat dikurangi. Pemantauan rutin pada tanaman sangat penting agar penanganan dapat dilakukan lebih cepat sebelum penyakit menyebar luas.
+                        </p>
+                    </div>
+                    <h5 class="section-title mt-4">
+                        Penyebab
+                    </h5>
+                    <p class="description-text">
+                        Penyakit blas disebabkan oleh jamur Magnaporthe oryzae. Jamur ini berkembang dengan baik pada lingkungan yang memiliki kelembapan tinggi, suhu sekitar 25–28°C, curah hujan tinggi, dan sirkulasi udara yang kurang baik. Selain faktor lingkungan, penggunaan pupuk nitrogen secara berlebihan juga dapat meningkatkan risiko serangan penyakit blas karena tanaman menjadi lebih rentan terhadap infeksi jamur. Penyebaran jamur dapat terjadi melalui benih yang terinfeksi, percikan air hujan, angin, serta sisa jerami atau tanaman sakit yang masih berada di lahan.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="container text-center">
-
-    <!-- Footer -->
-    <footer
-  class="bg-light text-center"
-  style="padding: 10px 0; margin-top: -40px;"
->
-  <p class="mb-0">
-    © 2026 Sistem Pakar Penyakit Padi
-  </p>
-</footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <script>
+        const closeBtn = document.getElementById("menu-toggle");
+        closeBtn.addEventListener("click", function () {
+            if (document.referrer !== "") {
+                window.history.back();
+            } else {
+                window.location.href = "/index.html#informasi";
+            }
+        });
+    </script>
+</body>
 </html>

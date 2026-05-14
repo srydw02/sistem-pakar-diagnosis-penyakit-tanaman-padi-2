@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 html,
 body {
@@ -10,18 +10,19 @@ body {
   scroll-behavior: smooth;
 }
 
-/* scrollbar tetap */
+body {
+  
+  color: #212529;
+  overflow-x: hidden;
+}
+
 html {
   overflow-y: scroll !important;
 }
 
-body {
-  background: linear-gradient(to right, #e8f5e9, #ffffff);
+.penyakit {
+  background: linear-gradient(to top, #ffffff, #f1fff4);
 }
-
-/* =========================
-   NAVBAR
-========================= */
 
 .navbar {
     background: rgba(255, 255, 255, 0.96);
@@ -51,7 +52,6 @@ body {
     padding: 8px 6px !important;
 }
 
-
 .nav-link:hover {
     color: #2f9e44 !important;
     transform: translateY(-2px);
@@ -65,19 +65,14 @@ body {
 .nav-link::after {
     content: "";
     position: absolute;
-
     left: 50%;
     bottom: -6px;
-
     width: 7px;
     height: 7px;
-
     border-radius: 50%;
     background: #2f9e44;
-
     transform: translateX(-50%) scale(0);
     opacity: 0;
-
     transition: .3s ease;
 }
 
@@ -108,7 +103,6 @@ body {
     box-shadow: none;
 }
 
-
 #hero {
   padding-top: 120px;
   padding-bottom: 60px;
@@ -123,11 +117,8 @@ body {
 
 #penyakit {
   margin-top: 20px;
+  background: linear-gradient(to top, #ffffff, #f1fff4);
 }
-
-/* =========================
-   TEXT
-========================= */
 
 .heading {
   font-size: 4em;
@@ -135,11 +126,10 @@ body {
   color: #2f281e;
 }
 
-.sub-heading {
-  font-size: 3em;
-  font-weight: 600;
-  color: #2f281e;
+.informasi-heading {
+  padding-top: 100px;
 }
+
 
 .teks {
   font-size: medium;
@@ -150,24 +140,14 @@ body {
   color: #2f281e;
 }
 
-/* =========================
-   CARD
-========================= */
-
 .card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 90px;
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(209, 247, 207, 0.1);
     transition: 0.3s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.inner-img {
-    position: relative;
-    overflow: hidden; /* Memotong gambar yang membesar */
-    height: 200px;    /* Sesuaikan dengan tinggi card-img-top kamu */
 }
 
 .position-relative {
@@ -175,18 +155,16 @@ body {
     overflow: hidden;
 }
 
-
-    .card-overlay {
+.card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 200px;
     background: rgba(0, 0, 0, 0.4); 
     transition: background 0.5s ease;
     z-index: 1;
 }
-
 
 .card-img-top {
     width: 100%;
@@ -198,10 +176,7 @@ body {
 .card-body {
     display: flex;
     flex-direction: column;
-}
-
-.card:hover .card-overlay{
-    background: rgba(0, 0, 0, 0.1);
+    background-color: none;
 }
 
 .card:hover {
@@ -228,15 +203,49 @@ body {
     z-index: 1;
 }
 
+.accordion{
+  background-color: none;
+}
+.accordion .card-gejala {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.card-gejala {
+    height: 100%;
+    border-radius: 20px !important;
+    box-shadow: 0 6px 30px rgba(209, 247, 207, 0.1);
+    background-color: #f8fdf9;
+
+    transition: 
+      transform 0.4s ease,
+      box-shadow 0.4s ease,
+      background-color 0.4s ease;
+      
+    will-change: transform;
+}
+
+.card-gejala:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.15) !important;
+    background-color: #ffffff;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;}
+  }
+  
 .gambar-dalam {
   position: relative;
   overflow: hidden;
   height: 220px;
 }
-
-/* =========================
-   BUTTON
-========================= */
 
 .btn-primary {
   background: #d8f5cf;
@@ -263,10 +272,6 @@ body {
   margin-top: 1em;
 }
 
-/* =========================
-   LINK
-========================= */
-
 a {
   color: black;
   transition: 0.3s ease;
@@ -276,10 +281,6 @@ a:hover {
   color: green;
   text-decoration: none;
 }
-
-/* =========================
-   IMAGE
-========================= */
 
 .kiri {
   margin: 1%;
@@ -294,42 +295,31 @@ a:hover {
   float: left;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media only screen and (max-width: 768px) {
-
   .heading {
-    font-size: 2.5em;
+    font-size: 2em;
   }
-
   .sub-heading {
     font-size: 2em;
   }
-
   .navbar-nav {
     padding-top: 10px;
   }
-
   .nav-item {
     margin: 5px 0;
   }
-
   .btn-register {
     margin-left: 0;
     margin-top: 10px;
   }
-
   .card {
     margin-top: 10px;
     margin-left: 0 !important;
   }
-
   .card-img-top {
     height: 180px;
   }
-
   #hero {
     padding-top: 100px;
   }
@@ -350,4 +340,5 @@ a:hover {
 
 .contaier{
   margin-top: 0px;
+  
 }

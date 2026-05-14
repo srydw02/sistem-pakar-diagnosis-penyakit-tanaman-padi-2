@@ -2,125 +2,198 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-     <link rel="shortcut icon" href="gambar/icon.png" type="image/x-icon"> 
+    <link rel="shortcut icon" href="../gambar/icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/static/style/style.css">
-    <title>Sistem Pakar Penyakit Padi</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- CSS Utama (Untuk Navbar & Footer) -->
+    <link rel="stylesheet" href="../static/style/style.css">
+    <!-- CSS Khusus Layout Berita ala CNN -->
+    <link rel="stylesheet" href="../static/style/style6.css">
+
+    <title>Berita - Sistem Pakar Penyakit Padi</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- NAVBAR SIPADI -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
         <div class="container-xl">
-            <a class="navbar-brand" >
-                <h3 style="color: green;">SiPadi</h3>
+            <a class="navbar-brand">
+                <h3 style="color: #0b8f1f; margin-bottom:0; font-weight: 800;">SiPadi</h3>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                 <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/index.html">Home</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/#home">Home</a></li>
+                    <li class="nav-item align-self-center active"><a class="nav-link active" href="/template/berita.html">Berita</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/informasi.html">Informasi</a></li>
+                    <li class="nav-item align-self-center">
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
                     </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link active" href="#berita">Berita</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="jenisPadi.html">Jenis Padi</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="informasi.html">Informasi</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href="diagnosis.html" role="button">
-                            Diagnosis
-                        </a>
-                    </li>
-
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- KONTEN PORTAL BERITA ALA CNN -->
+    <main class="news-portal-wrapper">
+        <div class="container-xl">
 
+            <!-- SECTION 1: BERITA UTAMA -->
+            <div class="row">
+                <!-- Kolom Kiri: Hero Article (Besar) -->
+                <div class="col-lg-7 pr-lg-4 mb-4 mb-lg-0">
+                    <div class="cnn-section-header">
+                        <div class="accent-bar"></div> BERITA UTAMA
+                    </div>
+                    
+                    <article class="hero-article">
+                        <a href="/template/beritapadi/beritamamah.html" class="text-decoration-none text-dark">
+                            <div class="img-wrapper">
+                                <img src="/static/images/fotoberita/pestisida.jpg" alt="Berita Utama" class="w-100">
+                            </div>
+                            <h1 class="hero-title mt-3">Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini</h1>
+                            <p class="hero-excerpt mt-2">Pakar menyarankan petani untuk rutin memantau area bawah rumpun padi karena kelembaban tinggi memicu ledakan populasi yang dapat merusak panen.</p>
+                        </a>
+                    </article>
+                </div>
 
-      <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
-          <div class="container">
-              <div class="row">
+                <!-- Kolom Kanan: Berita Sampingan & List -->
+                <div class="col-lg-5 pl-lg-3">
+                    <div class="cnn-section-header">
+                        <div class="accent-bar"></div> INFO TERKINI
+                    </div>
+
+                    <!-- Berita Sedang (Atas) -->
+                    <article class="medium-article mb-4">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="/static/images/fotoberita/drone1.jpg" alt="Berita" class="w-100 mb-2">
+                            <h3 class="medium-title">Drone Pertanian Mulai Didistribusikan ke Kelompok Tani Jawa Barat</h3>
+                        </a>
+                    </article>
+
+                    <!-- List Berita Kecil (Bawahnya) -->
+                    <div class="list-article-wrapper">
+                        <article class="list-article">
+                            <a href="/template/beritapadi/waspadaseranganblast.html" class="d-flex text-decoration-none text-dark">
+                                <div class="list-content pr-3">
+                                    <h4 class="list-title">Cuaca Ekstrem dan Kelembapan Tinggi, Penyakit Blast Mengancam Panen Padi</h4>
+                                </div>
+                                <img src="/static/images/fotoberita/homeberita1.jpg" alt="Thumb">
+                            </a>
+                        </article>
+
+                        <article class="list-article">
+                            <a href="/template/beritapadi/irigasi.html" class="d-flex text-decoration-none text-dark">
+                                <div class="list-content pr-3">
+                                    <h4 class="list-title">Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi Cerdas</h4>
+                                </div>
+                                <img src="/static/images/fotoberita/kering.jpg" alt="Thumb">
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: TEKNOLOGI & INOVASI (Grid 3 Kolom) -->
+            <div class="cnn-section-header mt-5 pt-3">
+                <div class="accent-bar"></div> TEKNOLOGI & INOVASI
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="grid-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="/static/images/fotoberita/drone.jpg" alt="Tech 1" class="w-100 mb-2">
+                            <h3 class="grid-title">Kementan Dorong Penerapan Smart Farming dan Penggunaan Drone Pertanian untuk Efisiensi</h3>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="grid-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech 2" class="w-100 mb-2">
+                            <h3 class="grid-title">Pupuk Organik Berbasis Bio-Nano Diklaim Mampu Perkuat Imunitas Tanaman</h3>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="grid-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech 3" class="w-100 mb-2">
+                            <h3 class="grid-title">Mampukah Sistem Pakar Menggantikan Peran Penyuluh Pertanian Lapangan?</h3>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+            <!-- SECTION 3: EDUKASI & TIPS (1 Besar, 1 Sedang) -->
+            <div class="cnn-section-header mt-5 pt-3">
+                <div class="accent-bar"></div> EDUKASI PETANI
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-8 pr-lg-4 mb-4 mb-lg-0">
+                    <article class="hero-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="img-wrapper">
+                                <img src="/static/images/fotoberita/bakanae.jpg" alt="Edukasi" class="w-100">
+                            </div>
+                            <h2 class="hero-title mt-3" style="font-size: 2rem;">Langkah Krusial Menyelamatkan Bibit Padi dari Serangan Penyakit Bakanae</h2>
+                        </a>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4">
+                    <article class="medium-article h-100 d-flex flex-column">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tips" class="w-100 mb-3">
+                            <h3 class="medium-title">Kenali Ciri-Ciri Serangan Wereng Hijau Pembawa Virus Tungro</h3>
+                            <p class="text-muted mt-2" style="font-size: 0.95rem;">Jangan tunggu sampai daun menguning oranye, segera lakukan tindakan preventif ini saat populasi wereng mulai terlihat.</p>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER SIPADI -->
+    <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
+        <div class="container-fluid px-5">
+            <div class="row">
                 <div class="col-lg-7 col-md-6">
                     <h5 class="fw-bold mb-3">Tentang</h5>
                     <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
-                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada tanaman padi berdasarkan gejala yang muncul. 
-                        Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani dapat mengambil tindakan yang tepat 
-                        untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
+                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada
+                        tanaman padi berdasarkan gejala yang muncul. Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya.
                     </p>
                 </div>
-
                 <div class="col-lg-4 col-md-6 offset-lg-1">
                     <h5 class="fw-bold mb-3">Link</h5>
-                    <ul class="list-unstyled" style="color: white;">
-                        <li class="mb-2">
-                            <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/metode.html" class="text-secondary text-decoration-none">Metode</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis Padi</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi Penyakit</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman Diagnosis</a>
-                        </li>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-secondary text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/template/berita.html" class="text-secondary text-decoration-none">Berita</a></li>
+                        <li class="mb-2"><a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis Padi</a></li>
+                        <li class="mb-2"><a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Diagnosis</a></li>
                     </ul>
                 </div>
-          </div>
-
-          <hr class="my-2 border-secondary">
-              
-          <div class="text-center">
-              <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
-          </div>
-
+            </div>
+            <hr class="my-2 border-secondary">
+            <div class="text-center">
+                <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
+            </div>
         </div>
-      </footer>
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
- <script>
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        // default home aktif
-        document.querySelector('a[href="#berita"]').classList.add("active");
-
-        // pindah active saat diklik
-        navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-
-                navLinks.forEach(item => {
-                    item.classList.remove("active");
-                });
-
-                this.classList.add("active");
-            });
-        });
-    </script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

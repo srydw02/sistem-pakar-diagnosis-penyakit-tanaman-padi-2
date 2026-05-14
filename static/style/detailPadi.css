@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #e8f5e9);
+    font-family: "Poppins", sans-serif;
+    color: #2f281e;
+    /* Tambahan jarak atas agar konten tidak tertabrak navbar fixed-top */
+    padding-top: 100px; 
+    padding-bottom: 60px;
+    overflow-y: scroll !important;
+}
+
+/* =========================
+   NAVBAR (COPAS DARI STYLE 2)
+========================= */
+.navbar {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.navbar-brand h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b8f1f;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 8px;
+}
+
+.nav-link {
+    position: relative;
+    color: #222 !important;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 8px 6px !important;
+}
+
+.nav-link:hover {
+    color: #2f9e44 !important;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: #2f9e44 !important;
+    font-weight: 600;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2f9e44;
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.nav-link.active::before { width: 70%; }
+
+.btn-primary {
+    background: #d8f5cf;
+    border: none;
+    color: #0b8f1f;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #2f9825;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-register {
+    border-radius: 14px;
+    padding: 10px 22px !important;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(47,158,68,.25);
+}
+
+.navbar-toggler { border: none; }
+.navbar-toggler:focus { outline: none; box-shadow: none; }
+
+/* =========================
+   DETAIL LAYOUT (GAMBAR & SPEK)
+========================= */
+.detail-header {
+    text-align: center;
+    padding: 10px 20px 30px;
+}
+
+.detail-header h1 {
+    color: #0b8f1f;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.detail-header p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Pembungkus Gambar dan Kartu Spesifikasi (Flexbox) */
+.detail-main-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.detail-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.detail-image-wrapper img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 5px solid white;
+}
+
+.specs-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    min-width: 300px;
+}
+
+.spec-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 6px 20px rgba(47, 158, 68, 0.05);
+    text-align: center;
+    border-bottom: 4px solid #28a745;
+    transition: 0.3s;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(47, 158, 68, 0.15);
+}
+
+.spec-card h4 {
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.spec-card p {
+    color: #0b8f1f;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* =========================
+   KONTEN DESKRIPSI
+========================= */
+.detail-content {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+.detail-content h3 {
+    color: #0b8f1f;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #d8f5cf;
+    color: #0b8f1f;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #0b8f1f;
+    color: white;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+@media (max-width: 768px) {
+    .detail-header h1 { font-size: 2rem; }
+    .detail-image-wrapper img { height: 250px; }
+    .specs-grid { grid-template-columns: 1fr; }
+    body { padding-top: 80px; }
+}
