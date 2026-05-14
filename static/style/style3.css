@@ -50,16 +50,42 @@ body {
   }
 }
 
+.brand-sipadi { 
+    color: #0b8f1f; 
+    font-weight: 800; 
+    font-size: 1.6rem; 
+    margin: 0; 
+    letter-spacing: -0.5px;
+}
 
 .navbar-detail {
-  padding: 15px 0;
+  padding: 12px 132px;
   z-index: 9999;
   backdrop-filter: blur(12px);
 }
 
+.breadcrumb-custom {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6c757d;
+    background: #ecefed;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.breadcrumb-custom a {
+    color: #2f9e44;
+    text-decoration: none;
+}
+.breadcrumb-custom a:hover {
+    text-decoration: underline;
+}
+
 .detail-container {
-  padding-top: 90px;
+  padding-top: 95px;
   padding-bottom: 50px;
+  padding-left: 110px;
+  padding-right: 110px;
 }
 
 .left-side {
