@@ -282,18 +282,7 @@ a:hover {
   text-decoration: none;
 }
 
-.kiri {
-  margin: 1%;
-  width: 15%;
-  border-radius: 8px;
-  float: left;
-}
 
-.kanan {
-  margin: 1%;
-  width: 75%;
-  float: left;
-}
 
 
 @media only screen and (max-width: 768px) {
