@@ -572,3 +572,116 @@ a:hover h1, a:hover h2, a:hover h3, a:hover h4 {
         font-size: 1.6rem;
     }
 }
+
+/* =========================
+   TOMBOL CAROUSEL MENGAMBANG (MODERN BOX / GLASS EFFECT)
+========================= */
+.carousel-btn-center {
+    position: absolute;
+    top: 35%; 
+    transform: translateY(-50%);
+    width: 40px;        /* Dibuat lebih ramping */
+    height: 70px;       /* Dibuat tinggi seperti tab/box vertikal */
+    border-radius: 8px; /* Sudut tumpul elegan, BUKAN bulat (50%) */
+    
+    /* Efek Kaca (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    
+    color: #0b8f1f; 
+    border: 1px solid rgba(11, 143, 31, 0.15); /* Garis tepi hijau super tipis */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem; /* Ikon dibuat sedikit lebih besar */
+    cursor: pointer;
+    z-index: 10;
+    
+    /* DEFAULT: Sembunyi total & geser dikit ke luar biar pas muncul ada animasi masuk */
+    opacity: 0; 
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    outline: none !important;
+}
+
+/* Posisi nempel di kiri dan kanan (ditambah efek slide-in pas muncul) */
+.carousel-btn-center.prev-btn { left: 0px; }
+.carousel-btn-center.next-btn { right: 0px; }
+
+/* MAGIC 1: Saat area slider disorot, tombol nongol, redup, dan geser ke dalam dikit */
+.news-carousel-wrapper:hover .carousel-btn-center.prev-btn {
+    opacity: 0.7;
+    visibility: visible;
+    left: 15px; /* Geser ke dalam */
+}
+.news-carousel-wrapper:hover .carousel-btn-center.next-btn {
+    opacity: 0.7;
+    visibility: visible;
+    right: 15px; /* Geser ke dalam */
+}
+
+/* MAGIC 2: Saat tombolnya sendiri disorot, nyala 100% dan warnanya solid */
+.carousel-btn-center:hover {
+    opacity: 1 !important;
+    background: #0b8f1f;
+    color: #ffffff;
+    border-color: #0b8f1f;
+    transform: translateY(-50%) scale(1.05); /* Membesar sedikit, elegan */
+    box-shadow: 0 8px 25px rgba(11, 143, 31, 0.35);
+}
+
+/* =========================
+   VERTICAL TICKER EDUKASI PETANI
+========================= */
+.vertical-ticker-track {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
+    /* Sembunyikan scrollbar jelek */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.vertical-ticker-track::-webkit-scrollbar {
+    display: none;
+}
+
+.ticker-item {
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8fdf9; /* Hijau super pudar */
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Biar ukurannya gak kegencet */
+}
+
+.ticker-item:hover {
+    background: #e6f7eb;
+    border-left: 4px solid #0b8f1f;
+    transform: translateX(5px); /* Efek geser ke kanan dikit pas disorot */
+}
+
+/* =========================
+   READING PROGRESS BAR (ALA CNN)
+========================= */
+.progress-container {
+    width: 100%;
+    height: 4px; /* Ketebalan garis, bisa diubah sesuai selera */
+    background: transparent;
+    position: absolute; 
+    bottom: -4px; /* Posisinya nempel tepat di garis bawah navbar */
+    left: 0;
+    z-index: 1050;
+}
+
+.progress-bar-custom {
+    height: 100%;
+    background: #0b8f1f; /* Warna hijau khas SiPadi */
+    width: 0%; /* Default 0% saat belum di-scroll */
+    border-radius: 0 3px 3px 0; /* Ujung kanannya agak membulat dikit biar manis */
+    box-shadow: 0 1px 3px rgba(11, 143, 31, 0.4); /* Efek nyala tipis */
+    transition: width 0.1s ease-out; /* Biar geraknya smooth nggak patah-patah */
+}
