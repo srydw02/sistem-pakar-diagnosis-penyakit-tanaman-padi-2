@@ -1,296 +1,195 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../gambar/icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
+    <!-- CSS Utama (Untuk Navbar & Footer) -->
     <link rel="stylesheet" href="../static/style/style.css">
+    <!-- CSS Khusus Layout Berita ala CNN -->
+    <link rel="stylesheet" href="../static/style/style6.css">
 
     <title>Berita - Sistem Pakar Penyakit Padi</title>
-
-    <style>
-        /* Background halaman agak abu-abu / hijau sangat muda agar kartu putih terlihat menonjol */
-        body {
-            background-color: #f8fafc; 
-        }
-
-        /* Styling Header Section */
-        .berita-header {
-            margin-top: 100px; /* Jarak dari fixed navbar */
-            margin-bottom: 50px;
-        }
-        .garis-bawah-hijau {
-            width: 80px;
-            height: 4px;
-            background-color: #28a745;
-            margin: 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Styling Kartu Berita ala Botani */
-        .botani-card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.5s ease;
-            overflow: hidden; /* Mencegah gambar tumpah saat di-zoom */
-            background-color: white;
-        }
-        
-        /* Efek saat kartu disentuh mouse */
-        .botani-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-        }
-
-        /* Bungkus Gambar */
-        .botani-img-wrapper {
-            position: relative;
-            overflow: hidden;
-            height: 200px;
-        }
-        .botani-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease-in-out;
-        }
-        
-        /* Efek gambar membesar saat kartu disentuh */
-        .botani-card:hover .botani-img {
-            transform: scale(1.05);
-        }
-
-        /* Gradien hitam transparan di atas gambar (untuk alas teks tanggal) */
-        .botani-img-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            pointer-events: none;
-        }
-
-        /* Teks Tanggal */
-        .botani-date {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-size: 0.85rem;
-            z-index: 2;
-        }
-
-        /* Konten Teks di bawah gambar */
-        .botani-card-body {
-            padding: 1.5rem;
-        }
-        .botani-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #343a40;
-            transition: color 0.3s ease;
-            margin-bottom: 0.75rem;
-        }
-        .botani-card:hover .botani-title {
-            color: #28a745; /* Berubah hijau saat hover */
-        }
-        
-        /* Memotong teks panjang menjadi 3 baris */
-        .line-clamp-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            line-clamp: 3; /* Tambahkan baris ini untuk mengatasi peringatan */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            color: #6c757d;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Link "Baca selengkapnya" */
-        .botani-link {
-            display: inline-flex;
-            align-items: center;
-            color: #28a745;
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .botani-link:hover {
-            color: #1e7e34;
-            text-decoration: none;
-        }
-        .botani-link i {
-            transition: transform 0.3s ease;
-        }
-        /* Ikon panah bergeser ke kanan saat disentuh */
-        .botani-card:hover .botani-link i {
-            transform: translateX(5px);
-        }
-    </style>
 </head>
 
 <body>
+    <!-- NAVBAR SIPADI -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
         <div class="container-xl">
             <a class="navbar-brand">
-                <h3 style="color: green; margin-bottom:0;">SiPadi</h3>
+                <h3 style="color: #0b8f1f; margin-bottom:0; font-weight: 800;">SiPadi</h3>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/#home">Home</a></li>
+                    <li class="nav-item align-self-center active"><a class="nav-link active" href="/template/berita.html">Berita</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/informasi.html">Informasi</a></li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/#home">Home</a>
-                    </li>
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link active" href="/template/berita.html">Berita</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">
-                            Diagnosis
-                        </a>
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-xl">
-        <div class="berita-header text-center animate-fade-up">
-            <h1 class="font-weight-bold" style="color: #2e7d32;">Berita Terkini</h1>
-            <p class="text-muted mb-4">Temukan informasi terbaru seputar dunia pertanian padi dan kesehatan tanaman.</p>
-            <div class="garis-bawah-hijau"></div>
+    <!-- KONTEN PORTAL BERITA ALA CNN -->
+    <main class="news-portal-wrapper">
+        <div class="container-xl">
+
+            <!-- SECTION 1: BERITA UTAMA -->
+            <div class="row">
+                <!-- Kolom Kiri: Hero Article (Besar) -->
+                <div class="col-lg-7 pr-lg-4 mb-4 mb-lg-0">
+                    <div class="cnn-section-header">
+                        <div class="accent-bar"></div> BERITA UTAMA
+                    </div>
+                    
+                    <article class="hero-article">
+                        <a href="/template/detailPenyakit/p1.html" class="text-decoration-none text-dark">
+                            <div class="img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1595015335805-24b9bc975db3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Berita Utama" class="w-100">
+                            </div>
+                            <h1 class="hero-title mt-3">Ancaman Cuaca Ekstrem: Pakar Peringatkan Lonjakan Kasus Penyakit Hawar Daun Bakteri</h1>
+                            <p class="hero-excerpt mt-2">Curah hujan yang tidak menentu dan kelembapan udara yang tinggi memicu kekhawatiran meluasnya wabah Hawar Daun Bakteri (BLB) atau penyakit Kresek di lumbung padi nasional. Petani diimbau gunakan VUTW.</p>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Kolom Kanan: Berita Sampingan & List -->
+                <div class="col-lg-5 pl-lg-3">
+                    <div class="cnn-section-header">
+                        <div class="accent-bar"></div> INFO TERKINI
+                    </div>
+
+                    <!-- Berita Sedang (Atas) -->
+                    <article class="medium-article mb-4">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Berita" class="w-100 mb-2">
+                            <h3 class="medium-title">Drone Pertanian Mulai Didistribusikan ke Kelompok Tani Jawa Barat</h3>
+                        </a>
+                    </article>
+
+                    <!-- List Berita Kecil (Bawahnya) -->
+                    <div class="list-article-wrapper">
+                        <article class="list-article">
+                            <a href="#" class="d-flex text-decoration-none text-dark">
+                                <div class="list-content pr-3">
+                                    <h4 class="list-title">Harga Gabah Kering Panen (GKP) Melonjak Tembus Rp7.500 per Kg</h4>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Thumb">
+                            </a>
+                        </article>
+
+                        <article class="list-article">
+                            <a href="#" class="d-flex text-decoration-none text-dark">
+                                <div class="list-content pr-3">
+                                    <h4 class="list-title">Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi Cerdas</h4>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1592982537447-6f2c6a0c5c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Thumb">
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: TEKNOLOGI & INOVASI (Grid 3 Kolom) -->
+            <div class="cnn-section-header mt-5 pt-3">
+                <div class="accent-bar"></div> TEKNOLOGI & INOVASI
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="grid-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1530836369250-ef71a3f5e48c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech 1" class="w-100 mb-2">
+                            <h3 class="grid-title">Aplikasi SiPadi Kini Dilengkapi Fitur Deteksi Penyakit Real-Time via Kamera AI</h3>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="grid-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech 2" class="w-100 mb-2">
+                            <h3 class="grid-title">Pupuk Organik Berbasis Bio-Nano Diklaim Mampu Perkuat Imunitas Tanaman</h3>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="grid-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech 3" class="w-100 mb-2">
+                            <span class="badge-tag mb-2 d-inline-block">Analisis Pakar</span>
+                            <h3 class="grid-title">Mampukah Sistem Pakar Menggantikan Peran Penyuluh Pertanian Lapangan?</h3>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+            <!-- SECTION 3: EDUKASI & TIPS (1 Besar, 1 Sedang) -->
+            <div class="cnn-section-header mt-5 pt-3">
+                <div class="accent-bar"></div> EDUKASI PETANI
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-8 pr-lg-4 mb-4 mb-lg-0">
+                    <article class="hero-article">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1586771107445-d3afaf0def8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Edukasi" class="w-100">
+                            </div>
+                            <h2 class="hero-title mt-3" style="font-size: 2rem;">Langkah Krusial Menyelamatkan Bibit Padi dari Serangan Penyakit Bakanae</h2>
+                        </a>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4">
+                    <article class="medium-article h-100 d-flex flex-column">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tips" class="w-100 mb-3">
+                            <h3 class="medium-title">Kenali Ciri-Ciri Serangan Wereng Hijau Pembawa Virus Tungro</h3>
+                            <p class="text-muted mt-2" style="font-size: 0.95rem;">Jangan tunggu sampai daun menguning oranye, segera lakukan tindakan preventif ini saat populasi wereng mulai terlihat.</p>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
         </div>
+    </main>
 
-        <div class="row pb-5">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <article class="card botani-card h-100">
-                    <div class="botani-img-wrapper">
-                        <img src="../static/images/fotoJenisPadi/IR64.png" alt="Berita 1" class="botani-img">
-                        <div class="botani-img-overlay"></div>
-                        <div class="botani-date">
-                            <i class="far fa-calendar-alt mr-1"></i> 14 Jul 2025
-                        </div>
-                    </div>
-                    <div class="botani-card-body d-flex flex-column">
-                        <h2 class="botani-title">Waspadai Serangan Blast Padi di Musim Hujan yang Semakin Ekstrem</h2>
-                        <p class="line-clamp-3">Penyakit blast yang disebabkan jamur Pyricularia oryzae meningkat drastis saat kelembaban tinggi di musim hujan. Para petani dihimbau untuk selalu memeriksa kondisi daun secara berkala dan memastikan drainase sawah berjalan dengan baik.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="botani-link">
-                                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <article class="card botani-card h-100">
-                    <div class="botani-img-wrapper">
-                        <img src="../static/images/fotoJenisPadi/ciherang.png" alt="Berita 2" class="botani-img">
-                        <div class="botani-img-overlay"></div>
-                        <div class="botani-date">
-                            <i class="far fa-calendar-alt mr-1"></i> 10 Jul 2025
-                        </div>
-                    </div>
-                    <div class="botani-card-body d-flex flex-column">
-                        <h2 class="botani-title">5 Cara Efektif Mencegah Penyakit Hawar Daun Bakteri Sejak Dini</h2>
-                        <p class="line-clamp-3">Hawar daun bakteri (HDB) dapat menurunkan hasil panen secara signifikan hingga 50%. Simak langkah pencegahan yang bisa dilakukan petani mulai dari pemilihan bibit unggul hingga manajemen pengairan lahan.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="botani-link">
-                                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <article class="card botani-card h-100">
-                    <div class="botani-img-wrapper">
-                        <img src="../static/images/fotoJenisPadi/pandan.png" alt="Berita 3" class="botani-img">
-                        <div class="botani-img-overlay"></div>
-                        <div class="botani-date">
-                            <i class="far fa-calendar-alt mr-1"></i> 05 Jul 2025
-                        </div>
-                    </div>
-                    <div class="botani-card-body d-flex flex-column">
-                        <h2 class="botani-title">Sistem Pakar Bantu Petani Deteksi Penyakit Lebih Cepat dan Akurat</h2>
-                        <p class="line-clamp-3">Penerapan teknologi sistem pakar berbasis web dengan metode Forward Chaining terbukti membantu petani mengidentifikasi penyakit padi 3x lebih cepat dibanding metode konvensional. Inovasi ini disambut baik oleh kelompok tani.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="botani-link">
-                                Baca selengkapnya <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-
-      <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
+    <!-- FOOTER SIPADI -->
+    <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
         <div class="container-fluid px-5">
             <div class="row">
                 <div class="col-lg-7 col-md-6">
                     <h5 class="fw-bold mb-3">Tentang</h5>
                     <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
                         Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada
-                        tanaman padi berdasarkan gejala yang muncul.
-                        Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani
-                        dapat mengambil tindakan yang tepat
-                        untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
+                        tanaman padi berdasarkan gejala yang muncul. Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya.
                     </p>
                 </div>
-
                 <div class="col-lg-4 col-md-6 offset-lg-1">
                     <h5 class="fw-bold mb-3">Link</h5>
-                    <ul class="list-unstyled" style="color: white;">
-                        <li class="mb-2">
-                            <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/berita.html" class="text-secondary text-decoration-none">Berita</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis
-                                Padi</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi
-                                Penyakit</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman
-                                Diagnosis</a>
-                        </li>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-secondary text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/template/berita.html" class="text-secondary text-decoration-none">Berita</a></li>
+                        <li class="mb-2"><a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis Padi</a></li>
+                        <li class="mb-2"><a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Diagnosis</a></li>
                     </ul>
                 </div>
             </div>
-
             <hr class="my-2 border-secondary">
-
             <div class="text-center">
                 <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
             </div>
-
         </div>
     </footer>
 
