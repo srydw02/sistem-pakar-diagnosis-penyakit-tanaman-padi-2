@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padi Rojolele - SiPadi</title>
+    <title>Padi Rojolele - SiPadi Analitik</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../../static/style/detailPadi.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl">
-            <a class="navbar-brand">
-                <h3>SiPadi</h3>
+            <a class="navbar-brand" href="/index.html">
+                <h3 class="brand-text">SiPadi</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,20 +23,12 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/berita.html">Berita</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/informasi.html">Informasi</a></li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/berita.html">Berita</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">Diagnosis</a>
                     </li>
                 </ul>
             </div>
@@ -43,7 +37,7 @@
 
     <div class="detail-header">
         <h1>Padi Rojolele</h1>
-        <p>Varietas Lokal Unggulan yang Melegenda</p>
+        <p>Legenda Pulen Wangi Nusantara</p>
     </div>
 
     <div class="detail-container">
@@ -54,24 +48,254 @@
             </div>
 
             <div class="specs-grid">
-                <div class="spec-card"><h4>Daerah Asal</h4><p>Klaten, Jateng</p></div>
+                <div class="spec-card"><h4>Daerah Asal</h4><p>Jawa Tengah</p></div>
                 <div class="spec-card"><h4>Tekstur Nasi</h4><p>Sangat Pulen</p></div>
-                <div class="spec-card"><h4>Aroma</h4><p>Wangi Khas</p></div>
-                <div class="spec-card"><h4>Umur Panen</h4><p>155 Hari</p></div>
+                <div class="spec-card"><h4>Bentuk Beras</h4><p>Bulat Besar</p></div>
+                <div class="spec-card"><h4>Penyajian</h4><p>Hidangan Premium</p></div>
             </div>
         </div>
 
         <div class="detail-content">
-            <h3>Deskripsi Lengkap</h3>
-            <p>Padi Rojolele merupakan salah satu varietas padi lokal unggulan yang sangat melegenda di Indonesia, khususnya di daerah Klaten dan Boyolali, Jawa Tengah. Keistimewaan utama dari beras ini terletak pada aroma wanginya yang sangat khas dan tekstur nasinya yang sangat pulen serta lembut saat dikonsumsi.</p>
-            <br>
-            <p>Tanaman padi Rojolele memiliki postur yang cukup tinggi sehingga membutuhkan perawatan ekstra agar tidak mudah rebah saat terkena hujan dan angin kencang. Meskipun masa panennya sedikit lebih lama dibandingkan padi modern, cita rasa premiumnya membuat Rojolele tetap menjadi primadona di pasaran.</p>
-            <a href="../jenisPadi.html" class="btn-back">⬅ Kembali ke Daftar Padi</a>
-        </div>
-    </div>
+            
+            <h3 class="editorial-title">Deskripsi Lengkap</h3>
+            <p class="editorial-text">
+                Rojolele adalah varietas padi lokal legendaris kebanggaan masyarakat Jawa Tengah, khususnya daerah Klaten dan Delanggu. Beras ini sangat dihormati karena menghasilkan nasi dengan tingkat kepulenan yang luar biasa serta aroma wangi yang menggugah selera. Bentuk bulirnya yang cenderung bulat dan sedikit kusam justru menjadi ciri khas keasliannya di pasaran.
+            </p>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Analisis Karakteristik</h3>
+            <div class="row editorial-row">
+                <div class="col-md-6 editorial-col-left">
+                    <h4 class="editorial-subtitle">Keunggulan Agronomi</h4>
+                    <p class="editorial-text">
+                        Keunggulan absolut Rojolele terletak pada kualitas gabah dan nasinya yang premium. Harga jual beras Rojolele asli di pasaran sangat tinggi, menjadikannya komoditas bernilai ekonomi fantastis bagi petani yang bersedia merawatnya dengan tekun.
+                    </p>
+                </div>
+                <div class="col-md-6 editorial-col-right">
+                    <h4 class="editorial-subtitle">Tantangan Budidaya</h4>
+                    <p class="editorial-text">
+                        Budidayanya sangat menantang karena umur panen yang amat panjang (mencapai 155 hari). Selain itu, postur tanaman ini sangat tinggi, membuatnya sangat rentan rebah (lodoh) jika diterjang angin kencang atau hujan lebat menjelang panen.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Kalender Tanam & Titik Kritis</h3>
+            <p class="editorial-text">Alur waktu fase pertumbuhan padi Rojolele sejak penyemaian hingga masa panen yang panjang.</p>
+            
+            <div class="editorial-timeline mt-4 mb-5">
+                <div class="timeline-axis">
+                    <div class="timeline-progress" style="width: 100%;"></div>
+                </div>
+                
+                <div class="timeline-labels">
+                    <div class="timeline-segment" style="width: 50%;">
+                        <div class="segment-tick"></div>
+                        <span class="segment-title">Vegetatif</span>
+                        <span class="segment-desc">0-80 Hari</span>
+                    </div>
+                    
+                    <div class="timeline-segment" style="width: 25%;">
+                        <div class="pulse-marker">
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-dot"></div>
+                            <div class="clean-tooltip">Titik Rawan: Postur tanaman meninggi. Rawan rebah (lodoh) oleh angin kencang dan rentan serangan hama penggerek batang.</div>
+                        </div>
+                        <span class="segment-title text-danger">Reproduktif</span>
+                        <span class="segment-desc">81-120 Hari</span>
+                    </div>
+                    
+                    <div class="timeline-segment" style="width: 25%;">
+                        <div class="segment-tick"></div>
+                        <span class="segment-title">Pematangan</span>
+                        <span class="segment-desc">121-155 Hari</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Proyeksi Finansial Dasar (Per Hektar)</h3>
+            <table class="editorial-table">
+                <tbody>
+                    <tr>
+                        <td>Estimasi Biaya Produksi (Perawatan Ekstra)</td>
+                        <td class="text-right">Rp 9.500.000</td>
+                    </tr>
+                    <tr>
+                        <td>Estimasi Hasil (5.0 Ton Gabah Premium)</td>
+                        <td class="text-right">Rp 32.500.000</td>
+                    </tr>
+                    <tr class="table-total">
+                        <td>Estimasi Margin Kotor</td>
+                        <td class="text-right highlight-text">Rp 23.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title mb-4">Komparasi Varietas</h3>
+            <p class="editorial-text mb-4">Pilih varietas di sisi kanan untuk membandingkan metrik agronomi dengan Rojolele.</p>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="bar-chart-wrapper">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="borderless-control-panel pl-lg-4">
+                        <h5 class="editorial-subtitle mb-4">Varietas Pembanding:</h5>
+                        <div id="checkboxContainer" class="checkbox-list-clean">
+                            </div>
+                        <small class="text-muted d-block mt-4" style="font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px;">
+                            * Rojolele terkunci sebagai subjek utama.<br>
+                            * Maksimal 3 varietas perbandingan.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4">
+                <a href="../jenisPadi.html" class="btn-clean">⬅ Kembali ke Katalog Varietas</a>
+            </div>
+
+        </div> </div> <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Konfigurasi Global Chart.js
+            Chart.defaults.font.family = "'Poppins', sans-serif";
+            Chart.defaults.color = '#555';
+
+            // Database 10 Padi (Posisi Rojolele Terkunci)
+            const padiData = {
+                'Rojolele': { data: [6, 4, 9, 5, 9], color: '#d35400', isDefault: true, locked: true }, // Subjek Utama (Merah Bata Terkunci)
+                'Siam Unus': { data: [5, 3, 10, 6, 9], color: '#0b8f1f', isDefault: true, locked: false }, // Hijau SiPadi
+                'Genjah Arum': { data: [9, 9, 6, 5, 8], color: '#e67e22', isDefault: true, locked: false }, // Oranye
+                'Siam Mutiara': { data: [6, 4, 8, 6, 7], color: '#3498db', isDefault: false, locked: false }, // Biru
+                'Adan Krayan': { data: [4, 3, 9, 7, 9], color: '#9b59b6', isDefault: false, locked: false }, // Ungu
+                'Kuku Balam': { data: [5, 4, 8, 6, 8], color: '#f1c40f', isDefault: false, locked: false }, // Kuning
+                'Mentik Susu': { data: [7, 6, 7, 5, 9], color: '#1abc9c', isDefault: false, locked: false }, // Tosca
+                'Mentik Wangi': { data: [6, 6, 8, 5, 9], color: '#e74c3c', isDefault: false, locked: false }, // Merah Soft
+                'Pandan Wangi': { data: [6, 5, 9, 4, 10], color: '#34495e', isDefault: false, locked: false }, // Slate Gelap
+                'Pare Gropak': { data: [5, 4, 7, 7, 6], color: '#7f8c8d', isDefault: false, locked: false } // Abu-abu
+            };
+
+            const labels = ['Hasil Panen', 'Kecepatan Panen', 'Harga Jual', 'Ketahanan Hama', 'Kualitas Rasa'];
+            let currentChart = null;
+
+            // Inisialisasi Kontrol Checkbox
+            const container = document.getElementById('checkboxContainer');
+            Object.keys(padiData).forEach(nama => {
+                const info = padiData[nama];
+                
+                const wrapper = document.createElement('div');
+                wrapper.className = 'custom-checkbox-item';
+                
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = 'chk_' + nama;
+                input.value = nama;
+                input.className = 'padi-checkbox';
+                input.checked = info.isDefault;
+                if(info.locked) input.disabled = true; // Kunci Rojolele
+
+                const label = document.createElement('label');
+                label.htmlFor = 'chk_' + nama;
+                label.innerHTML = `<span class="color-dot" style="background-color: ${info.color}"></span> ${nama}`;
+
+                wrapper.appendChild(input);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+
+                // Event Listener Pembatasan Maksimal 3
+                input.addEventListener('change', function() {
+                    const checkedBoxes = document.querySelectorAll('.padi-checkbox:checked');
+                    if (checkedBoxes.length > 3) {
+                        alert("Maksimal hanya 3 varietas yang bisa dibandingkan dalam satu waktu.");
+                        this.checked = false; // Batalkan centang
+                        return;
+                    }
+                    updateChart(); // Perbarui grafik jika lolos validasi
+                });
+            });
+
+            // Fungsi untuk Merender/Memperbarui Chart
+            function updateChart() {
+                const selectedPadi = [];
+                document.querySelectorAll('.padi-checkbox:checked').forEach(cb => {
+                    selectedPadi.push(cb.value);
+                });
+
+                // Siapkan Dataset untuk Bar Chart
+                const datasets = selectedPadi.map(nama => {
+                    const info = padiData[nama];
+                    return {
+                        label: nama,
+                        data: info.data,
+                        backgroundColor: info.color,
+                        borderRadius: 4, // Ujung bar membulat
+                        barPercentage: 0.8,
+                        categoryPercentage: 0.9
+                    };
+                });
+
+                // Hancurkan chart lama sebelum membuat yang baru
+                if (currentChart) {
+                    currentChart.destroy();
+                }
+
+                const ctx = document.getElementById('barChart').getContext('2d');
+                currentChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 10,
+                                grid: { color: '#f0f0f0', drawBorder: false },
+                                ticks: { stepSize: 2 }
+                            },
+                            x: {
+                                grid: { display: false, drawBorder: false }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false // Disembunyikan karena daftar checkbox sudah menjadi legend
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(34, 34, 34, 0.9)',
+                                titleFont: { size: 13 },
+                                bodyFont: { size: 12 },
+                                padding: 12,
+                                cornerRadius: 4
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Render awal saat halaman dimuat
+            updateChart();
+        });
+    </script>
 </body>
 </html>

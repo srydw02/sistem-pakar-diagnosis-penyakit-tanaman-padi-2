@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padi Adan Krayan - SiPadi</title>
+    <title>Padi Adan Krayan - SiPadi Analitik</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../../static/style/detailPadi.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl">
-            <a class="navbar-brand">
-                <h3>SiPadi</h3>
+            <a class="navbar-brand" href="/index.html">
+                <h3 class="brand-text">SiPadi</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,58 +23,246 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/berita.html">Berita</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/informasi.html">Informasi</a></li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/berita.html">Berita</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">Diagnosis</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <div class="detail-header">
         <h1>Padi Adan Krayan</h1>
-        <p>Padi Organik dari Perbatasan Negara</p>
+        <p>Kemurnian Organik dari Dataran Tinggi Borneo</p>
     </div>
 
     <div class="detail-container">
         
         <div class="detail-main-info">
             <div class="detail-image-wrapper">
-                <img src="../../static/images/fotoJenisPadi/adankrayan.png" alt="Foto Padi Adan Krayan">
+                <img src="../../static/images/fotoJenisPadi/adankrayan.png" alt="Padi Adan Krayan">
             </div>
 
             <div class="specs-grid">
-                <div class="spec-card"><h4>Daerah Asal</h4><p>Kalimantan Utara</p></div>
-                <div class="spec-card"><h4>Tekstur Nasi</h4><p>Lembut & Pulen</p></div>
-                <div class="spec-card"><h4>Sistem Tanam</h4><p>Organik Alami</p></div>
-                <div class="spec-card"><h4>Sertifikasi</h4><p>Indikasi Geografis</p></div>
+                <div class="spec-card"><h4>Daerah Asal</h4><p>Krayan, Kaltara</p></div>
+                <div class="spec-card"><h4>Tekstur Nasi</h4><p>Sangat Pulen</p></div>
+                <div class="spec-card"><h4>Bentuk Beras</h4><p>Kecil Bulat</p></div>
+                <div class="spec-card"><h4>Penyajian</h4><p>Menu Organik Eksklusif</p></div>
             </div>
         </div>
 
         <div class="detail-content">
-            <h3>Tentang Varietas Ini</h3>
-            <p>Adan Krayan adalah padi lokal organik luar biasa yang ditanam di dataran tinggi Krayan, perbatasan antara Indonesia dan Malaysia di Kabupaten Nunukan, Kalimantan Utara. Padi ini telah mendapatkan sertifikat Indikasi Geografis (IG), yang berarti kualitas rasanya dipengaruhi langsung oleh alam geografis tempatnya ditanam.</p>
-            <br>
-            <p>Proses penanaman padi ini menggunakan sistem pertanian tradisional yang sangat ramah lingkungan. Petani mengalirkan air langsung dari mata air pegunungan tanpa menggunakan pupuk kimia maupun pestisida sintetik. Butiran beras Adan Krayan berukuran kecil dan sangat halus, tersedia dalam warna putih, merah, dan hitam. Saking lezatnya, beras ini memiliki kualitas ekspor tinggi dan sering menjadi hidangan favorit bagi keluarga kerajaan di negara tetangga seperti Brunei Darussalam dan Malaysia.</p>
             
-            <a href="../jenisPadi.html" class="btn-back">⬅ Kembali ke Daftar Padi</a>
-        </div>
-    </div>
+            <h3 class="editorial-title">Deskripsi Lengkap</h3>
+            <p class="editorial-text">
+                Adan Krayan adalah varietas padi lokal istimewa yang dibudidayakan oleh suku Dayak Lundayeh di Dataran Tinggi Krayan. Padi ini tumbuh secara organik di ketinggian lebih dari 1.000 mdpl dengan udara yang bersih dan air pegunungan yang jernih. Memiliki sertifikasi Indikasi Geografis (IG), Adan Krayan diakui dunia karena tekstur nasinya yang sangat pulen, lembut, dan cita rasa manis alami yang murni tanpa penggunaan pupuk kimia sama sekali.
+            </p>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Analisis Karakteristik</h3>
+            <div class="row editorial-row">
+                <div class="col-md-6 editorial-col-left">
+                    <h4 class="editorial-subtitle">Keunggulan Agronomi</h4>
+                    <p class="editorial-text">
+                        Keunggulan mutlak varietas ini adalah kualitas organiknya yang tinggi dan ketahanannya yang baik terhadap suhu dingin dataran tinggi. Memiliki nilai ekonomi internasional, beras Adan Krayan menjadi salah satu produk ekspor unggulan Indonesia ke negara tetangga seperti Malaysia dan Brunei Darussalam.
+                    </p>
+                </div>
+                <div class="col-md-6 editorial-col-right">
+                    <h4 class="editorial-subtitle">Tantangan Budidaya</h4>
+                    <p class="editorial-text">
+                        Padi ini memiliki umur tanaman yang panjang (mencapai 150 hari) dan sifatnya yang spesifik lokasi (spesific location). Kualitas rasa dan aromanya akan menurun drastis jika ditanam di dataran rendah atau menggunakan sistem pertanian konvensional berbasis bahan kimia.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Kalender Tanam & Titik Kritis</h3>
+            <p class="editorial-text">Alur waktu fase pertumbuhan padi Adan Krayan yang menyesuaikan iklim mikro pegunungan.</p>
+            
+            <div class="editorial-timeline mt-4 mb-5">
+                <div class="timeline-axis">
+                    <div class="timeline-progress" style="width: 100%;"></div>
+                </div>
+                
+                <div class="timeline-labels">
+                    <div class="timeline-segment" style="width: 45%;">
+                        <div class="segment-tick"></div>
+                        <span class="segment-title">Vegetatif</span>
+                        <span class="segment-desc">0-70 Hari</span>
+                    </div>
+                    
+                    <div class="timeline-segment" style="width: 30%;">
+                        <div class="pulse-marker">
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-dot"></div>
+                            <div class="clean-tooltip">Titik Rawan: Waspada serangan Penyakit Blas (Blast) akibat kabut tebal dan kelembapan tinggi di pegunungan.</div>
+                        </div>
+                        <span class="segment-title text-danger">Reproduktif</span>
+                        <span class="segment-desc">71-110 Hari</span>
+                    </div>
+                    
+                    <div class="timeline-segment" style="width: 25%;">
+                        <div class="segment-tick"></div>
+                        <span class="segment-title">Pematangan</span>
+                        <span class="segment-desc">111-150 Hari</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Proyeksi Finansial Dasar (Per Hektar)</h3>
+            <table class="editorial-table">
+                <tbody>
+                    <tr>
+                        <td>Estimasi Biaya Produksi (Sertifikasi & Organik)</td>
+                        <td class="text-right">Rp 9.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Estimasi Hasil (4.0 Ton Beras IG Premium)</td>
+                        <td class="text-right">Rp 36.000.000</td>
+                    </tr>
+                    <tr class="table-total">
+                        <td>Estimasi Margin Kotor</td>
+                        <td class="text-right highlight-text">Rp 27.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title mb-4">Komparasi Varietas</h3>
+            <p class="editorial-text mb-4">Pilih varietas di sisi kanan untuk membandingkan metrik agronomi dengan Adan Krayan.</p>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="bar-chart-wrapper">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="borderless-control-panel pl-lg-4">
+                        <h5 class="editorial-subtitle mb-4">Varietas Pembanding:</h5>
+                        <div id="checkboxContainer" class="checkbox-list-clean">
+                            </div>
+                        <small class="text-muted d-block mt-4" style="font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px;">
+                            * Adan Krayan terkunci sebagai subjek utama.<br>
+                            * Maksimal 3 varietas perbandingan.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4">
+                <a href="../jenisPadi.html" class="btn-clean">⬅ Kembali ke Katalog Varietas</a>
+            </div>
+
+        </div> </div> <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Chart.defaults.font.family = "'Poppins', sans-serif";
+            Chart.defaults.color = '#555';
+
+            // Database 10 Padi (Adan Krayan Terkunci)
+            const padiData = {
+                'Adan Krayan': { data: [4, 3, 9, 7, 9], color: '#9b59b6', isDefault: true, locked: true }, // Subjek Utama (Ungu)
+                'Siam Unus': { data: [5, 3, 10, 6, 9], color: '#0b8f1f', isDefault: true, locked: false },
+                'Siam Mutiara': { data: [6, 4, 8, 6, 7], color: '#3498db', isDefault: true, locked: false },
+                'Genjah Arum': { data: [9, 9, 6, 5, 8], color: '#e67e22', isDefault: false, locked: false },
+                'Kuku Balam': { data: [5, 4, 8, 6, 8], color: '#f1c40f', isDefault: false, locked: false },
+                'Mentik Susu': { data: [7, 6, 7, 5, 9], color: '#1abc9c', isDefault: false, locked: false },
+                'Mentik Wangi': { data: [6, 6, 8, 5, 9], color: '#e74c3c', isDefault: false, locked: false },
+                'Pandan Wangi': { data: [6, 5, 9, 4, 10], color: '#34495e', isDefault: false, locked: false },
+                'Pare Gropak': { data: [5, 4, 7, 7, 6], color: '#7f8c8d', isDefault: false, locked: false },
+                'Rojolele': { data: [6, 4, 9, 5, 9], color: '#d35400', isDefault: false, locked: false }
+            };
+
+            const labels = ['Hasil Panen', 'Kecepatan Panen', 'Harga Jual', 'Ketahanan Hama', 'Kualitas Rasa'];
+            let currentChart = null;
+
+            const container = document.getElementById('checkboxContainer');
+            Object.keys(padiData).forEach(nama => {
+                const info = padiData[nama];
+                const wrapper = document.createElement('div');
+                wrapper.className = 'custom-checkbox-item';
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = 'chk_' + nama;
+                input.value = nama;
+                input.className = 'padi-checkbox';
+                input.checked = info.isDefault;
+                if(info.locked) input.disabled = true;
+
+                const label = document.createElement('label');
+                label.htmlFor = 'chk_' + nama;
+                label.innerHTML = `<span class="color-dot" style="background-color: ${info.color}"></span> ${nama}`;
+
+                wrapper.appendChild(input);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+
+                input.addEventListener('change', function() {
+                    const checkedBoxes = document.querySelectorAll('.padi-checkbox:checked');
+                    if (checkedBoxes.length > 3) {
+                        alert("Maksimal hanya 3 varietas yang bisa dibandingkan.");
+                        this.checked = false;
+                        return;
+                    }
+                    updateChart();
+                });
+            });
+
+            function updateChart() {
+                const selectedPadi = [];
+                document.querySelectorAll('.padi-checkbox:checked').forEach(cb => {
+                    selectedPadi.push(cb.value);
+                });
+
+                const datasets = selectedPadi.map(nama => {
+                    const info = padiData[nama];
+                    return {
+                        label: nama,
+                        data: info.data,
+                        backgroundColor: info.color,
+                        borderRadius: 4,
+                        barPercentage: 0.8,
+                        categoryPercentage: 0.9
+                    };
+                });
+
+                if (currentChart) { currentChart.destroy(); }
+
+                const ctx = document.getElementById('barChart').getContext('2d');
+                currentChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: { labels: labels, datasets: datasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: { mode: 'index', intersect: false },
+                        scales: {
+                            y: { beginAtZero: true, max: 10, grid: { color: '#f0f0f0' }, ticks: { stepSize: 2 } },
+                            x: { grid: { display: false } }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { backgroundColor: 'rgba(34, 34, 34, 0.9)', padding: 12, cornerRadius: 4 }
+                        }
+                    }
+                });
+            }
+            updateChart();
+        });
+    </script>
 </body>
 </html>

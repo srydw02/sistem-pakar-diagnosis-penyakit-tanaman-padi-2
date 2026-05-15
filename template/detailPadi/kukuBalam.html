@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padi Kuku Balam - SiPadi</title>
+    <title>Padi Kuku Balam - SiPadi Analitik</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../../static/style/detailPadi.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl">
-            <a class="navbar-brand">
-                <h3>SiPadi</h3>
+            <a class="navbar-brand" href="/index.html">
+                <h3 class="brand-text">SiPadi</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,20 +23,12 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/berita.html">Berita</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a></li>
+                    <li class="nav-item align-self-center"><a class="nav-link" href="/template/informasi.html">Informasi</a></li>
                     <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/berita.html">Berita</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="nav-link" href="/template/informasi.html">Informasi</a>
-                    </li>
-                    <li class="nav-item align-self-center">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html" role="button">Diagnosis</a>
+                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">Diagnosis</a>
                     </li>
                 </ul>
             </div>
@@ -43,7 +37,7 @@
 
     <div class="detail-header">
         <h1>Padi Kuku Balam</h1>
-        <p>Andalan Utama Kuliner Sumatera</p>
+        <p>Pilihan Utama Kuliner Tradisional Nusantara</p>
     </div>
 
     <div class="detail-container">
@@ -54,24 +48,221 @@
             </div>
 
             <div class="specs-grid">
-                <div class="spec-card"><h4>Daerah Asal</h4><p>Sumatera Utara / Barat</p></div>
-                <div class="spec-card"><h4>Bentuk</h4><p>Runcing Melengkung</p></div>
-                <div class="spec-card"><h4>Tekstur</h4><p>Pera Berkualitas</p></div>
-                <div class="spec-card"><h4>Kegunaan</h4><p>Rumah Makan Padang</p></div>
+                <div class="spec-card"><h4>Daerah Asal</h4><p>Sumatera</p></div>
+                <div class="spec-card"><h4>Tekstur Nasi</h4><p>Pera</p></div>
+                <div class="spec-card"><h4>Bentuk Beras</h4><p>Sedang Ramping</p></div>
+                <div class="spec-card"><h4>Penyajian</h4><p>Nasi Rames / Lontong</p></div>
             </div>
         </div>
 
         <div class="detail-content">
-            <h3>Deskripsi Lengkap</h3>
-            <p>Kuku Balam adalah jenis padi kebanggaan Sumatera. Namanya diambil dari bentuk fisik berasnya yang meruncing dan melengkung seperti kuku burung Balam.</p>
-            <br>
-            <p>Beras ini adalah standar emas untuk rumah makan Minangkabau karena tekstur peranya tidak mudah hancur saat disiram kuah gulai kental yang melimpah, menjaga rasa tetap otentik.</p>
-            <a href="../jenisPadi.html" class="btn-back">⬅ Kembali ke Daftar Padi</a>
-        </div>
-    </div>
+            
+            <h3 class="editorial-title">Deskripsi Lengkap</h3>
+            <p class="editorial-text">
+                Padi Kuku Balam merupakan varietas lokal yang banyak dibudidayakan untuk memenuhi permintaan pasar kuliner spesifik. Beras ini memiliki tekstur pera yang sangat ideal untuk diolah menjadi ketupat, lontong, maupun nasi rames khas Sumatera. Karakteristik butirannya yang padat dan tidak mudah hancur saat dimasak dalam waktu lama menjadikannya primadona bagi para pelaku usaha gastronomi tradisional.
+            </p>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Analisis Karakteristik</h3>
+            <div class="row editorial-row">
+                <div class="col-md-6 editorial-col-left">
+                    <h4 class="editorial-subtitle">Keunggulan Agronomi</h4>
+                    <p class="editorial-text">
+                        Varietas ini memiliki tingkat adaptabilitas yang baik terhadap lingkungan dengan curah hujan tinggi. Batangnya yang relatif kokoh membuatnya memiliki ketahanan yang mumpuni terhadap risiko rebah (lodoh) dibandingkan varietas lokal lainnya.
+                    </p>
+                </div>
+                <div class="col-md-6 editorial-col-right">
+                    <h4 class="editorial-subtitle">Tantangan Budidaya</h4>
+                    <p class="editorial-text">
+                        Respons pemupukan Kuku Balam tidak secepat varietas unggul baru (VUB). Jika diberikan pupuk nitrogen secara berlebihan untuk memacu pertumbuhan, varietas ini justru menjadi sangat rentan terhadap infeksi jamur, sehingga membutuhkan takaran nutrisi yang sangat presisi.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Kalender Tanam & Titik Kritis</h3>
+            <p class="editorial-text">Alur waktu fase pertumbuhan padi Kuku Balam yang membutuhkan manajemen pemupukan presisi.</p>
+            
+            <div class="editorial-timeline mt-4 mb-5">
+                <div class="timeline-axis">
+                    <div class="timeline-progress" style="width: 100%;"></div>
+                </div>
+                
+                <div class="timeline-labels">
+                    <div class="timeline-segment" style="width: 45%;">
+                        <div class="segment-tick"></div>
+                        <span class="segment-title">Vegetatif</span>
+                        <span class="segment-desc">0-55 Hari</span>
+                    </div>
+                    
+                    <div class="timeline-segment" style="width: 30%;">
+                        <div class="pulse-marker">
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-dot"></div>
+                            <div class="clean-tooltip">Titik Rawan: Waspada infeksi Penyakit Blas (Patah Leher Malai) jika curah hujan tinggi dan nitrogen berlebih.</div>
+                        </div>
+                        <span class="segment-title text-danger">Reproduktif</span>
+                        <span class="segment-desc">56-85 Hari</span>
+                    </div>
+                    
+                    <div class="timeline-segment" style="width: 25%;">
+                        <div class="segment-tick"></div>
+                        <span class="segment-title">Pematangan</span>
+                        <span class="segment-desc">86-115 Hari</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title">Proyeksi Finansial Dasar (Per Hektar)</h3>
+            <table class="editorial-table">
+                <tbody>
+                    <tr>
+                        <td>Estimasi Biaya Produksi</td>
+                        <td class="text-right">Rp 8.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Estimasi Hasil (5.0 Ton Gabah)</td>
+                        <td class="text-right">Rp 28.000.000</td>
+                    </tr>
+                    <tr class="table-total">
+                        <td>Estimasi Margin Kotor</td>
+                        <td class="text-right highlight-text">Rp 20.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr class="editorial-hr">
+
+            <h3 class="editorial-title mb-4">Komparasi Varietas</h3>
+            <p class="editorial-text mb-4">Pilih varietas di sisi kanan untuk membandingkan metrik agronomi dengan Kuku Balam.</p>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="bar-chart-wrapper">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="borderless-control-panel pl-lg-4">
+                        <h5 class="editorial-subtitle mb-4">Varietas Pembanding:</h5>
+                        <div id="checkboxContainer" class="checkbox-list-clean">
+                            </div>
+                        <small class="text-muted d-block mt-4" style="font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px;">
+                            * Kuku Balam terkunci sebagai subjek utama.<br>
+                            * Maksimal 3 varietas perbandingan.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4">
+                <a href="../jenisPadi.html" class="btn-clean">⬅ Kembali ke Katalog Varietas</a>
+            </div>
+
+        </div> </div> <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Chart.defaults.font.family = "'Poppins', sans-serif";
+            Chart.defaults.color = '#555';
+
+            // Database 10 Padi (Kuku Balam Terkunci)
+            const padiData = {
+                'Kuku Balam': { data: [5, 4, 8, 6, 8], color: '#f1c40f', isDefault: true, locked: true }, // Subjek Utama (Kuning Emas)
+                'Siam Unus': { data: [5, 3, 10, 6, 9], color: '#0b8f1f', isDefault: true, locked: false },
+                'Genjah Arum': { data: [9, 9, 6, 5, 8], color: '#e67e22', isDefault: true, locked: false },
+                'Siam Mutiara': { data: [6, 4, 8, 6, 7], color: '#3498db', isDefault: false, locked: false },
+                'Adan Krayan': { data: [4, 3, 9, 7, 9], color: '#9b59b6', isDefault: false, locked: false },
+                'Mentik Susu': { data: [7, 6, 7, 5, 9], color: '#1abc9c', isDefault: false, locked: false },
+                'Mentik Wangi': { data: [6, 6, 8, 5, 9], color: '#e74c3c', isDefault: false, locked: false },
+                'Pandan Wangi': { data: [6, 5, 9, 4, 10], color: '#34495e', isDefault: false, locked: false },
+                'Pare Gropak': { data: [5, 4, 7, 7, 6], color: '#7f8c8d', isDefault: false, locked: false },
+                'Rojolele': { data: [6, 4, 9, 5, 9], color: '#d35400', isDefault: false, locked: false }
+            };
+
+            const labels = ['Hasil Panen', 'Kecepatan Panen', 'Harga Jual', 'Ketahanan Hama', 'Kualitas Rasa'];
+            let currentChart = null;
+
+            const container = document.getElementById('checkboxContainer');
+            Object.keys(padiData).forEach(nama => {
+                const info = padiData[nama];
+                const wrapper = document.createElement('div');
+                wrapper.className = 'custom-checkbox-item';
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = 'chk_' + nama;
+                input.value = nama;
+                input.className = 'padi-checkbox';
+                input.checked = info.isDefault;
+                if(info.locked) input.disabled = true;
+
+                const label = document.createElement('label');
+                label.htmlFor = 'chk_' + nama;
+                label.innerHTML = `<span class="color-dot" style="background-color: ${info.color}"></span> ${nama}`;
+
+                wrapper.appendChild(input);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+
+                input.addEventListener('change', function() {
+                    const checkedBoxes = document.querySelectorAll('.padi-checkbox:checked');
+                    if (checkedBoxes.length > 3) {
+                        alert("Maksimal hanya 3 varietas yang bisa dibandingkan.");
+                        this.checked = false;
+                        return;
+                    }
+                    updateChart();
+                });
+            });
+
+            function updateChart() {
+                const selectedPadi = [];
+                document.querySelectorAll('.padi-checkbox:checked').forEach(cb => {
+                    selectedPadi.push(cb.value);
+                });
+
+                const datasets = selectedPadi.map(nama => {
+                    const info = padiData[nama];
+                    return {
+                        label: nama,
+                        data: info.data,
+                        backgroundColor: info.color,
+                        borderRadius: 4,
+                        barPercentage: 0.8,
+                        categoryPercentage: 0.9
+                    };
+                });
+
+                if (currentChart) { currentChart.destroy(); }
+
+                const ctx = document.getElementById('barChart').getContext('2d');
+                currentChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: { labels: labels, datasets: datasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: { mode: 'index', intersect: false },
+                        scales: {
+                            y: { beginAtZero: true, max: 10, grid: { color: '#f0f0f0' }, ticks: { stepSize: 2 } },
+                            x: { grid: { display: false } }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { backgroundColor: 'rgba(34, 34, 34, 0.9)', padding: 12, cornerRadius: 4 }
+                        }
+                    }
+                });
+            }
+            updateChart();
+        });
+    </script>
 </body>
 </html>
