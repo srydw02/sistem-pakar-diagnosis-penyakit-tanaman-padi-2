@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link rel="stylesheet" href="/static/style/style.css">
     <title>SiPadi</title>
 </head>
@@ -15,67 +15,80 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl">
-            <a class="navbar-brand">
-                <h3 style="color: green;">SiPadi 🌿</h3>
+            <a class="navbar-brand d-flex align-items-center">
+                <img src="/static/images/logo2.png" alt="Logo SiPadi"
+                    style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
+                <h3 style="color: green; margin: 0;">SiPadi</h3>
             </a>
+
+            <!-- Button Mobile -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="n-avbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Menu -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item align-self-center active">
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
 
-                    <li class="nav-item align-self-center active">
+                    <li class="nav-item align-self-center">
                         <a class="nav-link" href="#berita">Berita</a>
                     </li>
 
-                    <li class="nav-item align-self-center active">
+                    <li class="nav-item align-self-center">
                         <a class="nav-link" href="#jenis-padi">Jenis Padi</a>
                     </li>
 
-                    <li class="nav-item align-self-center active">
+                    <li class="nav-item align-self-center">
                         <a class="nav-link" href="#informasi">Informasi</a>
                     </li>
 
+
+
                     <li class="nav-item align-self-center active">
                         <a class="btn px-4 btn-primary ml-2 btn-register" href='template/diagnosis.html' role="button">
+
                             Diagnosis
                         </a>
                     </li>
 
                 </ul>
+
             </div>
         </div>
     </nav>
 
     <section id="home" class="heroBWA">
         <div class="container-xl">
-            <div class="row position-relative">
-                <div class="col align-self-center">
-                    <h1 class="mb-4 heading" style="color: #444;">Sistem Pakar </h1>
-                    <h6 class="font-weight-normal">Diagnosis Penyakit Tanaman Padi Menggunakan <br>Metode Forward
+            <div class="row">
+                <div class="col-lg-7 col-12 align-self-center">
+                    <p
+                        style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;">
+                        SISTEM PAKAR PENYAKIT PADI</p>
+                    <h1 class="mb-3 heading" style="color: #fff;">Sistem Pakar</h1>
+                    <h6 class="font-weight-normal mb-4">Diagnosis Penyakit Tanaman Padi Menggunakan <br>Metode Forward
                         Chaining</h6>
-                    </p>
-                    <a class="btn btn-primary" href="/template/diagnosis.html" role="button">Diagnosis Sekarang</a>
-                </div>
-                <div class="col d-none d-sm-block z-10">
-                    <img width="600" src="/static/images/hijau.png" alt="hero" />
+                    <div class="d-flex flex-wrap mt-2" style="gap: 12px;">
+                        <a class="btn btn-primary" href="/template/diagnosis.html" role="button">Diagnosis Sekarang</a>
+                        <a class="btn btn-outline-hero" href="/template/caraKerja.html">Cara Kerja</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="berita" class="berita py-5" style="background-color: #f8fbf9;">
+    <section id="berita" class="berita">
         <div class="container-xl">
-            <h1 class="font-weight-bold sub-heading text-center" style="color: #444; margin-bottom: 10px;">Caritahu Berita Terkini</h1>
-            <p class="text-center font-weight-light mb-5 text-secondary">Update terbaru seputar dunia pertanian padi dan kesehatan
+            <h1 class="font-weight 700 sub-heading text-center" style="color: #000000;">Caritahu Berita Terkini</h1>
+            <p class="text-center font-weight-light mb-3">Update terbaru seputar dunia pertanian padi dan kesehatan
                 tanaman</p>
-                
+
             <div class="headline-card animate-fade-in delay-1 mb-5">
                 <div class="row no-gutters h-100">
                     <div class="col-lg-7">
@@ -85,17 +98,24 @@
                     </div>
                     <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
                         <div class="mb-3">
-                            <span class="badge badge-hama px-3 py-2" style="border-radius: 8px; font-size: 0.85rem;">Waspada Hama</span>
+                            <span class="badge badge-hama px-3 py-2"
+                                style="border-radius: 8px; font-size: 0.85rem;">Waspada Hama</span>
                             <span class="small text-muted ml-2 font-weight-bold">12 Mei 2026</span>
                         </div>
-                        <h2 class="font-weight-bold mb-3" style="line-height: 1.3;">Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini</h2>
-                        <p class="text-secondary mb-4" style="font-size: 1.05rem;">Pakar menyarankan petani untuk rutin memantau area bawah rumpun padi karena kelembaban tinggi memicu ledakan populasi yang dapat merusak panen.</p>
+                        <h2 class="font-weight-bold mb-3" style="line-height: 1.3;">Antisipasi Serangan Wereng Coklat
+                            pada Musim Tanam Ini</h2>
+                        <p class="text-secondary mb-4" style="font-size: 1.05rem;">Pakar menyarankan petani untuk rutin
+                            memantau area bawah rumpun padi karena kelembaban tinggi memicu ledakan populasi yang dapat
+                            merusak panen.</p>
                         <div>
-                            <a onclick="window.location.href='/template/beritapadi/beritamamah.html'" class="btn-read-more" style="cursor: pointer;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                            <a onclick="window.location.href='/template/beritapadi/beritamamah.html'"
+                                class="btn-read-more" style="cursor: pointer;">Baca Selengkapnya <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 animate-fade-in delay-1">
@@ -106,16 +126,21 @@
                         </div>
                         <div class="card-body p-4">
                             <div class="small text-muted font-weight-bold mb-2">12 Mei 2026</div>
-                            <h5 class="card-title">Cuaca Ekstrem dan Kelembapan Tinggi, Penyakit Blast Mengancam Panen Padi</h5>
-                            <p class="card-text small text-secondary mt-2">Penyakit blast yang disebabkan jamur Pyricularia oryzae meningkat drastis saat kelembaban tinggi. Kenali gejalanya sejak dini.</p>
+                            <h5 class="card-title">Cuaca Ekstrem dan Kelembapan Tinggi, Penyakit Blast Mengancam Panen
+                                Padi</h5>
+                            <p class="card-text small text-secondary mt-2">Penyakit blast yang disebabkan jamur
+                                Pyricularia oryzae meningkat drastis saat kelembaban tinggi. Kenali gejalanya sejak
+                                dini.</p>
                             <hr style="border-color: rgba(0,0,0,0.05);">
                             <div class="text-right">
-                                <a onclick="window.location.href='/template/beritapadi/waspadaseranganblast.html'" class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
+                                <a onclick="window.location.href='/template/beritapadi/waspadaseranganblast.html'"
+                                    class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i
+                                        class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4 animate-fade-in delay-2">
                     <div class="card news-card">
                         <div class="news-card-img-wrapper">
@@ -124,47 +149,57 @@
                         </div>
                         <div class="card-body p-4">
                             <div class="small text-muted font-weight-bold mb-2">28 Apr 2026</div>
-                            <h5 class="card-title">Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi Cerdas</h5>
-                            <p class="card-text small text-secondary mt-2">Atasi krisis air di musim kemarau ekstrem, sistem irigasi cerdas berbasis IoT hadir untuk menyelamatkan sawah petani dari kekeringan.</p>
+                            <h5 class="card-title">Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi Cerdas
+                            </h5>
+                            <p class="card-text small text-secondary mt-2">Atasi krisis air di musim kemarau ekstrem,
+                                sistem irigasi cerdas berbasis IoT hadir untuk menyelamatkan sawah petani dari
+                                kekeringan.</p>
                             <hr style="border-color: rgba(0,0,0,0.05);">
                             <div class="text-right">
-                                <a onclick="window.location.href='/template/beritapadi/irigasi.html'" class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
+                                <a onclick="window.location.href='/template/beritapadi/irigasi.html'"
+                                    class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i
+                                        class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4 animate-fade-in delay-3">
                     <div class="card news-card">
                         <div class="news-card-img-wrapper">
                             <span class="badge-overlay badge-pasar">Teknologi</span>
-                            <img src="/static/images/fotoberita/homeberita3.jpg" class="card-img-top" alt="Berita Teknologi">
+                            <img src="/static/images/fotoberita/homeberita3.jpg" class="card-img-top"
+                                alt="Berita Teknologi">
                         </div>
                         <div class="card-body p-4">
                             <div class="small text-muted font-weight-bold mb-2">15 Apr 2026</div>
-                            <h5 class="card-title">Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem Pakar</h5>
-                            <p class="card-text small text-secondary mt-2">Penerapan teknologi sistem pakar berbasis web terbukti membantu petani mengidentifikasi penyakit padi secara instan.</p>
+                            <h5 class="card-title">Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem
+                                Pakar</h5>
+                            <p class="card-text small text-secondary mt-2">Penerapan teknologi sistem pakar berbasis web
+                                terbukti membantu petani mengidentifikasi penyakit padi secara instan.</p>
                             <hr style="border-color: rgba(0,0,0,0.05);">
                             <div class="text-right">
-                                <a onclick="window.location.href='/template/beritapadi/sistempakarbantu.html'" class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
+                                <a onclick="window.location.href='/template/beritapadi/sistempakarbantu.html'"
+                                    class="read-link text-decoration-none" style="cursor:pointer;">Baca Artikel <i
+                                        class="fas fa-chevron-right ml-1" style="font-size: 0.8rem;"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="text-center mt-5 mb-4 animate-fade-in delay-3">
-                <button class="btn btn-load-more shadow-sm" onclick="window.location.href='/template/berita.html'">Lihat Semua Berita</button>
+                <button class="btn btn-load-more shadow-sm"
+                    onclick="window.location.href='template/berita.html'">Lihat Semua Berita</button>
             </div>
         </div>
     </section>
 
-    <section id="jenis-padi" class="jenis-padi-section mt-5">
+    <section id="jenis-padi" class="jenis-padi-section">
 
         <div class="container-xl">
 
-            <div class="text-center mb-5 mt-0">
-                <h1 class="sub-heading" style="color: #444;">Jenis Padi Populer</h1>
+            <div class="text-center mb-3">
+                <h1 class="sub-heading" style="color: #000000;">Jenis Padi Populer</h1>
                 <p class="text-muted">
                     Kenali beberapa varietas padi unggulan yang banyak dibudidayakan di Indonesia.
                 </p>
@@ -176,7 +211,9 @@
                     <div class="jenis-card">
                         <div class="jenis-card-inner">
                             <div class="jenis-card-front">
+
                                 <img src="/static/images/fotoJenisPadi/pandan.png" alt="Padi Pandan Wangi">
+
                                 <div class="front-overlay">
                                     <h3>Pandan Wangi</h3>
                                     <p>Aroma Pandan Alami</p>
@@ -185,7 +222,7 @@
                             <div class="jenis-card-back">
                                 <h4>Pandan Wangi</h4>
                                 <p>
-                                    Padi khas Cianjur dengan aroma wangi pandan yang alami 
+                                    Padi khas Cianjur dengan aroma wangi pandan yang alami
                                     dan rasa nasi yang sangat pulen.
                                 </p>
                                 <a href="/template/detailPadi/pandanWangi.html" class="btn-detail">
@@ -209,7 +246,7 @@
                             <div class="jenis-card-back">
                                 <h4>Mentik Susu</h4>
                                 <p>
-                                    Dikenal sebagai 'beras Jepang' Indonesia karena teksturnya 
+                                    Dikenal sebagai 'beras Jepang' Indonesia karena teksturnya
                                     yang sangat lengket dan putih seperti susu.
                                 </p>
                                 <a href="/template/detailPadi/mentikSusu.html" class="btn-detail">
@@ -233,7 +270,7 @@
                             <div class="jenis-card-back">
                                 <h4>Siam Unus</h4>
                                 <p>
-                                    Varietas dari Kalimantan Selatan yang sangat diminati 
+                                    Varietas dari Kalimantan Selatan yang sangat diminati
                                     karena tekstur nasi yang pera namun tetap enak.
                                 </p>
                                 <a href="/template/detailPadi/siamUnus.html" class="btn-detail">
@@ -247,342 +284,253 @@
             </div>
 
             <div class="text-center mt-5 mb-4 animate-fade-in delay-3">
-                <button class="btn btn-load-more shadow-sm" onclick="window.location.href='template/jenisPadi.html'">Lihat Semua Jenis Padi</button>
+                <button class="btn btn-load-more shadow-sm"
+                    onclick="window.location.href='template/jenisPadi.html'">Lihat Semua Jenis Padi</button>
             </div>
 
         </div>
 
     </section>
 
-    <section id="informasi" class="py-0 mt-5 pt-0">
-        <div class="text-center position-relative mb-5">
-            <h1 class="font-bold sub-heading text-center" style="color: #444;">Informasi Penyakit Padi</h1>
-            <p style="max-width:42rem; text-align: center;" class="text-muted mx-auto mb-5">
-                Beberapa informasi tentang penyakit padi.
-            </p>
-        </div>
+    <section id="informasi" class="info">
 
-        <div class=" container-xl position-relative">
+        <div class="container-xl">
 
+            <!-- JUDUL -->
+            <div class="text-center info-header">
+
+                <h1 class="font-bold sub-heading" style="color:#000000;">
+                    Informasi Penyakit Padi
+                </h1>
+
+                <p class="text-secondary">
+                    Beberapa informasi tentang penyakit padi.
+                </p>
+
+            </div>
+
+            <!-- CARD -->
             <div class="card-grid">
 
-                <div
-                    class="info-card position-relative rounded-4 overflow-hidden border border-white border-opacity-10 shadow col-md-span-2 row-md-span-2 border-teal-hover">
-                    <a href="/template/detailPenyakit/p1.html" target="_blank" rel="noopener noreferrer"
-                        class="d-block w-100 h-100">
+                <!-- CARD 1 -->
+                <div class="info-card col-md-span-2 row-md-span-2">
 
-                        <div class="w-100 h-100 bg-dark">
-                            <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Blas (Blast).png"
-                                alt="Penyakit Blast Padi" loading="lazy">
-                        </div>
+                    <a href="/template/detailPenyakit/p1.html" target="_blank" class="d-block w-100 h-100">
+
+                        <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Blas (Blast).png">
 
                         <div class="card-overlay"></div>
 
                         <div class="card-info">
-                            <h4 class="fw-bold text-white mb-2 fs-4">Penyakit Blast Padi</h4>
-                            <p class="text-light mb-3 small">
-                                Penyakit yang disebabkan oleh jamur Magnaporthe oryzae, yang menyerang daun padi.
+                            <h4>Penyakit Blast Padi</h4>
+
+                            <p>
+                                Penyakit yang disebabkan oleh jamur
+                                Magnaporthe oryzae.
                             </p>
-                            <div class="d-flex align-items-center small fw-medium">
-                                <span class="text-white">Lihat →</span>
-                            </div>
                         </div>
+
                     </a>
+
                 </div>
 
-                <div
-                    class="info-card position-relative rounded-4 overflow-hidden border border-white border-opacity-10 shadow border-teal-hover">
-                    <a href="/template/detailPenyakit/p2.html" target="_blank" rel="noopener noreferrer"
-                        class="d-block w-100 h-100">
-                        <div class="w-100 h-100 bg-dark">
-                            <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Hawar Daun Bakteri (BLB).png"
-                                alt="Hawar Daun Padi" loading="lazy">
-                        </div>
+                <!-- CARD 2 -->
+                <div class="info-card">
+
+                    <a href="/template/detailPenyakit/p2.html" target="_blank" class="d-block w-100 h-100">
+
+                        <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Hawar Daun Bakteri (BLB).png">
+
                         <div class="card-overlay"></div>
+
                         <div class="card-info">
-                            <h4 class="fw-bold text-white mb-2 fs-5">Hawar Daun Padi</h4>
-                            <p class="text-light mb-3 small line-clamp-2">
-                                Penyakit yang disebabkan oleh jamur Xanthomonas oryzae, yang menyerang daun padi.
+                            <h4>Hawar Daun Padi</h4>
+
+                            <p>
+                                Penyakit yang menyerang daun padi.
                             </p>
-                            <div class="d-flex align-items-center small fw-medium">
-                                <span class="text-white">Lihat →</span>
-                            </div>
                         </div>
+
                     </a>
+
                 </div>
 
-                <div
-                    class="info-card position-relative rounded-4 overflow-hidden border border-white border-opacity-10 shadow row-md-span-2 border-teal-hover">
-                    <a href="/template/detailPenyakit/p3.html" target="_blank" rel="noopener noreferrer"
-                        class="d-block w-100 h-100">
-                        <div class="w-100 h-100 bg-dark">
-                            <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Tungro.png"
-                                alt="Tungro Padi" loading="lazy">
-                        </div>
+                <!-- CARD 3 -->
+                <div class="info-card row-md-span-2">
+
+                    <a href="/template/detailPenyakit/p3.html" target="_blank" class="d-block w-100 h-100">
+
+                        <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Tungro.png">
+
                         <div class="card-overlay"></div>
+
                         <div class="card-info">
-                            <h4 class="fw-bold text-white mb-2 fs-5">Tungro Padi</h4>
-                            <p class="text-light mb-3 small line-clamp-2">
-                                Penyakit tungro disebabkan oleh virus yang ditularkan oleh hama wereng hijau.
+                            <h4>Tungro Padi</h4>
+
+                            <p>
+                                Penyakit akibat virus yang dibawa wereng hijau.
                             </p>
-                            <div class="d-flex align-items-center small fw-medium">
-                                <span class="text-white">Lihat →</span>
-                            </div>
                         </div>
+
                     </a>
+
                 </div>
 
-                <div
-                    class="info-card position-relative rounded-4 overflow-hidden border border-white border-opacity-10 shadow border-teal-hover">
-                    <a href="/template/detailPenyakit/p4.html" target="_blank" rel="noopener noreferrer"
-                        class="d-block w-100 h-100">
-                        <div class="w-100 h-100 bg-dark">
-                            <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Busuk Pelepah (Sheath Blight).png"
-                                alt="Busuk Pelepah Padi" loading="lazy">
-                        </div>
+                <!-- CARD 4 -->
+                <div class="info-card">
+
+                    <a href="/template/detailPenyakit/p4.html" target="_blank" class="d-block w-100 h-100">
+
+                        <img
+                            src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Busuk Pelepah (Sheath Blight).png">
+
                         <div class="card-overlay"></div>
+
                         <div class="card-info">
-                            <h4 class="fw-bold text-white mb-2 fs-5">Busuk Pelepah Padi</h4>
-                            <p class="text-light mb-3 small line-clamp-2">
-                                Penyakit busuk pelepah disebabkan oleh jamur Rhizoctonia solani.
+                            <h4>Busuk Pelepah Padi</h4>
+
+                            <p>
+                                Penyakit yang menyerang pelepah daun.
                             </p>
-                            <div class="d-flex align-items-center small fw-medium">
-                                <span class="text-white">Lihat →</span>
-                            </div>
                         </div>
+
                     </a>
+
                 </div>
 
             </div>
 
+            <!-- BUTTON -->
             <div class="text-center mt-5 mb-4 animate-fade-in delay-3">
-                <button class="btn btn-load-more shadow-sm" onclick="window.location.href='/template/informasi.html'">Lihat Semua Informasi</button>
+                <button class="btn btn-load-more shadow-sm"
+                    onclick="window.location.href='template/informasi.html'">Lihat Semua Informasi</button>
             </div>
+
+        </div>
+
+    </section>
+
+    <section id="alur" class="py-5" style="min-height: 100vh; display: flex; align-items: center;">
+        <div class="container-xl text-center">
+
+            <p class="alur-label">CARA KERJA</p>
+            <h1 class="sub-heading font-weight-bold mb-5" style="color: #000000;">Tiga Langkah Mudah<br>Menuju Hasil Akurat
+            </h1>
+
+            <div class="alur-steps">
+                <!-- Langkah 1 -->
+                <div class="alur-step">
+                    <div class="alur-circle">01</div>
+                    <h5 class="alur-step-title">Pilih Gejala</h5>
+                    <p class="alur-step-desc">Pilih gejala-gejala yang terlihat pada tanaman padi Anda dari daftar yang
+                        tersedia.</p>
+                </div>
+
+                <!-- Garis -->
+                <div class="alur-line"></div>
+
+                <!-- Langkah 2 -->
+                <div class="alur-step">
+                    <div class="alur-circle">02</div>
+                    <h5 class="alur-step-title">Analisis Sistem</h5>
+                    <p class="alur-step-desc">Sistem Forward Chaining memproses data dan mencocokkan pola penyakit
+                        secara otomatis.</p>
+                </div>
+
+                <!-- Garis -->
+                <div class="alur-line"></div>
+
+                <!-- Langkah 3 -->
+                <div class="alur-step">
+                    <div class="alur-circle">03</div>
+                    <h5 class="alur-step-title">Terima Hasil</h5>
+                    <p class="alur-step-desc">Dapatkan diagnosis lengkap disertai rekomendasi penanganan yang perlu
+                        dilakukan.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="alur" class="py-5 mt-5">
-        <!--Content2-->
+
+
+    <footer class="footer-modern">
+
         <div class="container-xl">
-            <h1 style=" text-align: center; color: #444;" class="font-weight 700 sub-heading ">Cari Tahu Cara Diagnosis dan
-                Solusinya</h1>
-            <p class="pb-4 text-center font-weight-light">Ikuti pentujuk di bawah ini, agar Anda tidak kesulitan
-                mendiagnosis penyakit tanaman padi</p>
-            <p></p>
-            <div class="card-deck text-center ">
-                <div class="card border">
-                    <img src="/static/images/1.png" class="card-img-top  mx-auto mt-5"
-                        style="width: 300px; height:auto">
-                    <div class="card-body pt-5">
-                        <h5 class="card-title ">Klik Menu Diagnosis</h5>
-                        <p class="card-text font-weight-light ">Silakan buka Halaman Diagnosis dan lengkapi form
-                            diagnosis penyakit tanaman padi.</p>
+
+            <!-- Footer Top -->
+            <div class="footer-top">
+
+                <!-- Logo -->
+                <div class="footer-brand">
+
+                    <img src="/static/images/logo2.png" alt="Logo SiPadi">
+
+                    <div>
+                        <h2>SiPadi</h2>
+                        <p>Sistem Pakar Penyakit Padi</p>
                     </div>
+
                 </div>
-                <div class="card border">
-                    <img src="/static/images/2.png" class="card-img-top mx-auto mt-5" style="width: 300px; height:auto">
-                    <div class="card-body pt-5">
-                        <h5 class="card-title">Pilih Gejala Penyakit</h5>
-                        <p class="card-text font-weight-light">Dalam tahap ini pengguna akan diberikan beberapa
-                            pilihan gejala, dan pengguna diharapkan untuk memilih gejala yang dialami pada tanaman padi
-                            pengguna.</p>
-                    </div>
-                </div>
-                <div class="card border">
-                    <img src="/static/images/5.png" class="card-img-top mx-auto mt-5" style="width: 300px; height:auto">
-                    <div class="card-body pt-5">
-                        <h5 class="card-title ">Hasil Penyakit </h5>
-                        <p class="card-text font-weight-light">Pengguna akan melihat daftar kemungkinan penyakit tanaman
-                            padi, diurutkan dari yang paling berisiko.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="heroBWA-2">
-        <div class="container-xl">
-            <div class="row position-relative">
-                <div class="col align-self-center">
-                    <h1 style=" text-align: center; color: #444;" class="font-weight 700 sub-heading ">Cara kerja metode Forward
-                        Chaining</h1>
-                    <p class="pb-5 text-center font-weight-light">Forward Chaining adalah metode algoritma dalam sistem
-                        pakar yang bekerja secara deduktif,<br>metode dimulai dengan mengumpulkan fakta-fakta yang
-                        diketahui menuju kesimpulan</p>
-                    <p></p>
+                <!-- Tentang -->
+                <div class="footer-about">
 
-                    <section class="py-30 mb-5 container-xl">
-                        <div class="row mb-5">
-                            <div class="col-5 ">
-                                <img class="metode" src="/static/images/work.png">
-                            </div>
-                            <div class="col-7 d-flex justify-content-center flex-column">
-                                <h2 class="mt-4 ">Metode Forward Chaining pada Sistem Pakar Diagnosis Penyakit Padi</h2>
-                                <p class="font-weight-light">Metode Forward Chaining pada sistem pakar diagnosis
-                                    penyakit padi adalah pendekatan data-driven yang menelusuri aturan (rules)
-                                    berdasarkan fakta gejala (input) untuk menyimpulkan jenis penyakit dan solusinya.
-                                    Sistem ini mencocokkan gejala yang dipilih (IF) dengan basis pengetahuan pakar untuk
-                                    menghasilkan diagnosis akhir (THEN).
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-    </section>
+                    <h4>Tentang</h4>
 
-    <section section class="margin-top-2 container-xl">
-        <div class="row margin-top d-flex flex-column">
-            <div class="justify-content-center flex-column text-center">
-                <h1 class="font-weight 700 sub-heading " style="color: #444;">Memulai Jawaban Pertanyaan Penting </h1>
-                <p class="font-weight-light">Pertanyaan ini meliputi informasi dasar terkait penerapan Forward Chaining
-                    pada sistem pakar ini</p>
-            </div>
-
-            <div class="col margin-top">
-                <div class="accordion mb-5" id="accordionExample">
-                    <div class="card mb-3">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn font-weight-bold btn-block text-left" type="button"
-                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne">
-                                    Apa itu Metode Forward Chaining?
-                                </button>
-                            </h2>
-                        </div>
-
-                        <div id="collapseOne" class="collapse " aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Forward Chaining adalah metode penalaran dalam sistem pakar yang memulai proses
-                                inferensi dari kumpulan fakta atau gejala yang diketahui, kemudian menelusurinya secara
-                                maju melalui aturan-aturan IF-THEN hingga mencapai kesimpulan akhir, sehingga metode ini
-                                sangat cocok digunakan ketika data gejala sudah tersedia dan sistem perlu menentukan
-                                penyakit apa yang paling mungkin menyerang tanaman.
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                    Bagaimana cara kerja dari metode Forward Chaining?
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Saat pengguna mencentang gejala yang diamati pada tanaman padi — misalnya bercak belah
-                                ketupat pada daun dan pusat bercak berwarna abu-abu — sistem akan membaca seluruh aturan
-                                yang tersimpan dalam basis pengetahuan, mencocokkan fakta tersebut dengan kondisi IF
-                                pada setiap aturan, dan ketika kondisi terpenuhi sistem langsung mengeksekusi bagian
-                                THEN sebagai kesimpulan, yaitu menampilkan nama penyakit beserta solusi penanganannya
-                                secara otomatis dan real-time.
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                    Mengapa Metode Forward Chaining dipilih untuk Sistem Pakar Diagnosis Penyakit Padi?
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Forward Chaining dipilih karena sangat sesuai dengan alur berpikir petani yang selalu
-                                berangkat dari gejala yang mereka lihat di lapangan menuju diagnosis penyakit — metode
-                                ini efisien untuk jumlah penyakit dan gejala yang terstruktur, mudah diimplementasikan
-                                dalam bahasa pemrograman berbasis web (HTML, CSS, JavaScript), transparan sehingga alur
-                                keputusannya dapat dijelaskan kepada pengguna, serta tidak memerlukan data latih dalam
-                                jumlah besar seperti metode Machine Learning.
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-header" id="headingFour">
-                            <h2 class="mb-0">
-                                <button class="btn font-weight-bold btn-block text-left collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
-                                    Apa keuntungan menggunakan Metode Forward Chaining?
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Keuntungan Menggunakan Metode Forward Chaining
-                                Metode Forward Chaining menawarkan sejumlah keunggulan untuk sistem pakar diagnosis
-                                penyakit padi, antara lain prosesnya transparan dan mudah dipahami karena setiap aturan
-                                IF-THEN dapat dilihat dan dijelaskan, responsnya instan karena seluruh logika berjalan
-                                di sisi pengguna (client-side) tanpa perlu koneksi server, basis pengetahuannya mudah
-                                diperbarui cukup dengan menambah aturan baru tanpa mengubah struktur program, serta
-                                dapat dijalankan langsung di browser smartphone petani tanpa instalasi aplikasi
-                                tambahan.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
-        <div class="container-fluid px-5">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <h5 class="fw-bold mb-3">Tentang</h5>
-                    <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
-                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada
-                        tanaman padi berdasarkan gejala yang muncul.
-                        Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani
-                        dapat mengambil tindakan yang tepat
-                        untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
+                    <p>
+                        Sistem pakar diagnosis penyakit padi membantu petani dalam
+                        mengidentifikasi penyakit pada tanaman padi berdasarkan
+                        gejala yang muncul. Sistem ini memberikan hasil diagnosis
+                        secara cepat beserta saran penanganannya, sehingga petani
+                        dapat mengambil tindakan yang tepat untuk menjaga kesehatan
+                        tanaman dan meningkatkan hasil panen.
                     </p>
+
                 </div>
 
-                <div class="col-lg-4 col-md-6 offset-lg-1">
-                    <h5 class="fw-bold mb-3">Link</h5>
-                    <ul class="list-unstyled" style="color: white;">
-                        <li class="mb-2">
-                            <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/berita.html" class="text-secondary text-decoration-none">Berita</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis
-                                Padi</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi
-                                Penyakit</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman
-                                Diagnosis</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
-            <hr class="my-2 border-secondary">
+            <hr>
 
-            <div class="text-center">
-                <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+
+                <!-- Lokasi -->
+                <div class="footer-location">
+
+                    <i class="fas fa-map-marker-alt"></i>
+
+                    <span>
+                        Surakarta, Indonesia
+                    </span>
+
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-copy">
+
+                    <h6>
+                        ©2026 | SiPadi | All Rights Reserved
+                    </h6>
+
+                </div>
+
+                <!-- Nomor -->
+                <div class="footer-phone">
+
+                    <i class="fas fa-phone-alt"></i>
+
+                    <span>
+                        +62 000 0000 0000
+                    </span>
+
+                </div>
+
             </div>
 
         </div>
+
     </footer>
 
 
@@ -616,55 +564,83 @@
     </script> --> <!--dibungkam surya-->
 
     <script>
-        // --- Fitur Scrollspy untuk Navbar Dinamis ---
-        document.addEventListener('DOMContentLoaded', function() {
-            // Ambil semua section yang punya ID
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Ambil semua section
             const sections = document.querySelectorAll('section[id]');
-            // Ambil semua link navigasi di navbar
+
+            // Ambil menu navbar
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
+            // Home aktif pertama kali
+            document.querySelector('a[href="#home"]').classList.add('active');
+
+            // status apakah user sudah klik menu
+            let menuClicked = false;
+
+            // pindah active saat menu diklik
+            navLinks.forEach(link => {
+
+                link.addEventListener('click', function () {
+
+                    menuClicked = true;
+
+                    // hapus active semua
+                    navLinks.forEach(item => {
+                        item.classList.remove('active');
+                    });
+
+                    // tambahkan active ke menu yang diklik
+                    this.classList.add('active');
+
+                });
+
+            });
+
+            // ScrollSpy hanya aktif sebelum user klik menu
             function scrollSpy() {
-                // Posisi scroll saat ini (ditambah sedikit offset agar perubahan lebih awal)
-                let currentScroll = window.scrollY || document.documentElement.scrollTop;
-                // Offset bisa disesuaikan, biasanya sama dengan tinggi navbar (misal 150px)
-                let scrollPosition = currentScroll + 150; 
 
-                // Lakukan pengecekan untuk setiap section
+                // jika menu pernah diklik, hentikan
+                if (menuClicked) return;
+
+                let currentScroll =
+                    window.scrollY || document.documentElement.scrollTop;
+
+                let scrollPosition = currentScroll + 150;
+
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop; // Posisi atas section
-                    const sectionHeight = section.offsetHeight; // Tinggi section
-                    const sectionId = section.getAttribute('id'); // ID section (misal: 'berita')
 
-                    // Jika posisi scroll ada di dalam area section ini
-                    if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
-                        // 1. Hapus class 'active' dari semua link
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (
+                        scrollPosition >= sectionTop &&
+                        scrollPosition < (sectionTop + sectionHeight)
+                    ) {
+
                         navLinks.forEach(link => {
                             link.classList.remove('active');
                         });
 
-                        // 2. Tambahkan class 'active' HANYA ke link yang href-nya sesuai dengan sectionId
-                        // Gunakan querySelector untuk mencari link spesifik tersebut
-                        let activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
-                        
-                        // Validasi untuk mencegah error jika link dengan href="#home" tidak ditemukan (karena href-nya bisa beda misal "/")
+                        let activeLink = document.querySelector(
+                            `.navbar-nav .nav-link[href="#${sectionId}"]`
+                        );
+
                         if (activeLink) {
                             activeLink.classList.add('active');
-                        } else if (sectionId === 'home') {
-                             // Penanganan khusus jika href untuk home bukan "#home" melainkan "/" atau kosong
-                            let homeLink = document.querySelector('.navbar-nav .nav-link');
-                            if(homeLink) homeLink.classList.add('active');
                         }
                     }
+
                 });
+
             }
 
-            // Jalankan fungsi scrollSpy setiap kali user melakukan scroll
             window.addEventListener('scroll', scrollSpy);
-            
-            // Jalankan sekali saat halaman pertama kali dimuat (untuk set status awal)
-            scrollSpy(); 
+
         });
     </script>
 
 </body>
+
 </html>
