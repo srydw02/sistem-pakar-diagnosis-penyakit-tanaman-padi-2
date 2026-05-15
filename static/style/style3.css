@@ -203,3 +203,115 @@ ol li:hover {
   }
 
 }
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 14px 0;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+    z-index: 9999;
+    transition: all .3s ease;
+}
+
+.navbar .container-xl {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b8f1f;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 8px;
+}
+
+.nav-link {
+    position: relative;
+    color: #222 !important;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 8px 6px !important;
+}
+
+.nav-link:hover {
+    color: #2f9e44 !important;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: #2f9e44 !important;
+    font-weight: 600;
+}
+
+.btn-register {
+    border-radius: 14px;
+    padding: 10px 22px !important;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(47, 158, 68, .25);
+}
+
+.btn-primary {
+    background: #d8f5cf;
+    color: #0b8f1f;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 24px;
+    transition: .3s ease;
+}
+
+.btn-primary:hover {
+    background: #0b8f1f;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-back-home {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1fff4;
+    color: #0b8f1f;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid #d8f5cf;
+    transition: all .3s ease;
+    flex-shrink: 0;
+}
+
+.btn-back-home:hover {
+    background: #0b8f1f;
+    color: white;
+    transform: scale(1.1);
+    text-decoration: none;
+}
