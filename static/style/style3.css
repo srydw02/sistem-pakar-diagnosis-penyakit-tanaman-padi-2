@@ -82,11 +82,11 @@ body {
 }
 
 .detail-container {
-  padding-top: 95px;
+  padding-top: 110px;
   padding-bottom: 50px;
-  padding-left: 110px;
-  padding-right: 110px;
-}
+  padding-left: 15px;
+    padding-right: 15px;
+  }
 
 .left-side {
   position: sticky;
