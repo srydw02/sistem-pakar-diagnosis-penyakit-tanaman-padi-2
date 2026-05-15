@@ -15,44 +15,46 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container-xl">
-            <a class="navbar-brand">
-                <h3 style="color: green;">SiPadi</h3>
+    <div class="container-xl">
+      <a class="navbar-brand d-flex align-items-center">
+        <img src="/static/images/logo2.png" alt="Logo SiPadi"
+          style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
+        <h3 style="color: green; margin: 0;">SiPadi</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item align-self-center active">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item align-self-center active">
+            <a class="nav-link" href="/template/berita.html">Berita</a>
+          </li>
+
+          <li class="nav-item align-self-center active">
+            <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
+          </li>
+
+          <li class="nav-item align-self-center active">
+            <a class="nav-link active" href="#informasi">Informasi</a>
+          </li>
+
+          <li class="nav-item align-self-center active">
+            <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">
+              Diagnosis
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          </li>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/template/berita.html">Berita</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="nav-link active" href="#informasi">Informasi</a>
-                    </li>
-
-                    <li class="nav-item align-self-center active">
-                        <a class="btn px-4 btn-primary ml-2 btn-register" href='/template/diagnosis.html' role="button">
-                            Diagnosis
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <section class="penyakit margin-top">
     <div class="container">
@@ -69,12 +71,12 @@
 
       <section id="penyakit">
         <div id="penyakit-row" class="row row-cols-1 row-cols-md-3 g-4 mb-4 justify-content-center">
-          
+
           <div class="col">
             <div class="card h-100 shadow-sm border overflow-hidden">
               <div class="gambar-dalam">
                 <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Blas (Blast).png" class="card-img-top"
-                alt="..." />
+                  alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
@@ -92,8 +94,8 @@
           <div class="col">
             <div class="card h-100 shadow-sm border overflow-hidden">
               <div class="gambar-dalam">
-                 <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Hawar Daun Bakteri (BLB).png"
-                class="card-img-top" alt="..." />
+                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Hawar Daun Bakteri (BLB).png"
+                  class="card-img-top" alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
@@ -113,7 +115,8 @@
           <div class="col">
             <div class="card h-100 shadow-sm border overflow-hidden">
               <div class="gambar-dalam">
-                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Tungro.png" class="card-img-top" alt="..." />
+                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Tungro.png" class="card-img-top"
+                  alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
@@ -132,7 +135,7 @@
             <div class="card h-100 shadow-sm border overflow-hidden">
               <div class="gambar-dalam">
                 <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Busuk Pelepah (Sheath Blight).png"
-                class="card-img-top" alt="..." />
+                  class="card-img-top" alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
@@ -152,7 +155,7 @@
             <div class="card h-100 border-0 shadow-sm overflow-hidden">
               <div class="gambar-dalam">
                 <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Rumput Kerdil (Grassy Stunt).png"
-                class="card-img-top" alt="..." />
+                  class="card-img-top" alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
@@ -166,18 +169,19 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col">
             <div class="card h-100 border-0 shadow-sm overflow-hidden">
               <div class="gambar-dalam">
-                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Kresek.png"
-                class="card-img-top" alt="..." />
+                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Kresek.png" class="card-img-top"
+                  alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Penyakit Kresek</h5>
                 <p class="card-text">
-                  Kresek merupakan bentuk parah dari hawar daun bakteri. Penyakit berkembang cepat terutama saat musim hujan dan dapat menyebabkan tanaman mati muda.
+                  Kresek merupakan bentuk parah dari hawar daun bakteri. Penyakit berkembang cepat terutama saat musim
+                  hujan dan dapat menyebabkan tanaman mati muda.
                 </p>
                 <a href="/template/detailPenyakit/p6.html" class="btn btn-primary mt-auto">Detail Penyakit</a>
               </div>
@@ -187,14 +191,15 @@
           <div class="col">
             <div class="card h-100 border-0 shadow-sm overflow-hidden">
               <div class="gambar-dalam">
-                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Kerdil Hampa.png"
-                class="card-img-top" alt="..." />
+                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Kerdil Hampa.png" class="card-img-top"
+                  alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Rice Ragged Stunt Disease - Penyakit Kerdil Hampa</h5>
                 <p class="card-text">
-                  Penyakit ini ditularkan oleh wereng coklat. Tanaman yang terserang mengalami pertumbuhan abnormal dan hasil panen sangat menurun.
+                  Penyakit ini ditularkan oleh wereng coklat. Tanaman yang terserang mengalami pertumbuhan abnormal dan
+                  hasil panen sangat menurun.
                 </p>
                 <a href="/template/detailPenyakit/p7.html" class="btn btn-primary mt-auto">Detail Penyakit</a>
               </div>
@@ -204,14 +209,15 @@
           <div class="col">
             <div class="card h-100 border-0 shadow-sm overflow-hidden">
               <div class="gambar-dalam">
-                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit False Smut.png"
-                class="card-img-top" alt="..." />
+                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit False Smut.png" class="card-img-top"
+                  alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
                 <h5 class="card-title">False Smut</h5>
                 <p class="card-text">
-                  Penyakit menyerang saat pembentukan bulir. Bulir yang terinfeksi tidak dapat berkembang normal dan kualitas gabah menurun.
+                  Penyakit menyerang saat pembentukan bulir. Bulir yang terinfeksi tidak dapat berkembang normal dan
+                  kualitas gabah menurun.
                 </p>
                 <a href="/template/detailPenyakit/p8.html" class="btn btn-primary mt-auto">Detail Penyakit</a>
               </div>
@@ -221,32 +227,34 @@
           <div class="col">
             <div class="card h-100 border-0 shadow-sm overflow-hidden">
               <div class="gambar-dalam">
-                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Rot Toot.png"
-                class="card-img-top" alt="..." />
+                <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Rot Toot.png" class="card-img-top"
+                  alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Penyakit Rot Toot</h5>
                 <p class="card-text">
-                  Penyakit ini menyebabkan akar tidak mampu menyerap air dan nutrisi dengan baik sehingga tanaman mudah mati.
+                  Penyakit ini menyebabkan akar tidak mampu menyerap air dan nutrisi dengan baik sehingga tanaman mudah
+                  mati.
                 </p>
                 <a href="/template/detailPenyakit/p9.html" class="btn btn-primary mt-auto">Detail Penyakit</a>
               </div>
             </div>
           </div>
 
-          
+
           <div class="col">
             <div class="card h-100 border-0 shadow-sm overflow-hidden">
               <div class="gambar-dalam">
                 <img src="/static/images/fotoJenisPadi/fotopenyakitpadi/Penyakit Bakanae Disease.png"
-                class="card-img-top" alt="..." />
+                  class="card-img-top" alt="..." />
                 <div class="overlay"></div>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Penyakit Bakanae Disease</h5>
                 <p class="card-text">
-                  Penyakit sering terbawa melalui benih. Tanaman tampak lebih tinggi dari normal tetapi lemah dan mudah mati.
+                  Penyakit sering terbawa melalui benih. Tanaman tampak lebih tinggi dari normal tetapi lemah dan mudah
+                  mati.
                 </p>
                 <a href="/template/detailPenyakit/p10.html" class="btn btn-primary mt-auto">Detail Penyakit</a>
               </div>
@@ -269,7 +277,7 @@
           yang akurat sangat penting dalam proses diagnosis penyakit secara
           cepat dan efektif melalui sistem pakar dengan metode forward
           chaining.
-        </p>  
+        </p>
       </div>
 
       <div class="col margin-top">
@@ -455,53 +463,84 @@
     </div>
   </section>
 
-    <footer class="footer bg-dark pt-4 pb-2 mt-5 text-white">
-        <div class="container-fluid px-5">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <h5 class="fw-bold mb-3">Tentang</h5>
-                    <p class="text-secondary" style="text-align: justify; line-height: 1.6; color: white;">
-                        Sistem pakar diagnosis penyakit padi membantu petani dalam mengidentifikasi penyakit pada
-                        tanaman padi berdasarkan gejala yang muncul.
-                        Sistem ini memberikan hasil diagnosis secara cepat beserta saran penanganannya, sehingga petani
-                        dapat mengambil tindakan yang tepat
-                        untuk menjaga kesehatan tanaman dan meningkatkan hasil panen.
-                    </p>
-                </div>
+  <footer class="footer-modern">
 
-                <div class="col-lg-4 col-md-6 offset-lg-1">
-                    <h5 class="fw-bold mb-3">Link</h5>
-                    <ul class="list-unstyled" style="color: white;">
-                        <li class="mb-2">
-                            <a href="/" class="text-secondary text-decoration-none hover-white">Home</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/berita.html" class="text-secondary text-decoration-none">Berita</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/jenisPadi.html" class="text-secondary text-decoration-none">Jenis
-                                Padi</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/informasi.html" class="text-secondary text-decoration-none">Informasi
-                                Penyakit</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="/template/diagnosis.html" class="text-secondary text-decoration-none">Halaman
-                                Diagnosis</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="container-xl">
 
-            <hr class="my-2 border-secondary">
+      <!-- Footer Top -->
+      <div class="footer-top">
 
-            <div class="text-center">
-                <p class="small text-secondary mb-0">&copy; 2026 Sistem Pakar Padi</p>
-            </div>
+        <!-- Logo -->
+        <div class="footer-brand">
+
+          <img src="/static/images/logo2.png" alt="Logo SiPadi">
+
+          <div>
+            <h2>SiPadi</h2>
+            <p>Sistem Pakar Penyakit Padi</p>
+          </div>
 
         </div>
-    </footer>
+
+        <!-- Tentang -->
+        <div class="footer-about">
+
+          <h4>Tentang</h4>
+
+          <p>
+            Sistem pakar diagnosis penyakit padi membantu petani dalam
+            mengidentifikasi penyakit pada tanaman padi berdasarkan
+            gejala yang muncul. Sistem ini memberikan hasil diagnosis
+            secara cepat beserta saran penanganannya, sehingga petani
+            dapat mengambil tindakan yang tepat untuk menjaga kesehatan
+            tanaman dan meningkatkan hasil panen.
+          </p>
+
+        </div>
+
+      </div>
+
+      <hr>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+
+        <!-- Lokasi -->
+        <div class="footer-location">
+
+          <i class="fas fa-map-marker-alt"></i>
+
+          <span>
+            Surakarta, Indonesia
+          </span>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copy">
+
+          <h6>
+            ©2026 | SiPadi | All Rights Reserved
+          </h6>
+
+        </div>
+
+        <!-- Nomor -->
+        <div class="footer-phone">
+
+          <i class="fas fa-phone-alt"></i>
+
+          <span>
+            +62 000 0000 0000
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
@@ -511,7 +550,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
- 
+
 </body>
 
 </html>
