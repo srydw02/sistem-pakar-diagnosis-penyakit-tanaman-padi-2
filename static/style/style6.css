@@ -8,7 +8,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    color: #ffffff;
 }
 
 body {
@@ -87,6 +86,10 @@ a.hover-green:hover { color: #0b8f1f !important; }
 .article-meta .author {
     color: #0b8f1f;
     font-weight: 700;
+}
+
+.article-content{
+    color: black;
 }
 
 /* Featured Image & Share Button */
