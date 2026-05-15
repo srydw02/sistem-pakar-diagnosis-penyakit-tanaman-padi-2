@@ -544,100 +544,45 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
 
-    <!-- <script>
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        // default home aktif
-        document.querySelector('a[href="#home"]').classList.add("active");
-
-        // pindah active saat diklik
-        navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-
-                navLinks.forEach(item => {
-                    item.classList.remove("active");
-                });
-
-                this.classList.add("active");
-            });
-        });
-    </script> --> <!--dibungkam surya-->
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-
-            // Ambil semua section
+            // Ambil semua section yang memiliki ID
             const sections = document.querySelectorAll('section[id]');
-
-            // Ambil menu navbar
+            // Ambil semua link menu navbar
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-            // Home aktif pertama kali
-            document.querySelector('a[href="#home"]').classList.add('active');
-
-            // status apakah user sudah klik menu
-            let menuClicked = false;
-
-            // pindah active saat menu diklik
-            navLinks.forEach(link => {
-
-                link.addEventListener('click', function () {
-
-                    menuClicked = true;
-
-                    // hapus active semua
-                    navLinks.forEach(item => {
-                        item.classList.remove('active');
-                    });
-
-                    // tambahkan active ke menu yang diklik
-                    this.classList.add('active');
-
-                });
-
-            });
-
-            // ScrollSpy hanya aktif sebelum user klik menu
+            // Fungsi pembaca posisi scroll (ScrollSpy)
             function scrollSpy() {
-
-                // jika menu pernah diklik, hentikan
-                if (menuClicked) return;
-
-                let currentScroll =
-                    window.scrollY || document.documentElement.scrollTop;
-
-                let scrollPosition = currentScroll + 150;
+                let currentScroll = window.scrollY || document.documentElement.scrollTop;
+                // Offset 150px agar navbar mendeteksi section sedikit lebih awal sebelum menyentuh atap
+                let scrollPosition = currentScroll + 150; 
 
                 sections.forEach(section => {
-
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.offsetHeight;
                     const sectionId = section.getAttribute('id');
 
-                    if (
-                        scrollPosition >= sectionTop &&
-                        scrollPosition < (sectionTop + sectionHeight)
-                    ) {
-
+                    // Jika posisi scroll sedang berada di dalam area section ini
+                    if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+                        // 1. Hapus class 'active' dari semua menu
                         navLinks.forEach(link => {
                             link.classList.remove('active');
                         });
 
-                        let activeLink = document.querySelector(
-                            `.navbar-nav .nav-link[href="#${sectionId}"]`
-                        );
-
+                        // 2. Tambahkan class 'active' HANYA ke menu yang sedang dilewati
+                        let activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
                         if (activeLink) {
                             activeLink.classList.add('active');
                         }
                     }
-
                 });
-
             }
 
+            // Jalankan ScrollSpy setiap kali user men-scroll layar
             window.addEventListener('scroll', scrollSpy);
 
+            // Jalankan sekali saat halaman pertama kali dimuat (untuk set menu 'Home' atau menu lain jika di-refresh di tengah halaman)
+            scrollSpy();
         });
     </script>
 
