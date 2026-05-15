@@ -1,35 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail Berita</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
     <link rel="stylesheet" href="/static/style/style6.css" />
 </head>
+
 <body class="detail-page">
-    <!-- Navbar -->
+
+    <div id="readingBar" style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background-color: #28a745; z-index: 9999; transition: width 0.2s;"></div>
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl d-flex justify-content-between align-items-center">
-            <!-- Logo tetap di kiri -->
+
             <a class="navbar-brand d-flex align-items-center" href="/template/berita.html">
                 <img src="/static/images/logo2.png" alt="Logo SiPadi"
                     style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
                 <h3 style="color: green; margin: 0;">SiPadi</h3>
             </a>
-            <!-- Tombol silang di kanan -->
+
             <button id="menu-toggle" class="btn-back-home" title="Kembali">
                 ✕
             </button>
+
         </div>
     </nav>
-    <!-- Main Content Wrapper -->
+
     <main class="main-article">
         <div class="container-xl">
-            <!-- Breadcrumb -->
+
             <nav aria-label="breadcrumb" class="breadcrumb-custom mb-4">
                 <i class="fas fa-home"></i> <a href="/">Beranda</a>
                 <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> <a
@@ -37,42 +43,37 @@
                 <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> Antisipasi Serangan Wereng Coklat
                 pada Musim Tanam Ini
             </nav>
-            <!-- Title & Meta -->
+
             <h1 class="article-title mb-3">Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini</h1>
+
             <div class="article-meta mb-4">
                 <span class="author">Oleh Tim SiPadi</span>,
                 <span class="date">Kamis, 12 Mei 2026 | 08:30 WIB</span> -
                 <span class="views"><i class="far fa-eye"></i> 1,245 kali dilihat</span>
             </div>
+
             <div class="row">
-                <!-- Kiri: Konten Utama -->
                 <div class="col-lg-8 pr-lg-5">
-                    <!-- Featured Image dengan tombol share pop-up -->
+
                     <div class="featured-image-wrapper mb-4">
-                        <!-- Gambar Artikel -->
                         <img src="/static/images/fotoberita/pestisida2.png" alt="Pelatihan Petani" class="featured-img w-100">
-                        <!-- Wrapper Share Container -->
+
                         <div class="share-container">
-                            <!-- Tombol Utama -->
                             <button class="btn-floating-share shadow-sm"><i class="fas fa-share-alt"></i></button>
-                            <!-- Menu Pop-up Share -->
+
                             <div class="share-menu shadow-sm">
-                                <!-- Copy Link -->
                                 <a href="javascript:void(0)" onclick="copyToClipboard()" class="share-item copy-link"
                                     title="Copy Link">
                                     <i class="fas fa-link"></i>
                                 </a>
-                                <!-- WhatsApp -->
                                 <a href="https://api.whatsapp.com/send?text=Cek%20berita%20pertanian%20ini!"
                                     target="_blank" class="share-item wa" title="Bagikan ke WhatsApp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <!-- Facebook -->
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=#" target="_blank"
                                     class="share-item fb" title="Bagikan ke Facebook">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <!-- Instagram (Hanya buka web IG karena IG tidak punya direct share URL untuk web) -->
                                 <a href="https://instagram.com" target="_blank" class="share-item ig"
                                     title="Buka Instagram">
                                     <i class="fab fa-instagram"></i>
@@ -80,34 +81,39 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Article Text -->
+
                     <article class="article-content">
                         <p class="intro-text"><strong>SiPadi, InfoTani -</strong> Kementerian Pertanian melalui dinas
                             terkait mengimbau para petani untuk meningkatkan kewaspadaan terhadap potensi ledakan
                             serangan hama wereng batang coklat (WBC) yang diperkirakan akan meningkat tajam pada musim
                             tanam gadu tahun ini.</p>
+
                         <p>Peringatan kewaspadaan ini dikeluarkan menyusul adanya anomali cuaca ekstrem dan tingkat
                             kelembapan udara yang sangat tinggi. Kondisi iklim mikro tersebut menciptakan habitat yang
                             sangat ideal bagi perkembangbiakan hama wereng secara masif di berbagai hamparan sentra
                             produksi padi.</p>
+
                         <p>"Kami sangat meminta para petani untuk tidak lengah dan rutin turun ke sawah guna memantau
                             area pangkal batang padi. Jika sudah ditemukan lebih dari lima ekor wereng per rumpun,
                             tindakan pengendalian terpadu harus segera dilakukan sebelum populasinya meledak dan
                             menyebabkan puso," ujar perwakilan Tim Penyuluh Pertanian Pusat dalam keterangan resminya.
                         </p>
+
                         <p>Sebagai langkah antisipasi utama, para petani sangat disarankan untuk menerapkan sistem pola
                             tanam jajar legowo. Sistem ini terbukti ampuh memperbaiki sirkulasi udara dan intensitas
                             cahaya matahari di area pertanaman, sehingga kelembapan di sekitar pangkal batang dapat
                             ditekan.</p>
+
                         <p>Selain itu, untuk mengurangi risiko resistensi hama akibat penggunaan pestisida kimia yang
                             berlebihan, petani juga diedukasi untuk mulai beralih memanfaatkan agens hayati.
                             Pengaplikasian jamur <i>Beauveria bassiana</i> dinilai sangat efektif untuk menginfeksi dan
                             mengendalikan populasi wereng coklat secara alami dan ramah lingkungan.</p>
+
                         <p>Rangkaian edukasi dan sosialisasi mengenai langkah mitigasi wereng coklat ini akan terus
                             digencarkan melalui kegiatan bimbingan teknis di berbagai Balai Penyuluhan Pertanian (BPP)
                             tingkat kecamatan sepanjang bulan Mei 2026.</p>
                     </article>
-                    <!-- Tags Section -->
+
                     <div class="tags-section mt-5 pt-4 border-top">
                         <i class="fas fa-tags text-success mr-2"></i>
                         <a href="#" class="tag-pill">#PERTANIAN DIGITAL</a>
@@ -116,19 +122,21 @@
                         <a href="#" class="tag-pill">#PETANI MILENIAL</a>
                         <a href="#" class="tag-pill">#PENYULUHAN</a>
                     </div>
+
                 </div>
-                <!-- Kanan: Sidebar -->
+
                 <div class="col-lg-4 mt-5 mt-lg-0 pl-lg-3">
-                    <!-- Sidebar Item 1 (Image Top) -->
+
                     <div class="sidebar-widget mb-5">
                         <img src="/static/images/fotoberita/padibojonegoro.png"
-                            alt="" class="w-100 rounded-lg mb-3 shadow-sm"
+                            alt="Produksi Padi Bojonegoro" class="w-100 rounded-lg mb-3 shadow-sm"
                             style="height: 200px; object-fit: cover;">
                         <h5 class="sidebar-title"><a href="/template/beritapadi/padibojonegoro.html">Produksi Padi Bojonegoro Sekitar Migas Kedung Keris Jeblok</a></h5>
-                        <p class="sidebar-meta">Oleh Penyuluh Tani &bull; Rabu, 13 Mei 2026 | 21:47 WIB</p>
+                        <p class="sidebar-meta">Oleh Tim SiPadi &bull; Minggu, 19 April 2026 | 15:17 WIB</p>
                     </div>
-                    <!-- Sidebar List Items -->
+
                     <div class="sidebar-list">
+
                         <div class="sidebar-item d-flex mb-4">
                             <img src="/static/images/fotoberita/homeberita3.jpg" alt="Deteksi Penyakit Padi" class="sidebar-thumb rounded">
                             <div class="ml-3">
@@ -136,6 +144,7 @@
                                 <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
                             </div>
                         </div>
+
                         <div class="sidebar-item d-flex mb-4">
                             <img src="/static/images/fotoberita/bankIndonesia.png" alt="Bank Indonesia" class="sidebar-thumb rounded">
                             <div class="ml-3">
@@ -143,6 +152,7 @@
                                 <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
                             </div>
                         </div>
+
                         <div class="sidebar-item d-flex mb-4">
                             <img src="/static/images/fotoberita/kementan&pemda.png"
                                 alt="Kementan dan Pemda" class="sidebar-thumb rounded">
@@ -151,16 +161,20 @@
                                 <p class="sidebar-meta m-0">Selasa, 12 Mei 2026</p>
                             </div>
                         </div>
+
                     </div>
-        
+                </div>
+            </div>
         </div>
     </main>
-    <!-- SCRIPT BACK PINTAR (MENYESUAIKAN ASAL HALAMAN) -->
+
     <script>
         const closeBtn = document.getElementById("menu-toggle");
+
         closeBtn.addEventListener("click", function () {
             // Ambil URL dari halaman sebelumnya
             const previousPage = document.referrer.toLowerCase();
+
             // Kondisi 1: Jika user datang dari halaman Home (index.html atau root /)
             if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
                 // Balik ke Home (langsung scroll ke section berita)
@@ -181,20 +195,26 @@
             }
         });
     </script>
-    <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const track = document.getElementById("newsTrack");
             const btnPrev = document.getElementById("btnPrevNews");
             const btnNext = document.getElementById("btnNextNews");
             let autoSlideInterval;
+
             if (!track) return; // Jaga-jaga kalau track ga ada
+
             track.style.scrollBehavior = 'smooth';
+
             function slideNext() {
                 const firstItem = track.querySelector('.news-carousel-item');
                 if (!firstItem) return;
+
                 const itemWidth = firstItem.offsetWidth + 24;
+
                 track.scrollBy({ left: itemWidth, behavior: 'smooth' });
+
                 setTimeout(() => {
                     track.style.scrollBehavior = 'auto';
                     track.appendChild(firstItem);
@@ -202,19 +222,24 @@
                     track.style.scrollBehavior = 'smooth';
                 }, 400);
             }
+
             function slidePrev() {
                 const items = track.querySelectorAll('.news-carousel-item');
                 if (items.length === 0) return;
+
                 const lastItem = items[items.length - 1];
                 const itemWidth = lastItem.offsetWidth + 24;
+
                 track.style.scrollBehavior = 'auto';
                 track.prepend(lastItem);
                 track.scrollLeft += itemWidth;
+
                 setTimeout(() => {
                     track.style.scrollBehavior = 'smooth';
                     track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
                 }, 10);
             }
+
             // KUNCI PERBAIKANNYA DI SINI: Pakai if biar gak error kalau tombol dihapus
             if (btnNext) {
                 btnNext.addEventListener("click", slideNext);
@@ -222,13 +247,17 @@
             if (btnPrev) {
                 btnPrev.addEventListener("click", slidePrev);
             }
+
             function startAutoSlide() {
                 autoSlideInterval = setInterval(slideNext, 2000);
             }
+
             function stopAutoSlide() {
                 clearInterval(autoSlideInterval);
             }
+
             startAutoSlide();
+
             const wrapper = document.querySelector('.news-carousel-wrapper');
             if (wrapper) {
                 wrapper.addEventListener("mouseenter", stopAutoSlide);
@@ -236,11 +265,13 @@
             }
         });
     </script>
+
     <script>
         // Fungsi untuk tombol Copy Link
         function copyToClipboard() {
             // Mengambil URL halaman saat ini
             const url = window.location.href;
+
             navigator.clipboard.writeText(url).then(() => {
                 alert("Link artikel berhasil disalin!");
             }).catch(err => {
@@ -248,21 +279,26 @@
             });
         }
     </script>
-    <!-- SCRIPT UNTUK READING PROGRESS BAR -->
+
     <script>
         // Deteksi setiap kali user melakukan scroll
         window.addEventListener('scroll', function () {
             // Ambil elemen bar-nya
             const readingBar = document.getElementById("readingBar");
+
             // Hitung jarak dari atas (scrollTop)
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
             // Hitung total tinggi halaman dikurangi tinggi layar monitor user
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
             // Dapatkan persentasenya (Jarak saat ini dibagi Total jarak) dikali 100
             const scrolled = (winScroll / height) * 100;
+
             // Terapkan persentasenya ke lebar (width) garis hijaunya
             readingBar.style.width = scrolled + "%";
         });
     </script>
 </body>
+
 </html>
