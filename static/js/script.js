@@ -10,7 +10,15 @@ fetch('/data/data.json')
   .then(function(data) {
     knowledgeBase = data;
     gejalaKeys = Object.keys(data.gejala);
-    tampilkanPertanyaan();
+    
+    // CEK SESSION STORAGE: Jika ada sesi diagnosis yang tersimpan saat user klik 'back'
+    let savedDiagnosis = sessionStorage.getItem('savedDiagnosis');
+    if (savedDiagnosis) {
+        selectedGejala = JSON.parse(savedDiagnosis);
+        prosesDiagnosis(); // Langsung lompat ke hasil
+    } else {
+        tampilkanPertanyaan(); // Jika tidak ada, mulai dari pertanyaan pertama
+    }
   });
 
 function forwardChaining(faktaTerpilih) {
@@ -67,9 +75,6 @@ function tampilkanPertanyaan() {
       '<div class="card p-4 text-center border-0 shadow-sm" style="border-radius: 15px;">' +
 
         // --- BUNGKUSAN GAMBAR (CONTAINER) ---
-        // width: 92% memberikan margin kiri-kanan
-        // aspect-ratio: 4/3 mengunci rasio sesuai garis putih (bisa diganti 1/1 jika ingin kotak sempurna)
-        // margin: 15px auto memberikan jarak atas agar seimbang dengan space putih header
         '<div style="position: relative; overflow: hidden; border-radius: 12px; margin: 15px auto 20px auto; width: 92%; aspect-ratio: 4 / 3; background-color: #f8f9fa;">' +
           
           '<img src="' + dataGejala.gambar + '" style="width: 100%; height: 100%; object-fit: cover; display: block;">' +
@@ -115,50 +120,7 @@ function tampilkanPertanyaan() {
   }
 }
 
-// Catatan: Fungsi nextQuestion() dan toggleCheckbox() sudah tidak diperlukan lagi dan bisa dihapus.
-
-// function toggleCheckbox(clicked, tipe) {
-//   let ya    = document.getElementById('jawab-ya');
-//   let tidak = document.getElementById('jawab-tidak');
-
-//   if (tipe === 'ya' && clicked.checked) {
-//     tidak.checked = false;
-//   }
-//   if (tipe === 'tidak' && clicked.checked) {
-//     ya.checked = false;
-//   }
-// }
-
-// function nextQuestion() {
-//   let ya    = document.getElementById('jawab-ya');
-//   let tidak = document.getElementById('jawab-tidak');
-
-//   if (ya.checked === false && tidak.checked === false) {
-//     alert('Silakan pilih jawaban Ya atau Tidak sebelum melanjutkan!');
-//     return;
-//   }
-
-//   let kode = gejalaKeys[currentGejalaIndex];
-//   let jawabanBersih = [];
-  
-//   for (let i = 0; i < selectedGejala.length; i++) {
-//     if (selectedGejala[i] !== kode && selectedGejala[i] !== '!' + kode) {
-//       jawabanBersih.push(selectedGejala[i]);
-//     }
-//   }
-//   selectedGejala = jawabanBersih;
-
-//   if (ya.checked) {
-//     selectedGejala.push(kode);
-//   } else {
-//     selectedGejala.push('!' + kode);
-//   }
-
-//   currentGejalaIndex++;
-//   tampilkanPertanyaan();
-// }
-
-// --- FUNGSI BARU UNTUK PILIH GEJALA OTOMATIS ---
+// --- FUNGSI UNTUK PILIH GEJALA OTOMATIS ---
 function pilihGejala(isYa) {
   let kode = gejalaKeys[currentGejalaIndex];
   
@@ -191,6 +153,9 @@ function prevQuestion() {
 }
 
 function prosesDiagnosis() {
+  // SIMPAN JAWABAN KE SESSION STORAGE
+  sessionStorage.setItem('savedDiagnosis', JSON.stringify(selectedGejala));
+
   let faktaTerpilih = [];
   for (let i = 0; i < selectedGejala.length; i++) {
     if (selectedGejala[i][0] !== '!') {
@@ -251,29 +216,39 @@ function prosesDiagnosis() {
   } else {
     for (let i = 0; i < hasilArray.length; i++) {
       let item = hasilArray[i];
-      // let warnaBadge;
-      
-      // if (i === 0)      { warnaBadge = 'badge-danger';  }
-      // else if (i === 1) { warnaBadge = 'badge-warning'; }
-      // else              { warnaBadge = 'badge-secondary'; }
 
       let labelUrutan;
       if (i === 0) { labelUrutan = 'Diagnosis Utama';  }
       else         { labelUrutan = 'Kemungkinan ' + (i + 1); }
 
       output.innerHTML +=
-        '<div class="card mb-3 p-3">' +
+        '<div class="card mb-3 p-3 shadow-sm border-0">' +
           '<div class="d-flex align-items-center justify-content-between mb-2">' +
             '<h5 class="mb-0">' + item.nama + '</h5>' +
-            // '<span class="badge ' + warnaBadge + '">' + labelUrutan + '</span>' +
             '<span style="color: #2f281e; font-weight: 500;">' + labelUrutan + '</span>' +
-
           '</div>' +
-          //'<a href="' + item.link + '" class="btn btn-danger btn-sm mt-2" target="_blank">Lihat informasi</a>' +
-          '<a href="' + item.link + '" class="btn btn-lihat-info btn-sm mt-2" target="_blank">Lihat informasi</a>' +
+          '<a href="' + item.link + '" class="btn btn-lihat-info btn-sm mt-2">Lihat informasi</a>' +
         '</div>';
     }
   }
 
+  // TAMBAHKAN TOMBOL UNTUK MENGULANG DIAGNOSIS BARU
+  output.innerHTML += 
+    '<div class="mt-4 mb-5 text-center">' +
+        '<button class="btn btn-outline-success px-4 py-2" onclick="ulangiDiagnosis()" style="border-radius:10px; font-weight:600;">' +
+            '↻ Mulai Diagnosis Baru' +
+        '</button>' +
+    '</div>';
+
   document.getElementById('diagnosisForm').style.display = 'none';
+}
+
+// --- FUNGSI UNTUK MERESET (MENGHAPUS SESI) ---
+function ulangiDiagnosis() {
+    sessionStorage.removeItem('savedDiagnosis'); // Hapus memori jawaban
+    currentGejalaIndex = 0;
+    selectedGejala = [];
+    document.getElementById('hasil').innerHTML = ''; // Kosongkan hasil
+    document.getElementById('diagnosisForm').style.display = 'block'; // Tampilkan ulang form
+    tampilkanPertanyaan();
 }
