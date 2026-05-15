@@ -246,35 +246,85 @@ section {
 .heroBWA {
     min-height: 100vh;
     display: flex;
-
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80') center center / cover no-repeat;
+}
+
+.heroBWA::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.35) 60%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    z-index: 0;
+}
+
+.heroBWA .container-xl {
+    position: relative;
+    z-index: 1;
 }
 
 .heroBWA h1 {
     font-size: 4rem;
     font-weight: 700;
     line-height: 1.2;
+    color: #ffffff !important;
 }
 
 .heroBWA h6 {
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.8;
-    color: #555;
+    color: rgba(255,255,255,0.85);
 }
 
-.heading {
-    font-size: 4rem;
-}
-
-.sub-heading {
-    font-size: 3rem;
+.heroBWA .btn-primary {
+    background: #2f9e44;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 14px;
     font-weight: 600;
+    font-size: 1rem;
+    transition: .3s ease;
+    margin-top: 8px;
+    display: inline-block;
+    text-decoration: none;
 }
 
-.metode {
-    width: 400px;
-    height: 400px;
+.heroBWA .btn-primary:hover {
+    background: white;
+    color: #2f9e44;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.btn-outline-hero {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255,255,255,0.7);
+    padding: 12px 30px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: .3s ease;
+    margin-top: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-hero:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-3px);
+    text-decoration: none;
 }
 
 /* =========================
@@ -991,4 +1041,89 @@ section {
         font-size: .95rem;
         line-height: 1.7;
     }
+}
+
+/* =========================
+   ALUR STEPS
+========================= */
+
+.alur-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #2f9e44;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.alur-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    margin-top: 40px;
+}
+
+.alur-step {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.alur-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #2f9e44;
+    color: #2f9e44;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: transparent;
+}
+
+.alur-line {
+    flex: 0 0 80px;
+    height: 2px;
+    background: #2f9e44;
+    margin-top: 32px;
+    opacity: 0.4;
+}
+
+.alur-step-title {
+    font-weight: 700;
+    color: #1b4332;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.alur-step-desc {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .alur-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .alur-line {
+        width: 2px;
+        height: 40px;
+        flex: none;
+        margin-top: 0;
+    }
+}
+
+button.btn-outline-hero {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
 }
