@@ -145,7 +145,10 @@ body {
 .detail-container {
     max-width: 900px; 
     margin: -40px auto 60px auto;
-    padding: 0 20px;
+    padding-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+
 }
 
 /* INFO ATAS (GAMBAR & SPEK) */
