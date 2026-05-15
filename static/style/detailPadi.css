@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+/* --- CSS DASAR TEMA SIPADI --- */
 body {
-    background: linear-gradient(to bottom, #ffffff, #e8f5e9);
+    background: #f8f9fa; 
     font-family: "Poppins", sans-serif;
-    color: #2f281e;
-    /* Tambahan jarak atas agar konten tidak tertabrak navbar fixed-top */
-    padding-top: 100px; 
-    padding-bottom: 60px;
-    overflow-y: scroll !important;
+    color: #333;
+    margin: 0;
+    padding-top: 70px;
 }
 
 /* =========================
@@ -102,137 +101,424 @@ body {
 .navbar-toggler { border: none; }
 .navbar-toggler:focus { outline: none; box-shadow: none; }
 
-/* =========================
-   DETAIL LAYOUT (GAMBAR & SPEK)
-========================= */
+/* HEADER */
 .detail-header {
+    margin-top: 30px; 
     text-align: center;
-    padding: 10px 20px 30px;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(11, 143, 31, 0.85), rgba(11, 143, 31, 0.9)), url("../../static/images/hijau.png") center/cover no-repeat;
+    color: white;
 }
 
 .detail-header h1 {
-    color: #0b8f1f;
+    font-size: 2.2rem;
     font-weight: 700;
-    font-size: 2.8rem;
-    margin-bottom: 5px;
-    text-transform: capitalize;
+    margin-bottom: 10px;
 }
 
 .detail-header p {
-    color: #555;
     font-size: 1.1rem;
+    opacity: 0.9;
 }
 
+/* CONTAINER UTAMA */
 .detail-container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 900px; 
+    margin: -40px auto 60px auto;
     padding: 0 20px;
 }
 
-/* Pembungkus Gambar dan Kartu Spesifikasi (Flexbox) */
+/* INFO ATAS (GAMBAR & SPEK) */
 .detail-main-info {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    align-items: flex-start;
-    margin-bottom: 40px;
+    background: white;
+    padding: 30px;
+    border: 1px solid #eaeaea; 
+    border-radius: 8px;
 }
 
 .detail-image-wrapper {
     flex: 1;
     min-width: 300px;
+    overflow: hidden;
+    border-radius: 4px;
 }
 
 .detail-image-wrapper img {
     width: 100%;
-    height: 350px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border: 5px solid white;
 }
 
 .specs-grid {
     flex: 1;
+    min-width: 300px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    min-width: 300px;
 }
 
 .spec-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 15px;
-    box-shadow: 0 6px 20px rgba(47, 158, 68, 0.05);
-    text-align: center;
-    border-bottom: 4px solid #28a745;
-    transition: 0.3s;
-}
-
-.spec-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(47, 158, 68, 0.15);
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 4px solid #0b8f1f;
 }
 
 .spec-card h4 {
-    color: #888;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #777;
     margin-bottom: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .spec-card p {
-    color: #0b8f1f;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: #222;
     font-weight: 600;
     margin: 0;
 }
 
-/* =========================
-   KONTEN DESKRIPSI
-========================= */
+/* --- EDITORIAL KONTEN --- */
 .detail-content {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    line-height: 1.8;
+    background-color: #ffffff;
+    margin-top: 30px;
+    padding: 50px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+}
+
+.editorial-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+}
+
+.editorial-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #444;
+    margin-bottom: 12px;
+}
+
+.editorial-text {
+    font-size: 1rem;       
+    line-height: 1.8;      
+    color: #555;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
-.detail-content h3 {
-    color: #0b8f1f;
+/* Garis Pemisah (Hairline) */
+.editorial-hr {
+    border: 0;
+    border-top: 1px solid #e1e1e1;
+    margin: 40px 0;
+}
+
+/* Layout Kolom Editorial */
+.editorial-row {
+    margin-top: 20px;
+}
+
+.editorial-col-left {
+    border-right: 1px solid #e1e1e1;
+    padding-right: 30px;
+}
+
+.editorial-col-right {
+    padding-left: 30px;
+}
+
+
+/* ========================================================= */
+/* FITUR 2: TIMELINE GARIS EDITORIAL (GANTT STYLE)           */
+/* ========================================================= */
+.editorial-timeline {
+    position: relative;
+    padding-top: 15px;
+}
+
+/* Garis Axis Tipis */
+.timeline-axis {
+    width: 100%;
+    height: 3px;
+    background-color: #e1e1e1;
+    border-radius: 2px;
+    position: relative;
     margin-bottom: 15px;
-    font-weight: 600;
 }
 
-.btn-back {
+/* Penanda Progress pada Garis */
+.timeline-progress {
+    height: 100%;
+    background-color: #0b8f1f; /* Hijau Utama */
+    border-radius: 2px;
+}
+
+/* Layout Kolom Label */
+.timeline-labels {
+    display: flex;
+    width: 100%;
+}
+
+.timeline-segment {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Garis Centang (Tick) di atas label */
+.segment-tick {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 8px;
+    background-color: #ccc;
+}
+
+/* Tipografi Label Timeline */
+.segment-title {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.segment-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* ANIMASI TITIK KRITIS (PULSING RED DOT) */
+.pulse-marker {
+    position: absolute;
+    top: -24px; /* Diposisikan tepat di atas garis axis */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    z-index: 10;
+    cursor: help;
+}
+
+.pulse-dot {
+    width: 100%;
+    height: 100%;
+    background-color: #d32f2f; /* Merah Terang */
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.pulse-ring {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid #d32f2f;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: pulsing 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes pulsing {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3.5); opacity: 0; }
+}
+
+/* Tooltip Kritis Bersih */
+.clean-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.clean-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent;
+}
+
+.pulse-marker:hover .clean-tooltip {
+    visibility: visible;
+    opacity: 1;
+    bottom: 180%;
+}
+
+
+/* --- TABEL FINANSIAL BERSIH --- */
+.editorial-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.editorial-table td {
+    padding: 15px 10px;
+    font-size: 1rem;      
+    color: #555;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.editorial-table tr:last-child td {
+    border-bottom: none;
+}
+
+.table-total td {
+    font-weight: 600;
+    color: #222;
+    border-top: 2px solid #e1e1e1 !important; 
+}
+
+.highlight-text {
+    color: #0b8f1f !important;
+}
+
+
+/* ========================================================= */
+/* FITUR 4: CHECKBOX BORDERLESS & BAR CHART                  */
+/* ========================================================= */
+.bar-chart-wrapper {
+    width: 100%;
+    height: 400px;
+}
+
+.borderless-control-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.checkbox-list-clean {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Scrollbar minimalis untuk daftar */
+.checkbox-list-clean::-webkit-scrollbar {
+    width: 4px;
+}
+.checkbox-list-clean::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.custom-checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px; /* Spacing antar baris yang lega */
+}
+
+.custom-checkbox-item input[type="checkbox"] {
+    margin-right: 12px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: #0b8f1f; /* Warna centang hijau */
+}
+
+.custom-checkbox-item label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.05rem; /* Tipografi lebih besar dan jelas */
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.color-dot {
     display: inline-block;
-    margin-top: 30px;
-    padding: 12px 25px;
-    background: #d8f5cf;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+
+/* --- TOMBOL KEMBALI BERSIH --- */
+.btn-clean {
+    display: inline-block;
+    padding: 10px 0;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+.btn-clean:hover {
     color: #0b8f1f;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-back:hover {
-    background: #0b8f1f;
-    color: white;
-    transform: translateY(-3px);
+    border-color: #0b8f1f;
     text-decoration: none;
 }
 
-/* =========================
-   RESPONSIVE HP
-========================= */
+
+/* --- RESPONSIVITAS MOBILE --- */
+@media (max-width: 992px) {
+    /* Menyesuaikan susunan saat di Tablet/HP (Checkbox turun ke bawah Grafik) */
+    .borderless-control-panel {
+        padding-left: 0 !important;
+        margin-top: 30px;
+    }
+    .checkbox-list-clean {
+        max-height: 250px;
+    }
+}
+
 @media (max-width: 768px) {
-    .detail-header h1 { font-size: 2rem; }
-    .detail-image-wrapper img { height: 250px; }
+    .detail-main-info { flex-direction: column; padding: 20px; }
     .specs-grid { grid-template-columns: 1fr; }
-    body { padding-top: 80px; }
+    .detail-content { padding: 30px 20px; }
+    
+    .editorial-col-left {
+        border-right: none;
+        border-bottom: 1px solid #e1e1e1;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    .editorial-col-right {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    
+    .segment-title { font-size: 0.8rem; }
+    .segment-desc { font-size: 0.7rem; }
+    .bar-chart-wrapper { height: 300px; }
 }
