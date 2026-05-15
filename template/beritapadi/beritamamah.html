@@ -27,9 +27,9 @@
             </a>
 
             <!-- Tombol silang di kanan -->
-            <a href="/template/berita.html" class="btn-back-home" title="Kembali ke Berita">
+            <button id="menu-toggle" class="btn-back-home" title="Kembali">
                 ✕
-            </a>
+            </button>
 
         </div>
     </nav>
@@ -63,7 +63,7 @@
                     <!-- Featured Image dengan tombol share pop-up -->
                     <div class="featured-image-wrapper mb-4">
                         <!-- Gambar Artikel -->
-                        <img src="/static/images/mamah.png" alt="Pelatihan Petani" class="featured-img w-100">
+                        <img src="/static/images/fotoberita/pestisida2.png" alt="Pelatihan Petani" class="featured-img w-100">
 
                         <!-- Wrapper Share Container -->
                         <div class="share-container">
@@ -146,12 +146,10 @@
 
                     <!-- Sidebar Item 1 (Image Top) -->
                     <div class="sidebar-widget mb-5">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Sidebar img" class="w-100 rounded-lg mb-3 shadow-sm"
+                        <img src="/static/images/fotoberita/padibojonegoro.png"
+                            alt="" class="w-100 rounded-lg mb-3 shadow-sm"
                             style="height: 200px; object-fit: cover;">
-                        <span class="badge badge-sipadi mb-2">TIPS BUDIDAYA</span>
-                        <h5 class="sidebar-title"><a href="#">Kenali 3 Fase Kritis Tanaman Padi Terhadap Penyakit
-                                Blas</a></h5>
+                        <h5 class="sidebar-title"><a href="/template/beritapadi/padibojonegoro.html">Produksi Padi Bojonegoro Sekitar Migas Kedung Keris Jeblok</a></h5>
                         <p class="sidebar-meta">Oleh Penyuluh Tani &bull; Rabu, 13 Mei 2026 | 21:47 WIB</p>
                     </div>
 
@@ -159,32 +157,26 @@
                     <div class="sidebar-list">
 
                         <div class="sidebar-item d-flex mb-4">
-                            <img src="/static/images/mamah.png" alt="thumb" class="sidebar-thumb rounded">
+                            <img src="/static/images/fotoberita/homeberita3.jpg" alt="Deteksi Penyakit Padi" class="sidebar-thumb rounded">
                             <div class="ml-3">
-                                <span class="badge badge-outline mb-1">INFO TEKNOLOGI</span>
-                                <h6 class="sidebar-list-title"><a href="#">Sosialisasikan Pengembangan Sistem Pakar Bagi
-                                        Petani Subang</a></h6>
+                                <h6 class="sidebar-list-title"><a href="/template/beritapadi/sistempakarbantu.html">Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem Pakar</a></h6>
                                 <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
                             </div>
                         </div>
 
                         <div class="sidebar-item d-flex mb-4">
-                            <img src="/static/images/mamah.png" alt="thumb" class="sidebar-thumb rounded">
+                            <img src="/static/images/fotoberita/bankIndonesia.png" alt="Bank Indonesia" class="sidebar-thumb rounded">
                             <div class="ml-3">
-                                <span class="badge badge-outline mb-1">KEBIJAKAN</span>
-                                <h6 class="sidebar-list-title"><a href="#">Pemerintah Targetkan Pendapatan Hasil Panen
-                                        Padi Rp437 Miliar</a></h6>
+                                <h6 class="sidebar-list-title"><a href="/template/beritapadi/bankIndonesia.html">Bank Indonesia: Pertanian Jadi Tulang Punggung Ekonomi, Bukti Nyata Sektor Pangan Semakin Kuat</a></h6>
                                 <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
                             </div>
                         </div>
 
                         <div class="sidebar-item d-flex mb-4">
-                            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-                                alt="thumb" class="sidebar-thumb rounded">
+                            <img src="/static/images/fotoberita/kementan&pemda.png"
+                                alt="Kementan dan Pemda" class="sidebar-thumb rounded">
                             <div class="ml-3">
-                                <span class="badge badge-outline mb-1">INFO CUACA</span>
-                                <h6 class="sidebar-list-title"><a href="#">Antisipasi Kemarau Panjang, Petani Dihimbau
-                                        Gunakan Varietas Tahan Kering</a></h6>
+                                <h6 class="sidebar-list-title"><a href="/template/beritapadi/kementan.html">Kementan dan Pemda Perkuat Antisipasi Kemarau, Pastikan Pertanaman Padi Gunungkidul Tetap Aman Hingga Masa Panen</a></h6>
                                 <p class="sidebar-meta m-0">Selasa, 12 Mei 2026</p>
                             </div>
                         </div>
@@ -193,119 +185,7 @@
                 </div>
             </div>
 
-            <!-- Related News Section (Auto-Slide Carousel) -->
-            <section class="related-news mt-5 pt-5 border-top">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-bold m-0" style="color: #1b4332;">Berita Terkait Lainnya</h3>
-                </div>
-
-                <!-- Pembungkus Slider -->
-                <div class="news-carousel-wrapper">
-                    <div class="news-carousel-track" id="newsTrack">
-
-                        <!-- Card 1 -->
-                        <div class="news-carousel-item">
-                            <div class="card related-card h-100 border-0 shadow-sm">
-                                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    class="card-img-top" alt="Berita 1">
-                                <div class="card-body">
-                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC PROV
-                                        JABAR</span>
-                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Kamis, 7
-                                        Mei 2026 | 18:44 WIB</span>
-                                    <h5 class="card-title fw-bold"><a href="#"
-                                            class="text-dark text-decoration-none hover-green">Pemanfaatan Drone
-                                            Pertanian Jadi Momentum Perkuat Hasil Panen</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="news-carousel-item">
-                            <div class="card related-card h-100 border-0 shadow-sm">
-                                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    class="card-img-top" alt="Berita 2">
-                                <div class="card-body">
-                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC KAB
-                                        BLORA</span>
-                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Rabu, 6
-                                        Mei 2026 | 19:56 WIB</span>
-                                    <h5 class="card-title fw-bold"><a href="#"
-                                            class="text-dark text-decoration-none hover-green">803 Petani Blora Terima
-                                            Bantuan Benih Varietas Tahan Penyakit BLB</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="news-carousel-item">
-                            <div class="card related-card h-100 border-0 shadow-sm">
-                                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    class="card-img-top" alt="Berita 3">
-                                <div class="card-body">
-                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC KOTA
-                                        JAMBI</span>
-                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Jumat, 8
-                                        Mei 2026 | 17:15 WIB</span>
-                                    <h5 class="card-title fw-bold"><a href="#"
-                                            class="text-dark text-decoration-none hover-green">Pemkot Jambi Perkuat SDM
-                                            Petani Digital untuk Wujudkan Smart Farming</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 (Tambahan) -->
-                        <div class="news-carousel-item">
-                            <div class="card related-card h-100 border-0 shadow-sm">
-                                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    class="card-img-top" alt="Berita 4">
-                                <div class="card-body">
-                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh KEMENTAN
-                                        RI</span>
-                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Senin,
-                                        11 Mei 2026 | 09:00 WIB</span>
-                                    <h5 class="card-title fw-bold"><a href="#"
-                                            class="text-dark text-decoration-none hover-green">Efisiensi Irigasi Modern
-                                            Tingkatkan Produktivitas Sawah di Musim Kemarau</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 (Tambahan) -->
-                        <div class="news-carousel-item">
-                            <div class="card related-card h-100 border-0 shadow-sm">
-                                <img src="/static/images/fotoGejala/G13.png" class="card-img-top" alt="Berita 5">
-                                <div class="card-body">
-                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh TIM
-                                        SIPADI</span>
-                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Minggu,
-                                        10 Mei 2026 | 14:30 WIB</span>
-                                    <h5 class="card-title fw-bold"><a href="#"
-                                            class="text-dark text-decoration-none hover-green">Waspada Serangan Hama,
-                                            SiPadi Rilis Fitur Deteksi Real-Time</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 6 (Tambahan) -->
-                        <div class="news-carousel-item">
-                            <div class="card related-card h-100 border-0 shadow-sm">
-                                <img src="/static/images/fotoJenisPadi/IR64.png" class="card-img-top" alt="Berita 6">
-                                <div class="card-body">
-                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC KAB
-                                        BOGOR</span>
-                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Sabtu, 9
-                                        Mei 2026 | 10:15 WIB</span>
-                                    <h5 class="card-title fw-bold"><a href="#"
-                                            class="text-dark text-decoration-none hover-green">Peneliti IPB Kembangkan
-                                            Varietas Padi Baru yang Tahan Salinitas Tinggi</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+        
 
         </div>
     </main>
