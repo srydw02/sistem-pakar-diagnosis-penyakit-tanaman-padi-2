@@ -34,24 +34,106 @@ body {
 }
 
 /* =========================
-   NAVBAR FINALLLL *SANA
+   NAVBAR
 ========================= */
+
 .navbar {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  padding: 15px 0 !important; /* Ini yang mengunci tinggi/lebar navbar biar sama terus */
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
-  transition: 0.3s ease;
-  z-index: 1030;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 14px 0;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+    z-index: 9999;
+    transition: all .3s ease;
 }
 
+.navbar .container-xl {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b8f1f;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 8px;
+}
+
+.nav-link {
+    position: relative;
+    color: #222 !important;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 8px 6px !important;
+}
+
+
+.nav-link:hover {
+    color: #2f9e44 !important;
+    transform: translateY(-2px);
+}
+
+
+.nav-link.active {
+    color: #2f9e44 !important;
+    font-weight: 600;
+}
+
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: -6px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #2f9e44;
+
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+
+    transition: .3s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+
 .btn-register {
-  border-radius: 14px;
-  padding: 10px 22px !important;
-  margin: 0 0 0 10px !important; /* Mencegah margin 20px bawaan yang bikin navbar melar */
-  font-weight: 500;
-  font-size: 16px;
-  transition: 0.3s ease;
+    border-radius: 14px;
+    padding: 10px 22px !important;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(47,158,68,.25);
+}
+
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 /* Biar konten web tidak "nyelip" atau tenggelam di bawah navbar yang fixed */
