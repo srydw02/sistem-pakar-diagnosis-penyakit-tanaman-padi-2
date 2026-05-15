@@ -14,7 +14,11 @@ html {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
+<<<<<<< HEAD
 
+=======
+  color: black;
+>>>>>>> bcb950fea29ae0b2eb1846ce6864ab65121b2688
   
 }
 
@@ -404,4 +408,21 @@ section .container {
     .footer-phone {
         justify-content: center;
     }
+}
+
+/* Kunci semua tulisan di footer agar tetap putih srya*/
+.footer-modern, 
+.footer-modern h2, 
+.footer-modern h4, 
+.footer-modern h5, 
+.footer-modern h6, 
+.footer-modern p, 
+.footer-modern span, 
+.footer-modern i {
+    color: #ffffff !important;
+}
+
+/* Pastikan garis pembatas di footer juga tetap terang */
+.footer-modern hr {
+    border-color: rgba(255, 255, 255, 0.18) !important;
 }
