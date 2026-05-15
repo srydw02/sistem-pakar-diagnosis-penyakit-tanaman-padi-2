@@ -23,9 +23,9 @@
             </a>
 
             <!-- Tombol silang di kanan -->
-            <a href="/template/jenisPadi.html" class="btn-back-home" title="Kembali ke Berita">
+            <button id="menu-toggle" class="btn-back-home" title="Kembali">
                 ✕
-            </a>
+            </button>
 
         </div>
     </nav>
@@ -163,6 +163,19 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     
+    <!-- button back script -->
+    <script>
+        const closeBtn = document.getElementById("menu-toggle");
+
+        closeBtn.addEventListener("click", function () {
+            if (document.referrer !== "") {
+                window.history.back();
+            } else {
+                window.location.href = "/index.html#jenis-padi"; 
+            }
+        });
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             Chart.defaults.font.family = "'Poppins', sans-serif";
