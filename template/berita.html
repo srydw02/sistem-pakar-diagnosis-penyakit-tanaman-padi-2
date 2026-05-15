@@ -1,618 +1,515 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="../gambar/icon.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="../gambar/icon.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS Utama (Untuk Navbar & Footer) -->
-    <link rel="stylesheet" href="../static/style/style.css" />
-    <!-- CSS Khusus Layout Berita ala CNN -->
-    <link rel="stylesheet" href="../static/style/style6.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <title>Berita │ SiPadi</title>
-  </head>
+  <!-- CSS Utama (Untuk Navbar & Footer) -->
+  <link rel="stylesheet" href="../static/style/style.css" />
+  <!-- CSS Khusus Layout Berita ala CNN -->
+  <link rel="stylesheet" href="../static/style/style6.css" />
 
-  <body>
-    <!-- NAVBAR SIPADI -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
-        <div class="container-xl">
-            <a class="navbar-brand d-flex align-items-center">
-                <img src="/static/images/logo2.png" alt="Logo SiPadi"
-                    style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
-                <h3 style="color: green; margin: 0;">SiPadi</h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <title>Berita │ SiPadi</title>
+</head>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item align-self-center">
-              <a class="nav-link" href="/#home">Home</a>
-            </li>
-            <li class="nav-item align-self-center active">
-              <a class="nav-link active" href="/template/berita.html">Berita</a>
-            </li>
-            <li class="nav-item align-self-center">
-              <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
-            </li>
-            <li class="nav-item align-self-center">
-              <a class="nav-link" href="/template/informasi.html">Informasi</a>
-            </li>
-            <li class="nav-item align-self-center">
-              <a
-                class="btn px-4 btn-primary ml-2 btn-register"
-                href="/template/diagnosis.html"
-                role="button"
-                >Diagnosis</a
-              >
-            </li>
-          </ul>
-        </div>
+<body>
+  <!-- NAVBAR SIPADI -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+    <div class="container-xl">
+      <a class="navbar-brand d-flex align-items-center">
+        <img src="/static/images/logo2.png" alt="Logo SiPadi"
+          style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
+        <h3 style="color: green; margin: 0;">SiPadi</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item align-self-center">
+            <a class="nav-link" href="/#home">Home</a>
+          </li>
+          <li class="nav-item align-self-center active">
+            <a class="nav-link active" href="/template/berita.html">Berita</a>
+          </li>
+          <li class="nav-item align-self-center">
+            <a class="nav-link" href="/template/jenisPadi.html">Jenis Padi</a>
+          </li>
+          <li class="nav-item align-self-center">
+            <a class="nav-link" href="/template/informasi.html">Informasi</a>
+          </li>
+          <li class="nav-item align-self-center">
+            <a class="btn px-4 btn-primary ml-2 btn-register" href="/template/diagnosis.html"
+              role="button">Diagnosis</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- KONTEN PORTAL BERITA ALA CNN -->
-    <main class="news-portal-wrapper">
-      <div class="container-xl">
-        <!-- SECTION 1: BERITA UTAMA -->
-        <div class="row">
-          <!-- Kolom Kiri: Hero Article (Besar) -->
-          <div class="col-lg-7 pr-lg-4 mb-4 mb-lg-0">
-            <div class="cnn-section-header">
-              <div class="accent-bar"></div>
-              BERITA UTAMA
-            </div>
+  <!-- KONTEN PORTAL BERITA ALA CNN -->
+  <main class="news-portal-wrapper">
+    <div class="container-xl">
+      <!-- SECTION 1: BERITA UTAMA -->
+      <div class="row">
+        <!-- Kolom Kiri: Hero Article (Besar) -->
+        <div class="col-lg-7 pr-lg-4 mb-4 mb-lg-0">
+          <div class="cnn-section-header">
+            <div class="accent-bar"></div>
+            BERITA UTAMA
+          </div>
 
-            <article class="hero-article">
-              <a
-                href="/template/beritapadi/beritamamah.html"
-                class="text-decoration-none text-dark"
-              >
-                <div class="img-wrapper">
-                  <img
-                    src="/static/images/fotoberita/pestisida2.png"
-                    alt="Berita Utama"
-                    class="w-100"
-                  />
+          <article class="hero-article">
+            <a href="/template/beritapadi/bankIndonesia.html" class="text-decoration-none text-dark">
+              <div class="img-wrapper">
+                <img src="/static/images/fotoberita/bankIndonesia.png" alt="Berita Utama" class="w-100" />
+              </div>
+              <h1 class="hero-title mt-3">
+                Bank Indonesia: Pertanian Jadi Tulang Punggung Ekonomi, Bukti Nyata Sektor Pangan Semakin Kuat
+              </h1>
+              <p class="hero-excerpt mt-2">
+                Sektor pertanian kembali membuktikan ketangguhannya sebagai motor penggerak ekonomi. Dukungan pembiayaan
+                dan inovasi diharapkan terus memperkuat stabilitas pangan nasional ke depannya.
+              </p>
+            </a>
+          </article>
+        </div>
+
+        <!-- Kolom Kanan: Berita Sampingan & List -->
+        <div class="col-lg-5 pl-lg-3">
+          <div class="cnn-section-header">
+            <div class="accent-bar"></div>
+            BERITA PERTANIAN
+          </div>
+
+          <!-- Berita Sedang (Atas) -->
+          <article class="medium-article mb-4">
+            <a href="/template/beritapadi/produksiBeras.html" class="text-decoration-none text-dark">
+              <img src="/static/images/fotoberita/produkberas.png" alt="Berita" class="w-100 mb-2" />
+              <h3 class="medium-title">
+                Produksi Beras Semester I 2026 Diproyeksi Meningkat, Luas
+                Panen Ikut Menguat.
+              </h3>
+            </a>
+          </article>
+
+          <!-- List Berita Kecil (Bawahnya) -->
+          <div class="list-article-wrapper">
+            <article class="list-article">
+              <a href="/template/beritapadi/berasnyata.html" class="d-flex text-decoration-none text-dark">
+                <div class="list-content pr-3">
+                  <h4 class="list-title">
+                    Swasembada Beras Nyata ,Produksi Naik Tajam, Stok Muat,
+                    Tanpa Impor
+                  </h4>
                 </div>
-                <h1 class="hero-title mt-3">
-                  Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini
-                </h1>
-                <p class="hero-excerpt mt-2">
-                  Pakar menyarankan petani untuk rutin memantau area bawah
-                  rumpun padi karena kelembaban tinggi memicu ledakan populasi
-                  yang dapat merusak panen.
-                </p>
+                <img src="/static/images/fotoberita/berasnyata1.png" alt="Thumb" />
+              </a>
+            </article>
+
+            <article class="list-article">
+              <a href="/template/beritapadi/irigasi.html" class="d-flex text-decoration-none text-dark">
+                <div class="list-content pr-3">
+                  <h4 class="list-title">
+                    Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi
+                    Irigasi Cerdas
+                  </h4>
+                </div>
+                <img src="/static/images/fotoberita/kering.jpg" alt="Thumb" />
               </a>
             </article>
           </div>
+        </div>
+      </div>
 
-          <!-- Kolom Kanan: Berita Sampingan & List -->
-          <div class="col-lg-5 pl-lg-3">
-            <div class="cnn-section-header">
-              <div class="accent-bar"></div>
-              BERITA PERTANIAN
-            </div>
+      <!-- SECTION 2: TEKNOLOGI & INOVASI (Auto-Slide Carousel) -->
+      <div class="cnn-section-header mt-5 pt-3 mb-4">
+        <div class="accent-bar"></div>
+        SEPUTAR PADI
+      </div>
 
-            <!-- Berita Sedang (Atas) -->
-            <article class="medium-article mb-4">
-              <a
-                href="/template/beritapadi/produksiBeras.html"
-                class="text-decoration-none text-dark"
-              >
-                <img
-                  src="/static/images/fotoberita/produkberas.png"
-                  alt="Berita"
-                  class="w-100 mb-2"
-                />
-                <h3 class="medium-title">
-                  Produksi Beras Semester I 2026 Diproyeksi Meningkat, Luas
-                  Panen Ikut Menguat.
+      <!-- Pembungkus Slider Teknologi (Position Relative) -->
+      <div class="news-carousel-wrapper position-relative" id="techWrapper">
+        <!-- TOMBOL MENGAMBANG DI TENGAH CARD -->
+        <button id="btnPrevTech" class="carousel-btn-center prev-btn" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="btnNextTech" class="carousel-btn-center next-btn" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="news-carousel-track" id="techTrack">
+          <!-- Card 1 -->
+          <div class="news-carousel-item">
+            <article class="grid-article">
+              <a href="/template/beritapadi/kementan.html" class="text-decoration-none text-dark">
+                <img src="/static/images/fotoberita/kementan&pemda.png" alt="Tech 1" class="w-100 mb-2" />
+                <h3 class="grid-title">
+                  Kementan dan Pemda Perkuat Antisipasi Kemarau, Pastikan Pertanaman Padi Gunungkidul Tetap Aman Hingga
+                  Masa Panen
                 </h3>
               </a>
             </article>
-
-            <!-- List Berita Kecil (Bawahnya) -->
-            <div class="list-article-wrapper">
-              <article class="list-article">
-                <a
-                  href="/template/beritapadi/berasnyata.html"
-                  class="d-flex text-decoration-none text-dark"
-                >
-                  <div class="list-content pr-3">
-                    <h4 class="list-title">
-                      Swasembada Beras Nyata ,Produksi Naik Tajam, Stok Muat,
-                      Tanpa Impor
-                    </h4>
-                  </div>
-                  <img
-                    src="/static/images/fotoberita/berasnyata1.png"
-                    alt="Thumb"
-                  />
-                </a>
-              </article>
-
-              <article class="list-article">
-                <a
-                  href="/template/beritapadi/irigasi.html"
-                  class="d-flex text-decoration-none text-dark"
-                >
-                  <div class="list-content pr-3">
-                    <h4 class="list-title">
-                      Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi
-                      Irigasi Cerdas
-                    </h4>
-                  </div>
-                  <img src="/static/images/fotoberita/kering.jpg" alt="Thumb" />
-                </a>
-              </article>
-            </div>
           </div>
-        </div>
 
-        <!-- SECTION 2: TEKNOLOGI & INOVASI (Auto-Slide Carousel) -->
-        <div class="cnn-section-header mt-5 pt-3 mb-4">
-          <div class="accent-bar"></div>
-          TEKNOLOGI & INOVASI
-        </div>
-
-        <!-- Pembungkus Slider Teknologi (Position Relative) -->
-        <div class="news-carousel-wrapper position-relative" id="techWrapper">
-          <!-- TOMBOL MENGAMBANG DI TENGAH CARD -->
-          <button
-            id="btnPrevTech"
-            class="carousel-btn-center prev-btn"
-            aria-label="Previous"
-          >
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button
-            id="btnNextTech"
-            class="carousel-btn-center next-btn"
-            aria-label="Next"
-          >
-            <i class="fas fa-chevron-right"></i>
-          </button>
-
-          <div class="news-carousel-track" id="techTrack">
-            <!-- Card 1 -->
-            <div class="news-carousel-item">
-              <article class="grid-article">
-                <a href="/template/beritapadi/kementan.html" class="text-decoration-none text-dark">
-                  <img
-                    src="/static/images/fotoberita/kementan&pemda.png"
-                    alt="Tech 1"
-                    class="w-100 mb-2"
-                  />
-                  <h3 class="grid-title">
-                    Kementan dan Pemda Perkuat Antisipasi Kemarau, Pastikan Pertanaman Padi Gunungkidul Tetap Aman Hingga Masa Panen
-                  </h3>
-                </a>
-              </article>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="news-carousel-item">
-              <article class="grid-article">
-                <a href="/template/beritapadi/bankIndonesia.html" class="text-decoration-none text-dark">
-                  <img
-                    src="/static/images/fotoberita/bankIndonesia.png"
-                    alt="Bank Indonesia: Pertanian Jadi Tulang Punggung Ekonomi"
-                    class="w-100 mb-2"
-                  />
-                  <h3 class="grid-title">
-                    Bank Indonesia: Pertanian Jadi Tulang Punggung Ekonomi, Bukti Nyata Sektor Pangan Semakin Kuat
-                  </h3>
-                </a>
-              </article>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="news-carousel-item">
-              <article class="grid-article">
-                <a href="/template/beritapadi/kementanGaspol.html" class="text-decoration-none text-dark">
-                  <img
-                    src="/static/images/fotoberita/kementanGaspol.png"
-                    alt="Kementan Gaspol Tangani Hama Padi di Pinrang, 5.000 Hektare Diselamatkan"
-                    class="w-100 mb-2"
-                  />
-                  <h3 class="grid-title">
-                    Kementan Gaspol Tangani Hama Padi di Pinrang, 5.000 Hektare Diselamatkan
-                  </h3>
-                </a>
-              </article>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="news-carousel-item">
-              <article class="grid-article">
-                <a href="/template/beritapadi/penyakitKerdil.html" class="text-decoration-none text-dark">
-                  <img
-                    src="/static/images/fotoberita/penyakitKerdil.png"
-                    alt="Penyakit Kerdil"
-                    class="w-100 mb-2"
-                  />
-                  <h3 class="grid-title">
-                    Padi Terserang Penyakit Kerdil, Petani Sragen Keluhkan Hasil Panen Turun Dratis
-                  </h3>
-                </a>
-              </article>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="news-carousel-item">
-              <article class="grid-article">
-                <a href="/template/beritapadi/sistempakarbantu.html" class="text-decoration-none text-dark">
-                  <img
-                    src="/static/images/fotoberita/homeberita3.jpg"
-                    alt="Sistem Pakar Bantu Petani"
-                    class="w-100 mb-2"
-                  />
-                  <h3 class="grid-title">
-                    Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem Pakar
-                  </h3>
-                </a>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <!-- SECTION 3: EDUKASI & TIPS (1 Besar, 1 Sedang) -->
-        <div class="cnn-section-header mt-5 pt-3">
-          <div class="accent-bar"></div>
-          KABAR PERTANIAN
-        </div>
-
-        <div class="row mb-5">
-          <div class="col-lg-8 pr-lg-4 mb-4 mb-lg-0">
-            <article class="hero-article">
-              <a href="/template/beritapadi/padibojonegoro.html" class="text-decoration-none text-dark">
-                <div class="img-wrapper">
-                  <img
-                    src="/static/images/fotoberita/padibojonegoro.png"
-                    alt="Edukasi Petani"
-                    class="w-100"
-                  />
-                </div>
-                <h2 class="hero-title mt-3" style="font-size: 2rem;">
-                  Produksi Padi Bojonegoro Sekitar Migas Kedung Keris Jeblok
-                </h2>
-                <p class="hero-excerpt mt-2">
-                  Produksi Padi di Sekitar Lapangan Minyak Kedung Keris Turun Drastis Akibat Serangan Penyakit
-                </p>
+          <!-- Card 2 -->
+          <div class="news-carousel-item">
+            <article class="grid-article">
+              <a href="/template/beritapadi/beritamamah.html" class="text-decoration-none text-dark">
+                <img src="/static/images/fotoberita/pestisida2.png"
+                  alt="Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini" class="w-100 mb-2" />
+                <h3 class="grid-title">
+                  Antisipasi Serangan Wereng Coklat pada Musim Tanam Ini
+                </h3>
               </a>
             </article>
           </div>
 
-          <!-- Kolom Kanan: Vertical Auto-Scroll Ticker -->
-          <div class="col-lg-4 mt-4 mt-lg-0">
-            <div
-              class="vertical-ticker-wrapper bg-white shadow-sm p-3 h-100 d-flex flex-column"
-              style="border-radius: 12px; border: 1px solid #eef2f5;"
-            >
-              <h5
-                class="fw-bold mb-3 pb-2 border-bottom"
-                style="color: #0b8f1f; font-size: 1.1rem;"
-              >
-                <i class="fas fa-lightbulb mr-2 text-warning"></i> Tips Singkat
-              </h5>
+          <!-- Card 3 -->
+          <div class="news-carousel-item">
+            <article class="grid-article">
+              <a href="/template/beritapadi/kementanGaspol.html" class="text-decoration-none text-dark">
+                <img src="/static/images/fotoberita/kementanGaspol.png"
+                  alt="Kementan Gaspol Tangani Hama Padi di Pinrang, 5.000 Hektare Diselamatkan" class="w-100 mb-2" />
+                <h3 class="grid-title">
+                  Kementan Gaspol Tangani Hama Padi di Pinrang, 5.000 Hektare Diselamatkan
+                </h3>
+              </a>
+            </article>
+          </div>
 
-              <!-- Track yang akan discroll ke atas -->
-              <div
-                class="vertical-ticker-track flex-grow-1"
-                id="eduVerticalTrack"
-                style="overflow-y: hidden; max-height: 380px;"
-              >
-                <!-- Item 1 -->
-                <a
-                  href="#"
-                  class="d-flex text-decoration-none text-dark ticker-item"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-                    alt="Tips 1"
-                    class="rounded mr-3"
-                    style="width: 80px; height: 80px; object-fit: cover;"
-                  />
-                  <div class="d-flex flex-column justify-content-center">
-                    <h6
-                      class="font-weight-bold mb-1"
-                      style="font-size: 0.95rem;"
-                    >
-                      Kenali Ciri Wereng Hijau
-                    </h6>
-                    <p class="text-muted m-0" style="font-size: 0.8rem;">
-                      Jangan tunggu daun menguning oranye.
-                    </p>
-                  </div>
-                </a>
+          <!-- Card 4 -->
+          <div class="news-carousel-item">
+            <article class="grid-article">
+              <a href="/template/beritapadi/penyakitKerdil.html" class="text-decoration-none text-dark">
+                <img src="/static/images/fotoberita/penyakitKerdil.png" alt="Penyakit Kerdil" class="w-100 mb-2" />
+                <h3 class="grid-title">
+                  Padi Terserang Penyakit Kerdil, Petani Sragen Keluhkan Hasil Panen Turun Dratis
+                </h3>
+              </a>
+            </article>
+          </div>
 
-                <!-- Item 2 -->
-                <a
-                  href="#"
-                  class="d-flex text-decoration-none text-dark ticker-item"
-                >
-                  <img
-                    src="/static/images/fotoberita/pestisida.jpg"
-                    alt="Tips 2"
-                    class="rounded mr-3"
-                    style="width: 80px; height: 80px; object-fit: cover;"
-                  />
-                  <div class="d-flex flex-column justify-content-center">
-                    <h6
-                      class="font-weight-bold mb-1"
-                      style="font-size: 0.95rem;"
-                    >
-                      Bahaya Pestisida Berlebih
-                    </h6>
-                    <p class="text-muted m-0" style="font-size: 0.8rem;">
-                      Pahami takaran aman untuk tanah.
-                    </p>
-                  </div>
-                </a>
+          <!-- Card 5 -->
+          <div class="news-carousel-item">
+            <article class="grid-article">
+              <a href="/template/beritapadi/sistempakarbantu.html" class="text-decoration-none text-dark">
+                <img src="/static/images/fotoberita/homeberita3.jpg" alt="Sistem Pakar Bantu Petani"
+                  class="w-100 mb-2" />
+                <h3 class="grid-title">
+                  Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem Pakar
+                </h3>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
 
-                <!-- Item 3 -->
-                <a
-                  href="#"
-                  class="d-flex text-decoration-none text-dark ticker-item"
-                >
-                  <img
-                    src="/static/images/fotoJenisPadi/IR64.png"
-                    alt="Tips 3"
-                    class="rounded mr-3"
-                    style="width: 80px; height: 80px; object-fit: cover;"
-                  />
-                  <div class="d-flex flex-column justify-content-center">
-                    <h6
-                      class="font-weight-bold mb-1"
-                      style="font-size: 0.95rem;"
-                    >
-                      Pilih Benih Tahan Hama
-                    </h6>
-                    <p class="text-muted m-0" style="font-size: 0.8rem;">
-                      Panduan memilih bibit unggul 2026.
-                    </p>
-                  </div>
-                </a>
+      <!-- SECTION 3: EDUKASI & TIPS (1 Besar, 1 Sedang) -->
+      <div class="cnn-section-header mt-5 pt-3">
+        <div class="accent-bar"></div>
+        KABAR PERTANIAN
+      </div>
 
-                <!-- Item 4 (Tambahan agar loop mulus) -->
-                <a
-                  href="#"
-                  class="d-flex text-decoration-none text-dark ticker-item"
-                >
-                  <img
-                    src="/static/images/fotoberita/kering.jpg"
-                    alt="Tips 4"
-                    class="rounded mr-3"
-                    style="width: 80px; height: 80px; object-fit: cover;"
-                  />
-                  <div class="d-flex flex-column justify-content-center">
-                    <h6
-                      class="font-weight-bold mb-1"
-                      style="font-size: 0.95rem;"
-                    >
-                      Cara Atasi Tanah Retak
-                    </h6>
-                    <p class="text-muted m-0" style="font-size: 0.8rem;">
-                      Trik menjaga kelembapan di musim kemarau.
-                    </p>
-                  </div>
-                </a>
+      <div class="row mb-5">
+        <div class="col-lg-8 pr-lg-4 mb-4 mb-lg-0">
+          <article class="hero-article">
+            <a href="/template/beritapadi/padibojonegoro.html" class="text-decoration-none text-dark">
+              <div class="img-wrapper">
+                <img src="/static/images/fotoberita/padibojonegoro.png" alt="Edukasi Petani" class="w-100" />
               </div>
+              <h2 class="hero-title mt-3" style="font-size: 2rem;">
+                Produksi Padi Bojonegoro Sekitar Migas Kedung Keris Jeblok
+              </h2>
+            </a>
+          </article>
+        </div>
+
+        <!-- Kolom Kanan: Vertical Auto-Scroll Ticker -->
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="vertical-ticker-wrapper bg-white shadow-sm p-3 h-100 d-flex flex-column"
+            style="border-radius: 12px; border: 1px solid #eef2f5;">
+            <h5 class="fw-bold mb-3 pb-2 border-bottom" style="color: #0b8f1f; font-size: 1.1rem;">
+              <i class="fas fa-lightbulb mr-2 text-warning"></i> Tips Singkat
+            </h5>
+
+            <!-- Track yang akan discroll ke atas -->
+            <div class="vertical-ticker-track flex-grow-1" id="eduVerticalTrack"
+              style="overflow-y: hidden; max-height: 380px;">
+              <!-- Item 1 -->
+              <a href="#" class="d-flex text-decoration-none text-dark ticker-item">
+                <img
+                  src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                  alt="Tips 1" class="rounded mr-3" style="width: 80px; height: 80px; object-fit: cover;" />
+                <div class="d-flex flex-column justify-content-center">
+                  <h6 class="font-weight-bold mb-1" style="font-size: 0.95rem;">
+                    Kenali Ciri Wereng Hijau
+                  </h6>
+                  <p class="text-muted m-0" style="font-size: 0.8rem;">
+                    Jangan tunggu daun menguning oranye.
+                  </p>
+                </div>
+              </a>
+
+              <!-- Item 2 -->
+              <a href="#" class="d-flex text-decoration-none text-dark ticker-item">
+                <img src="/static/images/fotoberita/pestisida.jpg" alt="Tips 2" class="rounded mr-3"
+                  style="width: 80px; height: 80px; object-fit: cover;" />
+                <div class="d-flex flex-column justify-content-center">
+                  <h6 class="font-weight-bold mb-1" style="font-size: 0.95rem;">
+                    Bahaya Pestisida Berlebih
+                  </h6>
+                  <p class="text-muted m-0" style="font-size: 0.8rem;">
+                    Pahami takaran aman untuk tanah.
+                  </p>
+                </div>
+              </a>
+
+              <!-- Item 3 -->
+              <a href="#" class="d-flex text-decoration-none text-dark ticker-item">
+                <img src="/static/images/fotoJenisPadi/IR64.png" alt="Tips 3" class="rounded mr-3"
+                  style="width: 80px; height: 80px; object-fit: cover;" />
+                <div class="d-flex flex-column justify-content-center">
+                  <h6 class="font-weight-bold mb-1" style="font-size: 0.95rem;">
+                    Pilih Benih Tahan Hama
+                  </h6>
+                  <p class="text-muted m-0" style="font-size: 0.8rem;">
+                    Panduan memilih bibit unggul 2026.
+                  </p>
+                </div>
+              </a>
+
+              <!-- Item 4 (Tambahan agar loop mulus) -->
+              <a href="#" class="d-flex text-decoration-none text-dark ticker-item">
+                <img src="/static/images/fotoberita/kering.jpg" alt="Tips 4" class="rounded mr-3"
+                  style="width: 80px; height: 80px; object-fit: cover;" />
+                <div class="d-flex flex-column justify-content-center">
+                  <h6 class="font-weight-bold mb-1" style="font-size: 0.95rem;">
+                    Cara Atasi Tanah Retak
+                  </h6>
+                  <p class="text-muted m-0" style="font-size: 0.8rem;">
+                    Trik menjaga kelembapan di musim kemarau.
+                  </p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer class="footer-modern">
+  <footer class="footer-modern">
 
-        <div class="container-xl">
+    <div class="container-xl">
 
-            <!-- Footer Top -->
-            <div class="footer-top">
+      <!-- Footer Top -->
+      <div class="footer-top">
 
-                <!-- Logo -->
-                <div class="footer-brand">
+        <!-- Logo -->
+        <div class="footer-brand">
 
-                    <img src="/static/images/logo2.png" alt="Logo SiPadi">
+          <img src="/static/images/logo2.png" alt="Logo SiPadi">
 
-                    <div>
-                        <h2>SiPadi</h2>
-                        <p>Sistem Pakar Penyakit Padi</p>
-                    </div>
+          <div>
+            <h2>SiPadi</h2>
+            <p>Sistem Pakar Penyakit Padi</p>
+          </div>
 
-                </div>
+        </div>
 
-                <!-- Tentang -->
-                <div class="footer-about">
+        <!-- Tentang -->
+        <div class="footer-about">
 
-                    <h4>Tentang</h4>
+          <h4>Tentang</h4>
 
-                    <p>
-                        Sistem pakar diagnosis penyakit padi membantu petani dalam
-                        mengidentifikasi penyakit pada tanaman padi berdasarkan
-                        gejala yang muncul. Sistem ini memberikan hasil diagnosis
-                        secara cepat beserta saran penanganannya, sehingga petani
-                        dapat mengambil tindakan yang tepat untuk menjaga kesehatan
-                        tanaman dan meningkatkan hasil panen.
-                    </p>
+          <p>
+            Sistem pakar diagnosis penyakit padi membantu petani dalam
+            mengidentifikasi penyakit pada tanaman padi berdasarkan
+            gejala yang muncul. Sistem ini memberikan hasil diagnosis
+            secara cepat beserta saran penanganannya, sehingga petani
+            dapat mengambil tindakan yang tepat untuk menjaga kesehatan
+            tanaman dan meningkatkan hasil panen.
+          </p>
 
-                </div>
+        </div>
 
-            </div>
+      </div>
 
-            <hr>
+      <hr>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
 
-                <!-- Lokasi -->
-                <div class="footer-location">
+        <!-- Lokasi -->
+        <div class="footer-location">
 
-                    <i class="fas fa-map-marker-alt"></i>
+          <i class="fas fa-map-marker-alt"></i>
 
-                    <span>
-                        Surakarta, Indonesia
-                    </span>
+          <span>
+            Surakarta, Indonesia
+          </span>
 
-                </div>
+        </div>
 
-                <!-- Copyright -->
-                <div class="footer-copy">
+        <!-- Copyright -->
+        <div class="footer-copy">
 
-                    <h6>
-                        ©2026 | SiPadi | All Rights Reserved
-                    </h6>
+          <h6>
+            ©2026 | SiPadi | All Rights Reserved
+          </h6>
 
-                </div>
+        </div>
 
-                <!-- Nomor -->
-                <div class="footer-phone">
+        <!-- Nomor -->
+        <div class="footer-phone">
 
-                    <i class="fas fa-phone-alt"></i>
+          <i class="fas fa-phone-alt"></i>
 
-                    <span>
-                        +62 000 0000 0000
-                    </span>
+          <span>
+            +62 000 0000 0000
+          </span>
 
-                </div>
+        </div>
 
-            </div>
+      </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  </footer>
+=======
+<<<<<<< HEAD
+>>>>>>> 4202466f68d31862873d265278dd2e5b116ec73d
             
     </footer>
+>>>>>>> d185e25dab9c67bd2c373ed22b30b168401a668d
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <!-- SCRIPT INFINITE AUTOSLIDE TEKNOLOGI -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const techTrack = document.getElementById("techTrack");
-        const btnPrevTech = document.getElementById("btnPrevTech");
-        const btnNextTech = document.getElementById("btnNextTech");
-        const techWrapper = document.getElementById("techWrapper");
-        let techSlideInterval;
+  <!-- SCRIPT INFINITE AUTOSLIDE TEKNOLOGI -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const techTrack = document.getElementById("techTrack");
+      const btnPrevTech = document.getElementById("btnPrevTech");
+      const btnNextTech = document.getElementById("btnNextTech");
+      const techWrapper = document.getElementById("techWrapper");
+      let techSlideInterval;
 
-        if (!techTrack) return;
+      if (!techTrack) return;
 
-        techTrack.style.scrollBehavior = "smooth";
+      techTrack.style.scrollBehavior = "smooth";
 
-        function slideNextTech() {
-          const firstItem = techTrack.querySelector(".news-carousel-item");
-          const itemWidth = firstItem.offsetWidth + 24; // +24 gap CSS
+      function slideNextTech() {
+        const firstItem = techTrack.querySelector(".news-carousel-item");
+        const itemWidth = firstItem.offsetWidth + 24; // +24 gap CSS
 
-          techTrack.scrollBy({ left: itemWidth, behavior: "smooth" });
+        techTrack.scrollBy({ left: itemWidth, behavior: "smooth" });
 
-          setTimeout(() => {
-            techTrack.style.scrollBehavior = "auto";
-            techTrack.appendChild(firstItem);
-            techTrack.scrollLeft -= itemWidth;
-            techTrack.style.scrollBehavior = "smooth";
-          }, 400);
-        }
-
-        function slidePrevTech() {
-          const items = techTrack.querySelectorAll(".news-carousel-item");
-          const lastItem = items[items.length - 1];
-          const itemWidth = lastItem.offsetWidth + 24;
-
+        setTimeout(() => {
           techTrack.style.scrollBehavior = "auto";
-          techTrack.prepend(lastItem);
-          techTrack.scrollLeft += itemWidth;
+          techTrack.appendChild(firstItem);
+          techTrack.scrollLeft -= itemWidth;
+          techTrack.style.scrollBehavior = "smooth";
+        }, 400);
+      }
 
-          setTimeout(() => {
-            techTrack.style.scrollBehavior = "smooth";
-            techTrack.scrollBy({ left: -itemWidth, behavior: "smooth" });
-          }, 10);
-        }
+      function slidePrevTech() {
+        const items = techTrack.querySelectorAll(".news-carousel-item");
+        const lastItem = items[items.length - 1];
+        const itemWidth = lastItem.offsetWidth + 24;
 
-        if (btnNextTech) btnNextTech.addEventListener("click", slideNextTech);
-        if (btnPrevTech) btnPrevTech.addEventListener("click", slidePrevTech);
+        techTrack.style.scrollBehavior = "auto";
+        techTrack.prepend(lastItem);
+        techTrack.scrollLeft += itemWidth;
 
-        function startTechAutoSlide() {
-          // Di-set jalan tiap 4 detik (4000ms)
-          techSlideInterval = setInterval(slideNextTech, 2500);
-        }
+        setTimeout(() => {
+          techTrack.style.scrollBehavior = "smooth";
+          techTrack.scrollBy({ left: -itemWidth, behavior: "smooth" });
+        }, 10);
+      }
 
-        function stopTechAutoSlide() {
-          clearInterval(techSlideInterval);
-        }
+      if (btnNextTech) btnNextTech.addEventListener("click", slideNextTech);
+      if (btnPrevTech) btnPrevTech.addEventListener("click", slidePrevTech);
 
-        startTechAutoSlide();
+      function startTechAutoSlide() {
+        // Di-set jalan tiap 4 detik (4000ms)
+        techSlideInterval = setInterval(slideNextTech, 2500);
+      }
 
-        if (techWrapper) {
-          techWrapper.addEventListener("mouseenter", stopTechAutoSlide);
-          techWrapper.addEventListener("mouseleave", startTechAutoSlide);
-        }
+      function stopTechAutoSlide() {
+        clearInterval(techSlideInterval);
+      }
+
+      startTechAutoSlide();
+
+      if (techWrapper) {
+        techWrapper.addEventListener("mouseenter", stopTechAutoSlide);
+        techWrapper.addEventListener("mouseleave", startTechAutoSlide);
+      }
+    });
+  </script>
+
+  <!-- SCRIPT UNTUK VERTICAL TICKER EDUKASI (SMOOTH MARQUEE TANPA DELAY) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const eduTrack = document.getElementById("eduVerticalTrack");
+      if (!eduTrack) return;
+
+      // Matikan smooth scroll CSS agar tidak bentrok dengan JS Frame-by-Frame
+      eduTrack.style.scrollBehavior = "auto";
+
+      // 1. Gandakan isi berita (Clone) biar bisa nge-loop tanpa ujung yang kosong
+      const items = Array.from(eduTrack.children);
+      items.forEach((item) => {
+        const clone = item.cloneNode(true);
+        eduTrack.appendChild(clone);
       });
-    </script>
 
-    <!-- SCRIPT UNTUK VERTICAL TICKER EDUKASI (SMOOTH MARQUEE TANPA DELAY) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const eduTrack = document.getElementById("eduVerticalTrack");
-        if (!eduTrack) return;
+      let isPaused = false;
+      let scrollPos = 0;
+      const scrollSpeed = 1; // KECEPATAN: Ganti angka ini kalau mau lebih lambat (misal 0.5) atau lebih ngebut (misal 2)
 
-        // Matikan smooth scroll CSS agar tidak bentrok dengan JS Frame-by-Frame
-        eduTrack.style.scrollBehavior = "auto";
+      // 2. Fungsi penggerak 60 FPS
+      function continuousScroll() {
+        if (!isPaused) {
+          scrollPos += scrollSpeed;
+          eduTrack.scrollTop = scrollPos;
 
-        // 1. Gandakan isi berita (Clone) biar bisa nge-loop tanpa ujung yang kosong
-        const items = Array.from(eduTrack.children);
-        items.forEach((item) => {
-          const clone = item.cloneNode(true);
-          eduTrack.appendChild(clone);
-        });
-
-        let isPaused = false;
-        let scrollPos = 0;
-        const scrollSpeed = 1; // KECEPATAN: Ganti angka ini kalau mau lebih lambat (misal 0.5) atau lebih ngebut (misal 2)
-
-        // 2. Fungsi penggerak 60 FPS
-        function continuousScroll() {
-          if (!isPaused) {
-            scrollPos += scrollSpeed;
-            eduTrack.scrollTop = scrollPos;
-
-            // Kalau posisi scroll udah ngelewatin batas item aslinya (setengah dari total gabungan)
-            // Langsung reset ke 0 tanpa ketahuan mata (seamless loop)
-            if (eduTrack.scrollTop >= eduTrack.scrollHeight / 2) {
-              scrollPos = 0;
-              eduTrack.scrollTop = 0;
-            }
+          // Kalau posisi scroll udah ngelewatin batas item aslinya (setengah dari total gabungan)
+          // Langsung reset ke 0 tanpa ketahuan mata (seamless loop)
+          if (eduTrack.scrollTop >= eduTrack.scrollHeight / 2) {
+            scrollPos = 0;
+            eduTrack.scrollTop = 0;
           }
-
-          // Minta browser panggil fungsi ini lagi di frame berikutnya
-          requestAnimationFrame(continuousScroll);
         }
 
-        // 3. Jalankan animasi
+        // Minta browser panggil fungsi ini lagi di frame berikutnya
         requestAnimationFrame(continuousScroll);
+      }
 
-        // 4. Berhenti pas kursor nyorot area beritanya
-        const tickerWrapper = eduTrack.parentElement;
-        tickerWrapper.addEventListener("mouseenter", () => {
-          isPaused = true;
-        });
-        tickerWrapper.addEventListener("mouseleave", () => {
-          isPaused = false;
-        });
+      // 3. Jalankan animasi
+      requestAnimationFrame(continuousScroll);
+
+      // 4. Berhenti pas kursor nyorot area beritanya
+      const tickerWrapper = eduTrack.parentElement;
+      tickerWrapper.addEventListener("mouseenter", () => {
+        isPaused = true;
       });
-    </script>
-  </body>
+      tickerWrapper.addEventListener("mouseleave", () => {
+        isPaused = false;
+      });
+    });
+  </script>
+</body>
+
 </html>
