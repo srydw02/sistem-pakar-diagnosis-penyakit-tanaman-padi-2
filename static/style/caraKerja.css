@@ -160,6 +160,16 @@ body {
     font-weight: 600;
 }
 
+.hero-card {
+    border: 1.5px solid rgba(47, 158, 68, 0.25);
+    border-radius: 24px;
+    padding: 50px 50px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(47, 158, 68, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
 /* =========================
    FAQ SECTION
 ========================= */
@@ -184,7 +194,16 @@ body {
 }
 
 .accordion .btn:hover {
-    color: #0b8f1f;
+    color: #ffffff;
+}
+
+.accordion .card-header {
+    background: linear-gradient(135deg, #d8f5cf, #c3e0cb);
+    border-bottom: 1px solid rgba(47, 158, 68, 0.15);
+}
+
+.accordion .card-header:hover {
+    background: linear-gradient(135deg, green, rgb(1, 144, 1));
 }
 
 /* =========================
