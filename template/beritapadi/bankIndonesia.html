@@ -9,24 +9,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    
+
     <link rel="stylesheet" href="/static/style/style6.css" />
 </head>
 
 <body class="detail-page">
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl d-flex justify-content-between align-items-center">
 
-            <!-- Logo tetap di kiri -->
             <a class="navbar-brand d-flex align-items-center" href="/template/berita.html">
                 <img src="/static/images/logo2.png" alt="Logo SiPadi"
                     style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
                 <h3 style="color: green; margin: 0;">SiPadi</h3>
             </a>
 
-            <!-- Tombol silang di kanan -->
             <button id="menu-toggle" class="btn-back-home" title="Kembali">
                 ✕
             </button>
@@ -114,8 +111,8 @@
                         <p class="sidebar-meta">Oleh Tim SiPadi  &bull; Jum'at, 15 Mei 2026 | 15:00 WIB</p>
                     </div>
 
-                    <!-- Sidebar List Items -->
-                    <div class="sidebar-item d-flex mb-4">
+                    <div class="sidebar-list">
+                        <div class="sidebar-item d-flex mb-4">
                             <img src="/static/images/fotoberita/kementanUji.png" alt="Kementan Uji B50" class="sidebar-thumb rounded">
                             <div class="ml-3">
                                 <h6 class="sidebar-list-title"><a href="/template/beritapadi/kementanUji.html">Kementan Uji B50 untuk Alsintan, Bioreaktor Biodiesel Disiapkan</a></h6>
@@ -168,75 +165,6 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const track = document.getElementById("newsTrack");
-            const btnPrev = document.getElementById("btnPrevNews");
-            const btnNext = document.getElementById("btnNextNews");
-            let autoSlideInterval;
-
-            if (!track) return;
-
-            track.style.scrollBehavior = 'smooth';
-
-            function slideNext() {
-                const firstItem = track.querySelector('.news-carousel-item');
-                if (!firstItem) return;
-
-                const itemWidth = firstItem.offsetWidth + 24;
-
-                track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-
-                setTimeout(() => {
-                    track.style.scrollBehavior = 'auto';
-                    track.appendChild(firstItem);
-                    track.scrollLeft -= itemWidth;
-                    track.style.scrollBehavior = 'smooth';
-                }, 400);
-            }
-
-            function slidePrev() {
-                const items = track.querySelectorAll('.news-carousel-item');
-                if (items.length === 0) return;
-
-                const lastItem = items[items.length - 1];
-                const itemWidth = lastItem.offsetWidth + 24;
-
-                track.style.scrollBehavior = 'auto';
-                track.prepend(lastItem);
-                track.scrollLeft += itemWidth;
-
-                setTimeout(() => {
-                    track.style.scrollBehavior = 'smooth';
-                    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                }, 10);
-            }
-
-            if (btnNext) {
-                btnNext.addEventListener("click", slideNext);
-            }
-            if (btnPrev) {
-                btnPrev.addEventListener("click", slidePrev);
-            }
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(slideNext, 2000);
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-
-            startAutoSlide();
-
-            const wrapper = document.querySelector('.news-carousel-wrapper');
-            if (wrapper) {
-                wrapper.addEventListener("mouseenter", stopAutoSlide);
-                wrapper.addEventListener("mouseleave", startAutoSlide);
-            }
-        });
-    </script>
-
-    <script>
         function copyToClipboard() {
             const url = window.location.href;
 
@@ -247,19 +175,7 @@
             });
         }
     </script>
-
-    <script>
-        window.addEventListener('scroll', function () {
-            const readingBar = document.getElementById("readingBar");
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-            const scrolled = (winScroll / height) * 100;
-
-            readingBar.style.width = scrolled + "%";
-        });
-    </script>
+    
 </body>
 
 </html>
