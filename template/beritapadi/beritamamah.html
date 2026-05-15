@@ -151,7 +151,8 @@
                             alt="Sidebar img" class="w-100 rounded-lg mb-3 shadow-sm"
                             style="height: 200px; object-fit: cover;">
                         <span class="badge badge-sipadi mb-2">TIPS BUDIDAYA</span>
-                        <h5 class="sidebar-title"><a href="/template/beritapadi/fasekritis.html">Kenali 3 Fase Kritis Tanaman Padi Terhadap Penyakit
+                        <h5 class="sidebar-title"><a href="/template/beritapadi/fasekritis.html">Kenali 3 Fase Kritis
+                                Tanaman Padi Terhadap Penyakit
                                 Blas</a></h5>
                         <p class="sidebar-meta">Oleh Penyuluh Tani &bull; Rabu, 13 Mei 2026 | 21:47 WIB</p>
                     </div>
@@ -213,77 +214,6 @@
                     });
                 </script>
 
-                <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const track = document.getElementById("newsTrack");
-                        const btnPrev = document.getElementById("btnPrevNews");
-                        const btnNext = document.getElementById("btnNextNews");
-                        let autoSlideInterval;
-
-                        if (!track) return; // Jaga-jaga kalau track ga ada
-
-                        track.style.scrollBehavior = 'smooth';
-
-                        function slideNext() {
-                            const firstItem = track.querySelector('.news-carousel-item');
-                            if (!firstItem) return;
-
-                            const itemWidth = firstItem.offsetWidth + 24;
-
-                            track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-
-                            setTimeout(() => {
-                                track.style.scrollBehavior = 'auto';
-                                track.appendChild(firstItem);
-                                track.scrollLeft -= itemWidth;
-                                track.style.scrollBehavior = 'smooth';
-                            }, 400);
-                        }
-
-                        function slidePrev() {
-                            const items = track.querySelectorAll('.news-carousel-item');
-                            if (items.length === 0) return;
-
-                            const lastItem = items[items.length - 1];
-                            const itemWidth = lastItem.offsetWidth + 24;
-
-                            track.style.scrollBehavior = 'auto';
-                            track.prepend(lastItem);
-                            track.scrollLeft += itemWidth;
-
-                            setTimeout(() => {
-                                track.style.scrollBehavior = 'smooth';
-                                track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                            }, 10);
-                        }
-
-                        // KUNCI PERBAIKANNYA DI SINI: Pakai if biar gak error kalau tombol dihapus
-                        if (btnNext) {
-                            btnNext.addEventListener("click", slideNext);
-                        }
-                        if (btnPrev) {
-                            btnPrev.addEventListener("click", slidePrev);
-                        }
-
-                        function startAutoSlide() {
-                            autoSlideInterval = setInterval(slideNext, 2000);
-                        }
-
-                        function stopAutoSlide() {
-                            clearInterval(autoSlideInterval);
-                        }
-
-                        startAutoSlide();
-
-                        const wrapper = document.querySelector('.news-carousel-wrapper');
-                        if (wrapper) {
-                            wrapper.addEventListener("mouseenter", stopAutoSlide);
-                            wrapper.addEventListener("mouseleave", startAutoSlide);
-                        }
-                    });
-                </script>
-
                 <script>
                     // Fungsi untuk tombol Copy Link
                     function copyToClipboard() {
@@ -297,30 +227,6 @@
                         });
                     }
                 </script>
-
-                <!-- SCRIPT UNTUK READING PROGRESS BAR -->
-                <script>
-                    // Deteksi setiap kali user melakukan scroll
-                    window.addEventListener('scroll', function () {
-                        // Ambil elemen bar-nya
-                        const readingBar = document.getElementById("readingBar");
-
-                        // Hitung jarak dari atas (scrollTop)
-                        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-
-                        // Hitung total tinggi halaman dikurangi tinggi layar monitor user
-                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-                        // Dapatkan persentasenya (Jarak saat ini dibagi Total jarak) dikali 100
-                        const scrolled = (winScroll / height) * 100;
-
-                        // Terapkan persentasenya ke lebar (width) garis hijaunya
-                        readingBar.style.width = scrolled + "%";
-                    });
-                </script>
-
-
-
 </body>
 
 </html>

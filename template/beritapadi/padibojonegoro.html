@@ -140,49 +140,48 @@
           </div>
         </div>
 
-        <!-- Kanan: Sidebar -->
         <div class="col-lg-4 mt-5 mt-lg-0 pl-lg-3">
-          <!-- Sidebar Item 1 (Image Top) -->
           <div class="sidebar-widget mb-5">
             <img
               src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Sidebar img" class="w-100 rounded-lg mb-3 shadow-sm" style="height: 200px; object-fit: cover;" />
+              alt="Sidebar img" class="w-100 rounded-lg mb-3 shadow-sm" style="height: 200px; object-fit: cover;">
             <span class="badge badge-sipadi mb-2">TIPS BUDIDAYA</span>
-            <h5 class="sidebar-title">
-              <a href="#">Kenali 3 Fase Kritis Tanaman Padi Terhadap Penyakit Blas</a>
-            </h5>
-            <p class="sidebar-meta">
-              Oleh Penyuluh Tani &bull; Senin, 4 Mei 2026 | 14:47 WIB
-            </p>
+            <h5 class="sidebar-title"><a href="/template/beritapadi/fasekritis.html">Kenali 3 Fase Kritis
+                Tanaman Padi Terhadap Penyakit
+                Blas</a></h5>
+            <p class="sidebar-meta">Oleh Penyuluh Tani &bull; Rabu, 13 Mei 2026 | 21:47 WIB</p>
           </div>
 
           <!-- Sidebar List Items -->
           <div class="sidebar-list">
+
             <div class="sidebar-item d-flex mb-4">
-              <img src="/static/images/fotoberita/homeberita1.jpg" alt="thumb" class="sidebar-thumb rounded"
-                style="width: 172px;" />
+              <img src="/static/images/fotoberita/homeberita1.jpg" alt="Cuaca Ekstrem" class="sidebar-thumb rounded"
+                style="width: 172px;">
               <div class="ml-3">
-                <h6 class="sidebar-list-title">
-                  <a href="#">Sosialisasikan Pengembangan Sistem Pakar Bagi Petani
-                    Subang</a>
-                </h6>
-                <p class="sidebar-meta m-0">Senin, 4 Mei 2026</p>
+                <h6 class="sidebar-list-title"><a href="/template/beritapadi/waspadaseranganblast.html">Cuaca Ekstrem
+                    Tinggi
+                    Penyakit Blast Mengancam Panen Padi</a></h6>
+                <p class="sidebar-meta m-0">Kamis, 12 Mei 2026</p>
               </div>
             </div>
 
             <div class="sidebar-item d-flex mb-4">
-              <img src="/static/images/fotoberita/kering.jpg" alt="thumb" class="sidebar-thumb rounded" />
+              <img src="/static/images/fotoberita/kering.jpg" alt="Ratusan Hektar Sawah Terdampak Kekeringan"
+                class="sidebar-thumb rounded">
               <div class="ml-3">
-                <h6 class="sidebar-list-title">
-                  <a href="#">Ratusan Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi
-                    Cerdas</a>
-                </h6>
-                <p class="sidebar-meta m-0">Senin, 4 Mei 2026</p>
+                <h6 class="sidebar-list-title"><a href="/template/beritapadi/irigasi.html">Ratusan
+                    Hektar Sawah Terdampak Kekeringan, Ini Solusi Irigasi Cerdas Padi Rp437
+                    Miliar</a></h6>
+                <p class="sidebar-meta m-0">Kamis, 28 April 2026</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
+    </div>
+    </div>
   </main>
 
   <!-- SCRIPT BACK PINTAR (MENYESUAIKAN ASAL HALAMAN) -->
@@ -218,77 +217,6 @@
     });
   </script>
 
-  <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const track = document.getElementById("newsTrack");
-      const btnPrev = document.getElementById("btnPrevNews");
-      const btnNext = document.getElementById("btnNextNews");
-      let autoSlideInterval;
-
-      if (!track) return; // Jaga-jaga kalau track ga ada
-
-      track.style.scrollBehavior = "smooth";
-
-      function slideNext() {
-        const firstItem = track.querySelector(".news-carousel-item");
-        if (!firstItem) return;
-
-        const itemWidth = firstItem.offsetWidth + 24;
-
-        track.scrollBy({ left: itemWidth, behavior: "smooth" });
-
-        setTimeout(() => {
-          track.style.scrollBehavior = "auto";
-          track.appendChild(firstItem);
-          track.scrollLeft -= itemWidth;
-          track.style.scrollBehavior = "smooth";
-        }, 400);
-      }
-
-      function slidePrev() {
-        const items = track.querySelectorAll(".news-carousel-item");
-        if (items.length === 0) return;
-
-        const lastItem = items[items.length - 1];
-        const itemWidth = lastItem.offsetWidth + 24;
-
-        track.style.scrollBehavior = "auto";
-        track.prepend(lastItem);
-        track.scrollLeft += itemWidth;
-
-        setTimeout(() => {
-          track.style.scrollBehavior = "smooth";
-          track.scrollBy({ left: -itemWidth, behavior: "smooth" });
-        }, 10);
-      }
-
-      // KUNCI PERBAIKANNYA DI SINI: Pakai if biar gak error kalau tombol dihapus
-      if (btnNext) {
-        btnNext.addEventListener("click", slideNext);
-      }
-      if (btnPrev) {
-        btnPrev.addEventListener("click", slidePrev);
-      }
-
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(slideNext, 2000);
-      }
-
-      function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-      }
-
-      startAutoSlide();
-
-      const wrapper = document.querySelector(".news-carousel-wrapper");
-      if (wrapper) {
-        wrapper.addEventListener("mouseenter", stopAutoSlide);
-        wrapper.addEventListener("mouseleave", startAutoSlide);
-      }
-    });
-  </script>
-
   <script>
     // Fungsi untuk tombol Copy Link
     function copyToClipboard() {
@@ -306,29 +234,6 @@
     }
   </script>
 
-  <!-- SCRIPT UNTUK READING PROGRESS BAR -->
-  <script>
-    // Deteksi setiap kali user melakukan scroll
-    window.addEventListener("scroll", function () {
-      // Ambil elemen bar-nya
-      const readingBar = document.getElementById("readingBar");
-
-      // Hitung jarak dari atas (scrollTop)
-      const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
-
-      // Hitung total tinggi halaman dikurangi tinggi layar monitor user
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-      // Dapatkan persentasenya (Jarak saat ini dibagi Total jarak) dikali 100
-      const scrolled = (winScroll / height) * 100;
-
-      // Terapkan persentasenya ke lebar (width) garis hijaunya
-      readingBar.style.width = scrolled + "%";
-    });
-  </script>
 </body>
 
 </html>
