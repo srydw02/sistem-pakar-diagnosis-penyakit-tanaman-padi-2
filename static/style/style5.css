@@ -208,7 +208,7 @@ body {
   background: #a5e68d50;
   border: none;
   color: green;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .btn-primary:hover {
@@ -221,7 +221,7 @@ body {
   background: #00d25b50;
   border: none;
   color: #00d25b;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 a {

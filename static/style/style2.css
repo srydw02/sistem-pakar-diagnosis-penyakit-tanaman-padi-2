@@ -258,7 +258,7 @@ html {
   background: #d8f5cf;
   border: none;
   color: #0b8f1f;
-  border-radius: 12px;
+  border-radius: 14px;
   transition: 0.3s ease;
 }
 
@@ -272,7 +272,7 @@ html {
   background: #00d25b50;
   border: none;
   color: #00d25b;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .margin-top {
