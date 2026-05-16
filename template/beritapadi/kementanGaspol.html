@@ -15,21 +15,18 @@
 
 <body class="detail-page">
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl d-flex justify-content-between align-items-center">
 
-            <!-- Logo tetap di kiri -->
             <a class="navbar-brand d-flex align-items-center" href="/template/berita.html">
                 <img src="/static/images/logo2.png" alt="Logo SiPadi"
                     style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
                 <h3 style="color: green; margin: 0;">SiPadi</h3>
             </a>
 
-            <!-- Tombol silang di kanan -->
-            <a href="/template/berita.html" class="btn-back-home" title="Kembali ke Berita">
+            <button id="menu-toggle" class="btn-back-home" title="Kembali">
                 ✕
-            </a>
+            </button>
 
         </div>
     </nav>
@@ -124,18 +121,21 @@
 
                 <div class="col-lg-4 mt-5 mt-lg-0 pl-lg-3">
                     <div class="sidebar-widget mb-5">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Sidebar img" class="w-100 rounded-lg mb-3 shadow-sm"
+                        <img src="/static/images/fotoberita/bankIndonesia.png"
+                            alt="Bank Indonesia" class="w-100 rounded-lg mb-3 shadow-sm"
                             style="height: 200px; object-fit: cover;">
-                        <span class="badge badge-sipadi mb-2">TIPS BUDIDAYA</span>
-                        <h5 class="sidebar-title"><a href="/template/beritapadi/fasekritis.html">Kenali 3 Fase Kritis
-                                Tanaman Padi Terhadap Penyakit
-                                Blas</a></h5>
-                        <p class="sidebar-meta">Oleh Penyuluh Tani &bull; Rabu, 13 Mei 2026 | 21:47 WIB</p>
+                        <h5 class="sidebar-title"><a href="/template/beritapadi/bankIndonesia.html">Bank Indonesia: Pertanian Jadi Tulang Punggung Ekonomi</a></h5>
+                        <p class="sidebar-meta">Oleh Tim SiPadi &bull; Jum'at, 15 Mei 2026 | 15:00 WIB</p>
                     </div>
 
-                    <!-- Sidebar List Items -->
                     <div class="sidebar-list">
+                        <div class="sidebar-item d-flex mb-4">
+                            <img src="/static/images/fotoberita/homeberita3.jpg" alt="Deteksi Penyakit Padi" class="sidebar-thumb rounded">
+                            <div class="ml-3">
+                                <h6 class="sidebar-list-title"><a href="/template/beritapadi/sistempakarbantu.html">Deteksi Penyakit Padi Lebih Cepat, Ini Keunggulan Aplikasi Sistem Pakar</a></h6>
+                                <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
+                            </div>
+                        </div>
 
                         <div class="sidebar-item d-flex mb-4">
                             <img src="/static/images/fotoberita/homeberita1.jpg" alt="Cuaca Ekstrem"
@@ -163,10 +163,77 @@
                 </div>
             </div>
         </div>
-        </div>
-        </div>
     </main>
 
+    <footer class="footer-modern">
+
+    <div class="container-xl">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <img src="/static/images/logo2.png" alt="Logo SiPadi">
+
+          <div>
+            <h2>SiPadi</h2>
+            <p>Sistem Pakar Penyakit Padi</p>
+          </div>
+
+        </div>
+
+        <div class="footer-about">
+
+          <h4>Tentang</h4>
+
+          <p>
+            Sistem pakar diagnosis penyakit padi membantu petani dalam
+            mengidentifikasi penyakit pada tanaman padi berdasarkan
+            gejala yang muncul. Sistem ini memberikan hasil diagnosis
+            secara cepat beserta saran penanganannya, sehingga petani
+            dapat mengambil tindakan yang tepat untuk menjaga kesehatan
+            tanaman dan meningkatkan hasil panen.
+          </p>
+
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="footer-bottom">
+
+        <div class="footer-location">
+
+          <i class="fas fa-map-marker-alt"></i>
+
+          <span>
+            Surakarta, Indonesia
+          </span>
+
+        </div>
+
+        <div class="footer-copy">
+
+          <h6>
+            ©2026 | SiPadi | All Rights Reserved
+          </h6>
+
+        </div>
+
+        <div class="footer-phone">
+
+          <i class="fas fa-phone-alt"></i>
+
+          <span>
+            +62 000 0000 0000
+          </span>
+
+        </div>
+
+      </div>
+
+    </footer>
 
     <script>
         const closeBtn = document.getElementById("menu-toggle");
