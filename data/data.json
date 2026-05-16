@@ -290,14 +290,20 @@
     {
       "id": "R18",
       "kondisi": ["G03", "G15"],
-      "kesimpulan": "P09",
+      "kesimpulan": "P10",
       "keterangan": "Daun menguning pucat dan tanaman tumbuh memanjang abnormal (bakanae)"
     },
     {
       "id": "R19",
       "kondisi": ["G09", "G15"],
-      "kesimpulan": "P09",
+      "kesimpulan": "P10",
       "keterangan": "Tumbuh tinggi tidak normal dan menghasilkan bulir hampa"
+    },
+    {
+      "id": "R20",
+      "kondisi": ["G05", "G15"],
+      "kesimpulan": "P10",
+      "keterangan": "Tanaman awalnya tampak kerdil/lemah namun beberapa batang tumbuh memanjang ekstrem (Bakanae)"
     }
   ]
 }

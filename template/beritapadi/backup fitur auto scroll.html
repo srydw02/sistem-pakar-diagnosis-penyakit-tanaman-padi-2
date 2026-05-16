@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Berita</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
+    <link rel="stylesheet" href="/static/style/style6.css" />
+</head>
+
+<body class="detail-page">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-xl d-flex justify-content-between align-items-center">
+
+            <!-- Logo tetap di kiri -->
+            <a class="navbar-brand d-flex align-items-center" href="/template/berita.html">
+                <img src="/static/images/logo2.png" alt="Logo SiPadi"
+                    style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
+                <h3 style="color: green; margin: 0;">SiPadi</h3>
+            </a>
+
+            <!-- Tombol silang di kanan -->
+            <a href="/template/berita.html" class="btn-back-home" title="Kembali ke Berita">
+                ✕
+            </a>
+
+        </div>
+    </nav>
+    
+    <!-- Main Content Wrapper -->
+    <main class="main-article">
+        <div class="container-xl">
+
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="breadcrumb-custom mb-4">
+                <i class="fas fa-home"></i> <a href="/">Beranda</a>
+                <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> <a
+                    href="/template/berita.html">Berita Pertanian</a>
+                <i class="fas fa-chevron-right mx-2" style="font-size: 0.7rem;"></i> Cuaca Ekstrem dan Kelembapan
+                Tinggi, Penyakit Blast Mengancam Panen Padi
+            </nav>
+
+            <!-- Title & Meta -->
+            <h1 class="article-title mb-3">Cuaca Ekstrem dan Kelembapan Tinggi, Penyakit Blast Mengancam Panen Padi</h1>
+
+            <div class="article-meta mb-4">
+                <span class="author">Oleh Tim SiPadi</span>,
+                <span class="date">Kamis, 12 Mei 2026 | 10:20 WIB</span> -
+                <span class="views"><i class="far fa-eye"></i> 1,245 kali dilihat</span>
+            </div>
+
+            <div class="row">
+                <!-- Kiri: Konten Utama -->
+                <div class="col-lg-8 pr-lg-5">
+
+                    <!-- Featured Image dengan tombol share pop-up -->
+                    <div class="featured-image-wrapper mb-4">
+                        <!-- Gambar Artikel -->
+                        <img src="/static/images/fotoberita/homeberita1.jpg" alt="Pelatihan Petani"
+                            class="featured-img w-100">
+
+                        <!-- Wrapper Share Container -->
+                        <div class="share-container">
+                            <!-- Tombol Utama -->
+                            <button class="btn-floating-share shadow-sm"><i class="fas fa-share-alt"></i></button>
+
+                            <!-- Menu Pop-up Share -->
+                            <div class="share-menu shadow-sm">
+                                <!-- Copy Link -->
+                                <a href="javascript:void(0)" onclick="copyToClipboard()" class="share-item copy-link"
+                                    title="Copy Link">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <!-- WhatsApp -->
+                                <a href="https://api.whatsapp.com/send?text=Cek%20berita%20pertanian%20ini!"
+                                    target="_blank" class="share-item wa" title="Bagikan ke WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <!-- Facebook -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=#" target="_blank"
+                                    class="share-item fb" title="Bagikan ke Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <!-- Instagram (Hanya buka web IG karena IG tidak punya direct share URL untuk web) -->
+                                <a href="https://instagram.com" target="_blank" class="share-item ig"
+                                    title="Buka Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Text -->
+                    <article class="article-content">
+                        <p class="intro-text"><strong>SiPadi, InfoTani -</strong> Anomali cuaca ekstrem yang melanda
+                            berbagai wilayah agraris nusantara pada pertengahan tahun 2026 ini membawa ancaman serius
+                            bagi sektor ketahanan pangan. Curah hujan yang tak menentu berpadu dengan kelembapan udara
+                            yang sangat tinggi memicu lonjakan kasus penyakit Blas (<i>Blast</i>) yang kini mengintai
+                            dan mengancam kegagalan panen padi secara masif.</p>
+
+                        <p>Penyakit yang disebabkan oleh infeksi jamur mematikan, <i>Magnaporthe oryzae</i> (atau
+                            <i>Pyricularia oryzae</i>), ini dikenal sangat agresif dan mampu menyebar dengan pesat
+                            melalui hembusan angin maupun percikan air hujan. Lingkungan persawahan yang bersuhu hangat,
+                            lembap, dan memiliki sirkulasi udara yang buruk menjadi semacam 'surga' bagi spora jamur ini
+                            untuk berkembang biak.
+                        </p>
+
+                        <p>Serangan jamur ini tidak pandang bulu. Pada fase vegetatif, penyakit ini umumnya menyerang
+                            bagian daun (Blas Daun) yang ditandai dengan munculnya bercak khas berbentuk belah ketupat
+                            dengan pusat berwarna abu-abu. Namun, ancaman yang paling menakutkan justru terjadi pada
+                            fase generatif saat tanaman mulai berbunga, di mana jamur akan langsung menyerang leher
+                            malai (Blas Leher atau Patah Leher).</p>
+
+                        <p>"Jika infeksi sudah mencapai leher malai, aliran nutrisi menuju bulir padi akan terputus
+                            total. Akibatnya, proses pengisian gabah menjadi gagal, bulir menjadi hampa, dan leher malai
+                            akan mengering lalu patah. Pada tingkat serangan yang parah dan tidak tertangani, petani
+                            bisa menelan kerugian gagal panen hingga 70 persen," jelas Tim Peneliti Patologi Tanaman
+                            SiPadi dalam peringatan dininya pada Kamis (14/5/2026).</p>
+
+                        <p>Untuk menekan laju penyebaran wabah ini, para petani diimbau untuk segera mengubah pola
+                            perawatan lahan. Salah satu kesalahan fatal yang sering terjadi di lapangan adalah kebiasaan
+                            menggunakan pupuk Urea (Nitrogen) secara berlebihan demi mengejar daun yang hijau legam.
+                            Padahal, kelebihan unsur Nitrogen justru akan membuat jaringan sel tanaman menjadi lebih
+                            lunak, basah, dan sangat rentan ditembus oleh hifa jamur penyebab Blas.</p>
+
+                        <p>Sebagai langkah mitigasi, petani sangat disarankan untuk mulai menerapkan prinsip pemupukan
+                            berimbang dengan menambah unsur Kalium yang berfungsi memperkuat struktur jaringan tanaman.
+                            Selain itu, mengatur jarak tanam menggunakan sistem Jajar Legowo sangat penting agar sinar
+                            matahari dapat menembus dasar kanopi dan sirkulasi udara lebih lancar sehingga kelembapan
+                            lahan dapat ditekan.</p>
+
+                        <p>Tidak kalah pentingnya, deteksi dini kini menjadi garis pertahanan pertama yang wajib
+                            dilakukan. Melalui fitur diagnosis mandiri di *platform* <strong>SiPadi</strong>, petani
+                            dianjurkan untuk terus memantau kemunculan bercak pada daun sekecil apa pun, lalu
+                            mencocokkannya ke dalam sistem untuk mendapatkan rekomendasi agens hayati atau fungisida
+                            yang tepat sasaran. Jangan tunggu hingga leher malai patah, segera ambil tindakan sejak
+                            spora pertama hinggap di sawah Anda!</p>
+                    </article>
+
+                    <!-- Tags Section -->
+                    <div class="tags-section mt-5 pt-4 border-top">
+                        <i class="fas fa-tags text-success mr-2"></i>
+                        <a href="#" class="tag-pill">#PERTANIAN DIGITAL</a>
+                        <a href="#" class="tag-pill">#SIPADI</a>
+                        <a href="#" class="tag-pill">#MITRA STRATEGIS</a>
+                        <a href="#" class="tag-pill">#PETANI MILENIAL</a>
+                        <a href="#" class="tag-pill">#PENYULUHAN</a>
+                    </div>
+
+                </div>
+
+                <!-- Kanan: Sidebar -->
+                <div class="col-lg-4 mt-5 mt-lg-0 pl-lg-3">
+
+                    <!-- Sidebar Item 1 (Image Top) -->
+                    <div class="sidebar-widget mb-5">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Sidebar img" class="w-100 rounded-lg mb-3 shadow-sm"
+                            style="height: 200px; object-fit: cover;">
+                        <span class="badge badge-sipadi mb-2">TIPS BUDIDAYA</span>
+                        <h5 class="sidebar-title"><a href="#">Kenali 3 Fase Kritis Tanaman Padi Terhadap Penyakit
+                                Blas</a></h5>
+                        <p class="sidebar-meta">Oleh Penyuluh Tani &bull; Rabu, 13 Mei 2026 | 21:47 WIB</p>
+                    </div>
+
+                    <!-- Sidebar List Items -->
+                    <div class="sidebar-list">
+
+                        <div class="sidebar-item d-flex mb-4">
+                            <img src="/static/images/mamah.png" alt="thumb" class="sidebar-thumb rounded">
+                            <div class="ml-3">
+                                <span class="badge badge-outline mb-1">INFO TEKNOLOGI</span>
+                                <h6 class="sidebar-list-title"><a href="#">Sosialisasikan Pengembangan Sistem Pakar Bagi
+                                        Petani Subang</a></h6>
+                                <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-item d-flex mb-4">
+                            <img src="/static/images/mamah.png" alt="thumb" class="sidebar-thumb rounded">
+                            <div class="ml-3">
+                                <span class="badge badge-outline mb-1">KEBIJAKAN</span>
+                                <h6 class="sidebar-list-title"><a href="#">Pemerintah Targetkan Pendapatan Hasil Panen
+                                        Padi Rp437 Miliar</a></h6>
+                                <p class="sidebar-meta m-0">Rabu, 13 Mei 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-item d-flex mb-4">
+                            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                alt="thumb" class="sidebar-thumb rounded">
+                            <div class="ml-3">
+                                <span class="badge badge-outline mb-1">INFO CUACA</span>
+                                <h6 class="sidebar-list-title"><a href="#">Antisipasi Kemarau Panjang, Petani Dihimbau
+                                        Gunakan Varietas Tahan Kering</a></h6>
+                                <p class="sidebar-meta m-0">Selasa, 12 Mei 2026</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related News Section (Auto-Slide Carousel) -->
+            <section class="related-news mt-5 pt-5 border-top">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold m-0" style="color: #1b4332;">Berita Terkait Lainnya</h3>
+                </div>
+
+                <!-- Pembungkus Slider -->
+                <div class="news-carousel-wrapper">
+                    <div class="news-carousel-track" id="newsTrack">
+
+                        <!-- Card 1 -->
+                        <div class="news-carousel-item">
+                            <div class="card related-card h-100 border-0 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top" alt="Berita 1">
+                                <div class="card-body">
+                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC PROV
+                                        JABAR</span>
+                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Kamis, 7
+                                        Mei 2026 | 18:44 WIB</span>
+                                    <h5 class="card-title fw-bold"><a href="#"
+                                            class="text-dark text-decoration-none hover-green">Pemanfaatan Drone
+                                            Pertanian Jadi Momentum Perkuat Hasil Panen</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="news-carousel-item">
+                            <div class="card related-card h-100 border-0 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top" alt="Berita 2">
+                                <div class="card-body">
+                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC KAB
+                                        BLORA</span>
+                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Rabu, 6
+                                        Mei 2026 | 19:56 WIB</span>
+                                    <h5 class="card-title fw-bold"><a href="#"
+                                            class="text-dark text-decoration-none hover-green">803 Petani Blora Terima
+                                            Bantuan Benih Varietas Tahan Penyakit BLB</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="news-carousel-item">
+                            <div class="card related-card h-100 border-0 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top" alt="Berita 3">
+                                <div class="card-body">
+                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC KOTA
+                                        JAMBI</span>
+                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Jumat, 8
+                                        Mei 2026 | 17:15 WIB</span>
+                                    <h5 class="card-title fw-bold"><a href="#"
+                                            class="text-dark text-decoration-none hover-green">Pemkot Jambi Perkuat SDM
+                                            Petani Digital untuk Wujudkan Smart Farming</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 (Tambahan) -->
+                        <div class="news-carousel-item">
+                            <div class="card related-card h-100 border-0 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top" alt="Berita 4">
+                                <div class="card-body">
+                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh KEMENTAN
+                                        RI</span>
+                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Senin,
+                                        11 Mei 2026 | 09:00 WIB</span>
+                                    <h5 class="card-title fw-bold"><a href="#"
+                                            class="text-dark text-decoration-none hover-green">Efisiensi Irigasi Modern
+                                            Tingkatkan Produktivitas Sawah di Musim Kemarau</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 (Tambahan) -->
+                        <div class="news-carousel-item">
+                            <div class="card related-card h-100 border-0 shadow-sm">
+                                <img src="/static/images/fotoGejala/G13.png" class="card-img-top" alt="Berita 5">
+                                <div class="card-body">
+                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh TIM
+                                        SIPADI</span>
+                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Minggu,
+                                        10 Mei 2026 | 14:30 WIB</span>
+                                    <h5 class="card-title fw-bold"><a href="#"
+                                            class="text-dark text-decoration-none hover-green">Waspada Serangan Hama,
+                                            SiPadi Rilis Fitur Deteksi Real-Time</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 (Tambahan) -->
+                        <div class="news-carousel-item">
+                            <div class="card related-card h-100 border-0 shadow-sm">
+                                <img src="/static/images/fotoJenisPadi/IR64.png" class="card-img-top" alt="Berita 6">
+                                <div class="card-body">
+                                    <span class="author-small d-block mb-1 text-success font-weight-bold">Oleh MC KAB
+                                        BOGOR</span>
+                                    <span class="date-small d-block mb-2 text-muted" style="font-size: 0.8rem;">Sabtu, 9
+                                        Mei 2026 | 10:15 WIB</span>
+                                    <h5 class="card-title fw-bold"><a href="#"
+                                            class="text-dark text-decoration-none hover-green">Peneliti IPB Kembangkan
+                                            Varietas Padi Baru yang Tahan Salinitas Tinggi</a></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- SCRIPT BACK PINTAR (MENYESUAIKAN ASAL HALAMAN) -->
+    <script>
+        const closeBtn = document.getElementById("menu-toggle");
+
+        closeBtn.addEventListener("click", function () {
+            // Ambil URL dari halaman sebelumnya
+            const previousPage = document.referrer.toLowerCase();
+
+            // Kondisi 1: Jika user datang dari halaman Home (index.html atau root /)
+            if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
+                // Balik ke Home (langsung scroll ke section berita)
+                window.location.href = "/index.html#berita";
+            }
+            // Kondisi 2: Jika user datang dari halaman Berita
+            else if (previousPage.includes("berita.html")) {
+                window.location.href = "/template/berita.html";
+            }
+            // Kondisi 3: Jika ada history lain (contoh dari halaman pencarian)
+            else if (previousPage !== "") {
+                window.history.back();
+            }
+            // Kondisi 4: Jika user buka link langsung dari tab baru (tanpa history)
+            else {
+                // Default: lempar ke halaman portal berita
+                window.location.href = "/template/berita.html";
+            }
+        });
+    </script>
+
+    <!-- SCRIPT UNTUK CAROUSEL BERITA (INFINITE LOOP) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.getElementById("newsTrack");
+            const btnPrev = document.getElementById("btnPrevNews");
+            const btnNext = document.getElementById("btnNextNews");
+            let autoSlideInterval;
+
+            if (!track) return; // Jaga-jaga kalau track ga ada
+
+            track.style.scrollBehavior = 'smooth';
+
+            function slideNext() {
+                const firstItem = track.querySelector('.news-carousel-item');
+                if (!firstItem) return;
+
+                const itemWidth = firstItem.offsetWidth + 24;
+
+                track.scrollBy({ left: itemWidth, behavior: 'smooth' });
+
+                setTimeout(() => {
+                    track.style.scrollBehavior = 'auto';
+                    track.appendChild(firstItem);
+                    track.scrollLeft -= itemWidth;
+                    track.style.scrollBehavior = 'smooth';
+                }, 400);
+            }
+
+            function slidePrev() {
+                const items = track.querySelectorAll('.news-carousel-item');
+                if (items.length === 0) return;
+
+                const lastItem = items[items.length - 1];
+                const itemWidth = lastItem.offsetWidth + 24;
+
+                track.style.scrollBehavior = 'auto';
+                track.prepend(lastItem);
+                track.scrollLeft += itemWidth;
+
+                setTimeout(() => {
+                    track.style.scrollBehavior = 'smooth';
+                    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+                }, 10);
+            }
+
+            // KUNCI PERBAIKANNYA DI SINI: Pakai if biar gak error kalau tombol dihapus
+            if (btnNext) {
+                btnNext.addEventListener("click", slideNext);
+            }
+            if (btnPrev) {
+                btnPrev.addEventListener("click", slidePrev);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(slideNext, 2000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            startAutoSlide();
+
+            const wrapper = document.querySelector('.news-carousel-wrapper');
+            if (wrapper) {
+                wrapper.addEventListener("mouseenter", stopAutoSlide);
+                wrapper.addEventListener("mouseleave", startAutoSlide);
+            }
+        });
+    </script>
+
+    <script>
+        // Fungsi untuk tombol Copy Link
+        function copyToClipboard() {
+            // Mengambil URL halaman saat ini
+            const url = window.location.href;
+
+            navigator.clipboard.writeText(url).then(() => {
+                alert("Link artikel berhasil disalin!");
+            }).catch(err => {
+                console.error("Gagal menyalin link: ", err);
+            });
+        }
+    </script>
+
+    <!-- SCRIPT UNTUK READING PROGRESS BAR -->
+    <script>
+        // Deteksi setiap kali user melakukan scroll
+        window.addEventListener('scroll', function() {
+            // Ambil elemen bar-nya
+            const readingBar = document.getElementById("readingBar");
+            
+            // Hitung jarak dari atas (scrollTop)
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            
+            // Hitung total tinggi halaman dikurangi tinggi layar monitor user
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // Dapatkan persentasenya (Jarak saat ini dibagi Total jarak) dikali 100
+            const scrolled = (winScroll / height) * 100;
+            
+            // Terapkan persentasenya ke lebar (width) garis hijaunya
+            readingBar.style.width = scrolled + "%";
+        });
+    </script>
+</body>
+
+</html>
