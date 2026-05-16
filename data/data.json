@@ -219,91 +219,103 @@
       "id": "R06",
       "kondisi": ["G04", "G08"],
       "kesimpulan": "P02",
-      "keterangan": "Daun kering dan tanaman mudah rebah"
+      "keterangan": "Daun kering dan tanaman mudah rebah akibat HDB"
     },
     {
       "id": "R07",
       "kondisi": ["G05", "G06"],
       "kesimpulan": "P03",
-      "keterangan": "Tanaman kerdil dan daun kuning-oranye (tungro)"
+      "keterangan": "Tanaman kerdil dan daun kuning-oranye (Tungro)"
     },
     {
       "id": "R08",
       "kondisi": ["G05", "G10"],
       "kesimpulan": "P03",
-      "keterangan": "Kerdil dan pertumbuhan terhambat"
+      "keterangan": "Kerdil dan pertumbuhan terhambat secara menyeluruh (Tungro)"
     },
     {
       "id": "R09",
       "kondisi": ["G07", "G08"],
       "kesimpulan": "P04",
-      "keterangan": "Bercak pada pelepah dan tanaman rebah (busuk pelepah)"
+      "keterangan": "Bercak pada pelepah dan tanaman rebah (Busuk Pelepah)"
     },
     {
       "id": "R10",
       "kondisi": ["G07", "G09"],
       "kesimpulan": "P04",
-      "keterangan": "Infeksi batang menyebabkan bulir hampa"
+      "keterangan": "Infeksi pelepah/batang menyebabkan pengisian bulir hampa"
     },
     {
       "id": "R11",
       "kondisi": ["G05", "G09"],
       "kesimpulan": "P05",
-      "keterangan": "Tanaman kerdil dan bulir hampa (grassy stunt)"
+      "keterangan": "Tanaman kerdil menyerupai rumput dan bulir hampa (Grassy Stunt)"
     },
     {
       "id": "R12",
       "kondisi": ["G06", "G10"],
       "kesimpulan": "P05",
-      "keterangan": "Daun kuning-oranye dan pertumbuhan terhambat akibat virus"
+      "keterangan": "Daun kuning-oranye kaku dan pertumbuhan terhambat (Grassy Stunt)"
     },
     {
       "id": "R13",
       "kondisi": ["G05", "G11"],
-      "kesimpulan": "P06",
-      "keterangan": "Tanaman kerdil disertai tepi daun bergerigi (ragged stunt)"
+      "kesimpulan": "P07",
+      "keterangan": "Tanaman kerdil disertai tepi daun bergerigi atau sobek (Ragged Stunt)"
     },
     {
       "id": "R14",
       "kondisi": ["G09", "G12"],
-      "kesimpulan": "P06",
-      "keterangan": "Bulir hampa dan tulang daun membengkak akibat infeksi virus"
+      "kesimpulan": "P07",
+      "keterangan": "Bulir padi hampa disertai pembengkakan tulang daun (Ragged Stunt)"
     },
     {
       "id": "R15",
       "kondisi": ["G13"],
-      "kesimpulan": "P07",
-      "keterangan": "Bulir berubah menjadi gumpalan spora hitam kehijauan (false smut)"
+      "kesimpulan": "P08",
+      "keterangan": "Bulir berubah menjadi gumpalan spora beludru (False Smut)"
     },
     {
       "id": "R16",
       "kondisi": ["G03", "G14"],
-      "kesimpulan": "P08",
-      "keterangan": "Daun menguning diiringi akar hitam yang membusuk (root rot)"
+      "kesimpulan": "P09",
+      "keterangan": "Daun menguning diiringi akar hitam yang membusuk (Root Rot)"
     },
     {
       "id": "R17",
       "kondisi": ["G10", "G14"],
-      "kesimpulan": "P08",
-      "keterangan": "Pertumbuhan terhambat karena sistem akar rusak dan membusuk"
+      "kesimpulan": "P09",
+      "keterangan": "Pertumbuhan terhambat karena sistem akar rusak dan membusuk (Root Rot)"
     },
     {
       "id": "R18",
       "kondisi": ["G03", "G15"],
       "kesimpulan": "P10",
-      "keterangan": "Daun menguning pucat dan tanaman tumbuh memanjang abnormal (bakanae)"
+      "keterangan": "Daun menguning pucat dan tanaman tumbuh memanjang abnormal (Bakanae)"
     },
     {
       "id": "R19",
       "kondisi": ["G09", "G15"],
       "kesimpulan": "P10",
-      "keterangan": "Tumbuh tinggi tidak normal dan menghasilkan bulir hampa"
+      "keterangan": "Tumbuh tinggi tidak normal dan menghasilkan bulir hampa (Bakanae)"
     },
     {
       "id": "R20",
       "kondisi": ["G05", "G15"],
       "kesimpulan": "P10",
-      "keterangan": "Tanaman awalnya tampak kerdil/lemah namun beberapa batang tumbuh memanjang ekstrem (Bakanae)"
+      "keterangan": "Perpaduan tanaman lemah/kerdil dengan beberapa batang memanjang ekstrem (Bakanae)"
+    },
+    {
+      "id": "R21",
+      "kondisi": ["G04", "G10"],
+      "kesimpulan": "P06",
+      "keterangan": "Infeksi akut tanaman muda menyebabkan daun kering terbakar dan layu mendadak (Kresek)"
+    },
+    {
+      "id": "R22",
+      "kondisi": ["G03", "G04", "G10"],
+      "kesimpulan": "P06",
+      "keterangan": "Daun menguning lalu kering menggulung disertai hambatan tumbuh drastis (Kresek)"
     }
   ]
 }
