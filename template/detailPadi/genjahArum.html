@@ -146,7 +146,7 @@
                             </div>
                         <small class="text-muted d-block mt-4" style="font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px;">
                             * Genjah Arum terkunci sebagai subjek utama.<br>
-                            * Maksimal 3 varietas perbandingan.
+                            * Maksimal 4 varietas perbandingan.
                         </small>
                     </div>
                 </div>
@@ -255,7 +255,7 @@
                 input.addEventListener('change', function() {
                     const checkedBoxes = document.querySelectorAll('.padi-checkbox:checked');
                     if (checkedBoxes.length > 4) {
-                        alert("Maksimal hanya 3 varietas pembanding.");
+                        alert("Maksimal hanya 4 varietas pembanding.");
                         this.checked = false;
                         return;
                     }
