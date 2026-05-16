@@ -199,12 +199,49 @@
     </footer>
 
     <script>
+        // 1. --- LOGIKA TOMBOL KEMBALI (X) ---
         const closeBtn = document.getElementById("menu-toggle");
-        closeBtn.addEventListener("click", function () {
-            if (document.referrer !== "") {
-                window.history.back();
-            } else {
-                window.location.href = "/index.html#informasi";
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                if (document.referrer !== "") {
+                    window.history.back();
+                } else {
+                    window.location.href = "/index.html";
+                }
+            });
+        }
+
+        // 2. --- LOGIKA BREADCRUMB DINAMIS & KONDISIONAL ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const refSource = urlParams.get('ref');
+        
+        // Deteksi Jalur Diagnosis
+        const isFromDiagnosis = (refSource === 'diagnosis') || document.referrer.includes('diagnosis.html');
+        // Deteksi Jalur Informasi
+        const isFromInformasi = document.referrer.includes('informasi.html');
+
+        // Ambil semua link di dalam breadcrumb
+        const breadcrumbLinks = document.querySelectorAll('.breadcrumb-custom a');
+        
+        breadcrumbLinks.forEach(function(link) {
+            // Targetkan hanya link yang bertuliskan "Informasi"
+            if (link.innerText.trim() === "Informasi") {
+                if (isFromDiagnosis) {
+                    // JALUR A: Jika dari Diagnosis, ubah teksnya
+                    link.href = "/template/diagnosis.html";
+                    link.innerText = "Diagnosis";
+                } 
+                else if (!isFromInformasi) {
+                    // JALUR C: Jika BUKAN dari Informasi (artinya dari Beranda / index.html)
+                    // Ambil ikon chevron (panah) setelah kata "Informasi" lalu hapus
+                    const nextChevron = link.nextElementSibling;
+                    if (nextChevron && nextChevron.classList.contains('fa-chevron-right')) {
+                        nextChevron.remove();
+                    }
+                    // Hapus link kata "Informasi" itu sendiri
+                    link.remove();
+                }
+                // JALUR B: Jika dari Informasi, dibiarkan saja (default)
             }
         });
     </script>
