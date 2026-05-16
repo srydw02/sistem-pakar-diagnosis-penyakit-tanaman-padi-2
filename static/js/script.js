@@ -227,7 +227,8 @@ function prosesDiagnosis() {
             '<h5 class="mb-0">' + item.nama + '</h5>' +
             '<span style="color: #2f281e; font-weight: 500;">' + labelUrutan + '</span>' +
           '</div>' +
-          '<a href="' + item.link + '" class="btn btn-lihat-info btn-sm mt-2">Lihat informasi</a>' +
+          // '<a href="' + item.link + '" class="btn btn-lihat-info btn-sm mt-2">Lihat informasi</a>' +
+             '<a href="' + item.link + '?ref=diagnosis" class="btn btn-lihat-info btn-sm mt-2">Lihat informasi</a>' +
         '</div>';
     }
   }
