@@ -741,3 +741,13 @@ body {
         justify-content: center;
     }
 }
+
+/*sry muter*/
+#menu-toggle {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#menu-toggle:hover {
+  transform: rotate(90deg) scale(1.1);
+}
