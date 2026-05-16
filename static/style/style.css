@@ -813,7 +813,7 @@ section {
     border: 1px solid rgba(0,0,0,0.03);
     border-radius: 20px;
     transition: all 0.4s ease;
-    height: 100%;
+    /* height: 100%; */
     box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     overflow: hidden;
     text-align: left;
@@ -830,8 +830,16 @@ section {
     position: relative;
 }
 
-.news-card img {
+/* .news-card img {
     height: 220px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.5s ease;
+    background: #e0e0e0;
+} */
+
+.news-card img {
+    height: 180px; /* Tinggi dikurangi agar proporsional */
     object-fit: cover;
     width: 100%;
     transition: transform 0.5s ease;
@@ -926,10 +934,18 @@ section {
     height: 100%;
 }
 
-.headline-img {
+/* .headline-img {
     width: 100%;
     height: 100%;
     min-height: 350px;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    background: #e0e0e0;
+} */
+
+.headline-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.7s ease;
     background: #e0e0e0;
@@ -1126,4 +1142,11 @@ section {
 button.btn-outline-hero {
     cursor: pointer;
     font-family: "Poppins", sans-serif;
+}
+
+/* Mengontrol lebar maksimal section berita di layar desktop besar */
+@media (min-width: 1200px) {
+    #berita .container-xl {
+        max-width: 1080px; /* Mempersempit agar kartu tidak melar ke samping */
+    }
 }
