@@ -239,95 +239,53 @@
     </footer>
    
     <script>
+        // 1. --- LOGIKA TOMBOL KEMBALI (X) BAWAAN ---
         const closeBtn = document.getElementById("menu-toggle");
-        closeBtn.addEventListener("click", function () {
-            const previousPage = document.referrer.toLowerCase();
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                const previousPage = document.referrer.toLowerCase();
 
-            if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
-                window.location.href = "/index.html#berita";
-            }
-            else if (previousPage.includes("berita.html")) {
-                window.location.href = "/template/berita.html";
-            }
-            else if (previousPage !== "") {
-                window.history.back();
-            }
-            else {
-                window.location.href = "/template/berita.html";
-            }
-        });
-    </script>
+                // Jika asal halaman dari Home / Beranda
+                if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
+                    window.location.href = "/index.html#berita";
+                }
+                // Jika asal halaman dari Portal Berita Utama
+                else if (previousPage.includes("berita.html")) {
+                    window.location.href = "/template/berita.html";
+                }
+                // Jika dari halaman lainnya, gunakan sejarah navigasi browser
+                else if (previousPage !== "") {
+                    window.history.back();
+                }
+                // Antisipasi jika halaman dibuka langsung melalui tab baru
+                else {
+                    window.location.href = "/template/berita.html";
+                }
+            });
+        }
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const track = document.getElementById("newsTrack");
-            const btnPrev = document.getElementById("btnPrevNews");
-            const btnNext = document.getElementById("btnNextNews");
-            let autoSlideInterval;
+        // 2. --- LOGIKA BREADCRUMB DINAMIS & KONDISIONAL ---
+        // Deteksi apakah URL asal (referrer) mengandung kata 'berita.html'
+        const isFromBerita = document.referrer.toLowerCase().includes('berita.html');
 
-            if (!track) return;
+        // Jika BUKAN berasal dari halaman berita.html (artinya di-klik lewat Home/Index)
+        if (!isFromBerita) {
+            const breadcrumbLinks = document.querySelectorAll('.breadcrumb-custom a');
+            
+            breadcrumbLinks.forEach(function(link) {
+                // Mencari secara spesifik link yang teksnya tertulis "Berita Pertanian"
+                if (link.innerText.trim() === "Berita Pertanian") {
+                    const nextChevron = link.nextElementSibling;
+                    
+                    if (nextChevron && nextChevron.classList.contains('fa-chevron-right')) {
+                        nextChevron.remove(); // Hapus ikon panah (>)
+                    }
+                    link.remove(); // Hapus teks "Berita Pertanian"
+                }
+            });
+        }
 
-            track.style.scrollBehavior = 'smooth';
-
-            function slideNext() {
-                const firstItem = track.querySelector('.news-carousel-item');
-                if (!firstItem) return;
-
-                const itemWidth = firstItem.offsetWidth + 24;
-
-                track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-
-                setTimeout(() => {
-                    track.style.scrollBehavior = 'auto';
-                    track.appendChild(firstItem);
-                    track.scrollLeft -= itemWidth;
-                    track.style.scrollBehavior = 'smooth';
-                }, 400);
-            }
-
-            function slidePrev() {
-                const items = track.querySelectorAll('.news-carousel-item');
-                if (items.length === 0) return;
-
-                const lastItem = items[items.length - 1];
-                const itemWidth = lastItem.offsetWidth + 24;
-
-                track.style.scrollBehavior = 'auto';
-                track.prepend(lastItem);
-                track.scrollLeft += itemWidth;
-
-                setTimeout(() => {
-                    track.style.scrollBehavior = 'smooth';
-                    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                }, 10);
-            }
-
-            if (btnNext) {
-                btnNext.addEventListener("click", slideNext);
-            }
-            if (btnPrev) {
-                btnPrev.addEventListener("click", slidePrev);
-            }
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(slideNext, 2000);
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-
-            startAutoSlide();
-
-            const wrapper = document.querySelector('.news-carousel-wrapper');
-            if (wrapper) {
-                wrapper.addEventListener("mouseenter", stopAutoSlide);
-                wrapper.addEventListener("mouseleave", startAutoSlide);
-            }
-        });
-    </script>
-
-    <script>
+        // 3. --- LOGIKA MENYALIN LINK (COPY TO CLIPBOARD) ---
         function copyToClipboard() {
             const url = window.location.href;
 
@@ -337,19 +295,6 @@
                 console.error("Gagal menyalin link: ", err);
             });
         }
-    </script>
-
-    <script>
-        window.addEventListener('scroll', function () {
-            const readingBar = document.getElementById("readingBar");
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-            const scrolled = (winScroll / height) * 100;
-
-            readingBar.style.width = scrolled + "%";
-        });
     </script>
 </body>
 

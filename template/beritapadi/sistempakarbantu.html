@@ -254,15 +254,19 @@
             closeBtn.addEventListener("click", function () {
                 const previousPage = document.referrer.toLowerCase();
 
+                // Jika asal halaman dari Home / Beranda
                 if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
                     window.location.href = "/index.html#berita";
                 }
+                // Jika asal halaman dari Portal Berita Utama
                 else if (previousPage.includes("berita.html")) {
                     window.location.href = "/template/berita.html";
                 }
+                // Jika dari halaman lainnya, gunakan sejarah navigasi browser
                 else if (previousPage !== "") {
                     window.history.back();
                 }
+                // Antisipasi jika halaman dibuka langsung melalui tab baru
                 else {
                     window.location.href = "/template/berita.html";
                 }
@@ -270,35 +274,28 @@
         }
 
         // 2. --- LOGIKA BREADCRUMB DINAMIS & KONDISIONAL ---
-        document.addEventListener("DOMContentLoaded", function() {
-            // Deteksi apakah pengunjung datang dari halaman berita.html
-            const isFromBerita = document.referrer.toLowerCase().includes('berita.html');
+        // Deteksi apakah URL asal (referrer) mengandung kata 'berita.html'
+        const isFromBerita = document.referrer.toLowerCase().includes('berita.html');
 
-            // Jika BUKAN dari halaman Berita (misal dari Home/Index)
-            if (!isFromBerita) {
-                // Ambil semua link di dalam breadcrumb
-                const breadcrumbLinks = document.querySelectorAll('.breadcrumb-custom a');
-                
-                breadcrumbLinks.forEach(function(link) {
-                    // Cari link yang teksnya "Berita Pertanian"
-                    if (link.innerText.trim() === "Berita Pertanian") {
-                        // Ambil ikon chevron (panah) SETELAH link ini lalu hapus
-                        const nextChevron = link.nextElementSibling;
-                        if (nextChevron && nextChevron.classList.contains('fa-chevron-right')) {
-                            nextChevron.remove();
-                        }
-                        // Hapus link "Berita Pertanian" itu sendiri
-                        link.remove();
+        // Jika BUKAN berasal dari halaman berita.html (artinya di-klik lewat Home/Index)
+        if (!isFromBerita) {
+            const breadcrumbLinks = document.querySelectorAll('.breadcrumb-custom a');
+            
+            breadcrumbLinks.forEach(function(link) {
+                // Mencari secara spesifik link yang teksnya tertulis "Berita Pertanian"
+                if (link.innerText.trim() === "Berita Pertanian") {
+                    const nextChevron = link.nextElementSibling;
+                    
+                    if (nextChevron && nextChevron.classList.contains('fa-chevron-right')) {
+                        nextChevron.remove(); // Hapus ikon panah (>)
                     }
-                });
-            }
-        });
-    </script>
+                    link.remove(); // Hapus teks "Berita Pertanian"
+                }
+            });
+        }
 
-    <script>
-        // Fungsi untuk tombol Copy Link
+        // 3. --- LOGIKA MENYALIN LINK (COPY TO CLIPBOARD) ---
         function copyToClipboard() {
-            // Mengambil URL halaman saat ini
             const url = window.location.href;
 
             navigator.clipboard.writeText(url).then(() => {
@@ -308,6 +305,9 @@
             });
         }
     </script>
+
+
+
 
 </body>
 

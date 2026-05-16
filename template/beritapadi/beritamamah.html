@@ -239,107 +239,54 @@
     </footer>
 
     <script>
+        // 1. --- LOGIKA TOMBOL KEMBALI (X) BAWAAN ---
         const closeBtn = document.getElementById("menu-toggle");
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                const previousPage = document.referrer.toLowerCase();
 
-        closeBtn.addEventListener("click", function () {
-            // Ambil URL dari halaman sebelumnya
-            const previousPage = document.referrer.toLowerCase();
+                // Jika asal halaman dari Home / Beranda
+                if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
+                    window.location.href = "/index.html#berita";
+                }
+                // Jika asal halaman dari Portal Berita Utama
+                else if (previousPage.includes("berita.html")) {
+                    window.location.href = "/template/berita.html";
+                }
+                // Jika dari halaman lainnya, gunakan sejarah navigasi browser
+                else if (previousPage !== "") {
+                    window.history.back();
+                }
+                // Antisipasi jika halaman dibuka langsung melalui tab baru
+                else {
+                    window.location.href = "/template/berita.html";
+                }
+            });
+        }
 
-            // Kondisi 1: Jika user datang dari halaman Home (index.html atau root /)
-            if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
-                // Balik ke Home (langsung scroll ke section berita)
-                window.location.href = "/index.html#berita";
-            }
-            // Kondisi 2: Jika user datang dari halaman Berita
-            else if (previousPage.includes("berita.html")) {
-                window.location.href = "/template/berita.html";
-            }
-            // Kondisi 3: Jika ada history lain (contoh dari halaman pencarian)
-            else if (previousPage !== "") {
-                window.history.back();
-            }
-            // Kondisi 4: Jika user buka link langsung dari tab baru (tanpa history)
-            else {
-                // Default: lempar ke halaman portal berita
-                window.location.href = "/template/berita.html";
-            }
-        });
-    </script>
+        // 2. --- LOGIKA BREADCRUMB DINAMIS & KONDISIONAL ---
+        // Deteksi apakah URL asal (referrer) mengandung kata 'berita.html'
+        const isFromBerita = document.referrer.toLowerCase().includes('berita.html');
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const track = document.getElementById("newsTrack");
-            const btnPrev = document.getElementById("btnPrevNews");
-            const btnNext = document.getElementById("btnNextNews");
-            let autoSlideInterval;
+        // Jika BUKAN berasal dari halaman berita.html (artinya di-klik lewat Home/Index)
+        if (!isFromBerita) {
+            const breadcrumbLinks = document.querySelectorAll('.breadcrumb-custom a');
+            
+            breadcrumbLinks.forEach(function(link) {
+                // Mencari secara spesifik link yang teksnya tertulis "Berita Pertanian"
+                if (link.innerText.trim() === "Berita Pertanian") {
+                    const nextChevron = link.nextElementSibling;
+                    
+                    if (nextChevron && nextChevron.classList.contains('fa-chevron-right')) {
+                        nextChevron.remove(); // Hapus ikon panah (>)
+                    }
+                    link.remove(); // Hapus teks "Berita Pertanian"
+                }
+            });
+        }
 
-            if (!track) return; // Jaga-jaga kalau track ga ada
-
-            track.style.scrollBehavior = 'smooth';
-
-            function slideNext() {
-                const firstItem = track.querySelector('.news-carousel-item');
-                if (!firstItem) return;
-
-                const itemWidth = firstItem.offsetWidth + 24;
-
-                track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-
-                setTimeout(() => {
-                    track.style.scrollBehavior = 'auto';
-                    track.appendChild(firstItem);
-                    track.scrollLeft -= itemWidth;
-                    track.style.scrollBehavior = 'smooth';
-                }, 400);
-            }
-
-            function slidePrev() {
-                const items = track.querySelectorAll('.news-carousel-item');
-                if (items.length === 0) return;
-
-                const lastItem = items[items.length - 1];
-                const itemWidth = lastItem.offsetWidth + 24;
-
-                track.style.scrollBehavior = 'auto';
-                track.prepend(lastItem);
-                track.scrollLeft += itemWidth;
-
-                setTimeout(() => {
-                    track.style.scrollBehavior = 'smooth';
-                    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                }, 10);
-            }
-
-            // KUNCI PERBAIKANNYA DI SINI: Pakai if biar gak error kalau tombol dihapus
-            if (btnNext) {
-                btnNext.addEventListener("click", slideNext);
-            }
-            if (btnPrev) {
-                btnPrev.addEventListener("click", slidePrev);
-            }
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(slideNext, 2000);
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-
-            startAutoSlide();
-
-            const wrapper = document.querySelector('.news-carousel-wrapper');
-            if (wrapper) {
-                wrapper.addEventListener("mouseenter", stopAutoSlide);
-                wrapper.addEventListener("mouseleave", startAutoSlide);
-            }
-        });
-    </script>
-
-    <script>
-        // Fungsi untuk tombol Copy Link
+        // 3. --- LOGIKA MENYALIN LINK (COPY TO CLIPBOARD) ---
         function copyToClipboard() {
-            // Mengambil URL halaman saat ini
             const url = window.location.href;
 
             navigator.clipboard.writeText(url).then(() => {
@@ -348,26 +295,6 @@
                 console.error("Gagal menyalin link: ", err);
             });
         }
-    </script>
-
-    <script>
-        // Deteksi setiap kali user melakukan scroll
-        window.addEventListener('scroll', function () {
-            // Ambil elemen bar-nya
-            const readingBar = document.getElementById("readingBar");
-
-            // Hitung jarak dari atas (scrollTop)
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-
-            // Hitung total tinggi halaman dikurangi tinggi layar monitor user
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-            // Dapatkan persentasenya (Jarak saat ini dibagi Total jarak) dikali 100
-            const scrolled = (winScroll / height) * 100;
-
-            // Terapkan persentasenya ke lebar (width) garis hijaunya
-            readingBar.style.width = scrolled + "%";
-        });
     </script>
 </body>
 

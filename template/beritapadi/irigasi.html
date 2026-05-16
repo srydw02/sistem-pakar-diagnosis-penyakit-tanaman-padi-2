@@ -250,37 +250,54 @@
     </footer>
 
     <script>
+        // 1. --- LOGIKA TOMBOL KEMBALI (X) BAWAAN ---
         const closeBtn = document.getElementById("menu-toggle");
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                const previousPage = document.referrer.toLowerCase();
 
-        closeBtn.addEventListener("click", function () {
-            // Ambil URL dari halaman sebelumnya
-            const previousPage = document.referrer.toLowerCase();
+                // Jika asal halaman dari Home / Beranda
+                if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
+                    window.location.href = "/index.html#berita";
+                }
+                // Jika asal halaman dari Portal Berita Utama
+                else if (previousPage.includes("berita.html")) {
+                    window.location.href = "/template/berita.html";
+                }
+                // Jika dari halaman lainnya, gunakan sejarah navigasi browser
+                else if (previousPage !== "") {
+                    window.history.back();
+                }
+                // Antisipasi jika halaman dibuka langsung melalui tab baru
+                else {
+                    window.location.href = "/template/berita.html";
+                }
+            });
+        }
 
-            // Kondisi 1: Jika user datang dari halaman Home (index.html atau root /)
-            if (previousPage.includes("index.html") || previousPage.endsWith("127.0.0.1:5500/") || previousPage.endsWith("localhost:5500/")) {
-                // Balik ke Home (langsung scroll ke section berita)
-                window.location.href = "/index.html#berita";
-            }
-            // Kondisi 2: Jika user datang dari halaman Berita
-            else if (previousPage.includes("berita.html")) {
-                window.location.href = "/template/berita.html";
-            }
-            // Kondisi 3: Jika ada history lain (contoh dari halaman pencarian)
-            else if (previousPage !== "") {
-                window.history.back();
-            }
-            // Kondisi 4: Jika user buka link langsung dari tab baru (tanpa history)
-            else {
-                // Default: lempar ke halaman portal berita
-                window.location.href = "/template/berita.html";
-            }
-        });
-    </script>
+        // 2. --- LOGIKA BREADCRUMB DINAMIS & KONDISIONAL ---
+        // Deteksi apakah URL asal (referrer) mengandung kata 'berita.html'
+        const isFromBerita = document.referrer.toLowerCase().includes('berita.html');
 
-    <script>
-        // Fungsi untuk tombol Copy Link
+        // Jika BUKAN berasal dari halaman berita.html (artinya di-klik lewat Home/Index)
+        if (!isFromBerita) {
+            const breadcrumbLinks = document.querySelectorAll('.breadcrumb-custom a');
+            
+            breadcrumbLinks.forEach(function(link) {
+                // Mencari secara spesifik link yang teksnya tertulis "Berita Pertanian"
+                if (link.innerText.trim() === "Berita Pertanian") {
+                    const nextChevron = link.nextElementSibling;
+                    
+                    if (nextChevron && nextChevron.classList.contains('fa-chevron-right')) {
+                        nextChevron.remove(); // Hapus ikon panah (>)
+                    }
+                    link.remove(); // Hapus teks "Berita Pertanian"
+                }
+            });
+        }
+
+        // 3. --- LOGIKA MENYALIN LINK (COPY TO CLIPBOARD) ---
         function copyToClipboard() {
-            // Mengambil URL halaman saat ini
             const url = window.location.href;
 
             navigator.clipboard.writeText(url).then(() => {
