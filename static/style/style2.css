@@ -208,13 +208,59 @@ html {
   z-index: 1;
 }
 
+.faq-section {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
 .accordion {
-  background-color: none;
+    background: transparent;
 }
 
 .accordion .card-gejala {
-  border-radius: 12px !important;
-  overflow: hidden;
+    border: none;
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .05);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Smooth hover card */
+.accordion .card-gejala:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.accordion .card-gejala .card-header {
+    background: linear-gradient(135deg, #d8f5cf, #c3e0cb);
+    border-bottom: 1px solid rgba(47, 158, 68, 0.15);
+    padding: 0;
+    transition: 0.3s ease;
+}
+
+.accordion .card-gejala .card-header:hover {
+    background: linear-gradient(135deg, green, rgb(1, 144, 1));
+}
+
+.accordion .card-gejala .btn {
+    color: #222;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 18px 20px;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.accordion .card-gejala .card-header:hover .btn {
+    color: white;
+}
+
+.accordion .card-body {
+    background: #fff;
+    padding: 20px;
+    line-height: 1.7;
+    color: #555;
 }
 
 .card-gejala {
