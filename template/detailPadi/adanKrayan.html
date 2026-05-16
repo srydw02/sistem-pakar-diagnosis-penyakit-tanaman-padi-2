@@ -11,18 +11,15 @@
 </head>
 <body>
 
-   <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-xl d-flex justify-content-between align-items-center">
 
-            <!-- Logo tetap di kiri -->
             <a class="navbar-brand d-flex align-items-center" href="/template/jenisPadi.html">
                 <img src="/static/images/logo2.png" alt="Logo SiPadi"
                     style="width: 35px; height: 35px; object-fit: contain; margin-right: 8px;">
                 <h3 style="color: green; margin: 0;">SiPadi</h3>
             </a>
 
-            <!-- Tombol silang di kanan -->
             <button id="menu-toggle" class="btn-back-home" title="Kembali">
                 ✕
             </button>
@@ -35,7 +32,7 @@
         <p>Kemurnian Organik dari Dataran Tinggi Borneo</p>
     </div>
 
-    <div class="detail-container">
+    <div class="detail-container container-xl">
         
         <div class="detail-main-info">
             <div class="detail-image-wrapper">
@@ -70,7 +67,7 @@
                 <div class="col-md-6 editorial-col-right">
                     <h4 class="editorial-subtitle">Tantangan Budidaya</h4>
                     <p class="editorial-text">
-                        Padi ini memiliki umur tanaman yang panjang (mencapai 150 hari) dan sifatnya yang spesifik lokasi (spesific location). Kualitas rasa dan aromanya akan menurun drastis jika ditanam di dataran rendah atau menggunakan sistem pertanian konvensional berbasis bahan kimia.
+                        Padi ini memiliki umur tanaman yang panjang (mencapai 150 hari) dan sifatnya yang spesifik lokasi. Kualitas rasa dan aromanya akan menurun drastis jika ditanam di dataran rendah atau menggunakan sistem pertanian konvensional berbasis bahan kimia.
                     </p>
                 </div>
             </div>
@@ -149,7 +146,7 @@
                             </div>
                         <small class="text-muted d-block mt-4" style="font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 10px;">
                             * Adan Krayan terkunci sebagai subjek utama.<br>
-                            * Maksimal 3 varietas perbandingan.
+                            * Maksimal 4 varietas perbandingan.
                         </small>
                     </div>
                 </div>
@@ -158,80 +155,48 @@
     </div>
     
     <footer class="footer-modern">
-
-    <div class="container-xl">
-
-      <div class="footer-top">
-
-        <div class="footer-brand">
-
-          <img src="/static/images/logo2.png" alt="Logo SiPadi">
-
-          <div>
-            <h2>SiPadi</h2>
-            <p>Sistem Pakar Penyakit Padi</p>
+      <div class="container-xl">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img src="/static/images/logo2.png" alt="Logo SiPadi">
+            <div>
+              <h2>SiPadi</h2>
+              <p>Sistem Pakar Penyakit Padi</p>
+            </div>
           </div>
-
+          <div class="footer-about">
+            <h4>Tentang</h4>
+            <p>
+              Sistem pakar diagnosis penyakit padi membantu petani dalam
+              mengidentifikasi penyakit pada tanaman padi berdasarkan
+              gejala yang muncul. Sistem ini memberikan hasil diagnosis
+              secara cepat beserta saran penanganannya, sehingga petani
+              dapat mengambil tindakan yang tepat untuk menjaga kesehatan
+              tanaman dan meningkatkan hasil panen.
+            </p>
+          </div>
         </div>
-
-        <div class="footer-about">
-
-          <h4>Tentang</h4>
-
-          <p>
-            Sistem pakar diagnosis penyakit padi membantu petani dalam
-            mengidentifikasi penyakit pada tanaman padi berdasarkan
-            gejala yang muncul. Sistem ini memberikan hasil diagnosis
-            secara cepat beserta saran penanganannya, sehingga petani
-            dapat mengambil tindakan yang tepat untuk menjaga kesehatan
-            tanaman dan meningkatkan hasil panen.
-          </p>
-
+        <hr>
+        <div class="footer-bottom">
+          <div class="footer-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Surakarta, Indonesia</span>
+          </div>
+          <div class="footer-copy">
+            <h6>©2026 | SiPadi | All Rights Reserved</h6>
+          </div>
+          <div class="footer-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span>+62 000 0000 0000</span>
+          </div>
         </div>
-
       </div>
-
-      <hr>
-
-      <div class="footer-bottom">
-
-        <div class="footer-location">
-
-          <i class="fas fa-map-marker-alt"></i>
-
-          <span>
-            Surakarta, Indonesia
-          </span>
-
-        </div>
-
-        <div class="footer-copy">
-
-          <h6>
-            ©2026 | SiPadi | All Rights Reserved
-          </h6>
-
-        </div>
-
-        <div class="footer-phone">
-
-          <i class="fas fa-phone-alt"></i>
-
-          <span>
-            +62 000 0000 0000
-          </span>
-
-        </div>
-
-      </div>
-
     </footer>    
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     
-    <!-- button back script -->
     <script>
         const closeBtn = document.getElementById("menu-toggle");
 
@@ -239,7 +204,7 @@
             if (document.referrer !== "") {
                 window.history.back();
             } else {
-                window.location.href = "/index.html#jenis-padi"; 
+                window.location.href = "/index.html#jenisPadi"; 
             }
         });
     </script>
@@ -251,10 +216,10 @@
 
             // Database 10 Padi (Adan Krayan Terkunci)
             const padiData = {
-                'Adan Krayan': { data: [4, 3, 9, 7, 9], color: '#9b59b6', isDefault: true, locked: true }, // Subjek Utama (Ungu)
+                'Adan Krayan': { data: [4, 3, 9, 7, 9], color: '#6d3fa0', isDefault: true, locked: true },
+                'Genjah Arum': { data: [9, 9, 6, 5, 8], color: '#e67e22', isDefault: false, locked: false }, 
                 'Siam Unus': { data: [5, 3, 10, 6, 9], color: '#0b8f1f', isDefault: true, locked: false },
                 'Siam Mutiara': { data: [6, 4, 8, 6, 7], color: '#3498db', isDefault: true, locked: false },
-                'Genjah Arum': { data: [9, 9, 6, 5, 8], color: '#e67e22', isDefault: false, locked: false },
                 'Kuku Balam': { data: [5, 4, 8, 6, 8], color: '#f1c40f', isDefault: false, locked: false },
                 'Mentik Susu': { data: [7, 6, 7, 5, 9], color: '#1abc9c', isDefault: false, locked: false },
                 'Mentik Wangi': { data: [6, 6, 8, 5, 9], color: '#e74c3c', isDefault: false, locked: false },
@@ -289,8 +254,8 @@
 
                 input.addEventListener('change', function() {
                     const checkedBoxes = document.querySelectorAll('.padi-checkbox:checked');
-                    if (checkedBoxes.length > 3) {
-                        alert("Maksimal hanya 3 varietas yang bisa dibandingkan.");
+                    if (checkedBoxes.length > 4) {
+                        alert("Maksimal hanya 4 varietas pembanding.");
                         this.checked = false;
                         return;
                     }
